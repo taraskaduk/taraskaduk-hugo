@@ -1,0 +1,152 @@
+---
+title: Create World Pixel Maps in R
+author: Taras Kaduk
+date: '2017-11-26'
+slug: 2017-11-26-pixel-map
+categories:
+  - R
+tags:
+  - ggplot
+  - ggmap
+  - geo
+  - maps
+cover:
+        image: /images/map_wide.png
+        style: full
+---
+
+
+
+<p>Today, I’m going to show you how to make pixel maps in R. Why pixel maps? Because they look awesome!</p>
+<p>I was searching on the web for a while, but couldn’t find a good tutorial. Being stubborn as I am, I eventually figured out a way to get what I want. You know, if you torture your code enough, it might give you what you need.</p>
+<div id="setup" class="section level2">
+<h2>Setup</h2>
+<p>First, of course, loading required packages. These days, I don’t bother with discrete packages and get the entire <code>tidyverse</code> right away. Aside from that, you may need the <code>ggmap</code> package, which I used in the earlier iterations of this script (more on that later). You’ll also need the <code>maps</code> package.</p>
+<pre class="r"><code># Library -----------------------------------------------------------------
+
+library(tidyverse)
+library(googlesheets)
+library(maps)
+library(here)</code></pre>
+<p>Next, we’ll need our data points. You can do anything you want here: load a google sheet with data, reach to you Google Maps data, import a csv file, whatever your heart desires.</p>
+<p>Initially, I created a data frame with places I’ve been to, and then grabbed their coordinates with <code>mutate_geocode()</code> function from a <code>ggmap</code> package. That piece of code takes a while to run, and the list doesn’t really change that much, so I ended up saving it as a separate Google sheet, and now I simply import it. But you do as you wish.</p>
+<p>You’ll obviously need to replace this chunk with your own data. I include <code>tail</code> of my tibble to give you an idea about the data structure</p>
+<pre class="r"><code># Get data -------------------------------------------------------------
+url &lt;- &#39;https://docs.google.com/spreadsheets/d/e/2PACX-1vQoRxmeOvIAQSqOtr2DMOBW_P4idYKzRmVtT7lpqwoH7ZWAonRwOcKR2GqE-yqUOhb5Ac_RUs4MBICe/pub?output=csv&#39;
+destfile &lt;- &quot;locations.csv&quot;
+curl::curl_download(url, destfile)
+locations &lt;- read_csv(destfile)
+tail(locations)</code></pre>
+<pre><code>## # A tibble: 6 x 4
+##                      city status      lon      lat
+##                     &lt;chr&gt;  &lt;chr&gt;    &lt;dbl&gt;    &lt;dbl&gt;
+## 1          Hurgada, Egypt   been 33.81161 27.25790
+## 2     Simferopol, Ukraine   been 34.10242 44.95212
+## 3          Yalta, Ukraine   been 34.16630 44.49520
+## 4 Dnipropetrivsk, Ukraine   been 35.04618 48.46472
+## 5     Zaporizhya, Ukraine   been 35.13957 47.83880
+## 6          Moscow, Russia   been 37.61730 55.75583</code></pre>
+</div>
+<div id="rounding-the-coordinates" class="section level2">
+<h2>Rounding the coordinates</h2>
+<p>As I’m creating a pixel map - I need dots in the right places. I’m going to plot a dot for each degree, and therefore I need my coordinates rounded to the nearest degree</p>
+<pre class="r"><code>locations &lt;- locations %&gt;% 
+        mutate(long_round = round(lon, 0),
+               lat_round = round(lat,0))
+tail(locations)</code></pre>
+<pre><code>## # A tibble: 6 x 6
+##                      city status      lon      lat long_round lat_round
+##                     &lt;chr&gt;  &lt;chr&gt;    &lt;dbl&gt;    &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt;
+## 1          Hurgada, Egypt   been 33.81161 27.25790         34        27
+## 2     Simferopol, Ukraine   been 34.10242 44.95212         34        45
+## 3          Yalta, Ukraine   been 34.16630 44.49520         34        44
+## 4 Dnipropetrivsk, Ukraine   been 35.04618 48.46472         35        48
+## 5     Zaporizhya, Ukraine   been 35.13957 47.83880         35        48
+## 6          Moscow, Russia   been 37.61730 55.75583         38        56</code></pre>
+</div>
+<div id="generate-a-pixel-grid" class="section level2">
+<h2>Generate a pixel grid</h2>
+<p>The next step is the key to getting a pixel map. We’ll fill the entire plot with a grid of dots - 180 dots from south to north, and 360 dots from east to west, but then only keep the dots that are on land. Simple!</p>
+<pre class="r"><code># Generate a data frame with all dots -----------------------------------------------
+
+lat &lt;- data_frame(lat = seq(-90, 90, by = 1))
+long &lt;- data_frame(long = seq(-180, 180, by = 1))
+dots &lt;- lat %&gt;% 
+        merge(long, all = TRUE)
+
+## Only include dots that are within borders. Also, exclude lakes.
+dots &lt;- dots %&gt;% 
+        mutate(country = map.where(&#39;world&#39;, long, lat),
+               lakes = map.where(&#39;lakes&#39;, long, lat)) %&gt;% 
+        filter(!is.na(country) &amp; is.na(lakes)) %&gt;% 
+        select(-lakes)
+
+head(dots)</code></pre>
+<pre><code>##   lat long                   country
+## 1 -83 -173                Antarctica
+## 2 -83 -172                Antarctica
+## 3 -83 -171                Antarctica
+## 4  60 -167 USA:Alaska:Nunivak Island
+## 5  60 -166 USA:Alaska:Nunivak Island
+## 6  65 -166                USA:Alaska</code></pre>
+</div>
+<div id="plot" class="section level2">
+<h2>Plot</h2>
+<p>And now the easy part. Plotting.</p>
+<p><strong>Please note that this post, just like this entire site, runs on <code>blogdown</code>, and the post is created via Rmarkdown. When the plots render here - they look ugly-ish due to the fact that geom_point doesn’t scale down along with the plot. The output on your machine will look better. Take a look at the head image to understand how your output may look like</strong></p>
+<pre class="r"><code>theme &lt;- theme_void() +
+        theme(panel.background = element_rect(fill=&quot;#212121&quot;),
+              plot.background = element_rect(fill=&quot;#212121&quot;),
+              plot.title=element_text(face=&quot;bold&quot;, colour=&quot;#3C3C3C&quot;,size=16),
+              plot.subtitle=element_text(colour=&quot;#3C3C3C&quot;,size=12),
+              plot.caption = element_text(colour=&quot;#3C3C3C&quot;,size=10),  
+              plot.margin = unit(c(0, 0, 0, 0), &quot;cm&quot;))
+
+plot &lt;- ggplot() +   
+        #base layer of map dots
+        geom_point(data = dots, aes(x=long, y = lat), col = &quot;grey30&quot;, size = 0.4) + 
+        #plot all the places I&#39;ve been to
+        geom_point(data = locations, aes(x=long_round, y=lat_round), color=&quot;grey80&quot;, size=0.5) + 
+        #plot all the places I lived in, using red
+        geom_point(data = locations %&gt;% filter(status == &#39;lived&#39;), aes(x=long_round, y=lat_round), color=&quot;red&quot;, size=0.5) +
+        #an extra layer of halo around the places I lived in
+        geom_point(data = locations %&gt;% filter(status == &#39;lived&#39;), aes(x=long_round, y=lat_round), color=&quot;red&quot;, size=6, alpha = 0.4) +
+        #adding my theme
+        theme
+plot</code></pre>
+<p><img src="/post/2017-11-26-pixel-map_files/figure-html/unnamed-chunk-5-1.png" width="1344" /></p>
+<p>You probably want to save the map, too.</p>
+<pre class="r"><code>ggsave(&#39;map_full.jpg&#39;, 
+       device = &#39;jpg&#39;, 
+       path = getwd(), 
+       width = 360, 
+       height = 180, 
+       units = &#39;mm&#39;,
+       dpi = 250)</code></pre>
+<p>Looking at the map of the entire world can be overwhelming and sad, especially if you, just like me, are not much of a traveler. Look at it! There aren’t many dots! WTF?! Sad!</p>
+<p>You can zoom in on an area you did cover (e.g. include USA only), either computationally (calculate you westernmost, easternmost, southernmost and northernmost points and pass them as xlim and ylim), or excluding continents from the map with <code>dplyr</code> (excluding Antarctica at least would be a good idea). You can also use a different map to start with - World map may not be necessary for some tasks. I used it because I was fortunate enough to live on 2 continents, but your mileage may vary.</p>
+<p>In all of these cases, you may want to reconsider the grain of the map: if you zoom in on USA only, you may want to choose to plot a dot for every 0.5 degrees, and then would need to adjust your coordinate rounding respectively (round to the nearest half of degree). Why do it? The finer your grain - the more details you’ll get. For instance, with a grain of 1 degree, San Francisco, San Mateo, San Rafael and Oakland are all be one same dot.</p>
+<p>I could definitely program my way though this scaling issue and create a parameter, and make other variables depend on it… I don’t find this exercise to be particularly useful in this case. If you get it done - awesome!</p>
+<p>For my case, I wanted a wide banner, so I chose some specific arbitrary limits that looked good to me.</p>
+<pre class="r"><code>plot + scale_y_continuous(limits = c(10, 70), expand = c(0,0)) +
+        scale_x_continuous(limits = c(-150,90), expand = c(0,0)) +
+
+##Save it to the static folder for later re-use as a head image in YAML for this post.
+ggsave(&#39;map_wide.png&#39;, 
+       device = &#39;png&#39;, 
+       path = paste0(here(),&#39;/static/images&#39;),
+       width = 360, 
+       height = 90, 
+       units = &#39;mm&#39;,
+       dpi = 250)</code></pre>
+<p><img src="/post/2017-11-26-pixel-map_files/figure-html/unnamed-chunk-8-1.png" width="1920" /></p>
+</div>
+<div id="outro" class="section level2">
+<h2>Outro</h2>
+<p>Obviously, there is so much more to do with this. The possibilities are endless. The basic idea is pretty simple - generate a point grid and plot rounded coordinates on top of the grid.</p>
+<p>Let me know if you find new implementations of this code!</p>
+</div>
+<div id="repo" class="section level2">
+<h2>Repo</h2>
+<p>As this blog is rendered with <code>blogdown</code>, all the source code is on Github for your pleasure. taraskaduk.com repo is at <a href="https://github.com/taraskaduk/taraskaduk/" class="uri">https://github.com/taraskaduk/taraskaduk/</a> and the Rmd file for this post should be located at <a href="https://github.com/taraskaduk/taraskaduk/tree/master/content/post" class="uri">https://github.com/taraskaduk/taraskaduk/tree/master/content/post</a> (unless I mess it all up and relocate it. I’m really not good at your whole github and blogdown thing. But I’m learning)</p>
+</div>

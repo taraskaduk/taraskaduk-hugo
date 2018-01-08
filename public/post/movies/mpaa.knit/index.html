@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='Intro Being a parent in modern days is lots of fun. Not only all of us are pretty much winging it, not having any idea what we’re doing (seriously, you need a license to do braids and nails, yet raising a human being a future member of society is a no-brainer, right?) — we are also constantly being watched and judged by other parents.
+When it comes to watching movies with our six-year-old son, we don’t have a strict set of rules.'>
+
+<meta property='og:title' content='Do MPAA movie ratings mean anything? • I am Taraas'>
+<meta property='og:description' content='Intro Being a parent in modern days is lots of fun. Not only all of us are pretty much winging it, not having any idea what we’re doing (seriously, you need a license to do braids and nails, yet raising a human being a future member of society is a no-brainer, right?) — we are also constantly being watched and judged by other parents.
+When it comes to watching movies with our six-year-old son, we don’t have a strict set of rules.'>
+<meta property='og:url' content='/post/movies/mpaa.knit/'>
+<meta property='og:site_name' content='I am Taraas'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post'><meta property='article:tag' content='rvest'><meta property='article:tag' content='ggplot'><meta property='article:tag' content='movies'><meta property='article:tag' content='dataviz'><meta property='article:tag' content='stringr'><meta property='article:published_time' content='2017-09-30T00:00:00Z'/><meta property='article:modified_time' content='2017-09-30T00:00:00Z'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@imtaraas'>
+
+<meta name="generator" content="Hugo 0.31" />
+
+  <title>Do MPAA movie ratings mean anything? • I am Taraas</title>
+  <link rel='canonical' href='/post/movies/mpaa.knit/'>
+  
+  
+  <link rel='icon' href='/favicon.jpg'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Ubuntu:400,400i,700&subset=latin'>
+<link rel='stylesheet' href='/assets/css/main.77da63e1.css'><link rel='stylesheet' href='/css/custom.css'>
+</head>
+
+
+<body class='page type-post'>
+  <div class='site'>
+
+    <a class='screen-reader' href='#main'>Skip to Content</a>
+
+    <header id='header' class='header-container'>
+      <div class='header site-header'>
+        <nav id='main-menu' class='main-menu-container' aria-label='Main Menu'>
+  <ul class='main-menu'>
+  <li>
+      <a href='/'>Home</a>
+    </li>
+  <li>
+      <a href='/docs/'>Docs</a>
+    </li>
+  <li>
+      <a href='/post'>Blog</a>
+    </li>
+  <li>
+      <a href='https://github.com/taraskaduk/taraskaduk'>Repo</a>
+    </li>
+  <li>
+      <a href='/about/'>about</a>
+    </li>
+  
+  </ul>
+</nav>
+
+        <div class='header-info'>
+          
+          <p class='site-title title'>I am Taraas</p>
+          
+          <p class='site-description subtitle'>Manager of average intelligence \
+ Scientist of data \
+ Patron of craft beers \
+ Protector of coffee</p>
+        </div>
+      </div>
+    </header>
+
+
+<main id='main' class='main'>
+  <article lang='en' class='entry'>
+    <header class='header-container'>
+  <div class='header entry-header'>
+    <div class='header-info'>
+      <h1 class='title'>Do MPAA movie ratings mean anything?</h1>
+      
+
+    </div>
+    
+<div class='meta'>
+  <span class='posted-on'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+  <line x1="16" y1="2" x2="16" y2="6"/>
+  <line x1="8" y1="2" x2="8" y2="6"/>
+  <line x1="3" y1="10" x2="21" y2="10"/>
+  
+</svg>
+<span class='screen-reader'>Posted on </span>
+  <time class='date' datetime='2017-09-30T00:00:00Z'>2017, Sep 30</time>
+</span>
+
+  
+  
+<span class='reading-time'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <circle cx="12" cy="12" r="10"/>
+  <polyline points="12 6 12 12 15 15"/>
+  
+</svg>
+12 mins read
+</span>
+
+
+</div>
+
+
+  </div>
+</header>
+
+    
+    
+
+    <div class='entry-content'>
+  
+
+<h1 id="intro">Intro</h1>
+
+<p>Being a parent in modern days is lots of fun. Not only all of us are pretty much winging it, not having any idea what we’re doing <em>(seriously, you need a license to do braids and nails, yet raising a human being a future member of society is a no-brainer, right?)</em>  — we are also constantly being watched and judged by other parents.</p>
+
+<p>When it comes to watching movies with our six-year-old son, we don’t have a strict set of rules. We pretty much fly by the seat of our pants with <em>“I know it when I see it”</em> approach to violence, profanity, or any other content. Not to say that we’re watching Pulp Fiction and Basic Instinct (the most challenging movie to date was probably Alice in the Wonderland), but all the movies we watch with our son are between G and PG - and we hardly can tell a difference between the two.</p>
+
+<p>That’s why I was surprised to find out that some parents swear by this MPAA rating system, and use it religiously when deciding what their kids can and can’t watch.</p>
+
+<p>And it’d be all good if I haven’t noticed that these ratings are sometimes kind of… <em>arbitrary?</em> So, I decided to dig into the data. Because data will solve all of our problems, right?</p>
+
+<h1 id="the-data">The Data</h1>
+
+<p>I searched around a bit, and stumbled upon a few awesome things. First, apparently <a href="http://www.imdb.com/" target="_blank">imdb.com</a> has a parental section for every  movie. However, these guides are not standard in the way they are filled out, and scrubbing IMDb for this data wouldn’t get me where I wanted to be fast enough. And then I stumbled upon this awesome website called <a href="http://kids-in-mind.com" target="_blank">kids-in-mind.com</a>. It had a lot of info similar or equal to one contained on <a href="http://www.imdb.com/" target="_blank">IMBd.com</a>, but it had a crucial key component: every movie on this website is rated on an 11-point scale, from 0 to 10, on three metrics: <strong>sex &amp; nudity</strong>, <strong>violence &amp; gore</strong>, and <strong>profanity</strong>. Well, this is just perfect! Not only that — it also has that MPAA rating data point for every movie, which means I get all of my data in one sitting.</p>
+
+<p>So, I wrote a little R script using <code>rvest</code> package, and got my data into a tidy data frame, and started exploring. After a little bit of data wrangling (I excluded <strong>NR</strong> movies as they are obviously <em>not rated</em>, and are all over the place. Also, Kids In Mind database didn&rsquo;t have many <strong>NC-17</strong> rated movies, therefore I combined them with <strong>R</strong> rated films), I got my first results.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># library() -------------------------------------------------------------------</span>
+
+<span style="color:#f92672">library</span>(readr)
+<span style="color:#f92672">library</span>(stringr)
+<span style="color:#f92672">library</span>(tidyverse)
+<span style="color:#f92672">library</span>(rvest)
+<span style="color:#f92672">library</span>(ggrepel)
+
+<span style="color:#75715e"># Extract -----------------------------------------------------------------</span>
+<span style="color:#75715e">## Here, I decided to be easy on the website and not to scrape it every time: instead, I saved the output and only let the web scraping run is the output isn&#39;t found.</span>
+
+path <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">getwd</span>()
+
+<span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">file.exists</span>(<span style="color:#66d9ef">paste</span>(path,<span style="color:#e6db74">&#39;movies_extract.csv&#39;</span>, sep <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/&#34;</span>))) {
+  movies_df <span style="color:#f92672">&lt;-</span> read_csv(<span style="color:#66d9ef">paste</span>(path,<span style="color:#e6db74">&#39;movies_extract.csv&#39;</span>, sep <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/&#34;</span>))
+} <span style="color:#66d9ef">else</span> {
+        
+        
+<span style="color:#75715e">## This is my first attempt ever to use rvest and also the first time I work with regex. Obviously, the code need improvement! Comments are welcome!</span>
+
+        
+<span style="color:#75715e">## The site has data displayed in a table, broken down into pages, and the url contains the top movie&#39;s position and a range of 3 metrics - sex, violence and profanity - from 0 to 10.</span>
+<span style="color:#75715e">## The way the data comes out after scraping, I had a problem with movies rated 10 on profanity, as didn&#39;t know how to let my regex know that 10 is 10 (it took all 10 as 1, and appended 0 to the next movie in line)</span>
+<span style="color:#75715e">## I couldn&#39;t figure it out!!! So, I made a loop inside the loop. That&#39;s what j and k variables are for.</span>
+        
+  movies_vector <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">character</span>()
+  j<span style="color:#f92672">&lt;-</span><span style="color:#ae81ff">10</span>
+  k<span style="color:#f92672">&lt;-</span><span style="color:#ae81ff">0</span>
+  i<span style="color:#f92672">&lt;-</span><span style="color:#ae81ff">0</span>
+ 
+  <span style="color:#66d9ef">for</span>(j <span style="color:#66d9ef">in</span> <span style="color:#ae81ff">10</span><span style="color:#f92672">:</span><span style="color:#ae81ff">9</span>) {
+    <span style="color:#66d9ef">if</span> (j <span style="color:#f92672">==</span> <span style="color:#ae81ff">9</span>) k <span style="color:#f92672">&lt;-</span> <span style="color:#ae81ff">0</span> <span style="color:#66d9ef">else</span> k <span style="color:#f92672">&lt;-</span> <span style="color:#ae81ff">10</span>
+    position <span style="color:#f92672">&lt;-</span> <span style="color:#ae81ff">0</span>
+    
+    <span style="color:#66d9ef">for</span>(i <span style="color:#66d9ef">in</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">:</span><span style="color:#ae81ff">300</span>){
+      url <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">paste</span>(<span style="color:#e6db74">&#34;http://www.kids-in-mind.com/cgi-bin/listbyrating/search.pl?query=&amp;stpos=&#34;</span>, 
+                   position, 
+                   <span style="color:#e6db74">&#34;&amp;stype=AND&amp;s1=0&amp;s2=10&amp;v1=0&amp;v2=10&amp;p1=&#34;</span>,
+                   k,
+                   <span style="color:#e6db74">&#34;&amp;p2=&#34;</span>,
+                   j,
+                   <span style="color:#e6db74">&#34;&amp;m=1&amp;m=2&amp;m=3&amp;m=4&#34;</span>, sep <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>)
+      
+      import <span style="color:#f92672">&lt;-</span> read_html(<span style="color:#66d9ef">url</span>)
+      
+      <span style="color:#66d9ef">vector</span> <span style="color:#f92672">&lt;-</span> import <span style="color:#f92672">%&gt;%</span>
+        html_node(<span style="color:#e6db74">&#34;.t11normal+ p&#34;</span>) <span style="color:#f92672">%&gt;%</span>
+        html_text() <span style="color:#f92672">%&gt;%</span> 
+        str_replace_all(<span style="color:#e6db74">&#39;\\\n\\\n&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>) <span style="color:#f92672">%&gt;%</span> 
+        str_replace_all(<span style="color:#e6db74">&#39;\\[\\[&#39;</span>, <span style="color:#e6db74">&#39;[&#39;</span>) <span style="color:#f92672">%&gt;%</span>
+        str_replace_all(<span style="color:#e6db74">&#39;\\]\\]&#39;</span>, <span style="color:#e6db74">&#39;]&#39;</span>)
+<span style="color:#75715e">## This is that pesky regex. If the movie is return on the run that ask for movies rated 0 to 9 on profanity, then we know it is 0-9 as the last digit...      </span>
+      <span style="color:#66d9ef">if</span>(j <span style="color:#f92672">==</span> <span style="color:#ae81ff">9</span>){
+        <span style="color:#66d9ef">vector</span> <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">vector</span> <span style="color:#f92672">%&gt;%</span> 
+          str_extract_all(<span style="color:#e6db74">&#39;([^\\]]* \\[\\d{4}\\] \\[\\S+\\] - [0-9]{1,2}.[0-9]{1,2}.[0-9])&#39;</span>)
+
+      <span style="color:#75715e">##...otherwise, we know the last number is a 10!</span>
+      } <span style="color:#66d9ef">else</span> {
+        <span style="color:#66d9ef">vector</span> <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">vector</span> <span style="color:#f92672">%&gt;%</span> 
+          str_extract_all(<span style="color:#e6db74">&#39;([^\\]]* \\[\\d{4}\\] \\[\\S+\\] - [0-9]{1,2}.[0-9]{1,2}.10)&#39;</span>)
+      }
+      movies_vector <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">c</span>(movies_vector,<span style="color:#66d9ef">vector</span>[[<span style="color:#ae81ff">1</span>]])
+      
+      position <span style="color:#f92672">&lt;-</span> position <span style="color:#f92672">+</span> <span style="color:#ae81ff">34</span>
+      <span style="color:#66d9ef">if</span>(<span style="color:#66d9ef">any</span>(<span style="color:#66d9ef">duplicated</span>(movies_vector)) <span style="color:#f92672">==</span> <span style="color:#66d9ef">TRUE</span>) <span style="color:#66d9ef">break</span>
+    }
+
+<span style="color:#75715e">## Also, I couldn&#39;t figure out a good way to stop the loop. If you keep running it after the last movie, you&#39;ll return to the start and begin again. So, as dumb as it is, I simply looked up the last movie in the list and wrote it down. Given that Zootopia starts with a Z and followed by an O, it is unlikely there will be many more movies after this. I&#39;ll take my chances.</span>
+    
+    <span style="color:#66d9ef">if</span>(<span style="color:#66d9ef">any</span>(<span style="color:#66d9ef">grepl</span>(<span style="color:#e6db74">&#39;Zootopia&#39;</span>,movies_vector)) <span style="color:#f92672">==</span> <span style="color:#66d9ef">TRUE</span>) <span style="color:#66d9ef">break</span>
+  }
+  
+ 
+  <span style="color:#75715e">## Some stringr FTW</span>
+  movies_df <span style="color:#f92672">&lt;-</span> 
+    as_data_frame(movies_vector) <span style="color:#f92672">%&gt;%</span> 
+    separate(value, sep <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;\\[&#39;</span>, remove <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>, into <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#39;name&#39;</span>, <span style="color:#e6db74">&#39;year&#39;</span>, <span style="color:#e6db74">&#39;rating&#39;</span>)) <span style="color:#f92672">%&gt;%</span> 
+    separate(rating, sep <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;\\] - &#39;</span>, remove <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>, into <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#39;mpaa&#39;</span>, <span style="color:#e6db74">&#39;rating&#39;</span>)) <span style="color:#f92672">%&gt;%</span> 
+    separate(rating, sep <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;\\.&#39;</span>, remove <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>, into <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#39;sex&#39;</span>, <span style="color:#e6db74">&#39;violence&#39;</span>, <span style="color:#e6db74">&#39;profanity&#39;</span>))
+ 
+  <span style="color:#75715e">## Some dplyr FTW</span>
+  movies_df <span style="color:#f92672">&lt;-</span> movies_df <span style="color:#f92672">%&gt;%</span> 
+    mutate(
+      year <span style="color:#f92672">=</span> str_replace(movies_df<span style="color:#f92672">$</span>year, <span style="color:#e6db74">&#39;\\]&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>),
+      sex <span style="color:#f92672">=</span> <span style="color:#66d9ef">as.numeric</span>(sex),
+      violence <span style="color:#f92672">=</span> <span style="color:#66d9ef">as.numeric</span>(violence),
+      profanity <span style="color:#f92672">=</span> <span style="color:#66d9ef">as.numeric</span>(profanity),
+      mpaa <span style="color:#f92672">=</span> <span style="color:#66d9ef">factor</span>(mpaa, levels <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#39;G&#39;</span>, <span style="color:#e6db74">&#39;PG&#39;</span>, <span style="color:#e6db74">&#39;PG-13&#39;</span>, <span style="color:#e6db74">&#39;R&#39;</span>, <span style="color:#e6db74">&#39;NC-17&#39;</span>, <span style="color:#e6db74">&#39;NR&#39;</span>))
+    ) 
+  
+  <span style="color:#75715e">##Save output - I didn&#39;t want to ping their website every time. </span>
+  write_csv(movies_df, <span style="color:#66d9ef">paste</span>(path,<span style="color:#e6db74">&#39;movies_extract.csv&#39;</span>, sep <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/&#34;</span>))
+  <span style="color:#66d9ef">remove</span>(i,j,k, movies_vector, position, <span style="color:#66d9ef">url</span>, <span style="color:#66d9ef">vector</span>, import)
+}
+
+caption <span style="color:#f92672">&lt;-</span> <span style="color:#e6db74">&#39;\ntaraskaduk.com\nbased on data from kids-in-mind.com&#39;</span>
+
+
+
+<span style="color:#75715e"># Transform ---------------------------------------------------------------</span>
+
+movies_df <span style="color:#f92672">&lt;-</span> movies_df <span style="color:#f92672">%&gt;%</span> 
+  filter(mpaa <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;NR&#39;</span>) <span style="color:#f92672">%&gt;%</span> <span style="color:#75715e">## Not Rated movies are NOT RATED</span>
+  filter(name <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;Mozart\&#39;s Sister&#39;</span>) <span style="color:#f92672">%&gt;%</span>  <span style="color:#75715e">## This one is the one I caught that is wrong - it is actually NR and not G.</span>
+  mutate(avg <span style="color:#f92672">=</span> (sex <span style="color:#f92672">+</span> profanity <span style="color:#f92672">+</span> violence)<span style="color:#f92672">/</span><span style="color:#ae81ff">3</span>)
+
+<span style="color:#75715e">## Not enough NC-17 movies - let&#39;s match them up with R</span>
+movies_df<span style="color:#f92672">$</span>mpaa <span style="color:#f92672">&lt;-</span> movies_df<span style="color:#f92672">$</span>mpaa <span style="color:#f92672">%&gt;%</span> recode(R <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;R &amp; NC-17&#39;</span>, <span style="color:#e6db74">`NC-17`</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;R &amp; NC-17&#39;</span>) 
+
+movies_df<span style="color:#f92672">$</span>mpaa <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">factor</span>(movies_df<span style="color:#f92672">$</span>mpaa, levels <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#39;G&#39;</span>, <span style="color:#e6db74">&#39;PG&#39;</span>, <span style="color:#e6db74">&#39;PG-13&#39;</span>, <span style="color:#e6db74">&#39;R &amp; NC-17&#39;</span>))
+
+movies_gather <span style="color:#f92672">&lt;-</span> movies_df <span style="color:#f92672">%&gt;%</span> 
+  gather(key <span style="color:#f92672">=</span> metric, value <span style="color:#f92672">=</span> score, <span style="color:#66d9ef">c</span>(sex, violence, profanity, avg))
+
+
+<span style="color:#75715e"># Graphs -----------------------------------------------------------------</span>
+
+theme <span style="color:#f92672">&lt;-</span> theme(
+  legend.position<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;none&#34;</span>,
+  axis.ticks.y<span style="color:#f92672">=</span>element_blank(),
+  panel.grid.major.y <span style="color:#f92672">=</span> element_line(colour<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#e0e0e0&#34;</span>,size<span style="color:#f92672">=</span><span style="color:#ae81ff">40</span>),
+  panel.grid.major.x <span style="color:#f92672">=</span>element_line(colour<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#F0F0F0&#34;</span>,size<span style="color:#f92672">=</span><span style="color:#ae81ff">.75</span>),
+  panel.grid.minor <span style="color:#f92672">=</span>element_blank(),
+  panel.background<span style="color:#f92672">=</span>element_rect(fill<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#F0F0F0&#34;</span>),
+  plot.background<span style="color:#f92672">=</span>element_rect(fill<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#F0F0F0&#34;</span>),
+  plot.title<span style="color:#f92672">=</span>element_text(face<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bold&#34;</span>, colour<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#3C3C3C&#34;</span>,size<span style="color:#f92672">=</span><span style="color:#ae81ff">16</span>),
+  plot.subtitle<span style="color:#f92672">=</span>element_text(colour<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#3C3C3C&#34;</span>,size<span style="color:#f92672">=</span><span style="color:#ae81ff">12</span>),
+  plot.caption <span style="color:#f92672">=</span> element_text(colour<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#3C3C3C&#34;</span>,size<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>),  
+  axis.text.x<span style="color:#f92672">=</span>element_text(size<span style="color:#f92672">=</span><span style="color:#ae81ff">11</span>,colour<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#535353&#34;</span>,face<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bold&#34;</span>),
+  axis.text.y<span style="color:#f92672">=</span>element_text(size<span style="color:#f92672">=</span><span style="color:#ae81ff">11</span>,colour<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#535353&#34;</span>,face<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bold&#34;</span>),
+  axis.title.y<span style="color:#f92672">=</span>element_text(size<span style="color:#f92672">=</span><span style="color:#ae81ff">11</span>,colour<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#535353&#34;</span>,face<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bold&#34;</span>,vjust<span style="color:#f92672">=</span><span style="color:#ae81ff">1.5</span>),
+  axis.title.x<span style="color:#f92672">=</span>element_text(size<span style="color:#f92672">=</span><span style="color:#ae81ff">11</span>,colour<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#535353&#34;</span>,face<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bold&#34;</span>,vjust<span style="color:#f92672">=</span><span style="color:#ae81ff">-0.5</span>),
+  plot.margin <span style="color:#f92672">=</span> unit(<span style="color:#66d9ef">c</span>(<span style="color:#ae81ff">0.5</span>, <span style="color:#ae81ff">0.5</span>, <span style="color:#ae81ff">0.5</span>, <span style="color:#ae81ff">0.5</span>), <span style="color:#e6db74">&#34;cm&#34;</span>)
+)</code></pre></div>
+<h3 id="on-average-higher-mpaa-rating-follows-higher-levels-of-inappropriate-content-but">On average, higher MPAA rating follows higher levels of inappropriate content, but&hellip;</h3>
+
+<p>The first result seemed fairly obvious: higher (stricter) MPAA ratings have a higher rate of violence, sex and profanity. <strong>On average</strong>. However, the amount of overlap is astonishing. Basically, any category is entirely consumed by its two neighboring categories.</p>
+
+<p>What&rsquo;s more, you can always find a movie in a &ldquo;lower&rdquo; category that is more inappropriate than some other movie in a &ldquo;higher&rdquo; category: Jimmy Neutron VS Little Rascals, the 5th Harry Potter VS Life is Beautiful, Year One VS The King&rsquo;s Speech etc.</p>
+
+<p>You can see this from the figure below. You may also notice that there movies scoring 2.5 points on average that are in every MPAA category. We&rsquo;ll come back to this later.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">labels_all <span style="color:#f92672">&lt;-</span> movies_df <span style="color:#f92672">%&gt;%</span> 
+  filter(name <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Jimmy Neutron: Boy Genius&#34;</span> <span style="color:#f92672">|</span> 
+           name <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;Adventures of Elmo In Grouchland, The&#39;</span> <span style="color:#f92672">|</span>
+           name <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Harry Potter and the Half-Blood Prince&#34;</span> <span style="color:#f92672">|</span>
+           name <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;Year One&#39;</span> <span style="color:#f92672">|</span>
+           name <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;Halloween&#39;</span> <span style="color:#f92672">|</span>
+           name <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;Little Rascals, The&#39;</span> <span style="color:#f92672">|</span>
+           name <span style="color:#f92672">==</span>  <span style="color:#e6db74">&#39;Life is Beautiful&#39;</span> <span style="color:#f92672">|</span>
+           name <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;King\&#39;s Speech, The&#39;</span>
+  )
+
+ggplot(data <span style="color:#f92672">=</span> movies_df, aes(x<span style="color:#f92672">=</span>avg, y <span style="color:#f92672">=</span> mpaa, col <span style="color:#f92672">=</span> mpaa)) <span style="color:#f92672">+</span>
+  geom_jitter(alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.2</span>) <span style="color:#f92672">+</span>
+  scale_colour_brewer(palette <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Spectral&#34;</span>, direction <span style="color:#f92672">=</span> <span style="color:#ae81ff">-1</span>) <span style="color:#f92672">+</span>
+  geom_point(data <span style="color:#f92672">=</span> labels_all, size <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>) <span style="color:#f92672">+</span>
+  geom_label_repel(
+    data <span style="color:#f92672">=</span> labels_all,
+    aes(label <span style="color:#f92672">=</span> name),
+    size <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>,
+    nudge_y <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.1</span>) <span style="color:#f92672">+</span>
+  ylab(<span style="color:#e6db74">&#39;MPAA Rating&#39;</span>) <span style="color:#f92672">+</span> xlab(<span style="color:#e6db74">&#39;Average (violence &amp; gore, sex, profanity)&#39;</span>) <span style="color:#f92672">+</span>
+  labs(
+    title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;MPAA rating isn\&#39;t everything&#39;</span>,
+    subtitle <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Visualizing the amount of overlap between categories&#39;</span>,
+    caption <span style="color:#f92672">=</span> caption) <span style="color:#f92672">+</span>
+  theme</code></pre></div>
+<p><img src="mpaa_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+
+<h3 id="mpaa-is-most-forgiving-on-violence">MPAA is most forgiving on violence</h3>
+
+<p>Well, no kidding! This was hardly a surprise. As a foreigner, I am constantly amused by how much violence is considered appropriate, contrasted with, for example, how little nudity is acceptable. <em>Guts and blood? Body parts?</em> <strong>Sure, bring it on!</strong> <em>Naked breasts?</em> <strong>How dare you!</strong></p>
+
+<p>So, next time you rent a G rated movie and think it is clean - think again. It&rsquo;s probably just as violent as that other PG movie you wanted. Both G and PG movies center around 3 points on violence anyway, with max points being 5 for G and 6 for PG. Just go with PG then, eh?</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">labels_g_pg <span style="color:#f92672">&lt;-</span> movies_df <span style="color:#f92672">%&gt;%</span> 
+  filter(name <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Babe: Pig in the City&#34;</span> <span style="color:#f92672">|</span> 
+           name <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Beauty and the Beast&#34;</span> <span style="color:#f92672">&amp;</span> mpaa <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;G&#39;</span> <span style="color:#f92672">|</span>
+           name <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;Zeus and Roxanne&#39;</span> <span style="color:#f92672">|</span>
+           name <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;Sleepless in Seattle&#39;</span>)
+
+ggplot(data <span style="color:#f92672">=</span> movies_df <span style="color:#f92672">%&gt;%</span> filter(mpaa <span style="color:#f92672">%in%</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#39;PG&#39;</span>, <span style="color:#e6db74">&#39;G&#39;</span>)), aes(x<span style="color:#f92672">=</span><span style="color:#66d9ef">as.factor</span>(violence), y <span style="color:#f92672">=</span> mpaa, col <span style="color:#f92672">=</span> <span style="color:#66d9ef">as.factor</span>(violence))) <span style="color:#f92672">+</span>
+  geom_jitter(alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>, size <span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>) <span style="color:#f92672">+</span>
+  scale_colour_brewer(palette <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Spectral&#34;</span>, direction <span style="color:#f92672">=</span> <span style="color:#ae81ff">-1</span>) <span style="color:#f92672">+</span>
+  geom_point(data <span style="color:#f92672">=</span> labels_g_pg, size <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>) <span style="color:#f92672">+</span>
+  geom_label_repel(
+    data <span style="color:#f92672">=</span> labels_g_pg,
+    aes(label <span style="color:#f92672">=</span> name),
+    size <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>,
+    col <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;grey51&#39;</span>,
+    nudge_x <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>,
+    nudge_y <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>) <span style="color:#f92672">+</span>
+  theme <span style="color:#f92672">+</span>
+  theme(axis.text.y <span style="color:#f92672">=</span> element_text(size <span style="color:#f92672">=</span> rel(<span style="color:#ae81ff">1.2</span>)),
+        panel.grid.major.y <span style="color:#f92672">=</span> element_line(colour<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#e0e0e0&#34;</span>,size<span style="color:#f92672">=</span><span style="color:#ae81ff">70</span>)) <span style="color:#f92672">+</span>
+  ylab(<span style="color:#e6db74">&#39;MPAA Rating&#39;</span>) <span style="color:#f92672">+</span> xlab(<span style="color:#e6db74">&#39;Violence and Gore&#39;</span>) <span style="color:#f92672">+</span>
+  labs(
+    title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;That G movie you felt safe about&#39;</span>,
+    subtitle <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;is probably just as violent as the PG one you rejected&#39;</span>,
+    caption <span style="color:#f92672">=</span> caption)</code></pre></div>
+<p><img src="mpaa_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+
+<h3 id="what-the-is-up-with-profanity">What the **** is up with profanity?</h3>
+
+<p>Now, this is a zero tolerance zone in the movie world. Not sex and nudity, as I assumed. Profanity. Unlike other categories, where scores flow gradually from category to category, profanity has some clear trends:</p>
+
+<ul>
+<li><p>All G movies are bundled up in a narrow 0-2 points corridor</p></li>
+
+<li><p>Most PG-13 movies are between 4 and 5 points on profanity</p></li>
+
+<li><p>R and NC-17 movies reside between 5 and 10 points</p></li>
+</ul>
+
+<p>I bet if I was trying to predict an MPAA rating based on these criteria, profanity would be the strongest predictor (not a concern of this post, but maybe later)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">labels_profanity <span style="color:#f92672">&lt;-</span> movies_df <span style="color:#f92672">%&gt;%</span> 
+  filter(name <span style="color:#f92672">%in%</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#39;Aladdin&#39;</span>,
+                <span style="color:#e6db74">&#39;Beethoven&#39;</span>,
+                <span style="color:#e6db74">&#39;Life is Beautiful&#39;</span>,
+                <span style="color:#e6db74">&#39;Psycho&#39;</span>,
+                <span style="color:#e6db74">&#39;Cars&#39;</span>,
+                <span style="color:#e6db74">&#39;Apollo 13&#39;</span>,
+                <span style="color:#e6db74">&#39;Nutty Professor, The&#39;</span>,
+                <span style="color:#e6db74">&#39;Straight Outta Compton&#39;</span>)
+         )
+
+ggplot(data <span style="color:#f92672">=</span> movies_df, aes(x<span style="color:#f92672">=</span><span style="color:#66d9ef">as.factor</span>(profanity), y <span style="color:#f92672">=</span> mpaa, col <span style="color:#f92672">=</span> mpaa)) <span style="color:#f92672">+</span>
+  geom_jitter(alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.2</span>) <span style="color:#f92672">+</span>
+  scale_colour_brewer(palette <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Spectral&#34;</span>, direction <span style="color:#f92672">=</span> <span style="color:#ae81ff">-1</span>) <span style="color:#f92672">+</span>
+  geom_point(data <span style="color:#f92672">=</span> labels_profanity, size <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>) <span style="color:#f92672">+</span>
+  geom_label_repel(
+    data <span style="color:#f92672">=</span> labels_profanity,
+    aes(label <span style="color:#f92672">=</span> name),
+    size <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>,
+    nudge_y <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.1</span>) <span style="color:#f92672">+</span>
+  ylab(<span style="color:#e6db74">&#39;MPAA Rating&#39;</span>) <span style="color:#f92672">+</span> xlab(<span style="color:#e6db74">&#39;Profanity&#39;</span>) <span style="color:#f92672">+</span>
+  labs(
+    title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Profanity rating patterns across MPAA categories&#39;</span>,
+    caption <span style="color:#f92672">=</span> caption) <span style="color:#f92672">+</span>
+  theme</code></pre></div>
+<p><img src="mpaa_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+
+<p>Looking at R &amp; NC-17 section, it is tempting to dive in a bit more. Let&rsquo;s go!</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">labels_r <span style="color:#f92672">&lt;-</span> movies_gather <span style="color:#f92672">%&gt;%</span> 
+  filter(metric <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;avg&#39;</span>) <span style="color:#f92672">%&gt;%</span> 
+  filter(metric <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;violence&#39;</span> <span style="color:#f92672">&amp;</span> 
+           name <span style="color:#f92672">%in%</span> <span style="color:#66d9ef">c</span>(
+             <span style="color:#e6db74">&#39;Sex and the City&#39;</span>, 
+             <span style="color:#e6db74">&#39;Basic Instinct&#39;</span>, 
+             <span style="color:#e6db74">&#39;Saw&#39;</span>, 
+             <span style="color:#e6db74">&#39;Nightmare on Elm Street, A&#39;</span>) <span style="color:#f92672">|</span> 
+           metric <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;sex&#39;</span> <span style="color:#f92672">&amp;</span> 
+           name <span style="color:#f92672">%in%</span> <span style="color:#66d9ef">c</span>(
+             <span style="color:#e6db74">&#39;Reservoir Dogs&#39;</span>, 
+             <span style="color:#e6db74">&#39;Love Actually&#39;</span>, 
+             <span style="color:#e6db74">&#39;Basic Instinct&#39;</span>, 
+             <span style="color:#e6db74">&#39;American Pie&#39;</span>) <span style="color:#f92672">|</span>
+           metric <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;profanity&#39;</span> <span style="color:#f92672">&amp;</span> 
+           name <span style="color:#f92672">%in%</span> <span style="color:#66d9ef">c</span>(
+             <span style="color:#e6db74">&#39;Psycho&#39;</span>,  
+             <span style="color:#e6db74">&#39;Office Space&#39;</span>,
+             <span style="color:#e6db74">&#39;Pulp Fiction&#39;</span>,
+             <span style="color:#e6db74">&#39;Old School&#39;</span>,
+             <span style="color:#e6db74">&#39;Anchorman&#39;</span>,
+             <span style="color:#e6db74">&#39;Amelie&#39;</span>
+           )       
+  )
+
+
+ggplot(
+    data <span style="color:#f92672">=</span> movies_gather <span style="color:#f92672">%&gt;%</span> 
+        filter(
+            mpaa <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;R &amp; NC-17&#39;</span> <span style="color:#f92672">&amp;</span> 
+            metric <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;avg&#39;</span>), 
+    aes(x<span style="color:#f92672">=</span><span style="color:#66d9ef">as.factor</span>(score), y <span style="color:#f92672">=</span> metric, col <span style="color:#f92672">=</span> mpaa)) <span style="color:#f92672">+</span>
+    geom_jitter(alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.3</span>, size <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>) <span style="color:#f92672">+</span>
+    scale_colour_manual(values <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#39;#d7191c&#39;</span>)) <span style="color:#f92672">+</span>
+    geom_point(data <span style="color:#f92672">=</span> labels_r, size <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>,  col <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;black&#39;</span>) <span style="color:#f92672">+</span>
+    geom_label_repel(
+        data <span style="color:#f92672">=</span> labels_r,
+        aes(label <span style="color:#f92672">=</span> name),
+        size <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>,
+        col <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;black&#39;</span>) <span style="color:#f92672">+</span>
+    guides(fill <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>) <span style="color:#f92672">+</span>
+    xlab(<span style="color:#e6db74">&#39;&#39;</span>) <span style="color:#f92672">+</span> ylab(<span style="color:#e6db74">&#39;&#39;</span>) <span style="color:#f92672">+</span>
+  theme <span style="color:#f92672">+</span>
+  labs(
+    title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;R &amp; NC-17 Movies aren\&#39;t always violent or vulgar... \nbut they sure are profane&#39;</span>,
+    subtitle <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Most R and NC-17 movies are 5 or more on a profanity scale&#39;</span>,
+    caption <span style="color:#f92672">=</span> caption)</code></pre></div>
+<p><img src="mpaa_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+
+<p>Indeed, movies in R &amp; NC-17 categories are widely distributed across violence and sex, but snuggle tightly in the upper section of profanity. Why is that? Looking at the data, we can tell that often profanity accompanies other &ldquo;R&rdquo; worthy content. However, it is not always the case, and correlation is relatively weak. Good Will Hunting is neither violent nor sexually explicit, but it is profane AF, and, sure enough, is R rated for - wait for it - <em>&ldquo;strong language, including some sex-related dialogue&rdquo;.</em>
+It could be just me (after all, I am a foreigner, and English words don&rsquo;t carry the same connotation for me), but I think it is mighty unfair to Good Will Hunting to be rated R, especially knowing that Scary Movie, parts 3 through 5, are rated PG-13.</p>
+
+<h1 id="summary">Summary</h1>
+
+<p>So, what have we learned?</p>
+
+<ul>
+<li>It is probably OK to use MPAA ratings as a guide</li>
+<li>If you&rsquo;re optimizing for lack of violence, G and PG movies aren&rsquo;t that much different, therefore don&rsquo;t worry much.</li>
+<li>R rating doesn&rsquo;t mean the movie is violent or has a lot of sexual content. But it definitely means there is some profanity in it!</li>
+</ul>
+
+<h1 id="caveats">Caveats</h1>
+
+<p>It is important to remember that any rating will be arbitrary a priori. We aren&rsquo;t working with exact count of swear words, time duration of violent scenes, or percentage of naked body revealed. And <a href="http://kids-in-mind.com" target="_blank">kids-in-mind.com</a> rating isn&rsquo;t perfect either. For example, the website rates Pulp Fiction at 10 on a &ldquo;sex &amp; nudity&rdquo; scale, while there is hardly any sexual content in the movie.</p>
+
+<h1 id="outro">Outro</h1>
+
+<p>This post was nothing but an exercise in <code>rmarkdown</code>, <code>blogdown</code>, <code>ggplot</code> and <code>rvest</code> packages, along with honing my data storytelling and writing skills though. I am sure if I torture this dataset a bit more, it may confess to many other things. So, I will wrap up for now, but plan to return to this topic and this dataset in the future. Let me know if there are any specific questions that come to your mind for this dataset!</p>
+
+<h3 id="r-script">R script</h3>
+
+<p>This site runs on <del>dunkin</del> <code>blogdown</code>, and therefore all the source files are available on GitHub. Now, I must be honest: I am new to Github, to Hugo, and to the web in general. I have very little idea about what I&rsquo;m doing. But I guess here is the link? <a href="https://github.com/taraskaduk/taraskaduk/tree/master/content/post/movies" target="_blank">https://github.com/taraskaduk/taraskaduk/tree/master/content/post/movies</a> (unless I change something or screw it up big time, in which case throw rocks at me in the comment section)</p>
+
+</div>
+
+    
+<footer class='entry-footer-container'>
+  <div class='entry-footer'>
+  <div class='categories'>
+  <span class='taxonomyTerm-icon'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M22,19a2,2,0,0,1-2,2H4a2,2,0,0,1-2-2V5A2,2,0,0,1,4,3H9l2,3h9a2,2,0,0,1,2,2Z"/>
+  
+</svg>
+</span>
+  <span class='screen-reader'>Categories: </span><a class='category' href='/categories/r'>R</a></div>
+<div class='tags'>
+  <span class='taxonomyTerm-icon'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z"/>
+  <line x1="7" y1="7" x2="7" y2="7"/>
+  
+</svg>
+</span>
+  <span class='screen-reader'>Tags: </span><a class='tag' href='/tags/rvest'>Rvest</a>, <a class='tag' href='/tags/ggplot'>Ggplot</a>, <a class='tag' href='/tags/movies'>Movies</a>, <a class='tag' href='/tags/dataviz'>Dataviz</a>, <a class='tag' href='/tags/stringr'>Stringr</a></div>
+
+  </div>
+</footer>
+
+
+  </article>
+  
+<nav class='entry-nav-container'>
+  <div class='entry-nav'><div class='prev-entry'>
+      <a href='/post/movies/mpaa.utf8/'>
+        <span aria-hidden='true'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="20" y1="12" x2="4" y2="12"/>
+  <polyline points="10 18 4 12 10 6"/>
+  
+</svg>
+ Previous</span>
+        <span class='screen-reader'>Previous post: </span>Do MPAA movie ratings mean anything?</a>
+    </div></div>
+</nav>
+
+  
+<div class='comments-container'>
+  <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "taraskaduk" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+</main>
+
+    <footer id='footer' class='footer-container'>
+      <div class='footer'>
+        <div class='social-menu-container'>
+  <nav aria-label='Social Menu'>
+    <ul class='social-menu'><li>
+        <a href='https://github.com/taraskaduk' target='_blank' rel='noopener'>
+          <span class='screen-reader'>Open Github account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+  
+</svg>
+</a>
+      </li><li>
+        <a href='https://twitter.com/imtaraas' target='_blank' rel='noopener'>
+          <span class='screen-reader'>Open Twitter account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+  
+</svg>
+</a>
+      </li><li>
+        <a href='https://instagram.com/imtaraas' target='_blank' rel='noopener'>
+          <span class='screen-reader'>Open Instagram account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+  <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/>
+  
+</svg>
+</a>
+      </li><li>
+        <a href='mailto:contact@taraskaduk.com' target='_blank' rel='noopener'>
+          <span class='screen-reader'>Contact via Email</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+  <polyline points="22,6 12,13 2,6"/>
+  
+</svg>
+</a>
+      </li><li>
+        <a href='https://linkedin.com/in/taraskaduk' target='_blank' rel='noopener'>
+          <span class='screen-reader'>Open Linkedin account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path stroke-width="1.8" d="m5.839218,4.101561c0,1.211972 -0.974141,2.194011 -2.176459,2.194011s-2.176459,-0.982039 -2.176459,-2.194011c0,-1.211094 0.974141,-2.194011 2.176459,-2.194011s2.176459,0.982917 2.176459,2.194011zm0.017552,3.94922l-4.388022,0l0,14.04167l4.388022,0l0,-14.04167zm7.005038,0l-4.359939,0l0,14.04167l4.360816,0l0,-7.370999c0,-4.098413 5.291077,-4.433657 5.291077,0l0,7.370999l4.377491,0l0,-8.89101c0,-6.915523 -7.829986,-6.66365 -9.669445,-3.259423l0,-1.891237z"/>
+  
+</svg>
+</a>
+      </li></ul>
+  </nav>
+</div>
+        <div class='copyright'>
+  <p>
+        
+      
+
+       &copy; 2017 taraskaduk 
+  </p>
+</div>
+
+      </div>
+    </footer>
+
+  </div><script src='/assets/js/main.5871befd.js'></script><script src='/js/custom.js'></script></body>
+
+</html>
+
