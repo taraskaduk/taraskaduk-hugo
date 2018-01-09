@@ -1,0 +1,177 @@
+---
+title: CV
+author: Taras Kaduk
+date: "`r format(Sys.time(), '%Y-%m-%d')`"
+slug: cv
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(stringr)
+library(lubridate)
+library(ggrepel)
+library(readxl)
+# invalidate cache when the package version changes
+knitr::opts_chunk$set(tidy = FALSE)
+```
+
+
+### Summary
+
+* Love R
+* Love data science
+* Love online learning, self-education, love spreading knowledge, love helping people learn stuff
+* Hate redundancy, bad processes, manual tasks that should have been automated.
+* Living a minimalism-driven and adventurous life, preferring flexibility and ability to move to new places or work remotely
+
+### Mad R Skills
+* tidyverse
+* forecast
+* caret
+* rmarkdown
+
+### Other rad skills
+* SQL
+* Power BI
+* Data Visualization
+* All things data
+
+### Languages:
+* Russian - native
+* Ukrainian - native
+* English - fluent
+* French - elementary to intermediate
+
+---
+
+## Main Work Experience
+
+### Manager, Business Intelligence & CRM
+**Suddath**  |  April 2017 - Present  |  _Jacksonville, FL_
+
+* Managing Business Intelligence at the Suddath Companies, overseeing retrospective analytics via Microsoft Power BI, planning next steps in company's analytics strategy.
+* Started predictive analytics initiatives using R.
+* Leading various analysts throughout all business units by providing guidance on data strategy, giving training and helping solve problems
+* In charge of CRM adoption, usage and reporting on an enterprise level.
+
+### Business Intelligence Analyst, Financial Planning & Analytics
+**Suddath**  |  Jan 2017 - April 2017  |  _Jacksonville, FL_
+
+* Continued providing Business Intelligence solutions on a larger scope
+* Centralized, simplified, standardized and scaled most of the existing reports
+* Provided training and guidance on Microsoft Power BI and working with data in general to other analysts in the organization.
+* Crafted the analytics strategy for the enterprise
+
+### Data Analyst,  Financial Planning & Analytics
+**Suddath**  |  Oct 2015 - Jan 2017  |  _Seattle, WA_
+
+* Piloted company's efforts on centralized retrospective analytics, migrated various reports from different sources into the enterprise's BI tool - Microsoft Power BI
+* Acted as an SME for Power BI.
+
+### Jr. Analyst, Decision Support
+**Suddath**  |  Oct 2013 - Aug 2014  |  _Jacksonville FL_
+
+* Ran and maintained reporting for the International line of business of the company via Microsoft Access
+* Consolidated all reporting needs into one place, and optimized all recurring reports to run automatically.
+
+
+
+```{r load, include=FALSE}
+url <- "https://docs.google.com/spreadsheets/d/e/2PACX-1vTabJ1NhzJ_D91_KsYz-DJqmfcRXNFskkQiJfwhwVvCImeTnLsoBRLahubWxNFVChZGd5HKbbRaG9bI/pub?output=xlsx"
+destfile <- "data.xlsx"
+curl::curl_download(url, destfile)
+work <- read_xlsx(destfile, sheet = 'work') %>% 
+        mutate(date_start = as.Date(date_start),
+               date_end = as.Date(date_end),
+               connect_to = as.Date(connect_to))
+
+
+work <- work %>% 
+  mutate(date_end2 = if_else(is.na(date_end), today(), date_end),
+         duration = date_end2 - date_start) %>% 
+  group_by(company) %>% 
+  mutate(duration_company = cumsum(as.numeric(duration)),
+         highlight_company = as.character(sum(is.na(date_end)))) %>% 
+  ungroup() 
+
+work_disp <- work %>% 
+  select(start = date_start,
+         end = date_end,
+         title,
+         company,
+         employment = emp_type) %>% 
+  arrange(desc(start))
+
+work_comp <- work %>% 
+  group_by(company) %>% 
+  summarise(date_start = min(date_start),
+            date_end = max(date_end),
+            date_end2 = max(date_end2),
+            duration_full = date_end2 - date_start)
+```
+
+### Full Work History... in a table
+```{r table, echo=FALSE, out.width = '100%'}
+knitr::kable(
+  work_disp, format = 'markdown', padding = 0)
+```
+
+```{r graph_company, echo=FALSE, message=FALSE, warning=FALSE, fig.align = "center", out.width = '100%'}
+ggplot(work) +
+  geom_point(aes(x= date_start, y = duration_company - duration, col = highlight_company)) +
+  geom_point(aes(x = date_end2, y = duration_company, col = highlight_company)) +
+  geom_segment(aes(x=date_start, 
+                   xend = date_end2, 
+                   y = duration_company - duration, 
+                   yend = duration_company, 
+                   col = highlight_company),
+               size = 1,
+               alpha = 0.5) +
+  geom_segment(aes(x=date_start, xend = date_end2, y = 0, yend = 0), alpha = 0.3, size = 10) +
+  geom_text_repel(aes(x = date_end2, 
+                      y = duration_company, 
+                      label = title, 
+                      vjust = 1, 
+                      hjust = 0, 
+                      col = highlight_company),
+            size = 2,
+            nudge_x = 10
+            ) +
+  geom_vline(xintercept = today(), linetype = 3, col = "#1a9641") +
+  geom_text(aes(x = today(), y = 1300), label = 'Today', size = 3, vjust = -0.5, hjust = 0, col = '#1a9641', angle = 90) +
+  geom_text(
+    data = work_comp,
+    aes(y = -50, 
+        x = date_start, 
+        label = company,
+        hjust = 0), 
+    size = 2) +
+  theme_minimal() +
+  scale_color_manual(name = "", values = c("grey40", "grey10")) +
+  scale_size_manual(name = "", values = c(2, 3)) +
+  scale_x_date(date_breaks = '1 year', date_labels = "%Y") +
+  xlab('Timeline') +
+  ylab('Career path duration') +
+  theme(
+    axis.text.y=element_blank(),
+    axis.line.y = element_blank(),
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor = element_blank(),
+    legend.position="none"
+  ) +
+  coord_equal()
+
+```
+
+
+## Education
+### Kyiv National Economics University
+2005 - 2008^[If you do the math right, you'll see that's not enough years to graduate. But you will also see that my first full-time job started while I was in school. Life took an unexpected turn, and I had to forget about school and start working. In part, this is why I believe in power of online education and self-learning: self-education is how I stay relevant]  |  Economics and Computer Science^[In Ukraine, there are no majors and minors in a way they exist in the US. Instead, bachelor degrees are somewhat predefined. Mine was called "Intellectual systems on decision making in economics and business". In reality, it was just a lot of Economics and Computer Science.]
+
+
+### Self-education, online learning, MOOCs etc.
+* DataCamp^[https://www.datacamp.com/profile/taraas] member since 2015, 130,000+ XP earned, 30+ courses completed
+* Coursera^[https://www.coursera.org/user/318cf4331c68605ae73b4c3760d6d3da] and edX^[https://courses.edx.org/u/taraskaduk] member since 2013, auditing many classes and completing several.
+* Active user on Duolingo^[https://www.duolingo.com/imtaraas] and Khan Academy^[https://www.khanacademy.org/profile/Taraas/], occasional user on Udacity, Udemy, FutureLearn, Memrise etc.
+
+

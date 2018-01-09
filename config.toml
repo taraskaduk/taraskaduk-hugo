@@ -151,9 +151,15 @@ pygmentsStyle = "native"
 [[menu.main]]
 	name = "Home"
 	url  = "/"
-	weight = 10
+	weight = 20
 
 [[menu.main]]
 	name = "Blog"
 	url  = "post/"
-	weight = 0
+	weight = 10
+
+[[menu.main]]
+	name = "CV"
+	url  = "page/cv/"
+	weight = 5
+	
