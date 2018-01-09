@@ -15,14 +15,6 @@ library(readxl)
 knitr::opts_chunk$set(tidy = FALSE)
 ```
 
-### Summary
-
-* Love R
-* Love data science
-* Love online learning, self-education, love spreading knowledge, love helping people learn stuff
-* Hate redundancy, bad processes, manual tasks that should have been automated.
-* Living a minimalism-driven and adventurous life, preferring flexibility and ability to move to new places or work remotely
-
 <style>
 .column-left{
   float: left;
@@ -38,6 +30,21 @@ knitr::opts_chunk$set(tidy = FALSE)
 }
 </style>
 
+## Contact
+* phone: 904-662-9453
+* email: contact@taraskaduk.com
+* location: Jacksonville, FL
+
+## Summary
+
+* Love R
+* Love data science
+* Love online learning, self-education, love spreading knowledge, love helping people learn stuff
+* Hate redundancy, bad processes, manual tasks that should have been automated.
+* Living a minimalism-driven and adventurous life, preferring flexibility and ability to move to new places or work remotely
+
+
+***
 
 <div class="column-left">
 ### Mad R Skills
@@ -146,8 +153,9 @@ knitr::kable(
 
 ***
 
+### Work History Graph
 
-```{r graph_company, echo=FALSE, fig.align="left", message=FALSE, out.width = '200%', warning=FALSE}
+```{r graph_company, echo=FALSE, fig.align="left", message=FALSE, out.width = '160%', warning=FALSE}
 ggplot(work) +
   geom_point(aes(x= date_start, y = duration_company - duration, col = highlight_company)) +
   geom_point(aes(x = date_end2, y = duration_company, col = highlight_company)) +
@@ -188,7 +196,8 @@ ggplot(work) +
     axis.line.y = element_blank(),
     panel.grid.major.y = element_blank(),
     panel.grid.minor = element_blank(),
-    legend.position="none"
+    legend.position="none",
+    plot.background = element_rect(fill=NA, color = 'grey40')
   ) +
   coord_equal()
 
