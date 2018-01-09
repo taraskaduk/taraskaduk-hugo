@@ -1,115 +1,26 @@
-<!DOCTYPE HTML>
-
-<!-- 
-Strata by HTML5 UP
-html5up.net | @n33co
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Do MPAA movie ratings mean anything? &middot; Taraas</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="author" content="Taras Kaduk">
-		<meta name="description" content="Manager of average intelligence \
- Scientist of data \
- Patron of craft beers \
- Protector of coffee">
-		<meta http-equiv="content-language" content="en-us" />
-
-		
-		<meta name="og:site_name" content="Taraas">
-		<meta name="og:title" content="Do MPAA movie ratings mean anything?">
-		<meta name="og:url" content="/post/movies/2017-11-26-pixel-map/">
-		
-		<meta name="og:image" content="/images/avatar.png">
-		
-		
-
-		<meta name="generator" content="Hugo 0.32.2" />
-
-		<!--[if lte IE 8]><script src='/js/ie/html5shiv.js'></script><![endif]-->
-		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="/css/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="//css/ie8.css"><![endif]-->
-
-		
-		
-	</head>
-
-	<body id="top">
-		<!-- Header -->
-<header id="header">
-	
-	<a href="/" class="image avatar"><img src="/images/avatar.png" alt="" /></a>
-	
-	
-		<h1>Manager of average intelligence | Scientist of data | Patron of craft beers | Protector of coffee</h1>
-	
-
-	
-		<nav id="sidebar">
-			<ul>
-			
-				<li><a href="/">Home</a></li>
-			
-				<li><a href="/post/">Blog</a></li>
-			
-			</ul>
-		</nav>
-	
-</header>
-
-
-		<!-- Main -->
-		<div id="main">
-			
-	<span>
-		<h1>Do MPAA movie ratings mean anything?</h1>
-
-		<i class="fa fa-calendar"></i>&nbsp;&nbsp;
-<time datetime="2017-09-30 00:00:00 &#43;0000 UTC">2017-09-30</time>&nbsp;&nbsp;
-
-12 min read&nbsp;&nbsp;
-
-
-    
-    
-        <i class="fa fa-folder"></i>&nbsp;&nbsp;
-        
-        <a class="article-category-link" href="/categories/r">R</a>
-        
-        
-    
+---
+title: "Do MPAA movie ratings mean anything?"
+subtitle: "Using rvest, stringr, dplyr and ggplot2 to make sense of the movie data"
+thumbnailImagePosition: left
+categories: ['R']
+author: "Taras Kaduk"
+tags: [
+    "rvest",
+    "ggplot",
+    "movies",
+    "dataviz",
+    "stringr"
+]
+date: 2017-09-30
+slug: mpaa
+cover:
+        image: /images/mpaa.jpeg
+        style: full
+---
 
 
 
-   
-   
-       &nbsp;&nbsp;<i class="fa fa-tags"></i>&nbsp;&nbsp;
-       
-       <a class="article-category-link" href="/tags/rvest">rvest</a>
-       &middot;
-       
-       <a class="article-category-link" href="/tags/ggplot">ggplot</a>
-       &middot;
-       
-       <a class="article-category-link" href="/tags/movies">movies</a>
-       &middot;
-       
-       <a class="article-category-link" href="/tags/dataviz">dataviz</a>
-       &middot;
-       
-       <a class="article-category-link" href="/tags/stringr">stringr</a>
-       
-       
-   
-
-
-	</span>
-
-	<p>
-	    <div id="intro" class="section level1">
+<div id="intro" class="section level1">
 <h1>Intro</h1>
 <p>Being a parent in modern days is lots of fun. Not only all of us are pretty much winging it, not having any idea what we’re doing <em>(seriously, you need a license to do braids and nails, yet raising a human being a future member of society is a no-brainer, right?)</em>  — we are also constantly being watched and judged by other parents.</p>
 <p>When it comes to watching movies with our six-year-old son, we don’t have a strict set of rules. We pretty much fly by the seat of our pants with <em>“I know it when I see it”</em> approach to violence, profanity, or any other content. Not to say that we’re watching Pulp Fiction and Basic Instinct (the most challenging movie to date was probably Alice in the Wonderland), but all the movies we watch with our son are between G and PG - and we hardly can tell a difference between the two.</p>
@@ -285,7 +196,7 @@ ggplot(data = movies_df, aes(x=avg, y = mpaa, col = mpaa)) +
     subtitle = &#39;Visualizing the amount of overlap between categories&#39;,
     caption = caption) +
   theme</code></pre>
-<p><img src="/post/movies/mpaa_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p><img src="/post/2017-09-mpaa/mpaa_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 </div>
 <div id="mpaa-is-most-forgiving-on-violence" class="section level3">
 <h3>MPAA is most forgiving on violence</h3>
@@ -316,7 +227,7 @@ ggplot(data = movies_df %&gt;% filter(mpaa %in% c(&#39;PG&#39;, &#39;G&#39;)), a
     title = &#39;That G movie you felt safe about&#39;,
     subtitle = &#39;is probably just as violent as the PG one you rejected&#39;,
     caption = caption)</code></pre>
-<p><img src="/post/movies/mpaa_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p><img src="/post/2017-09-mpaa/mpaa_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 </div>
 <div id="what-the-is-up-with-profanity" class="section level3">
 <h3>What the **** is up with profanity?</h3>
@@ -352,7 +263,7 @@ ggplot(data = movies_df, aes(x=as.factor(profanity), y = mpaa, col = mpaa)) +
     title = &#39;Profanity rating patterns across MPAA categories&#39;,
     caption = caption) +
   theme</code></pre>
-<p><img src="/post/movies/mpaa_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="/post/2017-09-mpaa/mpaa_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p>Looking at R &amp; NC-17 section, it is tempting to dive in a bit more. Let’s go!</p>
 <pre class="r"><code>labels_r &lt;- movies_gather %&gt;% 
   filter(metric != &#39;avg&#39;) %&gt;% 
@@ -401,7 +312,7 @@ ggplot(
     title = &#39;R &amp; NC-17 Movies aren\&#39;t always violent or vulgar... \nbut they sure are profane&#39;,
     subtitle = &#39;Most R and NC-17 movies are 5 or more on a profanity scale&#39;,
     caption = caption)</code></pre>
-<p><img src="/post/movies/mpaa_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="/post/2017-09-mpaa/mpaa_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <p>Indeed, movies in R &amp; NC-17 categories are widely distributed across violence and sex, but snuggle tightly in the upper section of profanity. Why is that? Looking at the data, we can tell that often profanity accompanies other “R” worthy content. However, it is not always the case, and correlation is relatively weak. Good Will Hunting is neither violent nor sexually explicit, but it is profane AF, and, sure enough, is R rated for - wait for it - <em>“strong language, including some sex-related dialogue”.</em> It could be just me (after all, I am a foreigner, and English words don’t carry the same connotation for me), but I think it is mighty unfair to Good Will Hunting to be rated R, especially knowing that Scary Movie, parts 3 through 5, are rated PG-13.</p>
 </div>
 </div>
@@ -426,77 +337,3 @@ ggplot(
 <p>This site runs on <del>dunkin</del> <code>blogdown</code>, and therefore all the source files are available on GitHub. Now, I must be honest: I am new to Github, to Hugo, and to the web in general. I have very little idea about what I’m doing. But I guess here is the link? <a href="https://github.com/taraskaduk/taraskaduk/tree/master/content/post/movies" class="uri">https://github.com/taraskaduk/taraskaduk/tree/master/content/post/movies</a> (unless I change something or screw it up big time, in which case throw rocks at me in the comment section)</p>
 </div>
 </div>
-
-	</p>
-
-	<div id="disqus_thread"></div>
-<script>
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "taraskaduk" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-		</div>
-
-		<!-- Footer -->
-<footer id="footer">
-	<ul class="icons">
-		
-		
-		
-		<li><a href="//twitter.com/pantaraas" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-		
-		
-		<li><a href="//github.com/pantaraas" target="_blank" class="icon fa-github"><span class="label">GitHub</span></a></li>
-		
-		
-		
-		<li><a href="//linkedin.com/in/taraskaduk" target="_blank" class="icon fa-linkedin-square"><span class="label">Linkedin</span></a></li>
-		
-		
-		
-		
-		<li><a href="/#contact-form" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
-		
-		
-		<li><a href="/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
-		
-	</ul>
-
-	<ul class="copyright">
-		
-		<li>&copy; Taras Kaduk</li>
-		
-		<li>Design: <a href="//html5up.net">HTML5 UP</a></li>
-		
-	</ul>
-</footer>
-
-<!-- Scripts -->
-<script src="/js/jquery.min.js"></script>
-<script src="/js/jquery.poptrox.min.js"></script>
-<script src="/js/skel.min.js"></script>
-<script src="/js/util.js"></script>
-
-<script src="/js/main.js"></script>
-
-
-
-
-
-	</body>
-</html>

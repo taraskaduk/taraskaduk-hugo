@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Maps on Taraas</title>
-    <link>https://taraskaduk.com/tags/maps/</link>
+    <link>/tags/maps/</link>
     <description>Recent content in Maps on Taraas</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 26 Nov 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://taraskaduk.com/tags/maps/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/maps/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Create World Pixel Maps in R</title>
-      <link>https://taraskaduk.com/2017/11/26/2017-11-26-pixel-map/</link>
+      <link>/2017/11/26/pixel-maps/</link>
       <pubDate>Sun, 26 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://taraskaduk.com/2017/11/26/2017-11-26-pixel-map/</guid>
+      <guid>/2017/11/26/pixel-maps/</guid>
       <description>Today, I’m going to show you how to make pixel maps in R. Why pixel maps? Because they look awesome!
 I was searching on the web for a while, but couldn’t find a good tutorial. Being stubborn as I am, I eventually figured out a way to get what I want. You know, if you torture your code enough, it might give you what you need.
 Setup First, of course, loading required packages.</description>

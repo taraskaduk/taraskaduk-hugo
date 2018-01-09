@@ -1,23 +1,112 @@
----
-title: Create World Pixel Maps in R
-author: Taras Kaduk
-date: '2017-11-26'
-slug: 2017-11-26-pixel-map
-categories:
-  - R
-tags:
-  - ggplot
-  - ggmap
-  - geo
-  - maps
-cover:
-        image: /images/map_wide.png
-        style: full
----
+<!DOCTYPE HTML>
+
+<!-- 
+Strata by HTML5 UP
+html5up.net | @n33co
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Create World Pixel Maps in R &middot; Taraas</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="author" content="Taras Kaduk">
+		<meta name="description" content="Manager of average intelligence \
+ Scientist of data \
+ Patron of craft beers \
+ Protector of coffee">
+		<meta http-equiv="content-language" content="en-us" />
+
+		
+		<meta name="og:site_name" content="Taraas">
+		<meta name="og:title" content="Create World Pixel Maps in R">
+		<meta name="og:url" content="/2017/11/26/pixel-maps/">
+		
+		<meta name="og:image" content="/images/avatar.png">
+		
+		
+
+		<meta name="generator" content="Hugo 0.32.2" />
+
+		<!--[if lte IE 8]><script src='/js/ie/html5shiv.js'></script><![endif]-->
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="//css/ie8.css"><![endif]-->
+
+		
+		
+	</head>
+
+	<body id="top">
+		<!-- Header -->
+<header id="header">
+	
+	<a href="/" class="image avatar"><img src="/images/avatar.png" alt="" /></a>
+	
+	
+		<h1>Manager of average intelligence | Scientist of data | Patron of craft beers | Protector of coffee</h1>
+	
+
+	
+		<nav id="sidebar">
+			<ul>
+			
+				<li><a href="/">Home</a></li>
+			
+				<li><a href="/post/">Blog</a></li>
+			
+			</ul>
+		</nav>
+	
+</header>
+
+
+		<!-- Main -->
+		<div id="main">
+			
+	<span>
+		<h1>Create World Pixel Maps in R</h1>
+
+		<i class="fa fa-calendar"></i>&nbsp;&nbsp;
+<time datetime="2017-11-26 00:00:00 &#43;0000 UTC">2017-11-26</time>&nbsp;&nbsp;
+
+6 min read&nbsp;&nbsp;
+
+
+    
+    
+        <i class="fa fa-folder"></i>&nbsp;&nbsp;
+        
+        <a class="article-category-link" href="/categories/r">R</a>
+        
+        
+    
 
 
 
-<p>Today, I’m going to show you how to make pixel maps in R. Why pixel maps? Because they look awesome!</p>
+   
+   
+       &nbsp;&nbsp;<i class="fa fa-tags"></i>&nbsp;&nbsp;
+       
+       <a class="article-category-link" href="/tags/ggplot">ggplot</a>
+       &middot;
+       
+       <a class="article-category-link" href="/tags/ggmap">ggmap</a>
+       &middot;
+       
+       <a class="article-category-link" href="/tags/geo">geo</a>
+       &middot;
+       
+       <a class="article-category-link" href="/tags/maps">maps</a>
+       
+       
+   
+
+
+	</span>
+
+	<p>
+	    <p>Today, I’m going to show you how to make pixel maps in R. Why pixel maps? Because they look awesome!</p>
 <p>I was searching on the web for a while, but couldn’t find a good tutorial. Being stubborn as I am, I eventually figured out a way to get what I want. You know, if you torture your code enough, it might give you what you need.</p>
 <div id="setup" class="section level2">
 <h2>Setup</h2>
@@ -114,7 +203,7 @@ plot &lt;- ggplot() +
         #adding my theme
         theme
 plot</code></pre>
-<p><img src="/post/2017-11-26-pixel-map_files/figure-html/unnamed-chunk-5-1.png" width="1344" /></p>
+<p><img src="/post/2017-11-pixel-maps/pixel-maps_files/figure-html/unnamed-chunk-5-1.png" width="1344" /></p>
 <p>You probably want to save the map, too.</p>
 <pre class="r"><code>ggsave(&#39;map_full.jpg&#39;, 
        device = &#39;jpg&#39;, 
@@ -139,7 +228,7 @@ ggsave(&#39;map_wide.png&#39;,
        height = 90, 
        units = &#39;mm&#39;,
        dpi = 250)</code></pre>
-<p><img src="/post/2017-11-26-pixel-map_files/figure-html/unnamed-chunk-8-1.png" width="1920" /></p>
+<p><img src="/post/2017-11-pixel-maps/pixel-maps_files/figure-html/unnamed-chunk-8-1.png" width="1920" /></p>
 </div>
 <div id="outro" class="section level2">
 <h2>Outro</h2>
@@ -150,3 +239,77 @@ ggsave(&#39;map_wide.png&#39;,
 <h2>Repo</h2>
 <p>As this blog is rendered with <code>blogdown</code>, all the source code is on Github for your pleasure. taraskaduk.com repo is at <a href="https://github.com/taraskaduk/taraskaduk/" class="uri">https://github.com/taraskaduk/taraskaduk/</a> and the Rmd file for this post should be located at <a href="https://github.com/taraskaduk/taraskaduk/tree/master/content/post" class="uri">https://github.com/taraskaduk/taraskaduk/tree/master/content/post</a> (unless I mess it all up and relocate it. I’m really not good at your whole github and blogdown thing. But I’m learning)</p>
 </div>
+
+	</p>
+
+	<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "taraskaduk" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+		</div>
+
+		<!-- Footer -->
+<footer id="footer">
+	<ul class="icons">
+		
+		
+		
+		<li><a href="//twitter.com/pantaraas" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+		
+		
+		<li><a href="//github.com/pantaraas" target="_blank" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		
+		
+		
+		<li><a href="//linkedin.com/in/taraskaduk" target="_blank" class="icon fa-linkedin-square"><span class="label">Linkedin</span></a></li>
+		
+		
+		
+		
+		<li><a href="/#contact-form" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+		
+		
+		<li><a href="/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
+		
+	</ul>
+
+	<ul class="copyright">
+		
+		<li>&copy; Taras Kaduk</li>
+		
+		<li>Design: <a href="//html5up.net">HTML5 UP</a></li>
+		
+	</ul>
+</footer>
+
+<!-- Scripts -->
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.poptrox.min.js"></script>
+<script src="/js/skel.min.js"></script>
+<script src="/js/util.js"></script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+
+	</body>
+</html>

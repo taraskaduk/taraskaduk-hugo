@@ -20,18 +20,18 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 		
 		<meta name="og:site_name" content="Taraas">
 		<meta name="og:title" content="Do MPAA movie ratings mean anything?">
-		<meta name="og:url" content="https://taraskaduk.com/2017/09/30/do-mpaa-movie-ratings-mean-anything/">
+		<meta name="og:url" content="/2017/09/30/do-mpaa-movie-ratings-mean-anything/">
 		
-		<meta name="og:image" content="https://taraskaduk.com/images/avatar.png">
+		<meta name="og:image" content="/images/avatar.png">
 		
 		
 
 		<meta name="generator" content="Hugo 0.32.2" />
 
-		<!--[if lte IE 8]><script src='https://taraskaduk.com/js/ie/html5shiv.js'></script><![endif]-->
+		<!--[if lte IE 8]><script src='/js/ie/html5shiv.js'></script><![endif]-->
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="https://taraskaduk.com/css/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="https://taraskaduk.com//css/ie8.css"><![endif]-->
+		<link rel="stylesheet" href="/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="//css/ie8.css"><![endif]-->
 
 		
 		
@@ -41,7 +41,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 		<!-- Header -->
 <header id="header">
 	
-	<a href="https://taraskaduk.com/" class="image avatar"><img src="https://taraskaduk.com/images/avatar.png" alt="" /></a>
+	<a href="/" class="image avatar"><img src="/images/avatar.png" alt="" /></a>
 	
 	
 		<h1>Manager of average intelligence | Scientist of data | Patron of craft beers | Protector of coffee</h1>
@@ -51,9 +51,9 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 		<nav id="sidebar">
 			<ul>
 			
-				<li><a href="https://taraskaduk.com/">Home</a></li>
+				<li><a href="/">Home</a></li>
 			
-				<li><a href="https://taraskaduk.com/post/">Blog</a></li>
+				<li><a href="/post/">Blog</a></li>
 			
 			</ul>
 		</nav>
@@ -77,7 +77,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
     
         <i class="fa fa-folder"></i>&nbsp;&nbsp;
         
-        <a class="article-category-link" href="https://taraskaduk.com/categories/r">R</a>
+        <a class="article-category-link" href="/categories/r">R</a>
         
         
     
@@ -88,19 +88,19 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
    
        &nbsp;&nbsp;<i class="fa fa-tags"></i>&nbsp;&nbsp;
        
-       <a class="article-category-link" href="https://taraskaduk.com/tags/rvest">rvest</a>
+       <a class="article-category-link" href="/tags/rvest">rvest</a>
        &middot;
        
-       <a class="article-category-link" href="https://taraskaduk.com/tags/ggplot">ggplot</a>
+       <a class="article-category-link" href="/tags/ggplot">ggplot</a>
        &middot;
        
-       <a class="article-category-link" href="https://taraskaduk.com/tags/movies">movies</a>
+       <a class="article-category-link" href="/tags/movies">movies</a>
        &middot;
        
-       <a class="article-category-link" href="https://taraskaduk.com/tags/dataviz">dataviz</a>
+       <a class="article-category-link" href="/tags/dataviz">dataviz</a>
        &middot;
        
-       <a class="article-category-link" href="https://taraskaduk.com/tags/stringr">stringr</a>
+       <a class="article-category-link" href="/tags/stringr">stringr</a>
        
        
    
@@ -285,7 +285,7 @@ ggplot(data = movies_df, aes(x=avg, y = mpaa, col = mpaa)) +
     subtitle = &#39;Visualizing the amount of overlap between categories&#39;,
     caption = caption) +
   theme</code></pre>
-<p><img src="/post/movies/mpaa_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p><img src="/post/2017-09-mpaa/mpaa_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 </div>
 <div id="mpaa-is-most-forgiving-on-violence" class="section level3">
 <h3>MPAA is most forgiving on violence</h3>
@@ -316,7 +316,7 @@ ggplot(data = movies_df %&gt;% filter(mpaa %in% c(&#39;PG&#39;, &#39;G&#39;)), a
     title = &#39;That G movie you felt safe about&#39;,
     subtitle = &#39;is probably just as violent as the PG one you rejected&#39;,
     caption = caption)</code></pre>
-<p><img src="/post/movies/mpaa_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p><img src="/post/2017-09-mpaa/mpaa_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 </div>
 <div id="what-the-is-up-with-profanity" class="section level3">
 <h3>What the **** is up with profanity?</h3>
@@ -352,7 +352,7 @@ ggplot(data = movies_df, aes(x=as.factor(profanity), y = mpaa, col = mpaa)) +
     title = &#39;Profanity rating patterns across MPAA categories&#39;,
     caption = caption) +
   theme</code></pre>
-<p><img src="/post/movies/mpaa_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="/post/2017-09-mpaa/mpaa_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p>Looking at R &amp; NC-17 section, it is tempting to dive in a bit more. Let’s go!</p>
 <pre class="r"><code>labels_r &lt;- movies_gather %&gt;% 
   filter(metric != &#39;avg&#39;) %&gt;% 
@@ -401,7 +401,7 @@ ggplot(
     title = &#39;R &amp; NC-17 Movies aren\&#39;t always violent or vulgar... \nbut they sure are profane&#39;,
     subtitle = &#39;Most R and NC-17 movies are 5 or more on a profanity scale&#39;,
     caption = caption)</code></pre>
-<p><img src="/post/movies/mpaa_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="/post/2017-09-mpaa/mpaa_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <p>Indeed, movies in R &amp; NC-17 categories are widely distributed across violence and sex, but snuggle tightly in the upper section of profanity. Why is that? Looking at the data, we can tell that often profanity accompanies other “R” worthy content. However, it is not always the case, and correlation is relatively weak. Good Will Hunting is neither violent nor sexually explicit, but it is profane AF, and, sure enough, is R rated for - wait for it - <em>“strong language, including some sex-related dialogue”.</em> It could be just me (after all, I am a foreigner, and English words don’t carry the same connotation for me), but I think it is mighty unfair to Good Will Hunting to be rated R, especially knowing that Scary Movie, parts 3 through 5, are rated PG-13.</p>
 </div>
 </div>
@@ -470,10 +470,10 @@ ggplot(
 		
 		
 		
-		<li><a href="https://taraskaduk.com/#contact-form" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+		<li><a href="/#contact-form" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
 		
 		
-		<li><a href="https://taraskaduk.com/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
+		<li><a href="/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
 		
 	</ul>
 
@@ -487,12 +487,12 @@ ggplot(
 </footer>
 
 <!-- Scripts -->
-<script src="https://taraskaduk.com/js/jquery.min.js"></script>
-<script src="https://taraskaduk.com/js/jquery.poptrox.min.js"></script>
-<script src="https://taraskaduk.com/js/skel.min.js"></script>
-<script src="https://taraskaduk.com/js/util.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.poptrox.min.js"></script>
+<script src="/js/skel.min.js"></script>
+<script src="/js/util.js"></script>
 
-<script src="https://taraskaduk.com/js/main.js"></script>
+<script src="/js/main.js"></script>
 
 
 

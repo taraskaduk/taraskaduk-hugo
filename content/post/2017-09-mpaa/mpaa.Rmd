@@ -12,6 +12,7 @@ tags: [
     "stringr"
 ]
 date: 2017-09-30
+slug: mpaa
 cover:
         image: /images/mpaa.jpeg
         style: full

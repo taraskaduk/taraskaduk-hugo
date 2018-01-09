@@ -2,7 +2,7 @@
 title: Create World Pixel Maps in R
 author: Taras Kaduk
 date: '2017-11-26'
-slug: 2017-11-26-pixel-map
+slug: pixel-maps
 categories:
   - R
 tags:

@@ -2,84 +2,84 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Taraas</title>
-    <link>https://taraskaduk.com/tags/</link>
+    <link>/tags/</link>
     <description>Recent content in Tags on Taraas</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 30 Sep 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://taraskaduk.com/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Dataviz</title>
-      <link>https://taraskaduk.com/tags/dataviz/</link>
+      <link>/tags/dataviz/</link>
       <pubDate>Sat, 30 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://taraskaduk.com/tags/dataviz/</guid>
+      <guid>/tags/dataviz/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Geo</title>
-      <link>https://taraskaduk.com/tags/geo/</link>
+      <link>/tags/geo/</link>
       <pubDate>Sun, 26 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://taraskaduk.com/tags/geo/</guid>
+      <guid>/tags/geo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ggmap</title>
-      <link>https://taraskaduk.com/tags/ggmap/</link>
+      <link>/tags/ggmap/</link>
       <pubDate>Sun, 26 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://taraskaduk.com/tags/ggmap/</guid>
+      <guid>/tags/ggmap/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ggplot</title>
-      <link>https://taraskaduk.com/tags/ggplot/</link>
+      <link>/tags/ggplot/</link>
       <pubDate>Sun, 26 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://taraskaduk.com/tags/ggplot/</guid>
+      <guid>/tags/ggplot/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Maps</title>
-      <link>https://taraskaduk.com/tags/maps/</link>
+      <link>/tags/maps/</link>
       <pubDate>Sun, 26 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://taraskaduk.com/tags/maps/</guid>
+      <guid>/tags/maps/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Movies</title>
-      <link>https://taraskaduk.com/tags/movies/</link>
+      <link>/tags/movies/</link>
       <pubDate>Sat, 30 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://taraskaduk.com/tags/movies/</guid>
+      <guid>/tags/movies/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Rvest</title>
-      <link>https://taraskaduk.com/tags/rvest/</link>
+      <link>/tags/rvest/</link>
       <pubDate>Sat, 30 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://taraskaduk.com/tags/rvest/</guid>
+      <guid>/tags/rvest/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Stringr</title>
-      <link>https://taraskaduk.com/tags/stringr/</link>
+      <link>/tags/stringr/</link>
       <pubDate>Sat, 30 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://taraskaduk.com/tags/stringr/</guid>
+      <guid>/tags/stringr/</guid>
       <description></description>
     </item>
     
