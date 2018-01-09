@@ -13,10 +13,9 @@ tags: [
 ]
 date: 2017-09-30
 slug: mpaa
-cover:
-        image: /images/mpaa.jpeg
-        style: full
 ---
+
+<center>![](/images/mpaa.jpeg){width=100%}</center>
 
 # Intro
 
