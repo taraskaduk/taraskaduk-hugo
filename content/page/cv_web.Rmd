@@ -15,7 +15,6 @@ library(readxl)
 knitr::opts_chunk$set(tidy = FALSE)
 ```
 
-
 ### Summary
 
 * Love R
@@ -24,23 +23,44 @@ knitr::opts_chunk$set(tidy = FALSE)
 * Hate redundancy, bad processes, manual tasks that should have been automated.
 * Living a minimalism-driven and adventurous life, preferring flexibility and ability to move to new places or work remotely
 
+<style>
+.column-left{
+  float: left;
+  width: 33%;
+}
+.column-center{
+  display: inline-block;
+  width: 33%;
+}
+.column-right{
+  float: right;
+  width: 33%;
+}
+</style>
+
+
+<div class="column-left">
 ### Mad R Skills
 * tidyverse
 * forecast
 * caret
-* rmarkdown
-
+* rmarkdown 
+</div>
+<div class="column-center">
 ### Other rad skills
 * SQL
 * Power BI
 * Data Visualization
 * All things data
-
+</div>
+<div class="column-right">
 ### Languages:
 * Russian - native
 * Ukrainian - native
 * English - fluent
 * French - elementary to intermediate
+</div>
+
 
 ---
 
@@ -95,12 +115,16 @@ work <- work %>%
   ungroup() 
 
 work_disp <- work %>% 
-  select(start = date_start,
-         end = date_end,
-         title,
-         company,
-         employment = emp_type) %>% 
-  arrange(desc(start))
+  select(Start = date_start,
+         End = date_end,
+         Title = title,
+         Company = company,
+         Employment = emp_type) %>% 
+  mutate(start_sort = Start,
+         Start = format(Start, "%b\'%y"),
+         End = format(End, '%b\'%y')) %>% 
+  arrange(desc(start_sort)) %>% 
+  select(-start_sort)
 
 work_comp <- work %>% 
   group_by(company) %>% 
@@ -110,13 +134,20 @@ work_comp <- work %>%
             duration_full = date_end2 - date_start)
 ```
 
+***
+
 ### Full Work History... in a table
+
 ```{r table, echo=FALSE, out.width = '100%'}
 knitr::kable(
   work_disp, format = 'markdown', padding = 0)
 ```
 
-```{r graph_company, echo=FALSE, message=FALSE, warning=FALSE, fig.align = "center", out.width = '100%'}
+
+***
+
+
+```{r graph_company, echo=FALSE, fig.align="left", message=FALSE, out.width = '200%', warning=FALSE}
 ggplot(work) +
   geom_point(aes(x= date_start, y = duration_company - duration, col = highlight_company)) +
   geom_point(aes(x = date_end2, y = duration_company, col = highlight_company)) +
@@ -163,6 +194,7 @@ ggplot(work) +
 
 ```
 
+***
 
 ## Education
 ### Kyiv National Economics University
