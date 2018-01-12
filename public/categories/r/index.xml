@@ -6,10 +6,21 @@
     <description>Recent content in R on Taraas</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 26 Nov 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 10 Jan 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/r/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>When your data analysis is validated on The Late Show with Stephen Colbert</title>
+      <link>/2018/01/10/mpaa-damon/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/01/10/mpaa-damon/</guid>
+      <description>Originally published on Medium on Dec 13, 2017: Original post
+About a month ago, I wrote a little article about the MPAA rating system. I set up to find out if their lettering system does any justice to the actual content seen on the screen. Briefly speaking, it does, but with caveats.
+One of such caveats was the effect of profanity. What my quick and dirty data analysis showed was that profanity was the sure thing that could send a movie into an R category:</description>
+    </item>
     
     <item>
       <title>Create World Pixel Maps in R</title>

@@ -15,7 +15,9 @@ date: 2017-09-30
 slug: mpaa
 ---
 
-<center>![](/images/mpaa.jpeg){width=100%}</center>
+<center>![](/post/2017-09-mpaa/mpaa.jpeg){width=100%}</center>
+
+
 
 # Intro
 
@@ -33,7 +35,7 @@ I searched around a bit, and stumbled upon a few awesome things. First, apparent
 So, I wrote a little R script using `rvest` package, and got my data into a tidy data frame, and started exploring. After a little bit of data wrangling (I excluded **NR** movies as they are obviously *not rated*, and are all over the place. Also, Kids In Mind database didn't have many **NC-17** rated movies, therefore I combined them with **R** rated films), I got my first results.
 
 
-```{r message=FALSE, warning=FALSE, include=TRUE}
+```{r setup, message=FALSE, warning=FALSE, include=TRUE}
 # library() -------------------------------------------------------------------
 
 library(readr)
@@ -178,7 +180,7 @@ What's more, you can always find a movie in a "lower" category that is more inap
 
 You can see this from the figure below. You may also notice that there movies scoring 2.5 points on average that are in every MPAA category. We'll come back to this later.
 
-```{r}
+```{r mpaa}
 labels_all <- movies_df %>% 
   filter(name == "Jimmy Neutron: Boy Genius" | 
            name == 'Adventures of Elmo In Grouchland, The' |
@@ -213,7 +215,7 @@ Well, no kidding! This was hardly a surprise. As a foreigner, I am constantly am
 
 So, next time you rent a G rated movie and think it is clean - think again. It's probably just as violent as that other PG movie you wanted. Both G and PG movies center around 3 points on violence anyway, with max points being 5 for G and 6 for PG. Just go with PG then, eh?
 
-```{r message=FALSE, warning=FALSE, paged.print=FALSE}
+```{r violence, message=FALSE, warning=FALSE, paged.print=FALSE}
 labels_g_pg <- movies_df %>% 
   filter(name == "Babe: Pig in the City" | 
            name == "Beauty and the Beast" & mpaa == 'G' |
@@ -252,7 +254,7 @@ Now, this is a zero tolerance zone in the movie world. Not sex and nudity, as I 
 
 I bet if I was trying to predict an MPAA rating based on these criteria, profanity would be the strongest predictor (not a concern of this post, but maybe later)
 
-```{r message=FALSE, warning=FALSE, paged.print=FALSE}
+```{r profanity, message=FALSE, warning=FALSE, paged.print=FALSE}
 labels_profanity <- movies_df %>% 
   filter(name %in% c('Aladdin',
                 'Beethoven',
@@ -282,7 +284,7 @@ ggplot(data = movies_df, aes(x=as.factor(profanity), y = mpaa, col = mpaa)) +
 
 Looking at R & NC-17 section, it is tempting to dive in a bit more. Let's go!
 
-```{r message=FALSE, warning=FALSE, paged.print=FALSE}
+```{r profanity2, message=FALSE, warning=FALSE, paged.print=FALSE}
 labels_r <- movies_gather %>% 
   filter(metric != 'avg') %>% 
   filter(metric == 'violence' & 
@@ -332,8 +334,33 @@ ggplot(
     caption = caption)
 ```
 
-Indeed, movies in R & NC-17 categories are widely distributed across violence and sex, but snuggle tightly in the upper section of profanity. Why is that? Looking at the data, we can tell that often profanity accompanies other "R" worthy content. However, it is not always the case, and correlation is relatively weak. Good Will Hunting is neither violent nor sexually explicit, but it is profane AF, and, sure enough, is R rated for - wait for it - *"strong language, including some sex-related dialogue".* 
+Indeed, movies in R & NC-17 categories are widely distributed across violence and sex, but snuggle tightly in the upper section of profanity. Why is that? Looking at the data, we can tell that often profanity accompanies other "R" worthy content. However, it is not always the case, and correlation is relatively weak. <a id="quote">Good Will Hunting is neither violent nor sexually explicit, but it is profane AF, and, sure enough, is R rated for - wait for it - *"strong language, including some sex-related dialogue".* </a>
 It could be just me (after all, I am a foreigner, and English words don't carry the same connotation for me), but I think it is mighty unfair to Good Will Hunting to be rated R, especially knowing that Scary Movie, parts 3 through 5, are rated PG-13.
+
+```{r good_will_hunting}
+ggplot(
+    data = movies_gather %>% 
+        filter(metric != 'avg'), 
+    aes(x=as.factor(score), y = metric, col = mpaa)) +
+    geom_jitter(alpha = 0.2, size = 2) +
+    scale_colour_brewer(palette = "Spectral", direction = -1) +
+    geom_point(data = movies_gather %>% 
+        filter(name == 'Good Will Hunting' & metric != 'avg'), 
+        size = 7,  
+        col = 'grey20',
+        alpha = 0.9) +
+     geom_point(data = movies_gather %>% 
+        filter(name == 'Good Will Hunting' & metric != 'avg'), 
+        size = 2,  
+        col = 'grey10') +
+    guides(fill = FALSE) +
+    xlab('') + ylab('') +
+  theme +
+  labs(
+    title = 'Good Will Hunting, rated R',
+    subtitle = 'For strong language, including some sex-related dialogue',
+    caption = caption)
+```
 
 # Summary
 

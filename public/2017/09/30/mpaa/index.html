@@ -26,7 +26,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 		
 		
 
-		<meta name="generator" content="Hugo 0.32.2" />
+		<meta name="generator" content="Hugo 0.32.3" />
 
 		<!--[if lte IE 8]><script src='/js/ie/html5shiv.js'></script><![endif]-->
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -112,7 +112,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
 	<p>
 	    <center>
-<img src="/images/mpaa.jpeg" style="width:100.0%" />
+<img src="/post/2017-09-mpaa/mpaa.jpeg" style="width:100.0%" />
 </center>
 <div id="intro" class="section level1">
 <h1>Intro</h1>
@@ -290,7 +290,7 @@ ggplot(data = movies_df, aes(x=avg, y = mpaa, col = mpaa)) +
     subtitle = &#39;Visualizing the amount of overlap between categories&#39;,
     caption = caption) +
   theme</code></pre>
-<p><img src="/post/2017-09-mpaa/mpaa_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p><img src="/post/2017-09-mpaa/mpaa_files/figure-html/mpaa-1.png" width="672" /></p>
 </div>
 <div id="mpaa-is-most-forgiving-on-violence" class="section level3">
 <h3>MPAA is most forgiving on violence</h3>
@@ -321,7 +321,7 @@ ggplot(data = movies_df %&gt;% filter(mpaa %in% c(&#39;PG&#39;, &#39;G&#39;)), a
     title = &#39;That G movie you felt safe about&#39;,
     subtitle = &#39;is probably just as violent as the PG one you rejected&#39;,
     caption = caption)</code></pre>
-<p><img src="/post/2017-09-mpaa/mpaa_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p><img src="/post/2017-09-mpaa/mpaa_files/figure-html/violence-1.png" width="672" /></p>
 </div>
 <div id="what-the-is-up-with-profanity" class="section level3">
 <h3>What the **** is up with profanity?</h3>
@@ -357,7 +357,7 @@ ggplot(data = movies_df, aes(x=as.factor(profanity), y = mpaa, col = mpaa)) +
     title = &#39;Profanity rating patterns across MPAA categories&#39;,
     caption = caption) +
   theme</code></pre>
-<p><img src="/post/2017-09-mpaa/mpaa_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="/post/2017-09-mpaa/mpaa_files/figure-html/profanity-1.png" width="672" /></p>
 <p>Looking at R &amp; NC-17 section, it is tempting to dive in a bit more. Let’s go!</p>
 <pre class="r"><code>labels_r &lt;- movies_gather %&gt;% 
   filter(metric != &#39;avg&#39;) %&gt;% 
@@ -406,8 +406,31 @@ ggplot(
     title = &#39;R &amp; NC-17 Movies aren\&#39;t always violent or vulgar... \nbut they sure are profane&#39;,
     subtitle = &#39;Most R and NC-17 movies are 5 or more on a profanity scale&#39;,
     caption = caption)</code></pre>
-<p><img src="/post/2017-09-mpaa/mpaa_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
-<p>Indeed, movies in R &amp; NC-17 categories are widely distributed across violence and sex, but snuggle tightly in the upper section of profanity. Why is that? Looking at the data, we can tell that often profanity accompanies other “R” worthy content. However, it is not always the case, and correlation is relatively weak. Good Will Hunting is neither violent nor sexually explicit, but it is profane AF, and, sure enough, is R rated for - wait for it - <em>“strong language, including some sex-related dialogue”.</em> It could be just me (after all, I am a foreigner, and English words don’t carry the same connotation for me), but I think it is mighty unfair to Good Will Hunting to be rated R, especially knowing that Scary Movie, parts 3 through 5, are rated PG-13.</p>
+<p><img src="/post/2017-09-mpaa/mpaa_files/figure-html/profanity2-1.png" width="672" /></p>
+<p>Indeed, movies in R &amp; NC-17 categories are widely distributed across violence and sex, but snuggle tightly in the upper section of profanity. Why is that? Looking at the data, we can tell that often profanity accompanies other “R” worthy content. However, it is not always the case, and correlation is relatively weak. <a id="quote">Good Will Hunting is neither violent nor sexually explicit, but it is profane AF, and, sure enough, is R rated for - wait for it - <em>“strong language, including some sex-related dialogue”.</em> </a> It could be just me (after all, I am a foreigner, and English words don’t carry the same connotation for me), but I think it is mighty unfair to Good Will Hunting to be rated R, especially knowing that Scary Movie, parts 3 through 5, are rated PG-13.</p>
+<pre class="r"><code>ggplot(
+    data = movies_gather %&gt;% 
+        filter(metric != &#39;avg&#39;), 
+    aes(x=as.factor(score), y = metric, col = mpaa)) +
+    geom_jitter(alpha = 0.2, size = 2) +
+    scale_colour_brewer(palette = &quot;Spectral&quot;, direction = -1) +
+    geom_point(data = movies_gather %&gt;% 
+        filter(name == &#39;Good Will Hunting&#39; &amp; metric != &#39;avg&#39;), 
+        size = 7,  
+        col = &#39;grey20&#39;,
+        alpha = 0.9) +
+     geom_point(data = movies_gather %&gt;% 
+        filter(name == &#39;Good Will Hunting&#39; &amp; metric != &#39;avg&#39;), 
+        size = 2,  
+        col = &#39;grey10&#39;) +
+    guides(fill = FALSE) +
+    xlab(&#39;&#39;) + ylab(&#39;&#39;) +
+  theme +
+  labs(
+    title = &#39;Good Will Hunting, rated R&#39;,
+    subtitle = &#39;For strong language, including some sex-related dialogue&#39;,
+    caption = caption)</code></pre>
+<p><img src="/post/2017-09-mpaa/mpaa_files/figure-html/good_will_hunting-1.png" width="672" /></p>
 </div>
 </div>
 <div id="summary" class="section level1">
@@ -463,10 +486,10 @@ ggplot(
 		
 		
 		
-		<li><a href="//twitter.com/pantaraas" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+		<li><a href="//twitter.com/taraskaduk" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
 		
 		
-		<li><a href="//github.com/pantaraas" target="_blank" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		<li><a href="//github.com/taraskaduk" target="_blank" class="icon fa-github"><span class="label">GitHub</span></a></li>
 		
 		
 		
