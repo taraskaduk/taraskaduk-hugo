@@ -6,10 +6,21 @@
     <description>Recent content on Taras Kaduk</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 11 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 12 Jan 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>On Importance of Minimalism in Retrospective Analytics</title>
+      <link>/2018/01/12/sass/</link>
+      <pubDate>Fri, 12 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/01/12/sass/</guid>
+      <description>Originally published on Medium: https://medium.com/taras-kaduk/on-importance-of-minimalism-in-retrospective-analytics-75c5a02c2c83
+Hey, analyst, how is life? Talk to me. Do you love what you do for life, do you like all things data?
+ Yet, do you sometimes feel like you’re a Sisyphus rolling a giant rock of data up the hill every day, only to see it go down with a racket in the evening (and you know what you’re going to do tomorrow)?</description>
+    </item>
     
     <item>
       <title>CV</title>
