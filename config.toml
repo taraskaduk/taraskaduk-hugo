@@ -1,6 +1,6 @@
 baseurl = "https://taraskaduk.com/"
 languageCode = "en-us"
-title = "Taraas"
+title = "Taras Kaduk"
 theme = "hugo-strata-theme"
 disqusShortname = "taraskaduk"
 # Enable Google Analytics by inserting your tracking code
