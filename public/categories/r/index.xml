@@ -6,10 +6,20 @@
     <description>Recent content in R on Taras Kaduk</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 10 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 13 Jan 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/r/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>My first shiny app: calculating your hourly rate as a consultant</title>
+      <link>/2018/01/13/shiny_rate/</link>
+      <pubDate>Sat, 13 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/01/13/shiny_rate/</guid>
+      <description>(One year after building it and forgetting it)    Is it just me, or is your hard drive also full of abandoned projects, ideas et cetera? I know I’m not alone.
+Cleaning up my R folder the other day, I stumbled upon a file I hardly remember creating. It is was a Shiny app built to help one calculate the hourly rate of services, given a desired income and an amount of time working (billable hours in a day, days in a week, weeks in a year).</description>
+    </item>
     
     <item>
       <title>When your data analysis is validated on The Late Show with Stephen Colbert</title>
