@@ -64,5 +64,15 @@ Setup First, of course, loading required packages.</description>
 When it comes to watching movies with our six-year-old son, we don’t have a strict set of rules.</description>
     </item>
     
+    <item>
+      <title></title>
+      <link>/1/01/01/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/1/01/01/</guid>
+      <description>This is my first R Shiny app. It helps you calculate your rate as a consiltant, taking into account many factors at the same time.
+Please see full explanation at my blog post at https://taraskaduk.com/2018/01/13/shiny_rate/.</description>
+    </item>
+    
   </channel>
 </rss>
