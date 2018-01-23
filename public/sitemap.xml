@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/2018/01/22/impostor/</loc>
+    <lastmod>2018-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2018/01/22/4-stages/</loc>
+    <lastmod>2018-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/2018/01/13/shiny_rate/</loc>
     <lastmod>2018-01-13T00:00:00+00:00</lastmod>
   </url>
@@ -37,32 +47,54 @@
   </url>
   
   <url>
-    <loc>/tags/analytics/</loc>
-    <lastmod>2018-01-12T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <loc>/1/01/01/</loc>
   </url>
   
   <url>
     <loc>/categories/analytics/</loc>
-    <lastmod>2018-01-12T00:00:00+00:00</lastmod>
+    <lastmod>2018-01-22T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/analytics/</loc>
+    <lastmod>2018-01-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/business-intelligence/</loc>
-    <lastmod>2018-01-12T00:00:00+00:00</lastmod>
+    <lastmod>2018-01-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2018-01-12T00:00:00+00:00</lastmod>
+    <lastmod>2018-01-22T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/data-science/</loc>
+    <lastmod>2018-01-22T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/data-science/</loc>
+    <lastmod>2018-01-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/dataviz/</loc>
     <lastmod>2018-01-10T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/gartner/</loc>
+    <lastmod>2018-01-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -81,6 +113,12 @@
   <url>
     <loc>/tags/ggplot/</loc>
     <lastmod>2017-11-26T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/learning/</loc>
+    <lastmod>2018-01-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -104,7 +142,7 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2018-01-13T00:00:00+00:00</lastmod>
+    <lastmod>2018-01-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -140,13 +178,13 @@
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2018-01-12T00:00:00+00:00</lastmod>
+    <lastmod>2018-01-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/</loc>
-    <lastmod>2018-01-13T00:00:00+00:00</lastmod>
+    <lastmod>2018-01-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Taras Kaduk</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 12 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 22 Jan 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Analytics</title>
       <link>/tags/analytics/</link>
-      <pubDate>Fri, 12 Jan 2018 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 22 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/analytics/</guid>
       <description></description>
@@ -23,9 +23,18 @@
     <item>
       <title>Business Intelligence</title>
       <link>/tags/business-intelligence/</link>
-      <pubDate>Fri, 12 Jan 2018 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 22 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/business-intelligence/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Science</title>
+      <link>/tags/data-science/</link>
+      <pubDate>Mon, 22 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/data-science/</guid>
       <description></description>
     </item>
     
@@ -35,6 +44,15 @@
       <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/dataviz/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gartner</title>
+      <link>/tags/gartner/</link>
+      <pubDate>Mon, 22 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/gartner/</guid>
       <description></description>
     </item>
     
@@ -62,6 +80,15 @@
       <pubDate>Sun, 26 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/ggplot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Learning</title>
+      <link>/tags/learning/</link>
+      <pubDate>Mon, 22 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/learning/</guid>
       <description></description>
     </item>
     

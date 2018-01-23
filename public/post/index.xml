@@ -6,10 +6,33 @@
     <description>Recent content in Posts on Taras Kaduk</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 13 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 22 Jan 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Imposterism in Data Science: Addressing the credentials problem</title>
+      <link>/2018/01/22/impostor/</link>
+      <pubDate>Mon, 22 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/01/22/impostor/</guid>
+      <description>Originally posted on Medium on Jan 21, 2018: https://medium.com/taras-kaduk/imposterism-in-data-science-f96c29ae96ce 
+  We happen to talk a lot about the impostor syndrome these days. No wonder — it seems to be an important subject. But what is it? That feeling of faking it while others clearly know what’s they’re doing.
+Many attempts have been made to clarify the issue. Explaining that it is OK, that we all feel that way going through life.</description>
+    </item>
+    
+    <item>
+      <title>The 4 Stages of Data Analytics Maturity: Challenging the Gartner’s Model</title>
+      <link>/2018/01/22/4-stages/</link>
+      <pubDate>Mon, 22 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/01/22/4-stages/</guid>
+      <description>Originally posted on Dec 14, 2016 on LinkedIn: https://www.linkedin.com/pulse/4-stages-data-analytics-maturity-challenging-gartners-taras-kaduk/ 
+If you happen to work in analytics, data science or business intelligence, you’ve probably seen one of the iterations of this Gartner’s graph on stages of data analysis in a company:
+ The figure above shows various stages of analytics maturity, from “descriptive” to “prescriptive”. I’ve seen it so many times, it became an eyesore to me.
+There is nothing wrong with it.</description>
+    </item>
     
     <item>
       <title>My first shiny app: calculating your hourly rate as a consultant</title>
@@ -62,6 +85,15 @@ Setup First, of course, loading required packages.</description>
       <guid>/2017/09/30/mpaa/</guid>
       <description>Intro Being a parent in modern days is lots of fun. Not only all of us are pretty much winging it, not having any idea what we’re doing (seriously, you need a license to do braids and nails, yet raising a human being a future member of society is a no-brainer, right?) — we are also constantly being watched and judged by other parents.
 When it comes to watching movies with our six-year-old son, we don’t have a strict set of rules.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/1/01/01/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/1/01/01/</guid>
+      <description>Imposterism in Data Science: Addressing the credentials problem &amp;middot; Taras Kaduk// automatically refresh the page when necessary (R will send a message to ws)(function() {var protocol = &#39;ws:&#39;;if (window.location.protocol === &#39;https:&#39;) protocol = &#39;wss:&#39;;var path = window.location.pathname;if (!/\/$/.test(path)) path += &#39;/&#39;;path += &#39;websocket/&#39;;var ws = new WebSocket(protocol + &#39;//&#39; + window.location.host + path);ws.onmessage = function(evt) {// fire a servr:reload eventEvent &amp;&amp; document.</description>
     </item>
     
     <item>
