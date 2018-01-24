@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Pages on Taras Kaduk</title>
+    <title>Page on Taras Kaduk</title>
     <link>/page/</link>
-    <description>Recent content in Pages on Taras Kaduk</description>
+    <description>Recent content in Page on Taras Kaduk</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 11 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 23 Jan 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/page/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>CV</title>
       <link>/page/cv/</link>
-      <pubDate>Thu, 11 Jan 2018 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 23 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/page/cv/</guid>
       <description>.column-left{ float: left; width: 33%; } .column-center{ display: inline-block; width: 33%; } .column-right{ float: right; width: 33%; }  Contact  phone: 904-662-9453 email: contact@taraskaduk.com location: Jacksonville, FL   Summary  Love R Love data science Love online learning, self-education, love spreading knowledge, love helping people learn stuff Hate redundancy, bad processes, manual tasks that should have been automated. Living a minimalism-driven and adventurous life, preferring flexibility and ability to move to new places or work remotely  Mad R Skills  tidyverse forecast caret rmarkdown   Other rad skills  SQL Power BI Data Visualization All things data   Languages:  Russian - native Ukrainian - native English - fluent French - elementary to intermediate    Main Work Experience Manager, Business Intelligence &amp;amp; CRM Suddath | April 2017 - Present | Jacksonville, FL</description>

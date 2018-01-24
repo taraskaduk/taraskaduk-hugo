@@ -1,165 +1,172 @@
-baseurl = "https://taraskaduk.com/"
+baseurl = "https://taraskaduk.com"
 languageCode = "en-us"
 title = "Taras Kaduk"
-theme = "hugo-strata-theme"
-disqusShortname = "taraskaduk"
-# Enable Google Analytics by inserting your tracking code
-# googleAnalytics = ""
-# Define how many posts should appear on a site
+theme = "hugo-future-imperfect"
+preserveTaxonomyNames = true
 paginate = 5
-
-ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
-enableEmoji = true
-
-[permalinks]
-  post = "/:year/:month/:day/:slug/"
-
-
-# Syntax Highlighting ( https://gohugo.io/content-management/syntax-highlighting/ )
-pygmentsCodefences = true
-pygmentsStyle = "native"
+disqusShortname = "taraskaduk"
+googleAnalytics = ""
+pluralizeListTitles = false
 
 [params]
-	# To provide some metadata for search engines feel free to add a few
-    # information about you and your website.
-	name = "Taras Kaduk"
-	description = "Manager of average intelligence \\\n Scientist of data \\\n Patron of craft beers \\\n Protector of coffee"
+  # Sets the meta tag description
+  description          = "HTML5 UP theme, Future Imperfect with some extra goodies, ported by Julio Pescador. Powered by Hugo"
+  # Sets the navbarTitle that appears in the top left of the navigation bar
+  navbarTitle          = "Taras Kaduk"
+  # Sets where "View More Posts" links
+  viewMorePostLink     = "/post/"
 
-	# Format dates with Go's time formatting
-	date_format = "2006-01-02"
+# Optional Params
+  # Sets navbarTitle to match the section of the website
+  dynamicTitles        = true
+  # Sets RSS icons to appear on the sidebar with the social media buttons
+  rssAppearAtTop       = true
+  rssAppearAtBottom    = true
+  # Sets Social Media icons to appear on the sidebar
+  socialAppearAtTop    = true
+  socialAppearAtBottom = true
+  # Sets Categories to sort by number of posts instead of alphabetical
+  categoriesByCount    = true
+  # Sets Estimated Reading Time to appear in post headers
+  includeReadingTime   = true
+  # Sets the Favicon and Version for the site. Default support is for
+  # apple-touch-icon-precomposed.png, favicon.png, favicon.ico, and mstile.png.
+  # These are stored in the favicon folder. See the following for more information:
+  # https://github.com/audreyr/favicon-cheat-sheet
+  loadFavicon          = false
+  faviconVersion       = ""
+  # Sets Social Share links to appear on posts
+  socialShare          = true
+  # Load custom CSS or JavaScript files. The variable is an array so that you
+  # can load multiple files if necessary. You can also load the standard theme
+  # files by adding the value, "default".
+  # customCSS            = ["default", "/path/to/file"]
+  # customJS             = ["default", "/path/to/file"]
+  customCSS            = ["default"]
+  customJS             = ["default"]
 
-	# Add read time estimates in the format "X min read"
-	show_read_time = true
+# Disqus will take priority over Staticman (github.com/eduardoboucas/staticman)
+# due to its ease of use. Feel free to check out both and decide what you would
+# prefer to use. See Staticman.yml for additional settings.
+[params.staticman]
+  # Sets Statiman to be active
+  staticman = false
+  # Sets the location for Staticman to connect to
+  username  = ""
+  repo      = ""
+  branch    = ""
 
-	# Add custom assets with their paths relative to the static folder
-	custom_js   = []
-	custom_css  = []
+  [params.staticman.recaptcha]
+    sitekey = "SITE_KEY"
+    secret  = "ENCRYPTED_SECRET"
 
+  # These are optional params related to the sidebar. They are recommended, but not
+  # required for proper functionality. HTML is supported within the params.
+[params.intro]
+  header    = "Taras Kaduk"
 
-	[params.sidebar]
-		# Replace the avatar with a picture of your own under static/images
-		avatar = "avatar.png"
-		# Use Markdown to format the string. This works nearly all over the theme
-		bio = "Manager of average intelligence | Scientist of data | Patron of craft beers | Protector of coffee"
-		# The icons will be shown if you enter your username
-		twitter = "taraskaduk"
-		github = "taraskaduk"
-		medium = "taraskaduk"
-		gitlab = ""
-		dribbble = ""
-		facebook = ""
-		googleplus = ""
-		flickr = ""
-		linkedin = "taraskaduk"
+  paragraph = "Good luck pronouncing my name right"
 
-		copyright = [
-			"&copy; Taras Kaduk",
-			"Design: [HTML5 UP](//html5up.net)"
-		]
+  about     = "I'll complete this later, I swear!"
 
+  # This appears at the top of the sidebar above params.intro.header.
+  # A width of less than 100px is recommended from a design perspective.
+  [params.intro.pic]
+    src       = "/images/favicon.png"
+    # Sets Image to be a cirlce
+    circle    = false
+    # Sets Image to be Future Imperfect's hexagon
+    imperfect = false
+    width     = ""
+    alt       = ""
 
-	[params.about]
-		hide  = false
-		title = "Welcome to my blog!"
-		content = "I'll complete this section later, I promise!"
+[params.postAmount]
+# Sets the number of recent posts to show in the sidebar. The default value is 5.
+    sidebar = 5
 
-
-	[params.portfolio]
-		hide  = true
-		title = "Recent Work"
-
-		# The images and thumbnails are stored under static/images
-		# Create and change subfolders as you like
-		[[params.portfolio.gallery]]
-			image = "fulls/01.jpg"
-			thumb = "thumbs/01.jpg"
-			title = "Lorem ipsum dolor."
-			description = "Lorem ipsum dolor sit amet."
-
-		[[params.portfolio.gallery]]
-			image = "fulls/02.jpg"
-			thumb = "thumbs/02.jpg"
-			title = "Lorem ipsum dolor."
-			description = "Lorem ipsum dolor sit amet."
-
-		[[params.portfolio.gallery]]
-			image = "fulls/03.jpg"
-			thumb = "thumbs/03.jpg"
-			title = "Lorem ipsum dolor."
-			description = "Lorem ipsum dolor sit amet."
-
-		[[params.portfolio.gallery]]
-			image = "fulls/04.jpg"
-			thumb = "thumbs/04.jpg"
-			title = "Lorem ipsum dolor."
-			description = "Lorem ipsum dolor sit amet."
-
-		[[params.portfolio.gallery]]
-			image = "fulls/05.jpg"
-			thumb = "thumbs/05.jpg"
-			title = "Lorem ipsum dolor."
-			description = "Lorem ipsum dolor sit amet."
-
-		[[params.portfolio.gallery]]
-			image = "fulls/06.jpg"
-			thumb = "thumbs/06.jpg"
-			title = "Lorem ipsum dolor."
-			description = "Lorem ipsum dolor sit amet."
-
-	[params.recentposts]
-		hide  = false
-		title = "Recent blog posts"
-
-	[params.contact]
-		hide  = false
-		title = "Get In Touch"
-		content = "Use any of the social media platforms. Or this form below"
-
-		# This can be exact coordinates or a searchable address in google maps
-		gmaps_address = "30.3452116,-81.823191"
-		#address = [
-		#	"1234 Somewhere Rd.",
-		#	"Nashville, TN 00000",
-		#	"United States"
-		#]
-		
-		#phone = "000-000-0000"
-
-		# Since this template is static, the contact form uses www.formspree.io as a
-		# proxy. The form makes a POST request to their servers to send the actual
-		# email. Visitors can send up to a 1000 emails each month for free.
-	    #
-	    # What you need to do for the setup?
-	    #
-	    # - set your email address under 'email' below
-	    # - upload the generated site to your server
-	    # - send a dummy email yourself to confirm your account
-	    # - click the confirm link in the email from www.formspree.io
-	    # - you're done. Happy mailing!
-		email = "contact@taraskaduk.com"
-
-		[params.contact.form]
-			# Set custom strings for the form if your native
-			# language isn't English
-			name = "Name"
-			email = "Email"
-			message = "Message"
-			submit = "Send message"
-
-
-# Menu links that appear on the left sidebar
+# Sets the menu items in the navigation bar
+# Identifier prepends a Font Awesome icon to the menu item
 [[menu.main]]
-	name = "Home"
-	url  = "/"
-	weight = 5
+  name = "Home"
+  url = "/"
+  identifier = "fa fa-home"
+  weight = 1
 
 [[menu.main]]
-	name = "Blog"
-	url  = "post/"
-	weight = 10
+  name = "About"
+  url = "/page/cv/"
+  identifier = "fa fa-id-card-o"
+  weight = 2
 
 [[menu.main]]
-	name = "CV"
-	url  = "page/cv/"
-	weight = 20
-	
+  name = "Blog"
+  url = "/post/"
+  identifier = "fa fa-newspaper-o"
+  weight = 3
+
+[[menu.main]]
+  name = "Pages"
+  url = "/page/"
+  identifier = "fa fa-list"
+  weight = 4
+
+[[menu.main]]
+  name = "Categories"
+  url = "/categories/"
+  identifier = "fa fa-sitemap"
+  weight = 5
+
+[[menu.main]]
+  name = "Contact"
+  url = "/page/cv/"
+  identifier = "fa fa-envelope-o"
+  weight = 6
+
+# Sets Social Media icons to appear and link to your account. Value should be your
+# username unless otherwise noted. These are the icons affected by socialAppearAtTop
+# and socialAppearAtBottom.
+[social]
+  # Coding Communities
+  github          = "taraskaduk"
+  #gitlab          = ""
+  stackoverflow   = "5719631" # User Number
+  #bitbucket       = ""
+  #jsfiddle        = ""
+  #codepen         = ""
+  # Visual Art Communities
+  #deviantart      = ""
+  #flickr          = "example"
+ # behance         = ""
+  #dribbble        = ""
+  # Publishing Communities
+  #wordpress       = ""
+  medium          = "taraskaduk"
+  # Professional/Business Oriented Communities
+  linkedin        = "taraskaduk"
+ # foursquare      = ""
+ # xing            = ""
+  #slideshare      = ""
+  # Social Networks
+  #facebook        = "example"
+  #googleplus      = ""
+  #reddit          = "example"
+  #quora           = ""
+  #youtube         = ""
+  #vimeo           = ""
+  #whatsapp        = "" # WhatsApp Number
+    # WeChat and QQ need testing.
+    #wechat          = ""
+    #qq              = "" # User ID Number
+  instagram       = "taraskaduk"
+  # tumblr          = ""
+  twitter         = "taraskaduk"
+  # skype           = ""
+  # snapchat        = ""
+  # pinterest       = ""
+  # telegram        = "example"
+  #vine            = ""
+  #googlescholar   = ""
+  #orcid           = ""
+  #researchgate    = "example"    
+  # Email
+  email           = "contact@taraskaduk.com"

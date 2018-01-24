@@ -3,61 +3,57 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/2018/01/22/impostor/</loc>
+    <loc>/page/cv/</loc>
+    <lastmod>2018-01-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2018-01-impostor/impostor/</loc>
     <lastmod>2018-01-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/2018/01/22/4-stages/</loc>
+    <loc>/post/2016-12-4-stages/4-stages/</loc>
     <lastmod>2018-01-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/2018/01/13/shiny_rate/</loc>
+    <loc>/post/2018-01-shiny-rate/shiny_rate/</loc>
     <lastmod>2018-01-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/2018/01/12/sass/</loc>
+    <loc>/post/2018-01-sass/sass/</loc>
     <lastmod>2018-01-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/page/cv/</loc>
-    <lastmod>2018-01-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2018/01/10/mpaa-damon/</loc>
+    <loc>/post/2017-09-mpaa/mpaa-damon/</loc>
     <lastmod>2018-01-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/2017/11/26/pixel-maps/</loc>
+    <loc>/post/2017-11-pixel-maps/pixel-maps/</loc>
     <lastmod>2017-11-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/2017/09/30/mpaa/</loc>
+    <loc>/post/2017-09-mpaa/mpaa/</loc>
     <lastmod>2017-09-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/1/01/01/</loc>
+    <loc>/post/2018-01-shiny-rate/readme/</loc>
   </url>
   
   <url>
-    <loc>/1/01/01/</loc>
-  </url>
-  
-  <url>
-    <loc>/categories/analytics/</loc>
+    <loc>/tags/analytics/</loc>
     <lastmod>2018-01-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/analytics/</loc>
+    <loc>/categories/analytics/</loc>
     <lastmod>2018-01-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -136,7 +132,7 @@
   
   <url>
     <loc>/page/</loc>
-    <lastmod>2018-01-11T00:00:00+00:00</lastmod>
+    <lastmod>2018-01-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -184,7 +180,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2018-01-22T00:00:00+00:00</lastmod>
+    <lastmod>2018-01-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Data Science on Taras Kaduk</title>
+    <title>Data science on Taras Kaduk</title>
     <link>/tags/data-science/</link>
-    <description>Recent content in Data Science on Taras Kaduk</description>
+    <description>Recent content in Data science on Taras Kaduk</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 22 Jan 2018 00:00:00 +0000</lastBuildDate>
@@ -13,12 +13,12 @@
     
     <item>
       <title>Imposterism in Data Science: Addressing the credentials problem</title>
-      <link>/2018/01/22/impostor/</link>
+      <link>/post/2018-01-impostor/impostor/</link>
       <pubDate>Mon, 22 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/01/22/impostor/</guid>
+      <guid>/post/2018-01-impostor/impostor/</guid>
       <description>Originally posted on Medium on Jan 21, 2018: https://medium.com/taras-kaduk/imposterism-in-data-science-f96c29ae96ce 
-  We happen to talk a lot about the impostor syndrome these days. No wonder — it seems to be an important subject. But what is it? That feeling of faking it while others clearly know what’s they’re doing.
+We happen to talk a lot about the impostor syndrome these days. No wonder — it seems to be an important subject. But what is it? That feeling of faking it while others clearly know what’s they’re doing.
 Many attempts have been made to clarify the issue. Explaining that it is OK, that we all feel that way going through life.</description>
     </item>
     
