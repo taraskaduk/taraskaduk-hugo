@@ -31,7 +31,7 @@ One of such caveats was the effect of profanity. What my quick and dirty data an
 
 
 
-I even wrote this in my [blog post](/2017/09/30/mpaa/#quote), when summing up the effects of profanity on movie's rating:
+I even wrote this in my [blog post](/2017-09-mpaa/mpaa/#quote), when summing up the effects of profanity on movie's rating:
 
 > Good Will Hunting is neither violent nor sexually explicit, but it is profane AF, and, sure enough, is R rated for - wait for it - *"strong language, including some sex-related dialogue".*
 
