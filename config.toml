@@ -1,4 +1,4 @@
-baseurl = "https://taraskaduk.com"
+baseurl = "https://taraskaduk.com/"
 languageCode = "en-us"
 title = "Taras Kaduk"
 theme = "hugo-future-imperfect"

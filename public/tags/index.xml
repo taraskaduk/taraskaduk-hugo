@@ -2,147 +2,147 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Taras Kaduk</title>
-    <link>/tags/</link>
+    <link>https://taraskaduk.com/tags/</link>
     <description>Recent content in Tags on Taras Kaduk</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 22 Jan 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://taraskaduk.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Analytics</title>
-      <link>/tags/analytics/</link>
+      <link>https://taraskaduk.com/tags/analytics/</link>
       <pubDate>Mon, 22 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/analytics/</guid>
+      <guid>https://taraskaduk.com/tags/analytics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Business intelligence</title>
-      <link>/tags/business-intelligence/</link>
+      <link>https://taraskaduk.com/tags/business-intelligence/</link>
       <pubDate>Mon, 22 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/business-intelligence/</guid>
+      <guid>https://taraskaduk.com/tags/business-intelligence/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Data science</title>
-      <link>/tags/data-science/</link>
+      <link>https://taraskaduk.com/tags/data-science/</link>
       <pubDate>Mon, 22 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/data-science/</guid>
+      <guid>https://taraskaduk.com/tags/data-science/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Dataviz</title>
-      <link>/tags/dataviz/</link>
+      <link>https://taraskaduk.com/tags/dataviz/</link>
       <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/dataviz/</guid>
+      <guid>https://taraskaduk.com/tags/dataviz/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Gartner</title>
-      <link>/tags/gartner/</link>
+      <link>https://taraskaduk.com/tags/gartner/</link>
       <pubDate>Mon, 22 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/gartner/</guid>
+      <guid>https://taraskaduk.com/tags/gartner/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Geo</title>
-      <link>/tags/geo/</link>
+      <link>https://taraskaduk.com/tags/geo/</link>
       <pubDate>Sun, 26 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/geo/</guid>
+      <guid>https://taraskaduk.com/tags/geo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ggmap</title>
-      <link>/tags/ggmap/</link>
+      <link>https://taraskaduk.com/tags/ggmap/</link>
       <pubDate>Sun, 26 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/ggmap/</guid>
+      <guid>https://taraskaduk.com/tags/ggmap/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ggplot</title>
-      <link>/tags/ggplot/</link>
+      <link>https://taraskaduk.com/tags/ggplot/</link>
       <pubDate>Sun, 26 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/ggplot/</guid>
+      <guid>https://taraskaduk.com/tags/ggplot/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Learning</title>
-      <link>/tags/learning/</link>
+      <link>https://taraskaduk.com/tags/learning/</link>
       <pubDate>Mon, 22 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/learning/</guid>
+      <guid>https://taraskaduk.com/tags/learning/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Maps</title>
-      <link>/tags/maps/</link>
+      <link>https://taraskaduk.com/tags/maps/</link>
       <pubDate>Sun, 26 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/maps/</guid>
+      <guid>https://taraskaduk.com/tags/maps/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Movies</title>
-      <link>/tags/movies/</link>
+      <link>https://taraskaduk.com/tags/movies/</link>
       <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/movies/</guid>
+      <guid>https://taraskaduk.com/tags/movies/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Rvest</title>
-      <link>/tags/rvest/</link>
+      <link>https://taraskaduk.com/tags/rvest/</link>
       <pubDate>Sat, 30 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/rvest/</guid>
+      <guid>https://taraskaduk.com/tags/rvest/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Sass</title>
-      <link>/tags/sass/</link>
+      <link>https://taraskaduk.com/tags/sass/</link>
       <pubDate>Fri, 12 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/sass/</guid>
+      <guid>https://taraskaduk.com/tags/sass/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Shiny</title>
-      <link>/tags/shiny/</link>
+      <link>https://taraskaduk.com/tags/shiny/</link>
       <pubDate>Sat, 13 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/shiny/</guid>
+      <guid>https://taraskaduk.com/tags/shiny/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Stringr</title>
-      <link>/tags/stringr/</link>
+      <link>https://taraskaduk.com/tags/stringr/</link>
       <pubDate>Sat, 30 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/stringr/</guid>
+      <guid>https://taraskaduk.com/tags/stringr/</guid>
       <description></description>
     </item>
     

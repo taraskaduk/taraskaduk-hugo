@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Taras Kaduk</title>
-    <link>/categories/</link>
+    <link>https://taraskaduk.com/categories/</link>
     <description>Recent content in Categories on Taras Kaduk</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 22 Jan 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://taraskaduk.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Analytics</title>
-      <link>/categories/analytics/</link>
+      <link>https://taraskaduk.com/categories/analytics/</link>
       <pubDate>Mon, 22 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/categories/analytics/</guid>
+      <guid>https://taraskaduk.com/categories/analytics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Data Science</title>
-      <link>/categories/data-science/</link>
+      <link>https://taraskaduk.com/categories/data-science/</link>
       <pubDate>Mon, 22 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/categories/data-science/</guid>
+      <guid>https://taraskaduk.com/categories/data-science/</guid>
       <description></description>
     </item>
     
     <item>
       <title>R</title>
-      <link>/categories/r/</link>
+      <link>https://taraskaduk.com/categories/r/</link>
       <pubDate>Sat, 13 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/categories/r/</guid>
+      <guid>https://taraskaduk.com/categories/r/</guid>
       <description></description>
     </item>
     

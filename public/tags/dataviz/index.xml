@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Dataviz on Taras Kaduk</title>
-    <link>/tags/dataviz/</link>
+    <link>https://taraskaduk.com/tags/dataviz/</link>
     <description>Recent content in Dataviz on Taras Kaduk</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 10 Jan 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/dataviz/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://taraskaduk.com/tags/dataviz/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>When your data analysis is validated on The Late Show with Stephen Colbert</title>
-      <link>/post/2017-09-mpaa/mpaa-damon/</link>
+      <link>https://taraskaduk.com/post/2017-09-mpaa/mpaa-damon/</link>
       <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/2017-09-mpaa/mpaa-damon/</guid>
+      <guid>https://taraskaduk.com/post/2017-09-mpaa/mpaa-damon/</guid>
       <description>Originally published on Medium on Dec 13, 2017: Original post
 About a month ago, I wrote a little article about the MPAA rating system. I set up to find out if their lettering system does any justice to the actual content seen on the screen. Briefly speaking, it does, but with caveats.
 One of such caveats was the effect of profanity. What my quick and dirty data analysis showed was that profanity was the sure thing that could send a movie into an R category:</description>
@@ -24,10 +24,10 @@ One of such caveats was the effect of profanity. What my quick and dirty data an
     
     <item>
       <title>Do MPAA movie ratings mean anything?</title>
-      <link>/post/2017-09-mpaa/mpaa/</link>
+      <link>https://taraskaduk.com/post/2017-09-mpaa/mpaa/</link>
       <pubDate>Sat, 30 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/2017-09-mpaa/mpaa/</guid>
+      <guid>https://taraskaduk.com/post/2017-09-mpaa/mpaa/</guid>
       <description>Intro Being a parent in modern days is lots of fun. Not only all of us are pretty much winging it, not having any idea what we’re doing (seriously, you need a license to do braids and nails, yet raising a human being a future member of society is a no-brainer, right?) — we are also constantly being watched and judged by other parents.
 When it comes to watching movies with our six-year-old son, we don’t have a strict set of rules.</description>
     </item>
