@@ -6,8 +6,7 @@ featured: "fraud.gif"
 featuredpath: "/post/2018-01-impostor"
 slug: impostor
 categories:
-  - Analytics
-  - Data Science
+  - Insights
 tags:
   - analytics
   - business intelligence
@@ -15,7 +14,7 @@ tags:
   - learning
 ---
 
-*Originally posted on Medium on Jan 21, 2018: https://medium.com/taras-kaduk/imposterism-in-data-science-f96c29ae96ce *
+*Cross-posted: [**Medium**](https://medium.com/taras-kaduk/imposterism-in-data-science-f96c29ae96ce) *
 
 We happen to talk a lot about the impostor syndrome these days. No wonder — it seems to be an important subject. But what is it? That feeling of faking it while others *clearly* know what’s they’re doing.
 

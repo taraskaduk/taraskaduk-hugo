@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Learning on Taras Kaduk</title>
-    <link>https://taraskaduk.com/tags/learning/</link>
+    <link>/tags/learning/</link>
     <description>Recent content in Learning on Taras Kaduk</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 22 Jan 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://taraskaduk.com/tags/learning/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/learning/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Imposterism in Data Science: Addressing the credentials problem</title>
-      <link>https://taraskaduk.com/post/2018-01-impostor/impostor/</link>
+      <link>/post/2018-01-impostor/impostor/</link>
       <pubDate>Mon, 22 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://taraskaduk.com/post/2018-01-impostor/impostor/</guid>
-      <description>Originally posted on Medium on Jan 21, 2018: https://medium.com/taras-kaduk/imposterism-in-data-science-f96c29ae96ce 
+      <guid>/post/2018-01-impostor/impostor/</guid>
+      <description>Cross-posted: Medium 
 We happen to talk a lot about the impostor syndrome these days. No wonder — it seems to be an important subject. But what is it? That feeling of faking it while others clearly know what’s they’re doing.
-Many attempts have been made to clarify the issue. Explaining that it is OK, that we all feel that way going through life.</description>
+Many attempts have been made to clarify the issue. Explaining that it is OK, that we all feel that way going through life. Et cetera et cetera. Some advice has gone as far as making the impostor syndrome a badge of honor.</description>
     </item>
     
   </channel>

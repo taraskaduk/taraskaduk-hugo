@@ -7,11 +7,13 @@ featured: "map_full.jpg"
 featuredpath: "/post/2017-11-pixel-maps"
 categories:
   - R
+  - Data Visualization
 tags:
   - ggplot
   - ggmap
-  - geo
+  - geospatial
   - maps
+  - r
 cover:
         image: /images/map_wide.png
         style: full
@@ -20,6 +22,8 @@ cover:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(warning = FALSE, message=FALSE, engine = 'R')
 ```
+
+*Cross-posted: [**Medium**](https://medium.com/taras-kaduk/r-walkthrough-create-a-pixel-map-537ce12c2f0c)*
 
 Today, I'm going to show you how to make pixel maps in R. Why pixel maps? Because they look awesome!
 

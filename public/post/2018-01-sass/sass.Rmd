@@ -6,14 +6,14 @@ slug: sass
 featured: "platespinner.png"
 featuredpath: "/post/2018-01-sass/"
 categories:
-  - Analytics
+  - Insights
 tags:
   - analytics
   - business intelligence
   - sass
 ---
 
-*Originally published on Medium: [https://medium.com/taras-kaduk/on-importance-of-minimalism-in-retrospective-analytics-75c5a02c2c83](https://medium.com/taras-kaduk/on-importance-of-minimalism-in-retrospective-analytics-75c5a02c2c83)*
+*Cross-posted: [**Medium**](https://medium.com/taras-kaduk/on-importance-of-minimalism-in-retrospective-analytics-75c5a02c2c83), [**LinkedIn**](https://www.linkedin.com/pulse/importance-minimalism-retrospective-analytics-taras-kaduk-1/) *
 
 
 Hey, analyst, how is life? Talk to me. Do you love what you do for life, do you like all things data?

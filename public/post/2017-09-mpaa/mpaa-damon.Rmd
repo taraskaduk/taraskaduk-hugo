@@ -7,9 +7,13 @@ featuredpath: "/post/2017-09-mpaa/mpaa_files/figure-html"
 slug: mpaa-damon
 categories:
   - R
+  - Data Journalism
+  - Data Visualization
 tags:
   - movies
-  - dataviz
+  - data visualization
+  - data journalism
+  
 ---
 
 ```{r echo=FALSE}
@@ -17,7 +21,7 @@ library(knitr)
 read_chunk('mpaa.Rmd', labels = 'good_will_hunting')
 ```
 
-*Originally published on [Medium](https://medium.com/taras-kaduk) on Dec 13, 2017: [Original post](https://medium.com/taras-kaduk/when-your-data-analysis-is-validated-on-the-late-show-with-stephen-colbert-b7cd6ca37147)*
+*Cross-posted: [**Medium**](https://medium.com/taras-kaduk/when-your-data-analysis-is-validated-on-the-late-show-with-stephen-colbert-b7cd6ca37147)*
 
 ---
 

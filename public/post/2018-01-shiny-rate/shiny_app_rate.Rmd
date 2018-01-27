@@ -8,10 +8,14 @@ date: '2018-01-13'
 slug: shiny_rate
 categories:
   - R
+  - Interactive
 tags:
   - shiny
+  - r
 ---
 ## *(One year after building it and forgetting it)*
+
+*Cross-posted: [**Medium**](https://medium.com/taras-kaduk/my-first-shiny-app-calculating-your-hourly-rate-as-a-consultant-97abe5296a37)*
 
 &nbsp;
 

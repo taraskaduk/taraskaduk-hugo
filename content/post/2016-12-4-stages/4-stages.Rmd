@@ -6,14 +6,14 @@ slug: 4-stages
 featured: "venn.png"
 featuredpath: "/post/2016-12-4-stages"
 categories:
-  - Analytics
+  - Insights
 tags:
   - analytics
   - business intelligence
   - gartner
 ---
 
-*Originally posted on Dec 14, 2016 on LinkedIn: https://www.linkedin.com/pulse/4-stages-data-analytics-maturity-challenging-gartners-taras-kaduk/ *
+*Cross-posted: [**LinkedIn**](https://www.linkedin.com/pulse/4-stages-data-analytics-maturity-challenging-gartners-taras-kaduk/), [**Medium**](https://medium.com/taras-kaduk/4-stages-of-data-analytics-maturity-challenging-gartners-model-590eb5ebe6d1) *
 
 If you happen to work in analytics, data science or business intelligence, you've probably seen one of the iterations of this Gartner's graph on stages of data analysis in a company:
 

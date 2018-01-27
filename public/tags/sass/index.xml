@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sass on Taras Kaduk</title>
-    <link>https://taraskaduk.com/tags/sass/</link>
+    <link>/tags/sass/</link>
     <description>Recent content in Sass on Taras Kaduk</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 12 Jan 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://taraskaduk.com/tags/sass/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/sass/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>On Importance of Minimalism in Retrospective Analytics</title>
-      <link>https://taraskaduk.com/post/2018-01-sass/sass/</link>
+      <link>/post/2018-01-sass/sass/</link>
       <pubDate>Fri, 12 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://taraskaduk.com/post/2018-01-sass/sass/</guid>
-      <description>Originally published on Medium: https://medium.com/taras-kaduk/on-importance-of-minimalism-in-retrospective-analytics-75c5a02c2c83
+      <guid>/post/2018-01-sass/sass/</guid>
+      <description>Cross-posted: Medium, LinkedIn 
 Hey, analyst, how is life? Talk to me. Do you love what you do for life, do you like all things data?
  Yet, do you sometimes feel like you’re a Sisyphus rolling a giant rock of data up the hill every day, only to see it go down with a racket in the evening (and you know what you’re going to do tomorrow)? Or, do you imagine yourself being a plate spinner at a circus, only instead of plates and poles you’ve got five dozen reports to spin, and instead of an entertained crowd you’ve got your co-workers, managers and senior executives watching your “performance” and asking to add more plates, and God forbid any one plate falls?</description>
     </item>

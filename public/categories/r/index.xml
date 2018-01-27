@@ -2,54 +2,57 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>R on Taras Kaduk</title>
-    <link>https://taraskaduk.com/categories/r/</link>
+    <link>/categories/r/</link>
     <description>Recent content in R on Taras Kaduk</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 13 Jan 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://taraskaduk.com/categories/r/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/r/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>My first shiny app: calculating your hourly rate as a consultant</title>
-      <link>https://taraskaduk.com/post/2018-01-shiny-rate/shiny_rate/</link>
+      <link>/post/2018-01-shiny-rate/shiny_rate/</link>
       <pubDate>Sat, 13 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://taraskaduk.com/post/2018-01-shiny-rate/shiny_rate/</guid>
-      <description>(One year after building it and forgetting it)    Is it just me, or is your hard drive also full of abandoned projects, ideas et cetera? I know I’m not alone.
+      <guid>/post/2018-01-shiny-rate/shiny_rate/</guid>
+      <description>(One year after building it and forgetting it) Cross-posted: Medium
+   Is it just me, or is your hard drive also full of abandoned projects, ideas et cetera? I know I’m not alone.
 Cleaning up my R folder the other day, I stumbled upon a file I hardly remember creating. It is was a Shiny app built to help one calculate the hourly rate of services, given a desired income and an amount of time working (billable hours in a day, days in a week, weeks in a year).</description>
     </item>
     
     <item>
       <title>When your data analysis is validated on The Late Show with Stephen Colbert</title>
-      <link>https://taraskaduk.com/post/2017-09-mpaa/mpaa-damon/</link>
+      <link>/post/2017-09-mpaa/mpaa-damon/</link>
       <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://taraskaduk.com/post/2017-09-mpaa/mpaa-damon/</guid>
-      <description>Originally published on Medium on Dec 13, 2017: Original post
+      <guid>/post/2017-09-mpaa/mpaa-damon/</guid>
+      <description>Cross-posted: Medium
 About a month ago, I wrote a little article about the MPAA rating system. I set up to find out if their lettering system does any justice to the actual content seen on the screen. Briefly speaking, it does, but with caveats.
 One of such caveats was the effect of profanity. What my quick and dirty data analysis showed was that profanity was the sure thing that could send a movie into an R category:</description>
     </item>
     
     <item>
       <title>Create World Pixel Maps in R</title>
-      <link>https://taraskaduk.com/post/2017-11-pixel-maps/pixel-maps/</link>
+      <link>/post/2017-11-pixel-maps/pixel-maps/</link>
       <pubDate>Sun, 26 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://taraskaduk.com/post/2017-11-pixel-maps/pixel-maps/</guid>
-      <description>Today, I’m going to show you how to make pixel maps in R. Why pixel maps? Because they look awesome!
+      <guid>/post/2017-11-pixel-maps/pixel-maps/</guid>
+      <description>Cross-posted: Medium
+Today, I’m going to show you how to make pixel maps in R. Why pixel maps? Because they look awesome!
 I was searching on the web for a while, but couldn’t find a good tutorial. Being stubborn as I am, I eventually figured out a way to get what I want. You know, if you torture your code enough, it might give you what you need.
 Setup First, of course, loading required packages.</description>
     </item>
     
     <item>
       <title>Do MPAA movie ratings mean anything?</title>
-      <link>https://taraskaduk.com/post/2017-09-mpaa/mpaa/</link>
+      <link>/post/2017-09-mpaa/mpaa/</link>
       <pubDate>Sat, 30 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://taraskaduk.com/post/2017-09-mpaa/mpaa/</guid>
-      <description>Intro Being a parent in modern days is lots of fun. Not only all of us are pretty much winging it, not having any idea what we’re doing (seriously, you need a license to do braids and nails, yet raising a human being a future member of society is a no-brainer, right?) — we are also constantly being watched and judged by other parents.
+      <guid>/post/2017-09-mpaa/mpaa/</guid>
+      <description>Cross-posted: Medium 
+Intro Being a parent in modern days is lots of fun. Not only all of us are pretty much winging it, not having any idea what we’re doing (seriously, you need a license to do braids and nails, yet raising a human being a future member of society is a no-brainer, right?) — we are also constantly being watched and judged by other parents.
 When it comes to watching movies with our six-year-old son, we don’t have a strict set of rules.</description>
     </item>
     

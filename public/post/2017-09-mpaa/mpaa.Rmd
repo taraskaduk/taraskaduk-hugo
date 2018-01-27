@@ -4,18 +4,27 @@ subtitle: "Using rvest, stringr, dplyr and ggplot2 to make sense of the movie da
 thumbnailImagePosition: left
 featured: "mpaa.jpeg"
 featuredpath: "/post/2017-09-mpaa"
-categories: ['R']
+categories:
+  - R
+  - Data Journalism
+  - Data Visualization
+  - Web Scraping
 author: "Taras Kaduk"
-tags: [
-    "rvest",
-    "ggplot",
-    "movies",
-    "dataviz",
-    "stringr"
-]
+tags:
+- rvest
+- ggplot
+- r
+- web scraping
+- movies
+- data visualization
+- data journalism
+- stringr
+
 date: 2017-09-30
 slug: mpaa
 ---
+
+*Cross-posted: [**Medium**](https://medium.com/taras-kaduk/do-mpaa-movie-ratings-mean-anything-1d1ab683f21d) *
 
 # Intro
 
