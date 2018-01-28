@@ -8,6 +8,11 @@ disqusShortname = "taraskaduk"
 googleAnalytics = ""
 pluralizeListTitles = false
 
+[permalinks]
+  post = "/:year/:month/:day/:slug/"
+
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$", "blogdown", "public", "README.md"]
+
 [params]
   # Sets the meta tag description
   description          = "HTML5 UP theme, Future Imperfect with some extra goodies, ported by Julio Pescador. Powered by Hugo"

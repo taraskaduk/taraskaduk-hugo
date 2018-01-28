@@ -13,10 +13,10 @@
     
     <item>
       <title>The 4 Stages of Data Analytics Maturity: Challenging the Gartner’s Model</title>
-      <link>/post/2016-12-4-stages/4-stages/</link>
+      <link>/2018/01/22/4-stages/</link>
       <pubDate>Mon, 22 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/2016-12-4-stages/4-stages/</guid>
+      <guid>/2018/01/22/4-stages/</guid>
       <description>Cross-posted: LinkedIn, Medium 
 If you happen to work in analytics, data science or business intelligence, you’ve probably seen one of the iterations of this Gartner’s graph on stages of data analysis in a company:
  The figure above shows various stages of analytics maturity, from “descriptive” to “prescriptive”. I’ve seen it so many times, it became an eyesore to me.

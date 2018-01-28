@@ -13,10 +13,10 @@
     
     <item>
       <title>Create World Pixel Maps in R</title>
-      <link>/post/2017-11-pixel-maps/pixel-maps/</link>
+      <link>/2017/11/26/pixel-maps/</link>
       <pubDate>Sun, 26 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/2017-11-pixel-maps/pixel-maps/</guid>
+      <guid>/2017/11/26/pixel-maps/</guid>
       <description>Cross-posted: Medium
 Today, I’m going to show you how to make pixel maps in R. Why pixel maps? Because they look awesome!
 I was searching on the web for a while, but couldn’t find a good tutorial. Being stubborn as I am, I eventually figured out a way to get what I want. You know, if you torture your code enough, it might give you what you need.
@@ -25,10 +25,10 @@ Setup First, of course, loading required packages.</description>
     
     <item>
       <title>Do MPAA movie ratings mean anything?</title>
-      <link>/post/2017-09-mpaa/mpaa/</link>
+      <link>/2017/09/30/mpaa/</link>
       <pubDate>Sat, 30 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/2017-09-mpaa/mpaa/</guid>
+      <guid>/2017/09/30/mpaa/</guid>
       <description>Cross-posted: Medium 
 Intro Being a parent in modern days is lots of fun. Not only all of us are pretty much winging it, not having any idea what we’re doing (seriously, you need a license to do braids and nails, yet raising a human being a future member of society is a no-brainer, right?) — we are also constantly being watched and judged by other parents.
 When it comes to watching movies with our six-year-old son, we don’t have a strict set of rules.</description>
