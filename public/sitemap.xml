@@ -1,222 +1,355 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
-  <url>
-    <loc>/page/cv/</loc>
-    <lastmod>2018-01-28T00:00:00+00:00</lastmod>
-  </url>
+    
+    
+    <url>
+    
+      <loc>/2018/01/22/impostor/</loc>
+      <lastmod>2018-01-22T00:00:00+00:00</lastmod>
+    </url>
+    
   
-  <url>
-    <loc>/2018/01/22/impostor/</loc>
-    <lastmod>2018-01-22T00:00:00+00:00</lastmod>
-  </url>
+    
+    
+    <url>
+    
+      <loc>/2018/01/22/4-stages/</loc>
+      <lastmod>2018-01-22T00:00:00+00:00</lastmod>
+    </url>
+    
   
-  <url>
-    <loc>/2018/01/22/4-stages/</loc>
-    <lastmod>2018-01-22T00:00:00+00:00</lastmod>
-  </url>
+    
+    
+    <url>
+    
+      <loc>/2018/01/13/shiny_rate/</loc>
+      <lastmod>2018-01-13T00:00:00+00:00</lastmod>
+    </url>
+    
   
-  <url>
-    <loc>/2018/01/13/shiny_rate/</loc>
-    <lastmod>2018-01-13T00:00:00+00:00</lastmod>
-  </url>
+    
+    
+    <url>
+    
+      <loc>/2018/01/12/sass/</loc>
+      <lastmod>2018-01-12T00:00:00+00:00</lastmod>
+    </url>
+    
   
-  <url>
-    <loc>/2018/01/12/sass/</loc>
-    <lastmod>2018-01-12T00:00:00+00:00</lastmod>
-  </url>
+    
+    
+    <url>
+    
+      <loc>/2018/01/10/mpaa-damon/</loc>
+      <lastmod>2018-01-10T00:00:00+00:00</lastmod>
+    </url>
+    
   
-  <url>
-    <loc>/2018/01/10/mpaa-damon/</loc>
-    <lastmod>2018-01-10T00:00:00+00:00</lastmod>
-  </url>
+    
+    
+    <url>
+    
+      <loc>/2017/11/26/pixel-maps/</loc>
+      <lastmod>2017-11-26T00:00:00+00:00</lastmod>
+    </url>
+    
   
-  <url>
-    <loc>/2017/11/26/pixel-maps/</loc>
-    <lastmod>2017-11-26T00:00:00+00:00</lastmod>
-  </url>
+    
+    
+    <url>
+    
+      <loc>/2017/09/30/mpaa/</loc>
+      <lastmod>2017-09-30T00:00:00+00:00</lastmod>
+    </url>
+    
   
-  <url>
-    <loc>/2017/09/30/mpaa/</loc>
-    <lastmod>2017-09-30T00:00:00+00:00</lastmod>
-  </url>
+    
+    
+    <url>
+    
+      <loc>/tags/analytics/</loc>
+      <lastmod>2018-01-22T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
   
-  <url>
-    <loc>/1/01/01/</loc>
-  </url>
+    
+    
+    <url>
+    
+      <loc>/tags/business-intelligence/</loc>
+      <lastmod>2018-01-22T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
   
-  <url>
-    <loc>/tags/analytics/</loc>
-    <lastmod>2018-01-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
+    
+    
+    <url>
+    
+      <loc>/categories/</loc>
+      <priority>0</priority>
+    </url>
+    
   
-  <url>
-    <loc>/tags/business-intelligence/</loc>
-    <lastmod>2018-01-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
+    
+    
+    <url>
+    
+      <loc>/tags/data-journalism/</loc>
+      <lastmod>2018-01-10T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
   
-  <url>
-    <loc>/categories/</loc>
-    <priority>0</priority>
-  </url>
+    
+    
+    <url>
+    
+      <loc>/categories/data-journalism/</loc>
+      <lastmod>2018-01-10T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
   
-  <url>
-    <loc>/categories/data-journalism/</loc>
-    <lastmod>2018-01-10T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
+    
+    
+    <url>
+    
+      <loc>/tags/data-science/</loc>
+      <lastmod>2018-01-22T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
   
-  <url>
-    <loc>/categories/data-visualization/</loc>
-    <lastmod>2018-01-10T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
+    
+    
+    <url>
+    
+      <loc>/tags/data-visualization/</loc>
+      <lastmod>2018-01-10T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
   
-  <url>
-    <loc>/tags/data-journalism/</loc>
-    <lastmod>2018-01-10T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
+    
+    
+    <url>
+    
+      <loc>/categories/data-visualization/</loc>
+      <lastmod>2018-01-10T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
   
-  <url>
-    <loc>/tags/data-science/</loc>
-    <lastmod>2018-01-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
+    
+    
+    <url>
+    
+      <loc>/tags/gartner/</loc>
+      <lastmod>2018-01-22T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
   
-  <url>
-    <loc>/tags/data-visualization/</loc>
-    <lastmod>2018-01-10T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
+    
+    
+    <url>
+    
+      <loc>/tags/geospatial/</loc>
+      <lastmod>2017-11-26T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
   
-  <url>
-    <loc>/tags/gartner/</loc>
-    <lastmod>2018-01-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
+    
+    
+    <url>
+    
+      <loc>/tags/ggmap/</loc>
+      <lastmod>2017-11-26T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
   
-  <url>
-    <loc>/tags/geospatial/</loc>
-    <lastmod>2017-11-26T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
+    
+    
+    <url>
+    
+      <loc>/tags/ggplot/</loc>
+      <lastmod>2017-11-26T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
   
-  <url>
-    <loc>/tags/ggmap/</loc>
-    <lastmod>2017-11-26T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
+    
+    
+    <url>
+    
+      <loc>/categories/insights/</loc>
+      <lastmod>2018-01-22T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
   
-  <url>
-    <loc>/tags/ggplot/</loc>
-    <lastmod>2017-11-26T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
+    
+    
+    <url>
+    
+      <loc>/categories/interactive/</loc>
+      <lastmod>2018-01-13T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
   
-  <url>
-    <loc>/categories/insights/</loc>
-    <lastmod>2018-01-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
+    
+    
+    <url>
+    
+      <loc>/tags/learning/</loc>
+      <lastmod>2018-01-22T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
   
-  <url>
-    <loc>/categories/interactive/</loc>
-    <lastmod>2018-01-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
+    
+    
+    <url>
+    
+      <loc>/tags/maps/</loc>
+      <lastmod>2017-11-26T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
   
-  <url>
-    <loc>/tags/learning/</loc>
-    <lastmod>2018-01-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
+    
+    
+    <url>
+    
+      <loc>/tags/movies/</loc>
+      <lastmod>2018-01-10T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
   
-  <url>
-    <loc>/tags/maps/</loc>
-    <lastmod>2017-11-26T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
+    
+    
+    <url>
+    
+      <loc>/post/</loc>
+      <lastmod>2018-01-22T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
   
-  <url>
-    <loc>/tags/movies/</loc>
-    <lastmod>2018-01-10T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
+    
+    
+    <url>
+    
+      <loc>/publication_types/</loc>
+      <priority>0</priority>
+    </url>
+    
   
-  <url>
-    <loc>/page/</loc>
-    <lastmod>2018-01-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
+    
+    
+    <url>
+    
+      <loc>/tags/r/</loc>
+      <lastmod>2018-01-13T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
   
-  <url>
-    <loc>/post/</loc>
-    <lastmod>2018-01-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
+    
+    
+    <url>
+    
+      <loc>/categories/r/</loc>
+      <lastmod>2018-01-13T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
   
-  <url>
-    <loc>/tags/r/</loc>
-    <lastmod>2018-01-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
+    
+    
+    <url>
+    
+      <loc>/tags/rvest/</loc>
+      <lastmod>2017-09-30T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
   
-  <url>
-    <loc>/categories/r/</loc>
-    <lastmod>2018-01-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
+    
+    
+    <url>
+    
+      <loc>/tags/sass/</loc>
+      <lastmod>2018-01-12T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
   
-  <url>
-    <loc>/tags/rvest/</loc>
-    <lastmod>2017-09-30T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
+    
+    
+    <url>
+    
+      <loc>/tags/shiny/</loc>
+      <lastmod>2018-01-13T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
   
-  <url>
-    <loc>/tags/sass/</loc>
-    <lastmod>2018-01-12T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
+    
+    
+    <url>
+    
+      <loc>/tags/stringr/</loc>
+      <lastmod>2017-09-30T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
   
-  <url>
-    <loc>/tags/shiny/</loc>
-    <lastmod>2018-01-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
+    
+    
+    <url>
+    
+      <loc>/tags/</loc>
+      <lastmod>2018-01-22T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
   
-  <url>
-    <loc>/tags/stringr/</loc>
-    <lastmod>2017-09-30T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
+    
+    
+    <url>
+    
+      <loc>/</loc>
+      <lastmod>2017-10-15T00:00:00-04:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
   
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2018-01-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
+    
+    
+    <url>
+    
+      <loc>/tags/web-scraping/</loc>
+      <lastmod>2017-09-30T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
   
-  <url>
-    <loc>/</loc>
-    <lastmod>2018-01-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/web-scraping/</loc>
-    <lastmod>2017-09-30T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/web-scraping/</loc>
-    <lastmod>2017-09-30T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
+    
+    
+    <url>
+    
+      <loc>/categories/web-scraping/</loc>
+      <lastmod>2017-09-30T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
   
 </urlset>

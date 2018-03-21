@@ -1,650 +1,345 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
 
-<html>
-    <head>
-        
-            
-                <title>Do MPAA movie ratings mean anything?</title>
-            
-        
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.37.1" />
+  <meta name="author" content="Taras Kaduk">
 
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="generator" content="Hugo 0.32.3" />
-        
-
-
-        
-            <meta name="author" content="Taras Kaduk">
-        
-        
-            
-                <meta name="description" content="HTML5 UP theme, Future Imperfect with some extra goodies, ported by Julio Pescador. Powered by Hugo">
-            
-        
-
-        <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Do MPAA movie ratings mean anything?"/>
-<meta name="twitter:description" content="Cross-posted: Medium 
-Intro Being a parent in modern days is lots of fun. Not only all of us are pretty much winging it, not having any idea what we’re doing (seriously, you need a license to do braids and nails, yet raising a human being a future member of society is a no-brainer, right?) — we are also constantly being watched and judged by other parents.
-When it comes to watching movies with our six-year-old son, we don’t have a strict set of rules."/>
-<meta name="twitter:site" content="@taraskaduk"/>
-
-        <meta property="og:title" content="Do MPAA movie ratings mean anything?" />
-<meta property="og:description" content="Cross-posted: Medium 
-Intro Being a parent in modern days is lots of fun. Not only all of us are pretty much winging it, not having any idea what we’re doing (seriously, you need a license to do braids and nails, yet raising a human being a future member of society is a no-brainer, right?) — we are also constantly being watched and judged by other parents.
-When it comes to watching movies with our six-year-old son, we don’t have a strict set of rules." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/2017/09/30/mpaa/" />
-
-
-
-<meta property="article:published_time" content="2017-09-30T00:00:00&#43;00:00"/>
-
-<meta property="article:modified_time" content="2017-09-30T00:00:00&#43;00:00"/>
-
-
-
-
-
-
-
-
-
-
-
-        
-<meta itemprop="name" content="Do MPAA movie ratings mean anything?">
-<meta itemprop="description" content="Cross-posted: Medium 
+  
+  
+  
+  
+    
+      
+    
+  
+  <meta name="description" content="Cross-posted: Medium 
 Intro Being a parent in modern days is lots of fun. Not only all of us are pretty much winging it, not having any idea what we’re doing (seriously, you need a license to do braids and nails, yet raising a human being a future member of society is a no-brainer, right?) — we are also constantly being watched and judged by other parents.
 When it comes to watching movies with our six-year-old son, we don’t have a strict set of rules.">
 
+  
+  <link rel="alternate" hreflang="en-us" href="/2017/09/30/mpaa/">
 
-<meta itemprop="datePublished" content="2017-09-30T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2017-09-30T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="2485">
+  
 
 
+  
 
-<meta itemprop="keywords" content="rvest,ggplot,r,web scraping,movies,data visualization,data journalism,stringr," />
+  
+  
+  <meta name="theme-color" content="#0095eb">
+  
+  
+  
+  
+    
+  
+  
+    
+    
+      
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+      
+    
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.1/css/academicons.min.css" integrity="sha512-NThgw3XKQ1absAahW6to7Ey42uycrVvfNfyjqcFNgCmOCQ5AR4AO0SiXrN+8ZtYeappp56lk1WtvjVmEa+VR6A==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+  
+  
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700%7cRoboto:400,400italic,700%7cRoboto&#43;Mono">
+  
+  <link rel="stylesheet" href="/styles.css">
+  
 
-        
+  
 
-        
-            
-        
+  
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Taras Kaduk">
+  <link rel="feed" href="/index.xml" type="application/rss+xml" title="Taras Kaduk">
+  
 
-        
-        
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
-            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
-            <link rel="stylesheet" href="/css/main.css">
-            <link rel="stylesheet" href="/css/add-on.css">
-            <link rel="stylesheet" href="/css/academicons.min.css">
-        
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-        
-            
-                
-            
-        
+  <link rel="canonical" href="/2017/09/30/mpaa/">
+
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@/twitter.com/taraskaduk">
+  <meta property="twitter:creator" content="@/twitter.com/taraskaduk">
+  
+  <meta property="og:site_name" content="Taras Kaduk">
+  <meta property="og:url" content="/2017/09/30/mpaa/">
+  <meta property="og:title" content="Do MPAA movie ratings mean anything? | Taras Kaduk">
+  <meta property="og:description" content="Cross-posted: Medium 
+Intro Being a parent in modern days is lots of fun. Not only all of us are pretty much winging it, not having any idea what we’re doing (seriously, you need a license to do braids and nails, yet raising a human being a future member of society is a no-brainer, right?) — we are also constantly being watched and judged by other parents.
+When it comes to watching movies with our six-year-old son, we don’t have a strict set of rules."><meta property="og:image" content="/img/post/mpaa/mpaa_files/mpaa.jpg">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2017-09-30T00:00:00&#43;00:00">
+  
+  <meta property="article:modified_time" content="2017-09-30T00:00:00&#43;00:00">
+  
+
+  
+
+  <title>Do MPAA movie ratings mean anything? | Taras Kaduk</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#toc" data-offset="71" >
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+      <a class="navbar-brand" href="/"><img src="/img/icon.png" alt="Taras Kaduk"></a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
 
       
-    </head>
-    <body>
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#about">
+            
+            <span>Home</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#posts">
+            
+            <span>Posts</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#talks">
+            
+            <span>Talks</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#contact">
+            
+            <span>Contact</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#projects">
+            
+            <span>Projects</span>
+            
+          </a>
+        </li>
+
+        
+        
+      
 
       
-      <div id="wrapper">
-
-    
-    
-<header id="header">
-    
-      <h1><a href="/">post</a></h1>
-    
-
-    <nav class="links">
-        <ul>
-            
-                <li>
-                    <a href="/">
-                            <i class="fa fa-home">&nbsp;</i>Home
-                    </a>
-                </li>
-            
-                <li>
-                    <a href="/page/cv/">
-                            <i class="fa fa-id-card-o">&nbsp;</i>About
-                    </a>
-                </li>
-            
-                <li>
-                    <a href="/post/">
-                            <i class="fa fa-newspaper-o">&nbsp;</i>Blog
-                    </a>
-                </li>
-            
-                <li>
-                    <a href="/page/">
-                            <i class="fa fa-list">&nbsp;</i>Pages
-                    </a>
-                </li>
-            
-                <li>
-                    <a href="/categories/">
-                            <i class="fa fa-sitemap">&nbsp;</i>Categories
-                    </a>
-                </li>
-            
-                <li>
-                    <a href="/page/cv/">
-                            <i class="fa fa-envelope-o">&nbsp;</i>Contact
-                    </a>
-                </li>
-            
-        </ul>
-    </nav>
-    <nav class="main">
-        <ul>
-            
-            <li id="share-nav" class="share-menu" style="display:none;">
-                <a class="fa-share-alt" href="#share-menu">Share</a>
-            </li>
-            
-            <li class="search">
-                <a class="fa-search" href="#search">Search</a>
-                <form id="search" method="get" action="//google.com/search">
-                    <input type="text" name="q" placeholder="Search" />
-                    <input type="hidden" name="as_sitesearch" value="/">
-                </form>
-            </li>
-            <li class="menu">
-                <a class="fa-bars" href="#menu">Menu</a>
-            </li>
-        </ul>
-    </nav>
-</header>
-
-
-<section id="menu">
-
-    
-        <section>
-            <form class="search" method="get" action="//google.com/search">
-                <input type="text" name="q" placeholder="Search" />
-                <input type="hidden" name="as_sitesearch" value="/">
-            </form>
-        </section>
-
-    
-        <section>
-            <ul class="links">
-                
-                    <li>
-                        <a href="/">
-                            <h3>
-                                <i class="fa fa-home">&nbsp;</i>Home
-                            </h3>
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="/page/cv/">
-                            <h3>
-                                <i class="fa fa-id-card-o">&nbsp;</i>About
-                            </h3>
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="/post/">
-                            <h3>
-                                <i class="fa fa-newspaper-o">&nbsp;</i>Blog
-                            </h3>
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="/page/">
-                            <h3>
-                                <i class="fa fa-list">&nbsp;</i>Pages
-                            </h3>
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="/categories/">
-                            <h3>
-                                <i class="fa fa-sitemap">&nbsp;</i>Categories
-                            </h3>
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="/page/cv/">
-                            <h3>
-                                <i class="fa fa-envelope-o">&nbsp;</i>Contact
-                            </h3>
-                        </a>
-                    </li>
-                
-            </ul>
-        </section>
-
-    
-        <section id="recent-posts">
-            <div class="mini-posts">
-                <header>
-                    <h3>Recent Posts</h3>
-                </header>
-                
-
-                
-                    
-                
-
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/2018/01/22/impostor/">Imposterism in Data Science: Addressing the credentials problem</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2018-01-22'>
-                                    January 22, 2018</time>
-                            </header>
-                            
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-
-
-        
-        
-        
-
-        <a href="/2018/01/22/impostor/" class="image featured">
-            <img src="/post/2018-01-impostor/fraud.gif" alt="">
-        </a>
-    
-
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/2018/01/22/4-stages/">The 4 Stages of Data Analytics Maturity: Challenging the Gartner’s Model</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2018-01-22'>
-                                    January 22, 2018</time>
-                            </header>
-                            
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-
-
-        
-        
-        
-
-        <a href="/2018/01/22/4-stages/" class="image featured">
-            <img src="/post/2016-12-4-stages/venn.png" alt="">
-        </a>
-    
-
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/2018/01/13/shiny_rate/">My first shiny app: calculating your hourly rate as a consultant</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2018-01-13'>
-                                    January 13, 2018</time>
-                            </header>
-                            
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-
-
-        
-        
-        
-
-        <a href="/2018/01/13/shiny_rate/" class="image featured">
-            <img src="/post/2018-01-shiny-rate/shiny_rate.gif" alt="">
-        </a>
-    
-
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/2018/01/12/sass/">On Importance of Minimalism in Retrospective Analytics</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2018-01-12'>
-                                    January 12, 2018</time>
-                            </header>
-                            
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-
-
-        
-        
-        
-
-        <a href="/2018/01/12/sass/" class="image featured">
-            <img src="/post/2018-01-sass//platespinner.png" alt="">
-        </a>
-    
-
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/2018/01/10/mpaa-damon/">When your data analysis is validated on The Late Show with Stephen Colbert</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2018-01-10'>
-                                    January 10, 2018</time>
-                            </header>
-                            
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-
-
-        
-        
-        
-
-        <a href="/2018/01/10/mpaa-damon/" class="image featured">
-            <img src="/post/2017-09-mpaa/mpaa_files/figure-html/good_will_hunting-1.png" alt="">
-        </a>
-    
-
-
-                        </article>
-                
-
-                
-                    <a href=
-                        
-                            /post/
-                        
-                        class="button">View more posts</a>
-                
-            </div>
-        </section>
-
-    
-        
-</section>
-
-    <section id="share-menu">
-    <section id="social-share-nav">
-        <ul class="links">
-            <header>
-                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
-            </header>
-            
-
-
-<li>
-  <a href="//twitter.com/share?url=%2f2017%2f09%2f30%2fmpaa%2f&text=Do%20MPAA%20movie%20ratings%20mean%20anything%3f&via=taraskaduk" target="_blank" class="share-btn twitter">
-    <i class="fa fa-twitter"></i>
-    <p>Twitter</p>
-    </a>
-</li>
-
-
-<li>
-  <a href="//plus.google.com/share?url=%2f2017%2f09%2f30%2fmpaa%2f" target="_blank" class="share-btn google-plus">
-    <i class="fa fa-google-plus"></i>
-    <p>Google+</p>
-  </a>
-</li>
-
-
-<li>
-  <a href="//www.facebook.com/sharer/sharer.php?u=%2f2017%2f09%2f30%2fmpaa%2f" target="_blank" class="share-btn facebook">
-    <i class="fa fa-facebook"></i>
-    <p>Facebook</p>
-    </a>
-</li>
-
-
-<li>
-  <a href="//reddit.com/submit?url=%2f2017%2f09%2f30%2fmpaa%2f&title=Do%20MPAA%20movie%20ratings%20mean%20anything%3f" target="_blank" class="share-btn reddit">
-    <i class="fa fa-reddit-alien"></i>
-    <p>Reddit</p>
-  </a>
-</li>
-
-
-<li>
-  <a href="//www.linkedin.com/shareArticle?url=%2f2017%2f09%2f30%2fmpaa%2f&title=Do%20MPAA%20movie%20ratings%20mean%20anything%3f" target="_blank" class="share-btn linkedin">
-      <i class="fa fa-linkedin"></i>
-      <p>LinkedIn</p>
-    </a>
-</li>
-
-
-<li>
-  <a href="//www.stumbleupon.com/submit?url=%2f2017%2f09%2f30%2fmpaa%2f&title=Do%20MPAA%20movie%20ratings%20mean%20anything%3f" target="_blank" class="share-btn stumbleupon">
-    <i class="fa fa-stumbleupon"></i>
-    <p>StumbleUpon</p>
-  </a>
-</li>
-
-
-<li>
-  <a href="//www.pinterest.com/pin/create/button/?url=%2f2017%2f09%2f30%2fmpaa%2f&description=Do%20MPAA%20movie%20ratings%20mean%20anything%3f" target="_blank" class="share-btn pinterest">
-    <i class="fa fa-pinterest-p"></i>
-    <p>Pinterest</p>
-  </a>
-</li>
-
-
-<li>
-  <a href="mailto:?subject=Check out this post by Taras%20Kaduk&body=%2f2017%2f09%2f30%2fmpaa%2f" target="_blank" class="share-btn email">
-    <i class="fa fa-envelope"></i>
-    <p>Email</p>
-  </a>
-</li>
-
-        </ul>
-    </section>
-</section>
-
-    
-    <div id="main">
-        
-        
-        <article class="post">
-  <header>
-    <div class="title">
-        
-            <h1><a href="/2017/09/30/mpaa/">Do MPAA movie ratings mean anything?</a></h1>
-            
-        
-        
-    </div>
-    <div class="meta">
-        
-
-        <time class="published"
-            datetime='2017-09-30'>
-            September 30, 2017</time>
-        <span class="author">Taras Kaduk</span>
-        
-            <p>12 minute read</p>
-        
-        
-    </div>
-</header>
-
-
-  
-    <section id="social-share">
-      <ul class="icons">
-        
-
-
-<li>
-  <a href="//twitter.com/share?url=%2f2017%2f09%2f30%2fmpaa%2f&text=Do%20MPAA%20movie%20ratings%20mean%20anything%3f&via=taraskaduk" target="_blank" class="share-btn twitter">
-    <i class="fa fa-twitter"></i>
-    <p>Twitter</p>
-    </a>
-</li>
-
-
-<li>
-  <a href="//plus.google.com/share?url=%2f2017%2f09%2f30%2fmpaa%2f" target="_blank" class="share-btn google-plus">
-    <i class="fa fa-google-plus"></i>
-    <p>Google+</p>
-  </a>
-</li>
-
-
-<li>
-  <a href="//www.facebook.com/sharer/sharer.php?u=%2f2017%2f09%2f30%2fmpaa%2f" target="_blank" class="share-btn facebook">
-    <i class="fa fa-facebook"></i>
-    <p>Facebook</p>
-    </a>
-</li>
-
-
-<li>
-  <a href="//reddit.com/submit?url=%2f2017%2f09%2f30%2fmpaa%2f&title=Do%20MPAA%20movie%20ratings%20mean%20anything%3f" target="_blank" class="share-btn reddit">
-    <i class="fa fa-reddit-alien"></i>
-    <p>Reddit</p>
-  </a>
-</li>
-
-
-<li>
-  <a href="//www.linkedin.com/shareArticle?url=%2f2017%2f09%2f30%2fmpaa%2f&title=Do%20MPAA%20movie%20ratings%20mean%20anything%3f" target="_blank" class="share-btn linkedin">
-      <i class="fa fa-linkedin"></i>
-      <p>LinkedIn</p>
-    </a>
-</li>
-
-
-<li>
-  <a href="//www.stumbleupon.com/submit?url=%2f2017%2f09%2f30%2fmpaa%2f&title=Do%20MPAA%20movie%20ratings%20mean%20anything%3f" target="_blank" class="share-btn stumbleupon">
-    <i class="fa fa-stumbleupon"></i>
-    <p>StumbleUpon</p>
-  </a>
-</li>
-
-
-<li>
-  <a href="//www.pinterest.com/pin/create/button/?url=%2f2017%2f09%2f30%2fmpaa%2f&description=Do%20MPAA%20movie%20ratings%20mean%20anything%3f" target="_blank" class="share-btn pinterest">
-    <i class="fa fa-pinterest-p"></i>
-    <p>Pinterest</p>
-  </a>
-</li>
-
-
-<li>
-  <a href="mailto:?subject=Check out this post by Taras%20Kaduk&body=%2f2017%2f09%2f30%2fmpaa%2f" target="_blank" class="share-btn email">
-    <i class="fa fa-envelope"></i>
-    <p>Email</p>
-  </a>
-</li>
-
       </ul>
-    </section>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+<div class="article-header">
+  
+  
+    <img src="/post/mpaa/mpaa_files/mpaa.jpg" class="article-banner" itemprop="image">
   
 
   
-    
+</div>
+
+
+
+  <div class="article-container">
+    <h1 itemprop="name">Do MPAA movie ratings mean anything?</h1>
 
     
-        
-        
 
+<div class="article-metadata">
 
+  <span class="article-date">
+    
+    <time datetime="2017-09-30 00:00:00 &#43;0000 UTC" itemprop="datePublished dateModified">
+      Sep 30, 2017
+    </time>
+  </span>
+  <span itemscope itemprop="author publisher" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Taras Kaduk">
+  </span>
 
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    12 min read
+  </span>
+  
 
+  
+  
 
+  
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fa fa-folder"></i>
+    
+    <a href="/categories/r">R</a
+    >, 
+    
+    <a href="/categories/data-journalism">Data Journalism</a
+    >, 
+    
+    <a href="/categories/data-visualization">Data Visualization</a
+    >, 
+    
+    <a href="/categories/web-scraping">Web Scraping</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Do%20MPAA%20movie%20ratings%20mean%20anything%3f&amp;url=%2f2017%2f09%2f30%2fmpaa%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=%2f2017%2f09%2f30%2fmpaa%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2f2017%2f09%2f30%2fmpaa%2f&amp;title=Do%20MPAA%20movie%20ratings%20mean%20anything%3f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=%2f2017%2f09%2f30%2fmpaa%2f&amp;title=Do%20MPAA%20movie%20ratings%20mean%20anything%3f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Do%20MPAA%20movie%20ratings%20mean%20anything%3f&amp;body=%2f2017%2f09%2f30%2fmpaa%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
 
 
   
 
-
-        
-        
-        
-
-        <a href="/2017/09/30/mpaa/" class="image featured">
-            <img src="/post/2017-09-mpaa/mpaa.jpeg" alt="">
-        </a>
-    
+</div>
 
 
-  <div id="content">
-    <p><em>Cross-posted: <a href="https://medium.com/taras-kaduk/do-mpaa-movie-ratings-mean-anything-1d1ab683f21d"><strong>Medium</strong></a> </em></p>
+    <div class="article-style" itemprop="articleBody">
+      <p><em>Cross-posted: <a href="https://medium.com/taras-kaduk/do-mpaa-movie-ratings-mean-anything-1d1ab683f21d"><strong>Medium</strong></a> </em></p>
 <div id="intro" class="section level1">
 <h1>Intro</h1>
 <p>Being a parent in modern days is lots of fun. Not only all of us are pretty much winging it, not having any idea what we’re doing <em>(seriously, you need a license to do braids and nails, yet raising a human being a future member of society is a no-brainer, right?)</em>  — we are also constantly being watched and judged by other parents.</p>
@@ -821,7 +516,7 @@ ggplot(data = movies_df, aes(x=avg, y = mpaa, col = mpaa)) +
     subtitle = &#39;Visualizing the amount of overlap between categories&#39;,
     caption = caption) +
   theme</code></pre>
-<p><img src="/post/2017-09-mpaa/mpaa_files/figure-html/mpaa-1.png" width="672" /></p>
+<p><img src="/post/mpaa/mpaa_files/figure-html/mpaa-1.png" width="672" /></p>
 </div>
 <div id="mpaa-is-most-forgiving-on-violence" class="section level3">
 <h3>MPAA is most forgiving on violence</h3>
@@ -852,7 +547,7 @@ ggplot(data = movies_df %&gt;% filter(mpaa %in% c(&#39;PG&#39;, &#39;G&#39;)), a
     title = &#39;That G movie you felt safe about&#39;,
     subtitle = &#39;is probably just as violent as the PG one you rejected&#39;,
     caption = caption)</code></pre>
-<p><img src="/post/2017-09-mpaa/mpaa_files/figure-html/violence-1.png" width="672" /></p>
+<p><img src="/post/mpaa/mpaa_files/figure-html/violence-1.png" width="672" /></p>
 </div>
 <div id="what-the-is-up-with-profanity" class="section level3">
 <h3>What the **** is up with profanity?</h3>
@@ -888,7 +583,7 @@ ggplot(data = movies_df, aes(x=as.factor(profanity), y = mpaa, col = mpaa)) +
     title = &#39;Profanity rating patterns across MPAA categories&#39;,
     caption = caption) +
   theme</code></pre>
-<p><img src="/post/2017-09-mpaa/mpaa_files/figure-html/profanity-1.png" width="672" /></p>
+<p><img src="/post/mpaa/mpaa_files/figure-html/profanity-1.png" width="672" /></p>
 <p>Looking at R &amp; NC-17 section, it is tempting to dive in a bit more. Let’s go!</p>
 <pre class="r"><code>labels_r &lt;- movies_gather %&gt;% 
   filter(metric != &#39;avg&#39;) %&gt;% 
@@ -937,7 +632,7 @@ ggplot(
     title = &#39;R &amp; NC-17 Movies aren\&#39;t always violent or vulgar... \nbut they sure are profane&#39;,
     subtitle = &#39;Most R and NC-17 movies are 5 or more on a profanity scale&#39;,
     caption = caption)</code></pre>
-<p><img src="/post/2017-09-mpaa/mpaa_files/figure-html/profanity2-1.png" width="672" /></p>
+<p><img src="/post/mpaa/mpaa_files/figure-html/profanity2-1.png" width="672" /></p>
 <p>Indeed, movies in R &amp; NC-17 categories are widely distributed across violence and sex, but snuggle tightly in the upper section of profanity. Why is that? Looking at the data, we can tell that often profanity accompanies other “R” worthy content. However, it is not always the case, and correlation is relatively weak. <a id="quote">Good Will Hunting is neither violent nor sexually explicit, but it is profane AF, and, sure enough, is R rated for - wait for it - <em>“strong language, including some sex-related dialogue”.</em> </a> It could be just me (after all, I am a foreigner, and English words don’t carry the same connotation for me), but I think it is mighty unfair to Good Will Hunting to be rated R, especially knowing that Scary Movie, parts 3 through 5, are rated PG-13.</p>
 <pre class="r"><code>ggplot(
     data = movies_gather %&gt;% 
@@ -961,7 +656,7 @@ ggplot(
     title = &#39;Good Will Hunting, rated R&#39;,
     subtitle = &#39;For strong language, including some sex-related dialogue&#39;,
     caption = caption)</code></pre>
-<p><img src="/post/2017-09-mpaa/mpaa_files/figure-html/good_will_hunting-1.png" width="672" /></p>
+<p><img src="/post/mpaa/mpaa_files/figure-html/good_will_hunting-1.png" width="672" /></p>
 </div>
 </div>
 <div id="summary" class="section level1">
@@ -986,679 +681,130 @@ ggplot(
 </div>
 </div>
 
+    </div>
+
+    
+
+
+<div class="article-tags">
+  
+  <a class="btn btn-primary btn-outline" href="/tags/rvest">rvest</a>
+  
+  <a class="btn btn-primary btn-outline" href="/tags/ggplot">ggplot</a>
+  
+  <a class="btn btn-primary btn-outline" href="/tags/r">r</a>
+  
+  <a class="btn btn-primary btn-outline" href="/tags/web-scraping">web scraping</a>
+  
+  <a class="btn btn-primary btn-outline" href="/tags/movies">movies</a>
+  
+  <a class="btn btn-primary btn-outline" href="/tags/data-visualization">data visualization</a>
+  
+  <a class="btn btn-primary btn-outline" href="/tags/data-journalism">data journalism</a>
+  
+  <a class="btn btn-primary btn-outline" href="/tags/stringr">stringr</a>
+  
+</div>
+
+
+
+
+    
+    
+
+    
+
+    
+
+
   </div>
-
-  <footer>
-    <ul class="stats">
-  <li class="categories">
-    <ul>
-        
-            
-            
-                <i class="fa fa-folder"></i>
-                
-                
-                <li><a class="article-category-link" href="/categories/r">R</a></li>
-                
-                
-                <li><a class="article-category-link" href="/categories/data-journalism">Data Journalism</a></li>
-                
-                
-                <li><a class="article-category-link" href="/categories/data-visualization">Data Visualization</a></li>
-                
-                
-                <li><a class="article-category-link" href="/categories/web-scraping">Web Scraping</a></li>
-                
-            
-        
-    </ul>
-  </li>
-  <li class="tags">
-    <ul>
-        
-            
-            
-                <i class="fa fa-tags"></i>
-                
-                
-                <li><a class="article-category-link" href="/tags/rvest">rvest</a></li>
-                
-                
-                <li><a class="article-category-link" href="/tags/ggplot">ggplot</a></li>
-                
-                
-                <li><a class="article-category-link" href="/tags/r">r</a></li>
-                
-                
-                <li><a class="article-category-link" href="/tags/web-scraping">web scraping</a></li>
-                
-                
-                <li><a class="article-category-link" href="/tags/movies">movies</a></li>
-                
-                
-                <li><a class="article-category-link" href="/tags/data-visualization">data visualization</a></li>
-                
-                
-                <li><a class="article-category-link" href="/tags/data-journalism">data journalism</a></li>
-                
-                
-                <li><a class="article-category-link" href="/tags/stringr">stringr</a></li>
-                
-            
-        
-    </ul>
-  </li>
-</ul>
-
-  </footer>
-
 </article>
 
-    <article class="post">
-        <div id="disqus_thread"></div>
-<script>
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "taraskaduk" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    </article>
-
-
-<ul class="actions pagination">
-    
-        <li><a href="/1/01/01/"
-                class="button big previous"></a></li>
-    
-
-    
-        <li><a href="/2017/11/26/pixel-maps/"
-                class="button big next">Create World Pixel Maps in R</a></li>
-    
-</ul>
-
-
-    </div>
-    
-<section id="sidebar">
-
-  
-  <section id="intro">
-    
-    
-      
-        <a href='/'><img src="/images/favicon.png" width="" alt="" /></a>
-      
-    
-    
-      <header>
-        <h2>Taras Kaduk</h2>
-        <p>Good luck pronouncing my name right</p>
-      </header>
-    
-    
-      <ul class="icons">
-        
-          <li>
-            <a href="" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a>
-          </li>
-        
-        
-  <li><a href="//github.com/taraskaduk" target="_blank" title="GitHub" class="fa fa-github"></a></li>
-
-
-
-
-
-  <li><a href="//stackoverflow.com/users/5719631" target="_blank" title="Stack Overflow" class="fa fa-stack-overflow"></a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <li><a href="//medium.com/@taraskaduk" target="_blank" title="Medium" class="fa fa-medium"></a></li>
-
-
-
-  <li><a href="//linkedin.com/in/taraskaduk" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <li><a href="//instagram.com/taraskaduk" target="_blank" title="Instagram" class="fa fa-instagram"></a></li>
-
-
-
-
-
-  <li><a href="//twitter.com/taraskaduk" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <li><a href="mailto:contact@taraskaduk.com" title="Email" class="fa fa-envelope"></a></li>
-
-
-      </ul>
-    
-  </section>
-
-  
-  <section id="recent-posts">
-    <div class="mini-posts">
-      <header>
-        <h3>Recent Posts</h3>
-      </header>
-      <div class="posts-container">
-        
-
-        
-          
-        
-
-        
-          <article class="mini-post">
-            <header>
-              <h3>
-                <a href="/2018/01/22/impostor/">Imposterism in Data Science: Addressing the credentials problem</a>
-              </h3>
-              
-              <time class="published" datetime='2018-01-22'>
-                January 22, 2018
-              </time>
-            </header>
-            
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-
-
-        
-        
-        
-
-        <a href="/2018/01/22/impostor/" class="image featured">
-            <img src="/post/2018-01-impostor/fraud.gif" alt="">
-        </a>
-    
-
-
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <h3>
-                <a href="/2018/01/22/4-stages/">The 4 Stages of Data Analytics Maturity: Challenging the Gartner’s Model</a>
-              </h3>
-              
-              <time class="published" datetime='2018-01-22'>
-                January 22, 2018
-              </time>
-            </header>
-            
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-
-
-        
-        
-        
-
-        <a href="/2018/01/22/4-stages/" class="image featured">
-            <img src="/post/2016-12-4-stages/venn.png" alt="">
-        </a>
-    
-
-
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <h3>
-                <a href="/2018/01/13/shiny_rate/">My first shiny app: calculating your hourly rate as a consultant</a>
-              </h3>
-              
-              <time class="published" datetime='2018-01-13'>
-                January 13, 2018
-              </time>
-            </header>
-            
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-
-
-        
-        
-        
-
-        <a href="/2018/01/13/shiny_rate/" class="image featured">
-            <img src="/post/2018-01-shiny-rate/shiny_rate.gif" alt="">
-        </a>
-    
-
-
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <h3>
-                <a href="/2018/01/12/sass/">On Importance of Minimalism in Retrospective Analytics</a>
-              </h3>
-              
-              <time class="published" datetime='2018-01-12'>
-                January 12, 2018
-              </time>
-            </header>
-            
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-
-
-        
-        
-        
-
-        <a href="/2018/01/12/sass/" class="image featured">
-            <img src="/post/2018-01-sass//platespinner.png" alt="">
-        </a>
-    
-
-
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <h3>
-                <a href="/2018/01/10/mpaa-damon/">When your data analysis is validated on The Late Show with Stephen Colbert</a>
-              </h3>
-              
-              <time class="published" datetime='2018-01-10'>
-                January 10, 2018
-              </time>
-            </header>
-            
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-
-
-        
-        
-        
-
-        <a href="/2018/01/10/mpaa-damon/" class="image featured">
-            <img src="/post/2017-09-mpaa/mpaa_files/figure-html/good_will_hunting-1.png" alt="">
-        </a>
-    
-
-
-          </article>
-        
-      </div>
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
 
       
-        <a href=
-          
-            /post/
-          
-        class="button">View more posts</a>
-      
-    </div>
-  </section>
 
-  
-  
-  
-  
-    <section id="categories">
-      <header>
-        <h3>
-          <a href="/categories/">Categories</a>
-        </h3>
-      </header>
-        
-          
-        
+      Powered by the
+      <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+      <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
 
-        
-        <p>
-          <article>
-            <header>
-              
-                <a href="/categories/r/">R</a>
-                <span style="float:right;">4</span>
-              
-            </header>
-          </article>
-        </p>
-        
-        <p>
-          <article>
-            <header>
-              
-                <a href="/categories/data-visualization/">Data Visualization</a>
-                <span style="float:right;">3</span>
-              
-            </header>
-          </article>
-        </p>
-        
-        <p>
-          <article>
-            <header>
-              
-                <a href="/categories/insights/">Insights</a>
-                <span style="float:right;">3</span>
-              
-            </header>
-          </article>
-        </p>
-        
-        <p>
-          <article>
-            <header>
-              
-                <a href="/categories/data-journalism/">Data Journalism</a>
-                <span style="float:right;">2</span>
-              
-            </header>
-          </article>
-        </p>
-        
-        <p>
-          <article>
-            <header>
-              
-                <a href="/categories/interactive/">Interactive</a>
-                <span style="float:right;">1</span>
-              
-            </header>
-          </article>
-        </p>
-        
-        <p>
-          <article>
-            <header>
-              
-                <a href="/categories/web-scraping/">Web Scraping</a>
-                <span style="float:right;">1</span>
-              
-            </header>
-          </article>
-        </p>
-        
-    </section>
-  
-
-  
-  
-    <section id="mini-bio">
-      <h3>About</h1>
-      <p>I'll complete this later, I swear!</p>
-      <a href="/about/" class="button">Learn More</a>
-    </section>
-  
-
-  
-  <section id="footer">
-    
-      <ul class="icons">
-        
-          <li>
-            <a href="" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a>
-          </li>
-        
-        
-  <li><a href="//github.com/taraskaduk" target="_blank" title="GitHub" class="fa fa-github"></a></li>
-
-
-
-
-
-  <li><a href="//stackoverflow.com/users/5719631" target="_blank" title="Stack Overflow" class="fa fa-stack-overflow"></a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <li><a href="//medium.com/@taraskaduk" target="_blank" title="Medium" class="fa fa-medium"></a></li>
-
-
-
-  <li><a href="//linkedin.com/in/taraskaduk" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <li><a href="//instagram.com/taraskaduk" target="_blank" title="Instagram" class="fa fa-instagram"></a></li>
-
-
-
-
-
-  <li><a href="//twitter.com/taraskaduk" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <li><a href="mailto:contact@taraskaduk.com" title="Email" class="fa fa-envelope"></a></li>
-
-
-      </ul>
-    
-    <p class="copyright">
-      
-        &copy; 2018
-        
-          Taras Kaduk
-        
-      .
-      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
     </p>
-  </section>
-</section>
+  </div>
+</footer>
 
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close btn-large" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Cite</h4>
+      </div>
+      <div>
+        <pre><code class="modal-body tex"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-primary btn-outline js-copy-cite" href="#" target="_blank">
+          <i class="fa fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-primary btn-outline js-download-cite" href="#" target="_blank">
+          <i class="fa fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
     </div>
-    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+  </div>
+</div>
+
     
 
+    
+    
+
+    
+    <script async defer src="//maps.googleapis.com/maps/api/js?key="></script>
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.25/gmaps.min.js" integrity="sha256-7vjlAeb8OaTrCXZkCNun9djzuB2owUsaO72kXaFDBJs=" crossorigin="anonymous"></script>
+    
+    
+    <script src="/js/hugo-academic.js"></script>
+    
+
+    
     
       
-    
-
-    
-    
-      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
-      <script src="/js/util.js"></script>
-      <script src="/js/main.js"></script>
-      <script src="/js/backToTop.js"></script>
-    
-
-    
       
-        
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
       
+
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
     
 
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    
+
   </body>
 </html>
 

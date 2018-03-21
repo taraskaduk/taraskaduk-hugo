@@ -1,177 +1,279 @@
+# Configuration of Academic
+# Documentation: https://sourcethemes.com/academic/
+
 baseurl = "https://taraskaduk.com/"
-languageCode = "en-us"
 title = "Taras Kaduk"
-theme = "hugo-future-imperfect"
-preserveTaxonomyNames = true
-paginate = 5
-disqusShortname = "taraskaduk"
-googleAnalytics = ""
-pluralizeListTitles = false
 
 [permalinks]
-  post = "/:year/:month/:day/:slug/"
+    post = "/:year/:month/:day/:slug/"
 
-ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$", "blogdown", "public", "README.md"]
+# Your copyright notice - appears in site footer.
+# To display a copyright symbol, type `&copy;`.
+copyright = "&copy; 2018"
+
+theme = "hugo-academic"
+enableEmoji = true
+footnotereturnlinkcontents = "<sup>^</sup>"
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+preserveTaxonomyNames = true
+paginate = 10
+
+# Enable comments by entering your Disqus shortname
+disqusShortname = "taraskaduk"
+
+# Enable analytics by entering your Google Analytics tracking ID
+googleAnalytics = "UA-115954394-1"
+
+# Default language to use (if you setup multilingual support)
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+
+[outputs]
+  home = [ "HTML", "CSS", "RSS" ]
+  section = [ "HTML", "RSS" ]
+
+# Configure BlackFriday Markdown rendering.
+#   See: https://gohugo.io/readfiles/bfconfig/
+[blackfriday]
+  hrefTargetBlank = true  # `true` opens external links in a new tab.
+  fractions = true  # `false` disables smart fractions (e.g. 5/12 formatted as a fraction).
+  smartypants = true  # `false` disables all smart punctuation substitutions (e.g. smart quotes, dashes, fractions).
 
 [params]
-  # Sets the meta tag description
-  description          = "HTML5 UP theme, Future Imperfect with some extra goodies, ported by Julio Pescador. Powered by Hugo"
-  # Sets the navbarTitle that appears in the top left of the navigation bar
-  navbarTitle          = "Taras Kaduk"
-  # Sets where "View More Posts" links
-  viewMorePostLink     = "/post/"
+  # Color theme.
+  #   Choose from `default`, `ocean`, `forest`, `coffee`, `dark`, or `1950s`.
+  color_theme = "default"
 
-# Optional Params
-  # Sets navbarTitle to match the section of the website
-  dynamicTitles        = true
-  # Sets RSS icons to appear on the sidebar with the social media buttons
-  rssAppearAtTop       = true
-  rssAppearAtBottom    = true
-  # Sets Social Media icons to appear on the sidebar
-  socialAppearAtTop    = true
-  socialAppearAtBottom = true
-  # Sets Categories to sort by number of posts instead of alphabetical
-  categoriesByCount    = true
-  # Sets Estimated Reading Time to appear in post headers
-  includeReadingTime   = true
-  # Sets the Favicon and Version for the site. Default support is for
-  # apple-touch-icon-precomposed.png, favicon.png, favicon.ico, and mstile.png.
-  # These are stored in the favicon folder. See the following for more information:
-  # https://github.com/audreyr/favicon-cheat-sheet
-  loadFavicon          = false
-  faviconVersion       = ""
-  # Sets Social Share links to appear on posts
-  socialShare          = true
-  # Load custom CSS or JavaScript files. The variable is an array so that you
-  # can load multiple files if necessary. You can also load the standard theme
-  # files by adding the value, "default".
-  # customCSS            = ["default", "/path/to/file"]
-  # customJS             = ["default", "/path/to/file"]
-  customCSS            = ["default"]
-  customJS             = ["default"]
+  # Font style.
+  #   Choose from `default`, `classic`, or `playfair`.
+  font = "default"
 
-# Disqus will take priority over Staticman (github.com/eduardoboucas/staticman)
-# due to its ease of use. Feel free to check out both and decide what you would
-# prefer to use. See Staticman.yml for additional settings.
-[params.staticman]
-  # Sets Statiman to be active
-  staticman = false
-  # Sets the location for Staticman to connect to
-  username  = ""
-  repo      = ""
-  branch    = ""
+  # Your details.
+  name = "Taras Kaduk"
+  role = "I blog about things"
 
-  [params.staticman.recaptcha]
-    sitekey = "SITE_KEY"
-    secret  = "ENCRYPTED_SECRET"
+  # Organizations/Affiliations.
+  #   Separate multiple entries with a comma, using the form: `[ {name="Org1", url=""}, {name="Org2", url=""} ]`.
+  # organizations = [ { name = "Stanford University", url = "" } ]
 
-  # These are optional params related to the sidebar. They are recommended, but not
-  # required for proper functionality. HTML is supported within the params.
-[params.intro]
-  header    = "Taras Kaduk"
+  gravatar = false  # Get your avatar from Gravatar.com? (true/false)
+  avatar = "taras.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
+  email = "contact@taraskaduk.com"
+  address = "Jacksonville, FL 32207, USA"
+  # office_hours = "Monday 10:00 to 13:00 or email for appointment"
+  #phone = "888 888 88 88"
+  #skype = "echo123"
+  #telegram = ""
+  twitter = "@taraskaduk"
 
-  paragraph = "Good luck pronouncing my name right"
+  # Enable Keybase in Contact widget by entering your keybase.io username.
+  #keybase = ""
 
-  about     = "I'll complete this later, I swear!"
+  # Discussion link (e.g. link to a forum, mailing list, or chat).
+  #   Uncomment line below to use.
+  #   discussion = { name = "Discuss", url = "https://discourse.gohugo.io" }
 
-  # This appears at the top of the sidebar above params.intro.header.
-  # A width of less than 100px is recommended from a design perspective.
-  [params.intro.pic]
-    src       = "/images/favicon.png"
-    # Sets Image to be a cirlce
-    circle    = false
-    # Sets Image to be Future Imperfect's hexagon
-    imperfect = false
-    width     = ""
-    alt       = ""
+  # Diplay a logo in navigation bar rather than title (optional).
+  #   To enable, place an image in `static/img/` and reference its filename below. To disable, set the value to "".
+  logo = "icon.png"
 
-[params.postAmount]
-# Sets the number of recent posts to show in the sidebar. The default value is 5.
-    sidebar = 5
+  # Enable/disable map in Contact widget.
+  # To show your address on a map in the contact widget, you need to enter your latitude, longitude and choose
+  # a map provider below.
+  # To use Google Maps, set `map = 1` and enter your API key that can be obtained here:
+  #   https://developers.google.com/maps/documentation/javascript/get-api-key
+  # To use OpenStreetMap tiles, set `map = 2`.
+  # To use OpenStreetMap on a high traffic site, set `map = 3` and enter your API key that can be obtained here:
+  #   https://www.mapbox.com/studio/account/tokens
+  # To get your coordinates, right-click on Google Maps and choose "What's here?". The coords will show up at the bottom.
+  #
+  # Map provider:
+  #   0: No map
+  #   1: Google Maps
+  #   2: OpenStreetMap (Mapnik)
+  #   3: OpenStreetMap (Mapbox)
+  map = 1
+  map_api_key = ""
+  latitude = "30.3185853"
+  longitude = "-81.6619508"
+  zoom = 14
+  
 
-# Sets the menu items in the navigation bar
-# Identifier prepends a Font Awesome icon to the menu item
+  # Date and time format (refer to Go's date format: http://fuckinggodateformat.com )
+  #   Examples: "Mon, Jan 2, 2006" or "2006-01-02"
+  date_format = "Jan 2, 2006"
+  #   Examples: "3:04 pm" or "15:04"
+  time_format = "3:04 PM"
+
+  # Show estimated reading time for posts?
+  reading_time = true
+
+  # Display comment count? Requires commenting to be enabled.
+  comment_count = true
+
+  # Display next/previous section pager?
+  section_pager = false
+
+  # Enable global LaTeX math rendering?
+  #   If false, you can enable it locally on a per page basis.
+  math = false
+
+  # Highlight.js options
+  #   highlight
+  #     Enable global source code highlighting?  If false, you can
+  #     override it for a particular page in that page's preamble.
+  #
+  #     Example: highlight = true
+  #
+  #   highlight_languages
+  #     Add support for highlighting additional languages. Support for
+  #     languages mentioned here will be included in all pages. You
+  #     can also set this variable for a particular page in that
+  #     page's preamble.
+  #
+  #     Example: highlight_languages = ["go", "lisp", "ocaml"]
+  #
+  #   highlight_style
+  #     Choose a different CSS style for highlighting source
+  #     code. Setting this option in a page's preamble has no
+  #     effect.
+  #
+  #     Example: highlight_style = "github-gist"
+  #
+  #   For the list of supported languages and styles, see:
+  #   https://cdnjs.com/libraries/highlight.js/
+  #
+  #   For more info on the highlighting options, see:
+  #   https://sourcethemes.com/academic/post/writing-markdown-latex/#highlighting-options
+  highlight = true
+  highlight_languages = []
+  # highlight_style = "github"
+
+  # Enable native social sharing buttons?
+  sharing = true
+
+  # Link custom CSS and JS assets
+  #   (relative to /static/css and /static/js respectively)
+  custom_css = []
+  custom_js  = []
+
+  # Publication types.
+  #   Used to categorize publications.
+  #   The index of the publication type in the list is used as its unique numerical identifier.
+  #   The numeric ID is used in a publication's frontmatter to categorize it.
+  #   The language can be edited below.
+  #   For multilingual sites, `publication_types` can be copied to each language section at the end of this file and
+  #   translated.
+  publication_types = [
+    'Uncategorized',  # 0
+    'Blog post'  # 1
+  ]
+
+  # Configuration of talk pages.
+  [params.talks]
+    # Show talk time?
+    time = true
+
+  # Configuration of publication pages.
+  [params.publications]
+    # Date format (refer to Go's date format: http://fuckinggodateformat.com )
+    #   Examples: "Mon, Jan 2, 2006" or "2006-01-02"
+    date_format = "January, 2006"
+
+  # Configuration of project pages.
+  [params.projects]
+    # List publications and talks related to the project?
+    list_children = true
+
+    # Publication list format.
+    #   0 = Simple
+    #   1 = Detailed
+    #   2 = APA
+    #   3 = MLA
+    publication_format = 3
+
+  # Social/Academic Networking
+  #
+  # Icon pack "fa" includes the following social network icons:
+  #
+  #   twitter, weibo, linkedin, github, facebook, pinterest, google-plus,
+  #   youtube, instagram, soundcloud
+  #
+  #   For email icon, use "fa" icon pack, "envelope" icon, and
+  #   "mailto:your@email.com" as the link.
+  #
+  #   Full list: https://fortawesome.github.io/Font-Awesome/icons/
+  #
+  # Icon pack "ai" includes the following academic network icons:
+  #
+  #   google-scholar, arxiv, orcid, researchgate, mendeley
+  #
+  #   Full list: https://jpswalsh.github.io/academicons/
+
+  [[params.social]]
+    icon = "envelope"
+    icon_pack = "fa"
+    link = "mailto:contact@taraskaduk.com"
+
+  [[params.social]]
+    icon = "twitter"
+    icon_pack = "fa"
+    link = "/twitter.com/taraskaduk"
+
+  [[params.social]]
+    icon = "github"
+    icon_pack = "fa"
+    link = "/github.com/taraskaduk"
+    
+  [[params.social]]
+    icon = "linkedin"
+    icon_pack = "fa"
+    link = "/linkedin.com/taraskaduk"
+
+
+# Navigation Links
+#   To link a homepage widget, specify the URL as a hash `#` followed by the filename of the
+#     desired widget in your `content/home/` folder.
+#   The weight parameter defines the order that the links will appear in.
+[params.menus]
+  # Align the main menu to the right of the page? (true/false)
+  align_right = true
+
 [[menu.main]]
   name = "Home"
-  url = "/"
-  identifier = "fa fa-home"
+  url = "#about"
   weight = 1
 
 [[menu.main]]
-  name = "About"
-  url = "/page/cv/"
-  identifier = "fa fa-id-card-o"
+  name = "Posts"
+  url = "#posts"
   weight = 2
 
+
 [[menu.main]]
-  name = "Blog"
-  url = "/post/"
-  identifier = "fa fa-newspaper-o"
+  name = "Talks"
+  url = "#talks"
   weight = 3
 
 [[menu.main]]
-  name = "Pages"
-  url = "/page/"
-  identifier = "fa fa-list"
+  name = "Contact"
+  url = "#contact"
   weight = 4
 
 [[menu.main]]
-  name = "Categories"
-  url = "/categories/"
-  identifier = "fa fa-sitemap"
+  name = "Projects"
+  url = "#projects"
   weight = 5
 
-[[menu.main]]
-  name = "Contact"
-  url = "/page/cv/"
-  identifier = "fa fa-envelope-o"
-  weight = 6
+# Taxonomies.
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  publication_type = "publication_types"
 
-# Sets Social Media icons to appear and link to your account. Value should be your
-# username unless otherwise noted. These are the icons affected by socialAppearAtTop
-# and socialAppearAtBottom.
-[social]
-  # Coding Communities
-  github          = "taraskaduk"
-  #gitlab          = ""
-  stackoverflow   = "5719631" # User Number
-  #bitbucket       = ""
-  #jsfiddle        = ""
-  #codepen         = ""
-  # Visual Art Communities
-  #deviantart      = ""
-  #flickr          = "example"
- # behance         = ""
-  #dribbble        = ""
-  # Publishing Communities
-  #wordpress       = ""
-  medium          = "taraskaduk"
-  # Professional/Business Oriented Communities
-  linkedin        = "taraskaduk"
- # foursquare      = ""
- # xing            = ""
-  #slideshare      = ""
-  # Social Networks
-  #facebook        = "example"
-  #googleplus      = ""
-  #reddit          = "example"
-  #quora           = ""
-  #youtube         = ""
-  #vimeo           = ""
-  #whatsapp        = "" # WhatsApp Number
-    # WeChat and QQ need testing.
-    #wechat          = ""
-    #qq              = "" # User ID Number
-  instagram       = "taraskaduk"
-  # tumblr          = ""
-  twitter         = "taraskaduk"
-  # skype           = ""
-  # snapchat        = ""
-  # pinterest       = ""
-  # telegram        = "example"
-  #vine            = ""
-  #googlescholar   = ""
-  #orcid           = ""
-  #researchgate    = "example"    
-  # Email
-  email           = "contact@taraskaduk.com"
+# Languages
+#   Create a [languages.X] block for each language you want, where X is the language ID.
+
+# Configure the English version of the website.
+[Languages.en]
+  languageCode = "en-us"

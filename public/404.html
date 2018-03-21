@@ -1,367 +1,347 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-    <link rel="stylesheet" media="screen" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" />
-    <link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.37.1" />
+  <meta name="author" content="Taras Kaduk">
+
+  
+  
+  
+  
+  <meta name="description" content="I blog about things">
+
+  
+  <link rel="alternate" hreflang="en-us" href="">
+
+  
 
 
-    <style>
-     * {
-         -moz-box-sizing:border-box;
-         -webkit-box-sizing:border-box;
-         box-sizing:border-box;
-     }
+  
 
-     html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-     abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
-     small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
-     fieldset, form, label, legend, caption, article, aside, canvas, details, figcaption, figure,  footer, header, hgroup,
-     menu, nav, section, summary, time, mark, audio, video {
-         margin:0;
-         padding:0;
-         border:0;
-         outline:0;
-         vertical-align:baseline;
-         background:transparent;
-     }
+  
+  
+  <meta name="theme-color" content="#0095eb">
+  
+  
+  
+  
+    
+  
+  
+    
+    
+      
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+      
+    
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.1/css/academicons.min.css" integrity="sha512-NThgw3XKQ1absAahW6to7Ey42uycrVvfNfyjqcFNgCmOCQ5AR4AO0SiXrN+8ZtYeappp56lk1WtvjVmEa+VR6A==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+  
+  
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700%7cRoboto:400,400italic,700%7cRoboto&#43;Mono">
+  
+  <link rel="stylesheet" href="/styles.css">
+  
 
-     article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
-         display: block;
-     }
+  
 
-     html {
-         font-size: 16px;
-         line-height: 24px;
-         width:100%;
-         height:100%;
-         -webkit-text-size-adjust: 100%;
-         -ms-text-size-adjust: 100%;
-         overflow-y:scroll;
-         overflow-x:hidden;
-     }
+  
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Taras Kaduk">
+  <link rel="feed" href="/index.xml" type="application/rss+xml" title="Taras Kaduk">
+  
 
-     img {
-         vertical-align:middle;
-         max-width: 100%;
-         height: auto;
-         border: 0;
-         -ms-interpolation-mode: bicubic;
-     }
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-     body {
-         min-height:100%;
-         -webkit-font-smoothing: subpixel-antialiased;
-     }
+  <link rel="canonical" href="">
 
-     .clearfix {
-	       clear:both;
-	       zoom: 1;
-     }
-     .clearfix:before, .clearfix:after {
-         content: "\0020";
-         display: block;
-         height: 0;
-         visibility: hidden;
-     }
-     .clearfix:after {
-         clear: both;
-     }
-    </style>
-    <style>
-  .plain.error-page-wrapper {
-    font-family: 'Source Sans Pro', sans-serif;
-    background-color:#6355bc;
-    padding:0 5%;
-    position:relative;
-  }
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@/twitter.com/taraskaduk">
+  <meta property="twitter:creator" content="@/twitter.com/taraskaduk">
+  
+  <meta property="og:site_name" content="Taras Kaduk">
+  <meta property="og:url" content="">
+  <meta property="og:title" content="404 Page not found | Taras Kaduk">
+  <meta property="og:description" content="I blog about things">
+  <meta property="og:locale" content="en-us">
+  
+  
+  
 
-  .plain.error-page-wrapper .content-container {
-    -webkit-transition: left .5s ease-out, opacity .5s ease-out;
-    -moz-transition: left .5s ease-out, opacity .5s ease-out;
-    -ms-transition: left .5s ease-out, opacity .5s ease-out;
-    -o-transition: left .5s ease-out, opacity .5s ease-out;
-    transition: left .5s ease-out, opacity .5s ease-out;
-    max-width:400px;
-    position:relative;
-    left:-30px;
-    opacity:0;
-  }
+  
 
-  .plain.error-page-wrapper .content-container.in {
-    left: 0px;
-    opacity:1;
-  }
+  <title>404 Page not found | Taras Kaduk</title>
 
-  .plain.error-page-wrapper .head-line {
-    transition: color .2s linear;
-    font-size:48px;
-    line-height:60px;
-    color:rgba(255,255,255,.2);
-    letter-spacing: -1px;
-    margin-bottom: 5px;
-  }
-  .plain.error-page-wrapper .subheader {
-    transition: color .2s linear;
-    font-size:36px;
-    line-height:46px;
-    color:#fff;
-  }
-  .plain.error-page-wrapper hr {
-    height:1px;
-    background-color: rgba(255,255,255,.2);
-    border:none;
-    width:250px;
-    margin:35px 0;
-  }
-  .plain.error-page-wrapper .context {
-    transition: color .2s linear;
-    font-size:18px;
-    line-height:27px;
-    color:#fff;
-  }
-  .plain.error-page-wrapper .context p {
-    margin:0;
-  }
-  .plain.error-page-wrapper .context p:nth-child(n+2) {
-    margin-top:12px;
-  }
-  .plain.error-page-wrapper .buttons-container {
-    margin-top: 45px;
-    overflow: hidden;
-  }
-  .plain.error-page-wrapper .buttons-container a {
-    transition: color .2s linear, border-color .2s linear;
-    font-size:14px;
-    text-transform: uppercase;
-    text-decoration: none;
-    color:#fff;
-    border:2px solid white;
-    border-radius: 99px;
-    padding:8px 30px 9px;
-    display: inline-block;
-    float:left;
-  }
-  .plain.error-page-wrapper .buttons-container a:hover {
-    background-color:rgba(255,255,255,.05);
-  }
-  .plain.error-page-wrapper .buttons-container a:first-child {
-    margin-right:25px;
-  }
+</head>
+<body id="top" data-spy="scroll" data-target="#toc" data-offset="71" >
 
-  @media screen and (max-width: 485px) {
-    .plain.error-page-wrapper .header {
-      font-size:36px;
-     }
-    .plain.error-page-wrapper .subheader {
-      font-size:27px;
-      line-height:38px;
-     }
-    .plain.error-page-wrapper hr {
-      width:185px;
-      margin:25px 0;
-     }
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
 
-    .plain.error-page-wrapper .context {
-      font-size:16px;
-      line-height: 24px;
-     }
-    .plain.error-page-wrapper .buttons-container {
-      margin-top:35px;
-    }
+    
+    <div class="navbar-header">
+      
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+      <a class="navbar-brand" href="/"><img src="/img/icon.png" alt="Taras Kaduk"></a>
+    </div>
 
-    .plain.error-page-wrapper .buttons-container a {
-      font-size:13px;
-      padding:8px 0 7px;
-      width:45%;
-      text-align: center;
-    }
-    .plain.error-page-wrapper .buttons-container a:first-child {
-      margin-right:10%;
-    }
-  }
-</style>
-    <style>
+    
+    <div class="collapse navbar-collapse">
 
-    .background-color {
-      background-color: rgba(244, 244, 244, 1) !important;
-    }
+      
+      
+      <ul class="nav navbar-nav navbar-right">
+        
 
+        
+        
+        
+        
+        
+          
+        
 
-    .primary-text-color {
-      color: rgba(171, 171, 171, 1) !important;
-    }
+        <li class="nav-item">
+          <a href="/#about">
+            
+            <span>Home</span>
+            
+          </a>
+        </li>
 
-    .secondary-text-color {
-      color: rgba(0, 0, 0, 1) !important;
-    }
+        
+        
 
-    .sign-text-color {
-      color: #FFBA00 !important;
-    }
+        
+        
+        
+        
+        
+          
+        
 
-    .sign-frame-color {
-      color: #343C3F;
-    }
+        <li class="nav-item">
+          <a href="/#posts">
+            
+            <span>Posts</span>
+            
+          </a>
+        </li>
 
-    .pane {
-      background-color: #FFFFFF !important;
-    }
+        
+        
 
-    .border-button {
-      color: rgba(46, 186, 174, 1) !important;
-      border-color: rgba(46, 186, 174, 1) !important;
-    }
-    .button {
-      background-color: rgba(46, 186, 174, 1) !important;
-      color: #FFFFFF !important;
-    }
+        
+        
+        
+        
+        
+          
+        
 
-    .shadow {
-      box-shadow: 0 0 60px #000000;
-    }
+        <li class="nav-item">
+          <a href="/#talks">
+            
+            <span>Talks</span>
+            
+          </a>
+        </li>
 
-</style>
-  </head>
-  <body class="plain error-page-wrapper background-color background-image">
-    <div class="content-container">
-	<div class="head-line secondary-text-color">
-		404
-	</div>
-	<div class="subheader primary-text-color">
-		Oops, the page you're <br>
-		looking for does not exist.
-	</div>
-	<hr>
-	<div class="clearfix"></div>
-	<div class="context primary-text-color">
-		
-    <p>
-      You may want to head back to the homepage.<br />
-      If you think something is broken, report a problem.
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#contact">
+            
+            <span>Contact</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#projects">
+            
+            <span>Projects</span>
+            
+          </a>
+        </li>
+
+        
+        
+      
+
+      
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+
+  <h1>Page not found</h1>
+  <p>Perhaps you were looking for one of these?</p>
+
+  
+  
+  <h2>Posts</h2>
+  
+  <ul>
+    <li><a href="/2018/01/13/shiny_rate/">My first shiny app: calculating your hourly rate as a consultant</a></li>
+  </ul>
+  
+  <ul>
+    <li><a href="/2018/01/12/sass/">On Importance of Minimalism in Retrospective Analytics</a></li>
+  </ul>
+  
+  <ul>
+    <li><a href="/2018/01/10/mpaa-damon/">When your data analysis is validated on The Late Show with Stephen Colbert</a></li>
+  </ul>
+  
+  <ul>
+    <li><a href="/2017/11/26/pixel-maps/">Create World Pixel Maps in R</a></li>
+  </ul>
+  
+  <ul>
+    <li><a href="/2017/09/30/mpaa/">Do MPAA movie ratings mean anything?</a></li>
+  </ul>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+</div>
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      
+
+      Powered by the
+      <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+      <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
     </p>
-	</div>
-	<div class="buttons-container">
-		<a class="border-button" href="/">Go To Homepage</a>
-		<a class="border-button" href="mailto:contact@taraskaduk.com">Report A Problem</a>
-	</div>
+  </div>
+</footer>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close btn-large" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Cite</h4>
+      </div>
+      <div>
+        <pre><code class="modal-body tex"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-primary btn-outline js-copy-cite" href="#" target="_blank">
+          <i class="fa fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-primary btn-outline js-download-cite" href="#" target="_blank">
+          <i class="fa fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
 </div>
 
-    <script>
-     function ErrorPage(container, pageType, templateName) {
-       this.$container = $(container);
-       this.$contentContainer = this.$container.find(templateName == 'sign' ? '.sign-container' : '.content-container');
-       this.pageType = pageType;
-       this.templateName = templateName;
-     }
+    
 
-     ErrorPage.prototype.centerContent = function () {
-       var containerHeight = this.$container.outerHeight()
-         , contentContainerHeight = this.$contentContainer.outerHeight()
-         , top = (containerHeight - contentContainerHeight) / 2
-         , offset = this.templateName == 'sign' ? -100 : 0;
+    
+    
 
-       this.$contentContainer.css('top', top + offset);
-     };
+    
+    <script async defer src="//maps.googleapis.com/maps/api/js?key="></script>
+    
 
-     ErrorPage.prototype.initialize = function () {
-       var self = this;
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.25/gmaps.min.js" integrity="sha256-7vjlAeb8OaTrCXZkCNun9djzuB2owUsaO72kXaFDBJs=" crossorigin="anonymous"></script>
+    
+    
+    <script src="/js/hugo-academic.js"></script>
+    
 
-       this.centerContent();
-       this.$container.on('resize', function (e) {
-         e.preventDefault();
-         e.stopPropagation();
-         self.centerContent();
-       });
+    
+    
+      
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+      
 
-       
-       if (this.templateName == 'plain') {
-         window.setTimeout(function () {
-           self.$contentContainer.addClass('in');
-         }, 500);
-       }
+      
 
-       
-       if (this.templateName == 'sign') {
-         $('.sign-container').animate({textIndent : 0}, {
-           step : function (now) {
-             $(this).css({
-               transform : 'rotate(' + now + 'deg)',
-               'transform-origin' : 'top center'
-             });
-           },
-           duration : 1000,
-           easing : 'easeOutBounce'
-         });
-       }
-     };
+      
 
+      <script>hljs.initHighlightingOnLoad();</script>
+    
 
-     ErrorPage.prototype.createTimeRangeTag = function(start, end) {
-       return (
-         '<time utime=' + start + ' simple_format="MMM DD, YYYY HH:mm">' + start + '</time> - <time utime=' + end + ' simple_format="MMM DD, YYYY HH:mm">' + end + '</time>.'
-       )
-     };
-
-
-     ErrorPage.prototype.handleStatusFetchSuccess = function (pageType, data) {
-       if (pageType == '503') {
-         $('#replace-with-fetched-data').html(data.status.description);
-       } else {
-         if (!!data.scheduled_maintenances.length) {
-           var maint = data.scheduled_maintenances[0];
-           $('#replace-with-fetched-data').html(this.createTimeRangeTag(maint.scheduled_for, maint.scheduled_until));
-           $.fn.localizeTime();
-         }
-         else {
-           $('#replace-with-fetched-data').html('<em>(there are no active scheduled maintenances)</em>');
-         }
-       }
-     };
-
-
-     ErrorPage.prototype.handleStatusFetchFail = function (pageType) {
-       $('#replace-with-fetched-data').html('<em>(enter a valid StatusPage.io url)</em>');
-     };
-
-
-     ErrorPage.prototype.fetchStatus = function (pageUrl, pageType) {
-       
-       if (!pageUrl || !pageType || pageType == '404') return;
-
-       var url = ''
-         , self = this;
-
-       if (pageType == '503') {
-         url = pageUrl + '/api/v2/status.json';
-       }
-       else {
-         url = pageUrl + '/api/v2/scheduled-maintenances/active.json';
-       }
-
-       $.ajax({
-         type : "GET",
-         url : url,
-       }).success(function (data, status) {
-         
-         self.handleStatusFetchSuccess(pageType, data);
-       }).fail(function (xhr, msg) {
-         
-         self.handleStatusFetchFail(pageType);
-       });
-
-     };
-     var ep = new ErrorPage('body', "404", "plain");
-     ep.initialize();
-
-     
-     $(window).on('resize', function() {
-       $('body').trigger('resize')
-     });
-
-    </script>
-
+    
+    
 
   </body>
 </html>
+
