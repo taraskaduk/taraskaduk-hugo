@@ -1,0 +1,54 @@
+city,status,lon,lat,family
+"La Push, WA",been,-124.6352256,47.9081335,3
+"Ruby Beach, WA",been,-124.4154024,47.7108733,3
+"Forks, WA",been,-124.3854867,47.950355,3
+"Westport, WA",been,-124.1040613,46.8900903,3
+"Canon Beach, OR",been,-123.9615274,45.8917738,3
+"Port Angeles, WA",been,-123.4307413,48.118146,3
+"Vancouver, BC",been,-123.1207375,49.2827291,3
+"San Juan Island, WA",been,-123.0781062,48.5513671,3
+"Orcas Island, WA",been,-122.9289821,48.6330816,3
+"Portland, OR",been,-122.6764815,45.5230622,3
+"Anacortes, WA",been,-122.6126718,48.5126045,3
+San Francisco,been,-122.4194155,37.7749295,3
+"Seatlle, WA",been,-122.3320708,47.6062095,3
+"Seattle, WA",lived,-122.3320708,47.6062095,3
+Mt. Rainier,been,-121.7603229,46.8523075,3
+"Leavenworth, WA",been,-120.6614765,47.5962326,3
+Los Angeles,been,-118.2436849,34.0522342,2
+San Diego,been,-117.1610838,32.715738,2
+"Denver, CO",been,-104.990251,39.7392358,3
+"Atlanta, GA",been,-84.3879824,33.7489954,1
+"Robinsville, NC",been,-83.807399,35.322866,3
+"Asheville, NC",been,-82.5514869,35.5950581,1
+"Ocala, FL",been,-82.1400923,29.1871986,3
+"Key West, FL",been,-81.7799871,24.5550593,3
+"Boone, NC",been,-81.6745517,36.216795,3
+"Jacksonville, FL",lived,-81.655651,30.3321838,3
+"Orlando, FL",been,-81.3792365,28.5383355,3
+"St. Augustine, FL",been,-81.3124341,29.9012437,3
+"Savannah, GA",been,-81.0998342,32.0835407,3
+"Charleston, SC",been,-79.9310512,32.7764749,3
+"New York, NY",been,-74.0059728,40.7127753,3
+"Budapest, Hungary",been,19.040235,47.497912,1
+"Warsaw, Poland",been,21.0122287,52.2296756,2
+"Skopje, Macedonia",been,21.4279956,41.9973462,1
+"Lviv, Ukraine",been,24.029717,49.839683,2
+"Rakhiv, Ukraine",been,24.2128943,48.0545898,1
+"Ivano-Frankivsk, Ukraine",been,24.711117,48.922633,2
+"Khmelnitskiy, Ukraine",been,26.9871331,49.422983,1
+"Vinnitsya, Ukraine",been,28.4682169,49.233083,1
+"Kyiv, Ukraine",lived,30.5234,50.4501,3
+"Odessa, Ukraine",been,30.7233095,46.482526,2
+"Cairo, Egypt",been,31.2357116,30.0444196,2
+"Kirovograd, Ukraine",been,32.262317,48.507933,1
+"Evpatoriya, Ukraine",been,33.366867,45.19045,2
+"Kremenchuk, Ukraine",been,33.410033,49.065783,3
+"Kremenchuk, Ukraine",lived,33.410033,49.065783,1
+"Sevastopol, Ukraine",been,33.5253671,44.61665,1
+"Hurgada, Egypt",been,33.8116067,27.2578957,2
+"Simferopol, Ukraine",been,34.102417,44.952117,2
+"Yalta, Ukraine",been,34.166301,44.495205,2
+"Dnipropetrivsk, Ukraine",been,35.046183,48.464717,2
+"Zaporizhya, Ukraine",been,35.139567,47.8388,1
+"Moscow, Russia",been,37.6172999,55.755826,1
