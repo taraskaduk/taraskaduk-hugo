@@ -5,6 +5,15 @@
     
     <url>
     
+      <loc>/2018/03/29/power-query/</loc>
+      <lastmod>2018-03-29T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/2018/01/22/impostor/</loc>
       <lastmod>2018-01-22T00:00:00+00:00</lastmod>
     </url>
@@ -16,15 +25,6 @@
     
       <loc>/2018/01/22/4-stages/</loc>
       <lastmod>2018-01-22T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>/2018/01/13/shiny_rate/</loc>
-      <lastmod>2018-01-13T00:00:00+00:00</lastmod>
     </url>
     
   
@@ -69,7 +69,7 @@
     <url>
     
       <loc>/tags/analytics/</loc>
-      <lastmod>2018-01-22T00:00:00+00:00</lastmod>
+      <lastmod>2018-03-29T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -79,7 +79,7 @@
     <url>
     
       <loc>/tags/business-intelligence/</loc>
-      <lastmod>2018-01-22T00:00:00+00:00</lastmod>
+      <lastmod>2018-03-29T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -97,7 +97,7 @@
     
     <url>
     
-      <loc>/tags/data-journalism/</loc>
+      <loc>/categories/data-journalism/</loc>
       <lastmod>2018-01-10T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -107,7 +107,7 @@
     
     <url>
     
-      <loc>/categories/data-journalism/</loc>
+      <loc>/tags/data-journalism/</loc>
       <lastmod>2018-01-10T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -127,7 +127,7 @@
     
     <url>
     
-      <loc>/tags/data-visualization/</loc>
+      <loc>/categories/data-visualization/</loc>
       <lastmod>2018-01-10T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -137,7 +137,7 @@
     
     <url>
     
-      <loc>/categories/data-visualization/</loc>
+      <loc>/tags/data-visualization/</loc>
       <lastmod>2018-01-10T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -188,17 +188,7 @@
     <url>
     
       <loc>/categories/insights/</loc>
-      <lastmod>2018-01-22T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>/categories/interactive/</loc>
-      <lastmod>2018-01-13T00:00:00+00:00</lastmod>
+      <lastmod>2018-03-29T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -238,7 +228,7 @@
     <url>
     
       <loc>/post/</loc>
-      <lastmod>2018-01-22T00:00:00+00:00</lastmod>
+      <lastmod>2018-03-29T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -256,8 +246,8 @@
     
     <url>
     
-      <loc>/tags/r/</loc>
-      <lastmod>2018-01-13T00:00:00+00:00</lastmod>
+      <loc>/categories/r/</loc>
+      <lastmod>2018-01-10T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -266,8 +256,8 @@
     
     <url>
     
-      <loc>/categories/r/</loc>
-      <lastmod>2018-01-13T00:00:00+00:00</lastmod>
+      <loc>/tags/r/</loc>
+      <lastmod>2017-11-26T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -296,16 +286,6 @@
     
     <url>
     
-      <loc>/tags/shiny/</loc>
-      <lastmod>2018-01-13T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
       <loc>/tags/stringr/</loc>
       <lastmod>2017-09-30T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -317,7 +297,7 @@
     <url>
     
       <loc>/tags/</loc>
-      <lastmod>2018-01-22T00:00:00+00:00</lastmod>
+      <lastmod>2018-03-29T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -336,7 +316,7 @@
     
     <url>
     
-      <loc>/tags/web-scraping/</loc>
+      <loc>/categories/web-scraping/</loc>
       <lastmod>2017-09-30T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -346,7 +326,7 @@
     
     <url>
     
-      <loc>/categories/web-scraping/</loc>
+      <loc>/tags/web-scraping/</loc>
       <lastmod>2017-09-30T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>

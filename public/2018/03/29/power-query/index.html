@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.37.1" />
+  <meta name="author" content="Taras Kaduk">
+
+  
+  
+  
+  
+    
+      
+    
+  
+  <meta name="description" content="Intro In this blog post, I’ll try to highlight some of Excel’s functionality which have been around for a while, but remain largely unknown to the broad public.
+What this post is about This post is mainly about the tools within Excel that can be used to create reproducible data analysis / data transformations. Basically, we will be talking about Power Query module and the M language.
+ What this post isn’t about This post isn’t about: - Excel cell formulas - VBA - Power Pivot and data modeling - DAX and Excel / Power BI measures - Power Query’s and M’s history - full functionality of Power Query - Excel on a Mac">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/2018/03/29/power-query/">
+
+  
+
+
+  
+
+  
+  
+  <meta name="theme-color" content="#0095eb">
+  
+  
+  
+  
+    
+  
+  
+    
+    
+      
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+      
+    
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.1/css/academicons.min.css" integrity="sha512-NThgw3XKQ1absAahW6to7Ey42uycrVvfNfyjqcFNgCmOCQ5AR4AO0SiXrN+8ZtYeappp56lk1WtvjVmEa+VR6A==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+  
+  
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700%7cRoboto:400,400italic,700%7cRoboto&#43;Mono">
+  
+  <link rel="stylesheet" href="/styles.css">
+  
+
+  
+
+  
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Taras Kaduk">
+  <link rel="feed" href="/index.xml" type="application/rss+xml" title="Taras Kaduk">
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="/2018/03/29/power-query/">
+
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@/twitter.com/taraskaduk">
+  <meta property="twitter:creator" content="@/twitter.com/taraskaduk">
+  
+  <meta property="og:site_name" content="Taras Kaduk">
+  <meta property="og:url" content="/2018/03/29/power-query/">
+  <meta property="og:title" content="Reproducible data workflow in Excel | Taras Kaduk">
+  <meta property="og:description" content="Intro In this blog post, I’ll try to highlight some of Excel’s functionality which have been around for a while, but remain largely unknown to the broad public.
+What this post is about This post is mainly about the tools within Excel that can be used to create reproducible data analysis / data transformations. Basically, we will be talking about Power Query module and the M language.
+ What this post isn’t about This post isn’t about: - Excel cell formulas - VBA - Power Pivot and data modeling - DAX and Excel / Power BI measures - Power Query’s and M’s history - full functionality of Power Query - Excel on a Mac"><meta property="og:image" content="/img/post/power-query/json.png">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2018-03-29T00:00:00&#43;00:00">
+  
+  <meta property="article:modified_time" content="2018-03-29T00:00:00&#43;00:00">
+  
+
+  
+
+  <title>Reproducible data workflow in Excel | Taras Kaduk</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#toc" data-offset="71" >
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+      <a class="navbar-brand" href="/"><img src="/img/icon.png" alt="Taras Kaduk"></a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#about">
+            
+            <span>Home</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#posts">
+            
+            <span>Posts</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#talks">
+            
+            <span>Talks</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#contact">
+            
+            <span>Contact</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#projects">
+            
+            <span>Projects</span>
+            
+          </a>
+        </li>
+
+        
+        
+      
+
+      
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+<div class="article-header">
+  
+  
+    <img src="/post/power-query/json.png" class="article-banner" itemprop="image">
+  
+
+  
+</div>
+
+
+
+  <div class="article-container">
+    <h1 itemprop="name">Reproducible data workflow in Excel</h1>
+
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    
+    <time datetime="2018-03-29 00:00:00 &#43;0000 UTC" itemprop="datePublished dateModified">
+      Mar 29, 2018
+    </time>
+  </span>
+  <span itemscope itemprop="author publisher" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Taras Kaduk">
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    7 min read
+  </span>
+  
+
+  
+  
+
+  
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fa fa-folder"></i>
+    
+    <a href="/categories/insights">Insights</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Reproducible%20data%20workflow%20in%20Excel&amp;url=%2f2018%2f03%2f29%2fpower-query%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=%2f2018%2f03%2f29%2fpower-query%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2f2018%2f03%2f29%2fpower-query%2f&amp;title=Reproducible%20data%20workflow%20in%20Excel"
+         target="_blank" rel="noopener">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=%2f2018%2f03%2f29%2fpower-query%2f&amp;title=Reproducible%20data%20workflow%20in%20Excel"
+         target="_blank" rel="noopener">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Reproducible%20data%20workflow%20in%20Excel&amp;body=%2f2018%2f03%2f29%2fpower-query%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+
+    <div class="article-style" itemprop="articleBody">
+      <div id="intro" class="section level1">
+<h1>Intro</h1>
+<p>In this blog post, I’ll try to highlight some of Excel’s functionality which have been around for a while, but remain largely unknown to the broad public.</p>
+<div id="what-this-post-is-about" class="section level2">
+<h2>What this post is about</h2>
+<p>This post is mainly about the tools within Excel that can be used to create reproducible data analysis / data transformations. Basically, we will be talking about Power Query module and the M language.</p>
+</div>
+<div id="what-this-post-isnt-about" class="section level2">
+<h2>What this post isn’t about</h2>
+<p>This post isn’t about: - Excel cell formulas - VBA - Power Pivot and data modeling - DAX and Excel / Power BI measures - Power Query’s and M’s history - full functionality of Power Query - Excel on a Mac</p>
+</div>
+<div id="the-audience" class="section level2">
+<h2>The audience</h2>
+<p>This post isn’t a guide to using Excel’s and Power BI’s Power Query. This post is not for people who want to learn new cool tricks of Excel.</p>
+<p>This post is for data scientists and analysts who put reproducible analysis (achieved via programming one’s analysis in R or Python) at the center of what they do. This post is for people who like to use Excel as a punching bag (and I am one of those people).</p>
+</div>
+<div id="the-purpose" class="section level2">
+<h2>The purpose</h2>
+<p>I don’t want to persuade anyone to switch to Excel. I only want to bring some awareness to some of Excel’s functionality and perhaps spark some interest. And maybe shift the target of attacks from the tool (Excel) to the way people use the tool.</p>
+</div>
+</div>
+<div id="history" class="section level1">
+<h1>History</h1>
+<p>Power Query, a.k.a. Data Explorer, a.k.a. Query Editor is Microsoft’s module within Excel and Power BI which allows users to perform data import and transformations before loading the ready tables into a workbook. It’s been around since 2013. Google for more information, we aren’t here for a history excourse.</p>
+</div>
+<div id="components" class="section level1">
+<h1>Components</h1>
+<p>In the simplest terms possible, I could break the Power Query down into two parts: the language and the GUI.</p>
+<div id="the-m-language" class="section level2">
+<h2>The M language</h2>
+<p>From <a href="https://msdn.microsoft.com/en-us/library/mt211003.aspx">MSDN</a>: &gt; The Power Query M formula language is optimized for building highly flexible data mashup queries. It’s a functional, case sensitive language similar to F#</p>
+<p>In simpler terms, it is a data transformation language. Now, I’m not a computer scientist, and won’t be able to explain all the technical details well, therefore I suggest that the most interested ones go and check out the <a href="https://msdn.microsoft.com/en-us/library/mt807488.aspx">Power Query M language specification</a>. For the rest of us, I’ll just say that in the simplest way, M works by calling a function on a table or a list, then storing this result as a new table, and then calling this new table in the next step with another function. That is oversimplification, of course, but for the purpose of this post, it should do.</p>
+<p>Let me explain it on an example. In Excel, I created sample table of 3 rows and 3 columns called <code>df</code>. I then loaded it into the query editor, and pressed a few buttons. Here is the code it generated:</p>
+<pre><code>let
+    Source = Excel.CurrentWorkbook(){[Name=&quot;df&quot;]}[Content],
+    #&quot;Changed Type&quot; = Table.TransformColumnTypes(Source,{{&quot;a&quot;, Int64.Type}, {&quot;b&quot;, Int64.Type}, {&quot;c&quot;, Int64.Type}}),
+    #&quot;Filtered Rows&quot; = Table.SelectRows(#&quot;Changed Type&quot;, each ([a] &lt;&gt; 7)),
+    #&quot;Removed Columns&quot; = Table.RemoveColumns(#&quot;Filtered Rows&quot;,{&quot;c&quot;})
+in
+    #&quot;Removed Columns&quot;</code></pre>
+<p>The first step, <code>Source</code>, is our import step. It tells Power Query where to find our table. The second step, <code>#&quot;Changed Type&quot;</code>, is auto-generated. Notice that it references the first step as the first argument of the function <code>Table.TransformColumnTypes</code>: it says <em>“that’s the table we will work with”</em>. All this step does is assigns columns a, b and c the type of integer. Next step, <code>#&quot;Filtered Rows&quot;</code>, references the previous step, and performs a filter operation. Finally, <code>#&quot;Removed Columns&quot;</code> takes the result of the previous step, and then removes a columns. Then, the code tells Power Query that the result of <code>#&quot;Removed Columns&quot;</code> is the one to be printed.</p>
+<p>This is a very basic explanation of how this code works. You can twist it, bend it to your will, skip steps, branch out, use parameters etc. But the common functionally is this stitched <em>freight train</em>-like sequence of steps.</p>
+</div>
+<div id="the-gui" class="section level2">
+<h2>The GUI</h2>
+<p>The Query Editor GUI is bread and butter of this whole scheme: the M language itself is hard to type by hand, the functions are long, it is case sensitive, and there is no good source code editor (Notepad++ and other text editors do a better job than the Power Query itself). But I feel like Power Query wasn’t built to program in: that’s not the main customer base of Excel and Power BI. What Power Query is good at is their GUI that allows users to click around and apply data transformation steps, all the while generating a script behind the scenes.</p>
+<p>First, there is a ribbon with several tabs and plenty of buttons to click on. Some represent very simple existing functions, while others are pretty complicated and generate a solid chunck of code on just one click.</p>
+<p><img src="/post/power-query/1.png" /> <img src="/post/power-query/2.png" /> <img src="/post/power-query/3.png" /></p>
+<p>Next, you are allowed to interact with your data to some extend. You can’t edit any cells, but you can filter columns, move them around, fill them down, sort, and so on, within the table itself. Power Query will pick up on your actions and will save your transformations in a script.</p>
+<p>You can have more than one query, coming from different sources, and you can make them interact with each other: merge (join), append (union), reference, split, nest and so on.</p>
+</div>
+</div>
+<div id="what-i-like-about-power-query" class="section level1">
+<h1>What I like about Power Query</h1>
+<ul>
+<li><em>Accessing data.</em> Getting the data is the most seamless experience I’ve had. No need to set up any ODBC connections, any drivers, no need to install anything. It has pre-built functions for many data sources (I’ve got receipts: <a href="https://msdn.microsoft.com/en-US/library/mt296615.aspx">here is the list of functions</a>), and can recognize a large amount of data formats. The Power Query flavor that runs on Power BI can also use R script as a data source, yet this functoinality isn’t a part of Excel now.</li>
+<li><em>Tidy-like data storage and display.</em> Surprised? Yeah, with a few exceptions, Power Query treats everything as a dataframe. What if it’s not a dataframe? Then it tries to fit the data into a rectangular shape. Here is an example of a JSON file: Power Query treats it as a table, with the <code>location</code> column being a nested record. Down below, you can see what that particular cell I sampled consists of. From here, we could expand this record to new columns, drill down, or a create a new query.</li>
+</ul>
+<p>Here is an example of how Power Query treats JSON files. I used the well-known (thanks to Jenny Bryan’s tutorials!) <a href="https://anapioficeandfire.com/">API of Ice and Fire</a>. Here is what I’ve got after a few clicks. Note that I only plugged in the API call as a URL - Power QUery did the rest.</p>
+<p><a href="/post/power-query/got-1.png"><img src="/post/power-query/got-1.png" /></a></p>
+<p>And here is the code behind it:</p>
+<pre><code>let
+    Source = Json.Document(
+                  Web.Contents(&quot;https://anapioficeandfire.com/api/characters?page=2&amp;pageSize=5000&quot;)),
+    convert_to_table = Table.FromList(Source, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+    expand_records = Table.ExpandRecordColumn(convert_to_table, &quot;Column1&quot;, {&quot;url&quot;, &quot;name&quot;, &quot;gender&quot;, &quot;culture&quot;, &quot;born&quot;, &quot;died&quot;, &quot;titles&quot;, &quot;aliases&quot;, &quot;father&quot;, &quot;mother&quot;, &quot;spouse&quot;, &quot;allegiances&quot;, &quot;books&quot;, &quot;povBooks&quot;, &quot;tvSeries&quot;, &quot;playedBy&quot;}, {&quot;url&quot;, &quot;name&quot;, &quot;gender&quot;, &quot;culture&quot;, &quot;born&quot;, &quot;died&quot;, &quot;titles&quot;, &quot;aliases&quot;, &quot;father&quot;, &quot;mother&quot;, &quot;spouse&quot;, &quot;allegiances&quot;, &quot;books&quot;, &quot;povBooks&quot;, &quot;tvSeries&quot;, &quot;playedBy&quot;})
+    
+in
+    expand_records</code></pre>
+<p>Not only JSON records get nested. You could have a nested table (can happen upon a join or after a <code>group by</code>-like call), or a nested list. Regardless, Power Query will always try to make your data rectangular, which is pleasing to any <code>tidyverse</code> adept. - <em>Robust GUI that keeps the code.</em> Another cool feauture is that the GUI can handle 90% of one’s needs, and it scripts all transformations behind the scenes. I think of it as a gateway drug to <em>“programming one’s analysis”</em></p>
+</div>
+<div id="what-i-dont-like-about-power-query" class="section level1">
+<h1>What I don’t like about Power Query</h1>
+<ul>
+<li>Speed. It is unbelieveably slow. I guess the convinience comes at a cost of performance. It does well on small datasets and simpler operations, but fails to do a decent job the moment you scale.</li>
+<li>Syntax and flexibility. The language is rather rigid, and the syntax is annoying at times.</li>
+</ul>
+</div>
+<div id="so-who-is-it-for" class="section level1">
+<h1>So, who is it for?</h1>
+<p>I see Power Query as a</p>
+</div>
+
+    </div>
+
+    
+
+
+<div class="article-tags">
+  
+  <a class="btn btn-primary btn-outline" href="/tags/analytics">analytics</a>
+  
+  <a class="btn btn-primary btn-outline" href="/tags/business-intelligence">business intelligence</a>
+  
+</div>
+
+
+
+
+    
+    
+    <div class="article-widget">
+      <div class="hr-light"></div>
+      <h3>Related</h3>
+      <ul>
+        
+        <li><a href="/2018/01/22/4-stages/">The 4 Stages of Data Analytics Maturity: Challenging the Gartner’s Model</a></li>
+        
+        <li><a href="/2018/01/22/impostor/">Imposterism in Data Science: Addressing the credentials problem</a></li>
+        
+        <li><a href="/2018/01/12/sass/">On Importance of Minimalism in Retrospective Analytics</a></li>
+        
+      </ul>
+    </div>
+    
+
+    
+
+    
+
+
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      
+
+      Powered by the
+      <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+      <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close btn-large" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Cite</h4>
+      </div>
+      <div>
+        <pre><code class="modal-body tex"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-primary btn-outline js-copy-cite" href="#" target="_blank">
+          <i class="fa fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-primary btn-outline js-download-cite" href="#" target="_blank">
+          <i class="fa fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+
+    
+    <script async defer src="//maps.googleapis.com/maps/api/js?key="></script>
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.25/gmaps.min.js" integrity="sha256-7vjlAeb8OaTrCXZkCNun9djzuB2owUsaO72kXaFDBJs=" crossorigin="anonymous"></script>
+    
+    
+    <script src="/js/hugo-academic.js"></script>
+    
+
+    
+    
+      
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+      
+
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+
+  </body>
+</html>
+

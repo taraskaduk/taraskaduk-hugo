@@ -1,0 +1,28 @@
+let
+    source = Web.Page(Web.Contents("https://github.com/jennybc/gapminder/blob/master/inst/extdata/gapminder.tsv")),
+    data = source{0}[Data],
+
+    change_type = Table.TransformColumnTypes(data,{
+      {"", type text}, 
+      {"country", type text}, 
+      {"continent", type text}, 
+      {"year", Int64.Type}, 
+      {"lifeExp", type number}, 
+      {"pop", Int64.Type}, 
+      {"gdpPercap", type number}
+    }),
+    
+    filter = Table.SelectRows(change_type, each (
+        ([continent] = "Africa" or [continent] = "Americas") and 
+        [year] >= 1980)
+    ),
+    
+    group_by_summarise = Table.Group(filter, 
+                                     {"continent", "country"}, 
+                                     {
+                                       {"median_life_exp", each List.Median([lifeExp]), type number}, 
+                                       {"mean_pop", each List.Average([pop]), type number}, 
+                                       {"min_gdp_cap", each List.Min([gdpPercap]), type number}
+                                     })
+in
+    group_by_summarise
