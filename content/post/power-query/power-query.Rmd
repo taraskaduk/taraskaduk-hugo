@@ -63,6 +63,19 @@ in
 ```
 
 
+```
+let
+    Source = Web.Page(Web.Contents("https://github.com/jennybc/gapminder/blob/master/inst/extdata/gapminder.tsv")),
+    Data = Source{0}[Data],
+    col_types = Table.TransformColumnTypes(Data,{{"", type text}, {"country", type text}, {"continent", type text}, {"year", Int64.Type}, {"lifeExp", type number}, {"pop", Int64.Type}, {"gdpPercap", type number}}),
+    filter = Table.SelectRows(col_types, each ([year] = 2007)),
+    mutate = Table.AddColumn(filter, "lifeExpMonths", each [lifeExp] * 12, type number),
+    arrange = Table.Sort(mutate,{{"lifeExpMonths", Order.Descending}})
+in
+    arrange
+```
+
+
 https://campus.datacamp.com/courses/introduction-to-the-tidyverse/data-wrangling-1?ex=12
 ```{r}
 library(gapminder)
