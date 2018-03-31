@@ -10,92 +10,155 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Reproducible data workflow in Excel</title>
+      <title>Power Query: Excel&#39;s gateway to reproducible analysis</title>
       <link>/2018/03/29/power-query/</link>
       <pubDate>Thu, 29 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>/2018/03/29/power-query/</guid>
-      <description>&lt;div id=&#34;intro&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Intro&lt;/h1&gt;
-&lt;p&gt;In this blog post, I’ll try to highlight some of Excel’s functionality which have been around for a while, but remain largely unknown to the broad public.&lt;/p&gt;
-&lt;div id=&#34;what-this-post-is-about&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;What this post is about&lt;/h2&gt;
-&lt;p&gt;This post is mainly about the tools within Excel that can be used to create reproducible data analysis / data transformations. Basically, we will be talking about Power Query module and the M language.&lt;/p&gt;
+      <description>&lt;div id=&#34;intro&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Intro&lt;/h2&gt;
+&lt;p&gt;In this blog post, I’ll try to highlight some of Excel’s functionality which have been around for a while, but remains largely unknown to the broad public.&lt;/p&gt;
+&lt;p&gt;Now, I’ll be the first one to throw rocks at the Excel camp. I’ve got receipts:&lt;/p&gt;
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Please don&amp;#39;t... &lt;a href=&#34;https://t.co/r3j3KQtcCT&#34;&gt;pic.twitter.com/r3j3KQtcCT&lt;/a&gt;&lt;/p&gt;&amp;mdash; Taras Kaduk (@taraskaduk) &lt;a href=&#34;https://twitter.com/taraskaduk/status/962376095323643910?ref_src=twsrc%5Etfw&#34;&gt;February 10, 2018&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;My analysis is in Excel. &lt;a href=&#34;https://twitter.com/hashtag/Loseyourjobin5words?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#Loseyourjobin5words&lt;/a&gt;&lt;/p&gt;&amp;mdash; Taras Kaduk (@taraskaduk) &lt;a href=&#34;https://twitter.com/taraskaduk/status/970708905251737605?ref_src=twsrc%5Etfw&#34;&gt;March 5, 2018&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Reproducible analysis, case in point. A colleague from another department is out. People come to me w/ requests to recreate some analysis that person did. I have no idea, but OK, let&amp;#39;s see. &lt;br&gt;Colleague&amp;#39;s analysis is in Excel. How can I reproduce it? &lt;br&gt;No analysis for you! &lt;a href=&#34;https://t.co/SoXZO10ekG&#34;&gt;pic.twitter.com/SoXZO10ekG&lt;/a&gt;&lt;/p&gt;&amp;mdash; Taras Kaduk (@taraskaduk) &lt;a href=&#34;https://twitter.com/taraskaduk/status/935263135413555203?ref_src=twsrc%5Etfw&#34;&gt;November 27, 2017&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;/p&gt;
+&lt;p&gt;However, I’ll also be the first to jump in Excel’s defense whenever an opportunity presents itself: &lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Generally a very good article on advantages of R, but as always - completely overlooking Excel enhancements that came with Power Query and Power Pivot (e.g. scripting, hundreds of data connectors. I.e. all the Power BI functionality)&lt;a href=&#34;https://twitter.com/hashtag/rstats?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#rstats&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/PowerBI?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#PowerBI&lt;/a&gt; &lt;a href=&#34;https://t.co/k3qj8px81b&#34;&gt;https://t.co/k3qj8px81b&lt;/a&gt;&lt;/p&gt;&amp;mdash; Taras Kaduk (@taraskaduk) &lt;a href=&#34;https://twitter.com/taraskaduk/status/946035002571218944?ref_src=twsrc%5Etfw&#34;&gt;December 27, 2017&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;/p&gt;
+&lt;p&gt;What gives? I generally agree that Excel is a bad way to conduct an analysis. Having said that, there are many enhancements to the product (Windows version mainly) that came out over the last 10 years which are completely overlooked by both Excel users and Excel bashers. One of such enhancements, Power Query (or Query Editor, or M language), allows for a reproducible data import and transformation, and is quite easy to learn. That will be this post’s topic.&lt;/p&gt;
+&lt;div id=&#34;what-this-post-isnt-about&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;What this post isn’t about&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Excel cell formulas&lt;/li&gt;
+&lt;li&gt;VBA&lt;/li&gt;
+&lt;li&gt;Power Pivot and data modeling&lt;/li&gt;
+&lt;li&gt;DAX and Excel / Power BI measures&lt;/li&gt;
+&lt;li&gt;Power Query’s and M’s history&lt;/li&gt;
+&lt;li&gt;full functionality of Power Query&lt;/li&gt;
+&lt;li&gt;Excel on a Mac&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/div&gt;
-&lt;div id=&#34;what-this-post-isnt-about&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;What this post isn’t about&lt;/h2&gt;
-&lt;p&gt;This post isn’t about: - Excel cell formulas - VBA - Power Pivot and data modeling - DAX and Excel / Power BI measures - Power Query’s and M’s history - full functionality of Power Query - Excel on a Mac&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;the-audience&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;The audience&lt;/h2&gt;
+&lt;div id=&#34;the-audience&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;The audience&lt;/h3&gt;
 &lt;p&gt;This post isn’t a guide to using Excel’s and Power BI’s Power Query. This post is not for people who want to learn new cool tricks of Excel.&lt;/p&gt;
-&lt;p&gt;This post is for data scientists and analysts who put reproducible analysis (achieved via programming one’s analysis in R or Python) at the center of what they do. This post is for people who like to use Excel as a punching bag (and I am one of those people).&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;the-purpose&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;The purpose&lt;/h2&gt;
-&lt;p&gt;I don’t want to persuade anyone to switch to Excel. I only want to bring some awareness to some of Excel’s functionality and perhaps spark some interest. And maybe shift the target of attacks from the tool (Excel) to the way people use the tool.&lt;/p&gt;
+&lt;p&gt;This post is for data scientists and analysts who put reproducible analysis (achieved via programming one’s analysis in R or Python) at the center of what they do. This post is for people who like to use Excel as a punching bag (and again, I am one of those people).&lt;/p&gt;
+&lt;p&gt;Lastly, this post is for those analysts stuggling to switch the workflow at their place of work from Excel to R or Python. I think that Power Query could act as a gateway drug to reproducible analysis. Meet them where they’re at (in Excel), and guide them by hand out into the world of “programming your analysis”.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id=&#34;history&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;History&lt;/h1&gt;
-&lt;p&gt;Power Query, a.k.a. Data Explorer, a.k.a. Query Editor is Microsoft’s module within Excel and Power BI which allows users to perform data import and transformations before loading the ready tables into a workbook. It’s been around since 2013. Google for more information, we aren’t here for a history excourse.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;components&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Components&lt;/h1&gt;
+&lt;div id=&#34;power-query&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Power Query&lt;/h2&gt;
+&lt;p&gt;Power Query, a.k.a. Data Explorer, a.k.a. Query Editor is Microsoft’s module within Excel and Power BI which allows users to perform data import and transformations before loading the ready tables into a workbook. It’s been around since 2013. Google for more information.&lt;/p&gt;
+&lt;div id=&#34;components&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Components&lt;/h3&gt;
 &lt;p&gt;In the simplest terms possible, I could break the Power Query down into two parts: the language and the GUI.&lt;/p&gt;
-&lt;div id=&#34;the-m-language&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;The M language&lt;/h2&gt;
-&lt;p&gt;From &lt;a href=&#34;https://msdn.microsoft.com/en-us/library/mt211003.aspx&#34;&gt;MSDN&lt;/a&gt;: &amp;gt; The Power Query M formula language is optimized for building highly flexible data mashup queries. It’s a functional, case sensitive language similar to F#&lt;/p&gt;
-&lt;p&gt;In simpler terms, it is a data transformation language. Now, I’m not a computer scientist, and won’t be able to explain all the technical details well, therefore I suggest that the most interested ones go and check out the &lt;a href=&#34;https://msdn.microsoft.com/en-us/library/mt807488.aspx&#34;&gt;Power Query M language specification&lt;/a&gt;. For the rest of us, I’ll just say that in the simplest way, M works by calling a function on a table or a list, then storing this result as a new table, and then calling this new table in the next step with another function. That is oversimplification, of course, but for the purpose of this post, it should do.&lt;/p&gt;
-&lt;p&gt;Let me explain it on an example. In Excel, I created sample table of 3 rows and 3 columns called &lt;code&gt;df&lt;/code&gt;. I then loaded it into the query editor, and pressed a few buttons. Here is the code it generated:&lt;/p&gt;
+&lt;div id=&#34;the-m-language&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;The M language&lt;/h4&gt;
+&lt;p&gt;From &lt;a href=&#34;https://msdn.microsoft.com/en-us/library/mt211003.aspx&#34;&gt;MSDN&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The Power Query M formula language is optimized for building highly flexible data mashup queries. It’s a functional, case sensitive language similar to F#&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;In simpler terms, it is a data transformation language. Now, I’m not a computer scientist, and won’t be able to explain all the technical details well, therefore I suggest that the most interested ones go and check out the &lt;a href=&#34;https://msdn.microsoft.com/en-us/library/mt807488.aspx&#34;&gt;Power Query M language specification&lt;/a&gt;. For the rest of us, I’ll just say that M works by calling a function on a table or a list, then storing this result as a new table, and then calling this new table in the next step with another function. That is oversimplification, of course, but for the purpose of this post, it should do.&lt;/p&gt;
+&lt;div id=&#34;example-1&#34; class=&#34;section level5&#34;&gt;
+&lt;h5&gt;Example 1&lt;/h5&gt;
+&lt;p&gt;Let me explain it on an example. In Excel, I created sample table of 3 rows and 3 columns called &lt;code&gt;df&lt;/code&gt;. &lt;img src=&#34;/post/power-query/test1.png&#34; style=&#34;width:50.0%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;I then loaded it into the query editor, and pressed a few buttons. Here is the code it generated (I edited the step names and indented the lines):&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;let
     Source = Excel.CurrentWorkbook(){[Name=&amp;quot;df&amp;quot;]}[Content],
-    #&amp;quot;Changed Type&amp;quot; = Table.TransformColumnTypes(Source,{{&amp;quot;a&amp;quot;, Int64.Type}, {&amp;quot;b&amp;quot;, Int64.Type}, {&amp;quot;c&amp;quot;, Int64.Type}}),
-    #&amp;quot;Filtered Rows&amp;quot; = Table.SelectRows(#&amp;quot;Changed Type&amp;quot;, each ([a] &amp;lt;&amp;gt; 7)),
-    #&amp;quot;Removed Columns&amp;quot; = Table.RemoveColumns(#&amp;quot;Filtered Rows&amp;quot;,{&amp;quot;c&amp;quot;})
+    change_type = Table.TransformColumnTypes(Source,
+                                            {
+                                              {&amp;quot;a&amp;quot;, Int64.Type}, 
+                                              {&amp;quot;b&amp;quot;, Int64.Type}, 
+                                              {&amp;quot;c&amp;quot;, Int64.Type}
+                                            }),
+    filter = Table.SelectRows(change_type, each ([a] &amp;lt;&amp;gt; 7)),
+    remove_cols = Table.RemoveColumns(filter,{&amp;quot;c&amp;quot;})
 in
-    #&amp;quot;Removed Columns&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The first step, &lt;code&gt;Source&lt;/code&gt;, is our import step. It tells Power Query where to find our table. The second step, &lt;code&gt;#&amp;quot;Changed Type&amp;quot;&lt;/code&gt;, is auto-generated. Notice that it references the first step as the first argument of the function &lt;code&gt;Table.TransformColumnTypes&lt;/code&gt;: it says &lt;em&gt;“that’s the table we will work with”&lt;/em&gt;. All this step does is assigns columns a, b and c the type of integer. Next step, &lt;code&gt;#&amp;quot;Filtered Rows&amp;quot;&lt;/code&gt;, references the previous step, and performs a filter operation. Finally, &lt;code&gt;#&amp;quot;Removed Columns&amp;quot;&lt;/code&gt; takes the result of the previous step, and then removes a columns. Then, the code tells Power Query that the result of &lt;code&gt;#&amp;quot;Removed Columns&amp;quot;&lt;/code&gt; is the one to be printed.&lt;/p&gt;
+    remove_cols&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The final output will look like this: &lt;img src=&#34;/post/power-query/test2.png&#34; style=&#34;width:50.0%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;The first step, &lt;code&gt;Source&lt;/code&gt;, is our import step. It tells Power Query where to find our table. The second step, &lt;code&gt;change_type&amp;quot;&lt;/code&gt;, is auto-generated. Notice that it references the first step as the first argument of the function &lt;code&gt;Table.TransformColumnTypes&lt;/code&gt;: it says &lt;em&gt;“that’s the table we will work with”&lt;/em&gt;. All this step does is assigns columns a, b and c the type of integer. Next step, &lt;code&gt;filter&lt;/code&gt;, references the previous step, and performs a filter operation. Finally, &lt;code&gt;remove_cols&lt;/code&gt; takes the result of the previous step, and then removes a column. Then, the code tells Power Query that the result of &lt;code&gt;remove_cols&lt;/code&gt; is the one to be printed.&lt;/p&gt;
 &lt;p&gt;This is a very basic explanation of how this code works. You can twist it, bend it to your will, skip steps, branch out, use parameters etc. But the common functionally is this stitched &lt;em&gt;freight train&lt;/em&gt;-like sequence of steps.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div id=&#34;the-gui&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;The GUI&lt;/h2&gt;
-&lt;p&gt;The Query Editor GUI is bread and butter of this whole scheme: the M language itself is hard to type by hand, the functions are long, it is case sensitive, and there is no good source code editor (Notepad++ and other text editors do a better job than the Power Query itself). But I feel like Power Query wasn’t built to program in: that’s not the main customer base of Excel and Power BI. What Power Query is good at is their GUI that allows users to click around and apply data transformation steps, all the while generating a script behind the scenes.&lt;/p&gt;
-&lt;p&gt;First, there is a ribbon with several tabs and plenty of buttons to click on. Some represent very simple existing functions, while others are pretty complicated and generate a solid chunck of code on just one click.&lt;/p&gt;
+&lt;div id=&#34;example-2&#34; class=&#34;section level5&#34;&gt;
+&lt;h5&gt;Example 2&lt;/h5&gt;
+&lt;p&gt;Here is the data transformation sample from &lt;a href=&#34;https://twitter.com/drob&#34;&gt;David Robinson’s&lt;/a&gt; &lt;a href=&#34;https://campus.datacamp.com/courses/introduction-to-the-tidyverse/data-wrangling-1?ex=12&#34;&gt;DataCamp course on the tidyverse&lt;/a&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(gapminder)
+library(dplyr)
+
+gapminder %&amp;gt;%
+  filter(year == &amp;#39;2007&amp;#39;) %&amp;gt;%
+  mutate(lifeExpMonths = 12 * lifeExp) %&amp;gt;%
+  arrange(desc(lifeExpMonths))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I hope I don’t need to read to you what it does (if you can’t read the code, try running it. If you have no idea what’s going on here - I suggest taking the above-mentioned David’s class on the tidyverse)&lt;/p&gt;
+&lt;p&gt;Here is how I’d solve the same simple task in Power Query. First, Power Query in Excel, unlike Power Query in Power BI, can’t run R scripts, therefore I can’t just load a package. But Power Query can read &lt;code&gt;.RData&lt;/code&gt; files. It can also load stuff from the web. We’ll do just that&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;let
+    Source = Web.Page(
+                Web.Contents(&amp;quot;https://github.com/jennybc/gapminder/blob/master/inst/extdata/gapminder.tsv&amp;quot;)),
+    Data = Source{0}[Data],
+    col_types = Table.TransformColumnTypes(Data,{
+                                                  {&amp;quot;&amp;quot;, type text}, 
+                                                  {&amp;quot;country&amp;quot;, type text}, 
+                                                  {&amp;quot;continent&amp;quot;, type text}, 
+                                                  {&amp;quot;year&amp;quot;, Int64.Type}, 
+                                                  {&amp;quot;lifeExp&amp;quot;, type number}, 
+                                                  {&amp;quot;pop&amp;quot;, Int64.Type}, 
+                                                  {&amp;quot;gdpPercap&amp;quot;, type number}
+                                                }),
+    filter = Table.SelectRows(col_types, each ([year] = 2007)),
+    mutate = Table.AddColumn(filter, &amp;quot;lifeExpMonths&amp;quot;, each [lifeExp] * 12, type number),
+    arrange = Table.Sort(mutate,{{&amp;quot;lifeExpMonths&amp;quot;, Order.Descending}})
+in
+    arrange&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now, again, I changed the names of the steps and indented the code for readability purposes. The rest was generated by Power Query and I was just clicking on things. I want to stress it out again: &lt;strong&gt;I didn’t have to know any of the functions, any of the syntax&lt;/strong&gt;. All I did was:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Pass a web link into GUI.&lt;/li&gt;
+&lt;li&gt;From there, Power Query figured out that it needed a combo of &lt;code&gt;Web.Page(Web.Contents())&lt;/code&gt; to get to the data. It saw a table and guessed column types for me.&lt;/li&gt;
+&lt;li&gt;From here, I clicked on the “year” column header to filter it, clicked a button to create a new column out of the old one, and the clicked on its header to sort in descending order.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In other words, &lt;em&gt;I came to this with no pre-existing knowledge of coding, and got myself a reproducible piece of code&lt;/em&gt;. The data refreshes upon each load: Excel will be checking Jenny’s GitHub page every time we refresh the data, and will be applying the steps as documented.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-gui&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;The GUI&lt;/h3&gt;
+&lt;p&gt;As you may have guessed from my previous paragraph, the Query Editor GUI is bread and butter of this whole scheme: the M language itself is hard to type by hand, the functions are long, it is case sensitive, and there is no good source code editor (Notepad++ and other text editors do a better job than the Power Query itself). But I feel like Power Query wasn’t built to program in: that’s not the main customer base of Excel and Power BI. What Power Query is good at is its GUI that allows users to click around and apply data transformation steps, all the while generating a script behind the scenes.&lt;/p&gt;
+&lt;p&gt;First, there is a ribbon with several tabs and plenty of buttons to click on. Some represent very simple existing functions, while others are pretty complicated and generate a solid chunk of code on just one click.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/post/power-query/1.png&#34; /&gt; &lt;img src=&#34;/post/power-query/2.png&#34; /&gt; &lt;img src=&#34;/post/power-query/3.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Next, you are allowed to interact with your data to some extend. You can’t edit any cells, but you can filter columns, move them around, fill them down, sort, and so on, within the table itself. Power Query will pick up on your actions and will save your transformations in a script.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/power-query/gui1.png&#34; /&gt; &lt;img src=&#34;/post/power-query/gui2.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;You can have more than one query, coming from different sources, and you can make them interact with each other: merge (join), append (union), reference, split, nest and so on.&lt;/p&gt;
+&lt;p&gt;You can also re-arrange the query steps in the GUI via simple drag-n-drop, and your script will be re-written to reflect the new order.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id=&#34;what-i-like-about-power-query&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;What I like about Power Query&lt;/h1&gt;
+&lt;div id=&#34;what-i-like-about-power-query&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;What I like about Power Query&lt;/h2&gt;
+&lt;p&gt;There are quite a few things I like about Power Query:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;em&gt;Accessing data.&lt;/em&gt; Getting the data is the most seamless experience I’ve had. No need to set up any ODBC connections, any drivers, no need to install anything. It has pre-built functions for many data sources (I’ve got receipts: &lt;a href=&#34;https://msdn.microsoft.com/en-US/library/mt296615.aspx&#34;&gt;here is the list of functions&lt;/a&gt;), and can recognize a large amount of data formats. The Power Query flavor that runs on Power BI can also use R script as a data source, yet this functoinality isn’t a part of Excel now.&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;Tidy-like data storage and display.&lt;/em&gt; Surprised? Yeah, with a few exceptions, Power Query treats everything as a dataframe. What if it’s not a dataframe? Then it tries to fit the data into a rectangular shape. Here is an example of a JSON file: Power Query treats it as a table, with the &lt;code&gt;location&lt;/code&gt; column being a nested record. Down below, you can see what that particular cell I sampled consists of. From here, we could expand this record to new columns, drill down, or a create a new query.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Learning curve.&lt;/strong&gt; It’s easy to get started with Power Query and create functional reproducible scripts out of the gate. The powerful GUI allows for that. No setup necessary: no installation, fine tuning, no ODBC drivers and connections. It just works out of the box. Almost like it wasn’t Microsoft creating it.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Accessing data.&lt;/strong&gt; Getting the data is the most seamless experience I’ve had. It has pre-built functions for many data sources (I’ve got receipts: &lt;a href=&#34;https://msdn.microsoft.com/en-US/library/mt296615.aspx&#34;&gt;here is the list of functions&lt;/a&gt;), and can recognize a large amount of data formats. It doesn’t require any ODBC setup. The Power Query flavor that runs on Power BI can also use &lt;strong&gt;R scripts&lt;/strong&gt; as a data source or a data step, yet this functionality isn’t a part of Excel yet.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tidy-like data storage and display.&lt;/strong&gt; Surprised? Yeah, with a few exceptions, Power Query treats everything as a data frame. What if it’s not a data frame? Then it tries to fit the data into a rectangular shape. I’d like to show a few examples.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Here is an example of how Power Query treats JSON files. I used the well-known (thanks to Jenny Bryan’s tutorials!) &lt;a href=&#34;https://anapioficeandfire.com/&#34;&gt;API of Ice and Fire&lt;/a&gt;. Here is what I’ve got after a few clicks. Note that I only plugged in the API call as a URL - Power QUery did the rest.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;/post/power-query/got-1.png&#34;&gt;&lt;img src=&#34;/post/power-query/got-1.png&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;And here is the code behind it:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;let
-    Source = Json.Document(
-                  Web.Contents(&amp;quot;https://anapioficeandfire.com/api/characters?page=2&amp;amp;pageSize=5000&amp;quot;)),
-    convert_to_table = Table.FromList(Source, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
-    expand_records = Table.ExpandRecordColumn(convert_to_table, &amp;quot;Column1&amp;quot;, {&amp;quot;url&amp;quot;, &amp;quot;name&amp;quot;, &amp;quot;gender&amp;quot;, &amp;quot;culture&amp;quot;, &amp;quot;born&amp;quot;, &amp;quot;died&amp;quot;, &amp;quot;titles&amp;quot;, &amp;quot;aliases&amp;quot;, &amp;quot;father&amp;quot;, &amp;quot;mother&amp;quot;, &amp;quot;spouse&amp;quot;, &amp;quot;allegiances&amp;quot;, &amp;quot;books&amp;quot;, &amp;quot;povBooks&amp;quot;, &amp;quot;tvSeries&amp;quot;, &amp;quot;playedBy&amp;quot;}, {&amp;quot;url&amp;quot;, &amp;quot;name&amp;quot;, &amp;quot;gender&amp;quot;, &amp;quot;culture&amp;quot;, &amp;quot;born&amp;quot;, &amp;quot;died&amp;quot;, &amp;quot;titles&amp;quot;, &amp;quot;aliases&amp;quot;, &amp;quot;father&amp;quot;, &amp;quot;mother&amp;quot;, &amp;quot;spouse&amp;quot;, &amp;quot;allegiances&amp;quot;, &amp;quot;books&amp;quot;, &amp;quot;povBooks&amp;quot;, &amp;quot;tvSeries&amp;quot;, &amp;quot;playedBy&amp;quot;})
-    
-in
-    expand_records&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Not only JSON records get nested. You could have a nested table (can happen upon a join or after a &lt;code&gt;group by&lt;/code&gt;-like call), or a nested list. Regardless, Power Query will always try to make your data rectangular, which is pleasing to any &lt;code&gt;tidyverse&lt;/code&gt; adept. - &lt;em&gt;Robust GUI that keeps the code.&lt;/em&gt; Another cool feauture is that the GUI can handle 90% of one’s needs, and it scripts all transformations behind the scenes. I think of it as a gateway drug to &lt;em&gt;“programming one’s analysis”&lt;/em&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;what-i-dont-like-about-power-query&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;What I don’t like about Power Query&lt;/h1&gt;
+&lt;p&gt;Here is an example of how Power Query treats JSON files. I used the well-known (thanks to Jenny Bryan’s tutorials!) &lt;a href=&#34;https://anapioficeandfire.com/&#34;&gt;API of Ice and Fire&lt;/a&gt;. Here is what I’ve got after a few clicks. Note that I only plugged in the API call as a URL - Power Query did the rest.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;/post/power-query/got-1.png&#34;&gt;&lt;img src=&#34;/post/power-query/got-1.png&#34; /&gt;&lt;/a&gt; It is a data frame, but it has a nested list column for titles. Neat!&lt;/p&gt;
+&lt;p&gt;Not only JSON records get nested. You could have a nested table (can happen upon a join or after a &lt;code&gt;group_by&lt;/code&gt;-like call), or a nested list. Regardless, Power Query will always try to make your data rectangular, which is pleasing to any &lt;code&gt;tidyverse&lt;/code&gt; adept. Here is another example. I took the same Gapminder dataset, and nested it, grouping by &lt;code&gt;country&lt;/code&gt;. The table above is now how Power Query sees the table. The data frame below is a sneak peek into one of the nested cells for the United Kingdom. The function up on top is the step I applied to nest the data frame: &lt;img src=&#34;/post/power-query/gui4.png&#34; /&gt; One more example. Here is how Power Query sees a folder full of files: &lt;img src=&#34;/post/power-query/gui5.png&#34; /&gt; Likewise, if you told Power Query to access a database, and didn’t specify SQL statement, it would return a data frame of all tables and views in that database, and you can take it from there.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Speed. It is unbelieveably slow. I guess the convinience comes at a cost of performance. It does well on small datasets and simpler operations, but fails to do a decent job the moment you scale.&lt;/li&gt;
-&lt;li&gt;Syntax and flexibility. The language is rather rigid, and the syntax is annoying at times.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Robust GUI that keeps the code.&lt;/em&gt; Another cool feature is that the GUI can handle 90% of one’s needs, and it scripts all transformations behind the scenes. I think of it as a gateway drug to &lt;em&gt;“programming one’s analysis”&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;div id=&#34;so-who-is-it-for&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;So, who is it for?&lt;/h1&gt;
-&lt;p&gt;I see Power Query as a&lt;/p&gt;
+&lt;div id=&#34;what-i-dont-like-about-power-query&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;What I don’t like about Power Query&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Speed.&lt;/strong&gt; It is unbelievably slow. I guess the convenience comes at a cost of performance. It does well on small datasets and simpler operations, but fails to do a decent job the moment you scale.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Syntax and flexibility.&lt;/strong&gt; The language is rather rigid, and the syntax is annoying at times.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Limits.&lt;/strong&gt; It can only do so much. You can import and transform the data, but you can’t do anything else here.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;conclusion&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;What we have these days is several generations of knowledge workers trained on doing their analysis in Excel. Just bashing the tool is not productive. We think we provide better alternatives with R or Python, but we frequently forget about the learning curve associated not only with learning a new language, but also with learning &lt;strong&gt;a language&lt;/strong&gt; for the first time. Excel’s Power Query could serve as an important stepping stone in taking the analysis out of the Wild West world of Excel VLOOKUPs into the world of reproducible code, git repos and other warm and fuzzy things.&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>
