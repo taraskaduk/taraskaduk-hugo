@@ -14,8 +14,6 @@ aliases:
     - /post/power-query
 header:
   image: post/power-query/head.png
-
-twitterImg: post/power-query/head.png
 ---
 
 ## Intro
