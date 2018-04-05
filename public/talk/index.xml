@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Recent &amp; Upcoming Talks on Taras Kaduk</title>
+    <link>/talk/</link>
+    <description>Recent content in Recent &amp; Upcoming Talks on Taras Kaduk</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/talk/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>R and Power BI - Better Together</title>
+      <link>/talk/jpug-r/</link>
+      <pubDate>Thu, 08 Mar 2018 18:00:00 -0500</pubDate>
+      
+      <guid>/talk/jpug-r/</guid>
+      <description>R is one of the leading languages in the world of data science. It has a growing following and many applications, including data transformation, machine learning, statistical modeling, data visualization, web applications, and even building websites.
+R is widely used in academia, science and business. Some of the large companies like Microsoft, Facebook, Airbnb, Etsy, Stitch Fix, IBM and Uber use R for data science exclusively, or in tandem with Python.</description>
+    </item>
+    
+    <item>
+      <title>SASS: Simplify, Standardize, Automate and Scale your enterprise reporting</title>
+      <link>/talk/jpug-sass/</link>
+      <pubDate>Thu, 05 Oct 2017 18:00:00 -0400</pubDate>
+      
+      <guid>/talk/jpug-sass/</guid>
+      <description>In this session, we will talk about how to run Power BI reporting on enterprise level with minimal resources (i.e. lean), and introduce you to a SASS framework: simple, standard, automated and scalable.</description>
+    </item>
+    
+    <item>
+      <title>Migrate your enterprise reporting into Power BI: process canvas, pitfalls &amp; best practices</title>
+      <link>/talk/sql-sat-649/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 -0500</pubDate>
+      
+      <guid>/talk/sql-sat-649/</guid>
+      <description>In this session, we will discuss how to efficiently migrate your retrospective analytics from where it is now to Power BI, and do it in a way that saves you time in the future.
+Some of the topics include:
+ How to create a solution that is simple, automated, standardized and scalable How to avoid common pitfalls and &amp;ldquo;death by a thousand reports&amp;rdquo; How to most efficiently distribute the reports afterwards  </description>
+    </item>
+    
+  </channel>
+</rss>

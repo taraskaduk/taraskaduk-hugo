@@ -164,6 +164,20 @@ in
     </item>
     
     <item>
+      <title>R and Power BI - Better Together</title>
+      <link>/talk/jpug-r/</link>
+      <pubDate>Thu, 08 Mar 2018 18:00:00 -0500</pubDate>
+      
+      <guid>/talk/jpug-r/</guid>
+      <description>&lt;p&gt;R is one of the leading languages in the world of data science. It has a growing following and many applications, including data transformation, machine learning, statistical modeling, data visualization, web applications, and even building websites.&lt;/p&gt;
+
+&lt;p&gt;R is widely used in academia, science and business. Some of the large companies like Microsoft, Facebook, Airbnb, Etsy, Stitch Fix, IBM and Uber use R for data science exclusively, or in tandem with Python.&lt;/p&gt;
+
+&lt;p&gt;In this session, we will first look at R separately as a language, followed by use of R within Power BI: how, when and why to resort to it for data transformation, modeling and visualization.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Imposterism in Data Science: Addressing the credentials problem</title>
       <link>/2018/01/22/impostor/</link>
       <pubDate>Mon, 22 Jan 2018 00:00:00 +0000</pubDate>
@@ -483,6 +497,16 @@ plot&lt;/code&gt;&lt;/pre&gt;
 &lt;h2&gt;Repo&lt;/h2&gt;
 &lt;p&gt;As this blog is rendered with &lt;code&gt;blogdown&lt;/code&gt;, all the source code is on Github for your pleasure. taraskaduk.com repo is at &lt;a href=&#34;https://github.com/taraskaduk/taraskaduk/&#34; class=&#34;uri&#34;&gt;https://github.com/taraskaduk/taraskaduk/&lt;/a&gt; and the Rmd file for this post should be located at &lt;a href=&#34;https://github.com/taraskaduk/taraskaduk/tree/master/content/post&#34; class=&#34;uri&#34;&gt;https://github.com/taraskaduk/taraskaduk/tree/master/content/post&lt;/a&gt; (unless I mess it all up and relocate it. I’m really not good at your whole github and blogdown thing. But I’m learning)&lt;/p&gt;
 &lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>SASS: Simplify, Standardize, Automate and Scale your enterprise reporting</title>
+      <link>/talk/jpug-sass/</link>
+      <pubDate>Thu, 05 Oct 2017 18:00:00 -0400</pubDate>
+      
+      <guid>/talk/jpug-sass/</guid>
+      <description>&lt;p&gt;In this session, we will talk about how to run Power BI reporting on enterprise level with minimal resources (i.e. lean), and introduce you to a SASS framework: simple, standard, automated and scalable.&lt;/p&gt;
 </description>
     </item>
     
@@ -833,6 +857,71 @@ ggplot(
 &lt;p&gt;This site runs on &lt;del&gt;dunkin&lt;/del&gt; &lt;code&gt;blogdown&lt;/code&gt;, and therefore all the source files are available on GitHub. Now, I must be honest: I am new to Github, to Hugo, and to the web in general. I have very little idea about what I’m doing. But I guess here is the link? &lt;a href=&#34;https://github.com/taraskaduk/taraskaduk/tree/master/content/post/movies&#34; class=&#34;uri&#34;&gt;https://github.com/taraskaduk/taraskaduk/tree/master/content/post/movies&lt;/a&gt; (unless I change something or screw it up big time, in which case throw rocks at me in the comment section)&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Migrate your enterprise reporting into Power BI: process canvas, pitfalls &amp; best practices</title>
+      <link>/talk/sql-sat-649/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 -0500</pubDate>
+      
+      <guid>/talk/sql-sat-649/</guid>
+      <description>&lt;p&gt;In this session, we will discuss how to efficiently migrate your retrospective analytics from where it is now to Power BI, and do it in a way that saves you time in the future.&lt;/p&gt;
+
+&lt;p&gt;Some of the topics include:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;How to create a solution that is simple, automated, standardized and scalable&lt;/li&gt;
+&lt;li&gt;How to avoid common pitfalls and &amp;ldquo;death by a thousand reports&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;How to most efficiently distribute the reports afterwards&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Deep Learning</title>
+      <link>/project/deep-learning/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/project/deep-learning/</guid>
+      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
+
+&lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
+
+&lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
+
+&lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
+
+&lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>External Project</title>
+      <link>/project/example-external-project/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/project/example-external-project/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A Person Re-Identification System For Mobile Devices</title>
+      <link>/publication/person-re-identification/</link>
+      <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/publication/person-re-identification/</guid>
+      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Mobile visual clothing search</title>
+      <link>/publication/clothing-search/</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>/publication/clothing-search/</guid>
+      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
 </description>
     </item>
     

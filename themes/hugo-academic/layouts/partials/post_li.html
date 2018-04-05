@@ -10,7 +10,7 @@
     {{ if $img_src.Scheme }}
       <img src="{{ $post.Params.header.image }}" class="article-banner" itemprop="image">
     {{ else }}
-      <img src="{{ "./" | relURL }}{{ $post.Params.header.image }}" class="article-banner" itemprop="image">
+      <img src="{{ "/img/" | relURL }}{{ $post.Params.header.image }}" class="article-banner" itemprop="image">
     {{ end }}
   </a>
   {{end}}

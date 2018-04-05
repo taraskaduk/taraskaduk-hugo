@@ -31,23 +31,21 @@
     </item>
     
     <item>
+      <title>Recent &amp; Upcoming Talks</title>
+      <link>/home/talks/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/home/talks/</guid>
+      <description>Test</description>
+    </item>
+    
+    <item>
       <title>Recent Posts</title>
       <link>/home/posts/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>/home/posts/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>Talks</title>
-      <link>/home/talks/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>/home/talks/</guid>
-      <description>As a highly functioning introvert, I&amp;rsquo;ve learned to partially overcome my fear of public speaking.
-Here are some of my latest talks:
- PASS SQL Saturday #649: Migrate your enterprise reporting into Power BI: process canvas, pitfalls &amp;amp; best practices Jacksonville Power BI User Group:  SASS: Simplify, Standardize, Automate and Scale your enterprise reporting R and Power BI - Better Together   </description>
     </item>
     
     <item>

@@ -16,7 +16,7 @@
     </span>
 
     {{ if .Params.image }}
-    <img src="{{ "./" | relURL }}{{ .Params.image }}" class="pub-banner" itemprop="image">
+    <img src="{{ "/img/" | relURL }}{{ .Params.image }}" class="pub-banner" itemprop="image">
     {{end}}
 
     {{ if .Params.abstract }}

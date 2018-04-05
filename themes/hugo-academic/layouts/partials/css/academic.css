@@ -469,6 +469,7 @@ a[data-fancybox] img {
   display: inline-flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
   list-style: none;
   padding: 0;
   margin-top: 30px;
@@ -575,7 +576,7 @@ article {
 }
 
 .article-container {
-  max-width: 860px;
+  max-width: 760px;
   padding: 1rem 20px 0 20px;
   margin: 0 auto 0 auto;
 }
@@ -658,7 +659,6 @@ article .article-metadata {
 
 .article-style img,
 .article-style video {
-  max-width: 1060px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 60px;
@@ -694,13 +694,6 @@ article .article-metadata {
   border-top: 1px solid rgba(0,0,0,.05);
   margin-top: 0.5rem;
   margin-bottom: 1rem;
-}
-
-.center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
 }
 
 #comments {
