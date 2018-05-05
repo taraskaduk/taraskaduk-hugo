@@ -1,0 +1,254 @@
+---
+title: "Power BI User Group"
+subtitle: "⚔<br/>R in Power BI"
+author: "Taras Kaduk"
+date: "2018/03/08"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+
+<div id="agenda" class="section level1">
+<h1>Agenda</h1>
+<ul>
+<li>What is R</li>
+<li>R inside Power BI</li>
+<li>Why do you even need it?</li>
+</ul>
+</div>
+<div id="slides-and-stuff" class="section level1">
+<h1>Slides and stuff</h1>
+<div id="httpsgithub.comtaraskadukr-in-power-bi" class="section level2">
+<h2><a href="https://github.com/taraskaduk/r-in-power-bi" class="uri">https://github.com/taraskaduk/r-in-power-bi</a></h2>
+<hr />
+</div>
+</div>
+<div id="what-is-love-what-is-r" class="section level1">
+<h1><del>What is love?</del> What is R?</h1>
+<div id="more-importantly-what-can-it-do" class="section level2">
+<h2>More importantly, what can it do?</h2>
+<ul>
+<li>data transform</li>
+<li>stat analysis</li>
+<li>machine learning / predictive modeling</li>
+<li>web apps</li>
+<li>reports, presentations</li>
+<li>websites &amp; books</li>
+</ul>
+</div>
+</div>
+<div id="what-can-r-do" class="section level1">
+<h1>What can R do?</h1>
+<div id="data-transformation" class="section level2">
+<h2>Data transformation</h2>
+<pre class="r"><code>iris_gather &lt;- iris %&gt;% 
+    gather(&quot;key&quot;, &quot;size&quot;, -Species)
+    
+head(iris_gather)</code></pre>
+<pre><code>##   Species          key size
+## 1  setosa Sepal.Length  5.1
+## 2  setosa Sepal.Length  4.9
+## 3  setosa Sepal.Length  4.7
+## 4  setosa Sepal.Length  4.6
+## 5  setosa Sepal.Length  5.0
+## 6  setosa Sepal.Length  5.4</code></pre>
+</div>
+</div>
+<div id="what-can-r-do-1" class="section level1">
+<h1>What can R do?</h1>
+<div id="data-transformation-1" class="section level2">
+<h2>Data transformation</h2>
+<pre class="r"><code>iris_summary &lt;- iris_gather2 %&gt;% 
+    group_by(Species) %&gt;% 
+    summarise(size_avg = mean(size),
+              size_sd = sd(size),
+              size_med = median(size))
+
+head(iris_summary)    </code></pre>
+<pre><code>## # A tibble: 3 x 4
+##   Species    size_avg size_sd size_med
+##   &lt;fct&gt;         &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;
+## 1 setosa         2.54    1.85     2.10
+## 2 versicolor     3.57    1.76     3.30
+## 3 virginica      4.28    1.92     4.15</code></pre>
+</div>
+</div>
+<div id="what-can-r-do-2" class="section level1">
+<h1>What can R do?</h1>
+<div id="data-visualization" class="section level2">
+<h2>Data visualization</h2>
+<div class="figure">
+<img src="https://d33wubrfki0l68.cloudfront.net/cd18743b0d0cb9270a884f2df772e64595ac99bb/2dfe8/post/2017-11-pixel-maps/pixel-maps_files/figure-html/unnamed-chunk-5-1.png" />
+
+</div>
+<p><a href="https://taraskaduk.com/2017/11/26/pixel-maps/" class="uri">https://taraskaduk.com/2017/11/26/pixel-maps/</a></p>
+</div>
+<div id="what-can-r-do-3" class="section level2">
+<h2>What can R do?</h2>
+<div id="so-much-more" class="section level3">
+<h3>So much more!</h3>
+<ul>
+<li>reports</li>
+<li>presentations (including this one!)</li>
+<li>websites</li>
+<li>books</li>
+</ul>
+<hr />
+</div>
+</div>
+<div id="what-can-r-do-bread-and-butter" class="section level2">
+<h2><strong>What can R do?</strong> Bread and butter</h2>
+<blockquote>
+<p><em>“The best thing about R is that it was written by statisticians. The worst thing about R is that it was written by statisticians.”</em> <strong>~ Bob Cowgill</strong> (probably) <sup>1</sup></p>
+</blockquote>
+<p>.footnote[ <a href="http://blog.revolutionanalytics.com/2015/06/why-has-r-been-so-successful.html">1 - Why has R, despite quirks, been so successful? - Revolution Analytics</a>]</p>
+<hr />
+</div>
+<div id="what-can-r-do-4" class="section level2">
+<h2>What can R do?</h2>
+<div id="statistical-analysis-and-machine-learning" class="section level3">
+<h3>Statistical analysis and Machine Learning</h3>
+<ul>
+<li>perform statistical analysis</li>
+<li>create, train and test models on your laptop (<code>caret</code>, <code>modelr</code> packages, etc)</li>
+<li>reach to Keras and TensorFlow from within R</li>
+<li>et cetera et cetera</li>
+</ul>
+<hr />
+</div>
+</div>
+<div id="r-in-power-bi" class="section level2">
+<h2>R in Power BI</h2>
+<div id="r-in-microsoft" class="section level3">
+<h3>R in Microsoft</h3>
+<p>What can you do with R inside of MS products? - Run R on SQL Server. - Run R code in Azure ML - Use Microsoft R Server for paralel processing</p>
+<hr />
+<p><a href="https://microsoft.github.io/sql-ml-tutorials/R/rentalprediction/step/3.html" class="uri">https://microsoft.github.io/sql-ml-tutorials/R/rentalprediction/step/3.html</a></p>
+<pre class="sql"><code>-- Stored procedure that trains and generates an R model using the rental_data and a decision tree algorithm
+DROP PROCEDURE IF EXISTS generate_rental_rx_model;
+go
+CREATE PROCEDURE generate_rental_rx_model (@trained_model varbinary(max) OUTPUT)
+AS
+BEGIN
+    EXECUTE sp_execute_external_script
+      @language = N&#39;R&#39;
+    , @script = N&#39;
+        require(&quot;RevoScaleR&quot;);
+
+
+            rental_train_data$Holiday = factor(rental_train_data$Holiday);
+            rental_train_data$Snow = factor(rental_train_data$Snow);
+            rental_train_data$WeekDay = factor(rental_train_data$WeekDay);
+
+        #Create a dtree model and train it using the training data set
+        model_dtree &lt;- rxDTree(RentalCount ~ Month + Day + WeekDay + Snow + Holiday, data = rental_train_data);
+        #Before saving the model to the DB table, we need to serialize it
+        trained_model &lt;- as.raw(serialize(model_dtree, connection=NULL));&#39;
+
+    , @input_data_1 = N&#39;select &quot;RentalCount&quot;, &quot;Year&quot;, &quot;Month&quot;, &quot;Day&quot;, &quot;WeekDay&quot;, &quot;Snow&quot;, &quot;Holiday&quot; from dbo.rental_data where Year &lt; 2015&#39;
+    , @input_data_1_name = N&#39;rental_train_data&#39;
+    , @params = N&#39;@trained_model varbinary(max) OUTPUT&#39;
+    , @trained_model = @trained_model OUTPUT;
+END;
+GO</code></pre>
+<p>class: center, middle <img src="https://sdtimes.com/wp-content/uploads/2016/01/0113.sdt-news.png" /></p>
+</div>
+</div>
+<div id="r-in-power-bi-1" class="section level2">
+<h2>R in Power BI</h2>
+<p>That’s cool, but what can I do with R in Power BI?</p>
+<ul>
+<li>custom R visuals</li>
+<li>scripts</li>
+<li>visuals</li>
+</ul>
+<p><img src="http://gqbi.files.wordpress.com/2016/08/082516_0434_binsightpow3.png" /> <a href="http://community.powerbi.com/t5/R-Script-Showcase/bd-p/RVisuals" class="uri">http://community.powerbi.com/t5/R-Script-Showcase/bd-p/RVisuals</a> — # Custom R visuals <a href="https://docs.microsoft.com/en-us/power-bi/desktop-r-powered-custom-visuals" class="uri">https://docs.microsoft.com/en-us/power-bi/desktop-r-powered-custom-visuals</a> <img src="https://docs.microsoft.com/en-us/power-bi/media/desktop-r-powered-custom-visuals/powerbi-r-powered-custom-viz_3a.png" /></p>
+</div>
+</div>
+<div id="custom-r-visuals" class="section level1">
+<h1>Custom R Visuals</h1>
+<p><a href="https://github.com/Microsoft/PowerBI-visuals-forcasting-exp" class="uri">https://github.com/Microsoft/PowerBI-visuals-forcasting-exp</a></p>
+<pre class="r"><code>  ets_params = list(Automatic=&quot;Z&quot;,Multiplicative=&quot;M&quot;,Additive=&quot;A&quot;,None=&quot;N&quot;)
+  if(frequency(timeSeries) == 1)
+    seasonType = &quot;None&quot;
+  deModel = paste(ets_params[[errorType]],ets_params[[trendType]],ets_params[[seasonType]],sep=&quot;&quot;)
+  
+  if(sum(deModel==c(&quot;ANM&quot;,&quot;ZMA&quot;,&quot;MMA&quot;,&quot;AZM&quot;,&quot;AMZ&quot;,&quot;AMM&quot;,&quot;AMA&quot;,&quot;AMN&quot;,&quot;AAM&quot;)))# Forbidden model combination 
+    deModel = &quot;ZZZ&quot;
+  
+  fit = ets(timeSeries, model=deModel,damped=damped)</code></pre>
+<p>class: middle, center # Custom R visuals in Power BI are well thought-out and overall legit. Use them — class: middle, center # R Scripts — # R scripts</p>
+<p><br><br></p>
+<div id="when-power-query-cant-do-the-job" class="section level3">
+<h3>- When Power Query can’t do the job</h3>
+</div>
+<div id="when-power-query-is-slow-and-clunky" class="section level2">
+<h2>### - When Power Query is slow and clunky</h2>
+</div>
+</div>
+<div id="r-scripts" class="section level1">
+<h1>R scripts</h1>
+<p>This</p>
+<pre><code>let
+    Source = Web.Page(
+                Web.Contents(&quot;https://github.com/jennybc/gapminder/blob/master/inst/extdata/gapminder.tsv&quot;)),
+    Data = Source{0}[Data],
+    col_types = Table.TransformColumnTypes(Data,{
+                                                  {&quot;&quot;, type text}, 
+                                                  {&quot;country&quot;, type text}, 
+                                                  {&quot;continent&quot;, type text}, 
+                                                  {&quot;year&quot;, Int64.Type}, 
+                                                  {&quot;lifeExp&quot;, type number}, 
+                                                  {&quot;pop&quot;, Int64.Type}, 
+                                                  {&quot;gdpPercap&quot;, type number}
+                                                }),
+    filter = Table.SelectRows(col_types, each ([year] = 2007)),
+    mutate = Table.AddColumn(filter, &quot;lifeExpMonths&quot;, each [lifeExp] * 12, type number),
+    arrange = Table.Sort(mutate,{{&quot;lifeExpMonths&quot;, Order.Descending}})
+in
+    arrange</code></pre>
+</div>
+<div id="r-scripts-1" class="section level1">
+<h1>R scripts</h1>
+<div id="what-if-demo" class="section level2">
+<h2><em>What If</em> demo</h2>
+<ul>
+<li>what_if.R</li>
+<li>what_if.pbix</li>
+</ul>
+</div>
+</div>
+<div id="demo-4" class="section level1">
+<h1>Demo 4</h1>
+<div id="r-visuals" class="section level2">
+<h2>R Visuals</h2>
+<ul>
+<li>what_if.pbix</li>
+<li>financial_forecast_demo.pbix</li>
+</ul>
+</div>
+</div>
+<div id="the-end" class="section level1">
+<h1>The end</h1>
+<div id="follow-me" class="section level2">
+<h2>Follow me:</h2>
+<ul>
+<li><a href="https://taraskaduk.com" class="uri">https://taraskaduk.com</a></li>
+<li><a href="https://www.linkedin.com/in/taraskaduk/" class="uri">https://www.linkedin.com/in/taraskaduk/</a></li>
+<li><a href="https://github.com/taraskaduk/" class="uri">https://github.com/taraskaduk/</a></li>
+<li><a href="https://twitter.com/taraskaduk" class="uri">https://twitter.com/taraskaduk</a></li>
+</ul>
+</div>
+<div id="this-presentation-is-here" class="section level2">
+<h2>This presentation is here</h2>
+<div id="httpsgithub.comtaraskadukr-in-power-bi-1" class="section level3">
+<h3><a href="https://github.com/taraskaduk/r-in-power-bi" class="uri">https://github.com/taraskaduk/r-in-power-bi</a></h3>
+</div>
+</div>
+</div>

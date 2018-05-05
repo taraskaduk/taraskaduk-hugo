@@ -178,6 +178,14 @@
     
     <url>
     
+      <loc>/talk/r-in-power-bi/presentation/slides-career/</loc>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/tags/analytics/</loc>
       <lastmod>2018-03-29T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -370,6 +378,22 @@
       <loc>/post/</loc>
       <lastmod>2018-03-29T00:00:00+00:00</lastmod>
       <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/talk/r-in-power-bi/presentation/slides/</loc>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/talk/slides/</loc>
     </url>
     
   
