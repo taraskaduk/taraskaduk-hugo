@@ -12,6 +12,24 @@
     
     
     <item>
+      <title>All the ways to break into data science and analytics</title>
+      <link>/talk/sql-sat-759-career/</link>
+      <pubDate>Tue, 01 May 2018 00:00:00 -0400</pubDate>
+      
+      <guid>/talk/sql-sat-759-career/</guid>
+      <description>In this session, we will explore all the various ways to pivot into the data science field. We will go over some common scenarios, and will inspect different pieces of advice found on the Internet.</description>
+    </item>
+    
+    <item>
+      <title>R in Power BI</title>
+      <link>/talk/sql-sat-759-r-pbi/</link>
+      <pubDate>Tue, 01 May 2018 00:00:00 -0400</pubDate>
+      
+      <guid>/talk/sql-sat-759-r-pbi/</guid>
+      <description>In this session, we will touch on R as the language for data science, and then will dive right into how to use R within the Power BI environment, and why to use it in a first place.</description>
+    </item>
+    
+    <item>
       <title>R and Power BI - Better Together</title>
       <link>/talk/jpug-r/</link>
       <pubDate>Thu, 08 Mar 2018 18:00:00 -0500</pubDate>

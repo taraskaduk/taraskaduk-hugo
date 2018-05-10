@@ -5,6 +5,24 @@
     
     <url>
     
+      <loc>/talk/sql-sat-759-career/</loc>
+      <lastmod>2018-05-01T00:00:00-04:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/talk/sql-sat-759-r-pbi/</loc>
+      <lastmod>2018-05-01T00:00:00-04:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/2018/03/29/power-query/</loc>
       <lastmod>2018-03-29T00:00:00+00:00</lastmod>
     </url>
@@ -171,14 +189,6 @@
       <loc>/publication_types/2/</loc>
       <lastmod>2015-09-01T00:00:00+00:00</lastmod>
       <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>/talk/r-in-power-bi/presentation/slides-career/</loc>
     </url>
     
   
@@ -378,22 +388,6 @@
       <loc>/post/</loc>
       <lastmod>2018-03-29T00:00:00+00:00</lastmod>
       <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>/talk/r-in-power-bi/presentation/slides/</loc>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>/talk/slides/</loc>
     </url>
     
   

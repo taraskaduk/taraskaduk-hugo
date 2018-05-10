@@ -12,7 +12,7 @@ event_url = "https://www.meetup.com/Jacksonville-Power-BI-User-Group-PUG/events/
 location = "Jacksonville, FL"
 
 # Is this a selected talk? (true/false)
-selected = true
+selected = false
 
 # Projects (optional).
 #   Associate this talk with one or more of your projects.
