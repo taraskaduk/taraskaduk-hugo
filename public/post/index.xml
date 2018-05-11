@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Taras Kaduk</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 29 Mar 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 10 May 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Here&#39;s to the hardworking ones</title>
+      <link>/2018/05/10/encouragement/</link>
+      <pubDate>Thu, 10 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/05/10/encouragement/</guid>
+      <description>Backstory: I wrote this blog post a couple of months ago, and I wasn&amp;rsquo;t at my best. My resumes and cover letters were getting no response, I was (and still am) suffering from a bad case of imposterism fueled by doing data analytics and data science without a degree, I was looking around only saw people 10 times smarter than I&amp;rsquo;d ever be.
+Since that time, in a matter of a few months, I had a number of very good interviews with prospective employers, and I gave two well-received talks at a local SQL Saturday event.</description>
+    </item>
     
     <item>
       <title>Power Query: Excel&#39;s gateway to reproducible analysis</title>
