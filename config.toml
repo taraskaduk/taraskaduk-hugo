@@ -218,17 +218,17 @@ defaultContentLanguageInSubdir = false
   [[params.social]]
     icon = "twitter"
     icon_pack = "fa"
-    link = "/twitter.com/taraskaduk"
+    link = "https://twitter.com/taraskaduk"
 
   [[params.social]]
     icon = "github"
     icon_pack = "fa"
-    link = "/github.com/taraskaduk"
+    link = "https://github.com/taraskaduk"
     
   [[params.social]]
     icon = "linkedin"
     icon_pack = "fa"
-    link = "/linkedin.com/taraskaduk"
+    link = "https://linkedin.com/taraskaduk"
 
 
 # Navigation Links
