@@ -93,11 +93,11 @@ defaultContentLanguageInSubdir = false
   #   1: Google Maps
   #   2: OpenStreetMap (Mapnik)
   #   3: OpenStreetMap (Mapbox)
-  map = 1
-  map_api_key = ""
-  latitude = "30.3185853"
-  longitude = "-81.6619508"
-  zoom = 14
+  # map = 1
+#  map_api_key = ""
+ # latitude = "30.3185853"
+  #longitude = "-81.6619508"
+  #zoom = 14
   
 
   # Date and time format (refer to Go's date format: http://fuckinggodateformat.com )
