@@ -2,76 +2,76 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Homes on Taras Kaduk</title>
-    <link>/home/</link>
+    <link>https://taraskaduk.com/home/</link>
     <description>Recent content in Homes on Taras Kaduk</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 15 Oct 2017 00:00:00 -0400</lastBuildDate>
     
-	<atom:link href="/home/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://taraskaduk.com/home/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>A quick reminder...</title>
-      <link>/home/hero/</link>
+      <link>https://taraskaduk.com/home/hero/</link>
       <pubDate>Sun, 15 Oct 2017 00:00:00 -0400</pubDate>
       
-      <guid>/home/hero/</guid>
+      <guid>https://taraskaduk.com/home/hero/</guid>
       <description>Conducting an analysis of partying counts as partying, Taras.
 &amp;mdash; ANDREW W.K. (@AndrewWK) January 28, 2018  </description>
     </item>
     
     <item>
       <title></title>
-      <link>/home/about/</link>
+      <link>https://taraskaduk.com/home/about/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/home/about/</guid>
+      <guid>https://taraskaduk.com/home/about/</guid>
       <description>About I am a Senior Digital Data Analyst at TIAA Bank. In my spare time, I keep this website alive and blog about various data things.</description>
     </item>
     
     <item>
       <title>Recent &amp; Upcoming Talks</title>
-      <link>/home/talks/</link>
+      <link>https://taraskaduk.com/home/talks/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/home/talks/</guid>
+      <guid>https://taraskaduk.com/home/talks/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Recent Posts</title>
-      <link>/home/posts/</link>
+      <link>https://taraskaduk.com/home/posts/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/home/posts/</guid>
+      <guid>https://taraskaduk.com/home/posts/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tags</title>
-      <link>/home/tags/</link>
+      <link>https://taraskaduk.com/home/tags/</link>
       <pubDate>Wed, 20 Sep 2017 00:00:00 -0400</pubDate>
       
-      <guid>/home/tags/</guid>
+      <guid>https://taraskaduk.com/home/tags/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Contact</title>
-      <link>/home/contact/</link>
+      <link>https://taraskaduk.com/home/contact/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/home/contact/</guid>
+      <guid>https://taraskaduk.com/home/contact/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Projects</title>
-      <link>/home/projects/</link>
+      <link>https://taraskaduk.com/home/projects/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/home/projects/</guid>
+      <guid>https://taraskaduk.com/home/projects/</guid>
       <description>Definitely coming up</description>
     </item>
     

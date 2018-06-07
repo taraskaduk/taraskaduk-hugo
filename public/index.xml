@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Taras Kaduk on Taras Kaduk</title>
-    <link>/</link>
+    <link>https://taraskaduk.com/</link>
     <description>Recent content in Taras Kaduk on Taras Kaduk</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -11,10 +11,10 @@
     
     <item>
       <title>Here&#39;s to the hardworking ones</title>
-      <link>/2018/05/10/encouragement/</link>
+      <link>https://taraskaduk.com/2018/05/10/encouragement/</link>
       <pubDate>Thu, 10 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/05/10/encouragement/</guid>
+      <guid>https://taraskaduk.com/2018/05/10/encouragement/</guid>
       <description>
 
 &lt;p&gt;&lt;strong&gt;Backstory:&lt;/strong&gt; &lt;em&gt;I wrote this blog post a couple of months ago, and I wasn&amp;rsquo;t at my best. My resumes and cover letters were getting no response, I was (and still am) suffering from a bad case of imposterism fueled by doing data analytics and data science without a degree, I was looking around only saw people 10 times smarter than I&amp;rsquo;d ever be.&lt;/em&gt;&lt;/p&gt;
@@ -85,30 +85,30 @@
     
     <item>
       <title>All the ways to break into data science and analytics</title>
-      <link>/talk/sql-sat-759-career/</link>
+      <link>https://taraskaduk.com/talk/sql-sat-759-career/</link>
       <pubDate>Tue, 01 May 2018 00:00:00 -0400</pubDate>
       
-      <guid>/talk/sql-sat-759-career/</guid>
+      <guid>https://taraskaduk.com/talk/sql-sat-759-career/</guid>
       <description>&lt;p&gt;In this session, we will explore all the various ways to pivot into the data science field. We will go over some common scenarios, and will inspect different pieces of advice found on the Internet.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>R in Power BI</title>
-      <link>/talk/sql-sat-759-r-pbi/</link>
+      <link>https://taraskaduk.com/talk/sql-sat-759-r-pbi/</link>
       <pubDate>Tue, 01 May 2018 00:00:00 -0400</pubDate>
       
-      <guid>/talk/sql-sat-759-r-pbi/</guid>
+      <guid>https://taraskaduk.com/talk/sql-sat-759-r-pbi/</guid>
       <description>&lt;p&gt;In this session, we will touch on R as the language for data science, and then will dive right into how to use R within the Power BI environment, and why to use it in a first place.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Power Query: Excel&#39;s gateway to reproducible analysis</title>
-      <link>/2018/03/29/power-query/</link>
+      <link>https://taraskaduk.com/2018/03/29/power-query/</link>
       <pubDate>Thu, 29 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/03/29/power-query/</guid>
+      <guid>https://taraskaduk.com/2018/03/29/power-query/</guid>
       <description>&lt;div id=&#34;intro&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Intro&lt;/h2&gt;
 &lt;p&gt;In this blog post, I’ll try to highlight some of Excel’s functionality which have been around for a while, but remains largely unknown to the broad public.&lt;/p&gt;
@@ -158,7 +158,7 @@
 &lt;p&gt;In simpler terms, it is a data transformation language. Now, I’m not a computer scientist, and won’t be able to explain all the technical details well, therefore I suggest that the most interested ones go and check out the &lt;a href=&#34;https://msdn.microsoft.com/en-us/library/mt807488.aspx&#34;&gt;Power Query M language specification&lt;/a&gt;. For the rest of us, I’ll just say that M works by calling a function on a table or a list, then storing this result as a new table, and then calling this new table in the next step with another function. That is oversimplification, of course, but for the purpose of this post, it should do.&lt;/p&gt;
 &lt;div id=&#34;example-1&#34; class=&#34;section level5&#34;&gt;
 &lt;h5&gt;Example 1&lt;/h5&gt;
-&lt;p&gt;Let me explain it on an example. In Excel, I created sample table of 3 rows and 3 columns called &lt;code&gt;df&lt;/code&gt;. &lt;img src=&#34;/post/power-query/test1.png&#34; style=&#34;width:50.0%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Let me explain it on an example. In Excel, I created sample table of 3 rows and 3 columns called &lt;code&gt;df&lt;/code&gt;. &lt;img src=&#34;https://taraskaduk.com/post/power-query/test1.png&#34; style=&#34;width:50.0%&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;I then loaded it into the query editor, and pressed a few buttons. Here is the code it generated (I edited the step names and indented the lines):&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;let
     Source = Excel.CurrentWorkbook(){[Name=&amp;quot;df&amp;quot;]}[Content],
@@ -172,7 +172,7 @@
     remove_cols = Table.RemoveColumns(filter,{&amp;quot;c&amp;quot;})
 in
     remove_cols&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The final output will look like this: &lt;img src=&#34;/post/power-query/test2.png&#34; style=&#34;width:50.0%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;The final output will look like this: &lt;img src=&#34;https://taraskaduk.com/post/power-query/test2.png&#34; style=&#34;width:50.0%&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;The first step, &lt;code&gt;Source&lt;/code&gt;, is our import step. It tells Power Query where to find our table. The second step, &lt;code&gt;change_type&amp;quot;&lt;/code&gt;, is auto-generated. Notice that it references the first step as the first argument of the function &lt;code&gt;Table.TransformColumnTypes&lt;/code&gt;: it says &lt;em&gt;“that’s the table we will work with”&lt;/em&gt;. All this step does is assigns columns a, b and c the type of integer. Next step, &lt;code&gt;filter&lt;/code&gt;, references the previous step, and performs a filter operation. Finally, &lt;code&gt;remove_cols&lt;/code&gt; takes the result of the previous step, and then removes a column. Then, the code tells Power Query that the result of &lt;code&gt;remove_cols&lt;/code&gt; is the one to be printed.&lt;/p&gt;
 &lt;p&gt;This is a very basic explanation of how this code works. You can twist it, bend it to your will, skip steps, branch out, use parameters etc. But the common functionally is this stitched &lt;em&gt;freight train&lt;/em&gt;-like sequence of steps.&lt;/p&gt;
 &lt;/div&gt;
@@ -220,9 +220,9 @@ in
 &lt;h3&gt;The GUI&lt;/h3&gt;
 &lt;p&gt;As you may have guessed from my previous paragraph, the Query Editor GUI is bread and butter of this whole scheme: the M language itself is hard to type by hand, the functions are long, it is case sensitive, and there is no good source code editor (Notepad++ and other text editors do a better job than the Power Query itself). But I feel like Power Query wasn’t built to program in: that’s not the main customer base of Excel and Power BI. What Power Query is good at is its GUI that allows users to click around and apply data transformation steps, all the while generating a script behind the scenes.&lt;/p&gt;
 &lt;p&gt;First, there is a ribbon with several tabs and plenty of buttons to click on. Some represent very simple existing functions, while others are pretty complicated and generate a solid chunk of code on just one click.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/power-query/1.png&#34; /&gt; &lt;img src=&#34;/post/power-query/2.png&#34; /&gt; &lt;img src=&#34;/post/power-query/3.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://taraskaduk.com/post/power-query/1.png&#34; /&gt; &lt;img src=&#34;https://taraskaduk.com/post/power-query/2.png&#34; /&gt; &lt;img src=&#34;https://taraskaduk.com/post/power-query/3.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Next, you are allowed to interact with your data to some extend. You can’t edit any cells, but you can filter columns, move them around, fill them down, sort, and so on, within the table itself. Power Query will pick up on your actions and will save your transformations in a script.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/power-query/gui1.png&#34; /&gt; &lt;img src=&#34;/post/power-query/gui2.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://taraskaduk.com/post/power-query/gui1.png&#34; /&gt; &lt;img src=&#34;https://taraskaduk.com/post/power-query/gui2.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;You can have more than one query, coming from different sources, and you can make them interact with each other: merge (join), append (union), reference, split, nest and so on.&lt;/p&gt;
 &lt;p&gt;You can also re-arrange the query steps in the GUI via simple drag-n-drop, and your script will be re-written to reflect the new order.&lt;/p&gt;
 &lt;/div&gt;
@@ -236,8 +236,8 @@ in
 &lt;li&gt;&lt;strong&gt;Tidy-like data storage and display.&lt;/strong&gt; Surprised? Yeah, with a few exceptions, Power Query treats everything as a data frame. What if it’s not a data frame? Then it tries to fit the data into a rectangular shape. I’d like to show a few examples.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Here is an example of how Power Query treats JSON files. I used the well-known (thanks to Jenny Bryan’s tutorials!) &lt;a href=&#34;https://anapioficeandfire.com/&#34;&gt;API of Ice and Fire&lt;/a&gt;. Here is what I’ve got after a few clicks. Note that I only plugged in the API call as a URL - Power Query did the rest.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;/post/power-query/got-1.png&#34;&gt;&lt;img src=&#34;/post/power-query/got-1.png&#34; /&gt;&lt;/a&gt; It is a data frame, but it has a nested list column for titles. Neat!&lt;/p&gt;
-&lt;p&gt;Not only JSON records get nested. You could have a nested table (can happen upon a join or after a &lt;code&gt;group_by&lt;/code&gt;-like call), or a nested list. Regardless, Power Query will always try to make your data rectangular, which is pleasing to any &lt;code&gt;tidyverse&lt;/code&gt; adept. Here is another example. I took the same Gapminder dataset, and nested it, grouping by &lt;code&gt;country&lt;/code&gt;. The table above is now how Power Query sees the table. The data frame below is a sneak peek into one of the nested cells for the United Kingdom. The function up on top is the step I applied to nest the data frame: &lt;img src=&#34;/post/power-query/gui4.png&#34; /&gt; One more example. Here is how Power Query sees a folder full of files: &lt;img src=&#34;/post/power-query/gui5.png&#34; /&gt; Likewise, if you told Power Query to access a database, and didn’t specify SQL statement, it would return a data frame of all tables and views in that database, and you can take it from there.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://taraskaduk.com/post/power-query/got-1.png&#34;&gt;&lt;img src=&#34;https://taraskaduk.com/post/power-query/got-1.png&#34; /&gt;&lt;/a&gt; It is a data frame, but it has a nested list column for titles. Neat!&lt;/p&gt;
+&lt;p&gt;Not only JSON records get nested. You could have a nested table (can happen upon a join or after a &lt;code&gt;group_by&lt;/code&gt;-like call), or a nested list. Regardless, Power Query will always try to make your data rectangular, which is pleasing to any &lt;code&gt;tidyverse&lt;/code&gt; adept. Here is another example. I took the same Gapminder dataset, and nested it, grouping by &lt;code&gt;country&lt;/code&gt;. The table above is now how Power Query sees the table. The data frame below is a sneak peek into one of the nested cells for the United Kingdom. The function up on top is the step I applied to nest the data frame: &lt;img src=&#34;https://taraskaduk.com/post/power-query/gui4.png&#34; /&gt; One more example. Here is how Power Query sees a folder full of files: &lt;img src=&#34;https://taraskaduk.com/post/power-query/gui5.png&#34; /&gt; Likewise, if you told Power Query to access a database, and didn’t specify SQL statement, it would return a data frame of all tables and views in that database, and you can take it from there.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;em&gt;Robust GUI that keeps the code.&lt;/em&gt; Another cool feature is that the GUI can handle 90% of one’s needs, and it scripts all transformations behind the scenes. I think of it as a gateway drug to &lt;em&gt;“programming one’s analysis”&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -259,10 +259,10 @@ in
     
     <item>
       <title>R and Power BI - Better Together</title>
-      <link>/talk/jpug-r/</link>
+      <link>https://taraskaduk.com/talk/jpug-r/</link>
       <pubDate>Thu, 08 Mar 2018 18:00:00 -0500</pubDate>
       
-      <guid>/talk/jpug-r/</guid>
+      <guid>https://taraskaduk.com/talk/jpug-r/</guid>
       <description>&lt;p&gt;R is one of the leading languages in the world of data science. It has a growing following and many applications, including data transformation, machine learning, statistical modeling, data visualization, web applications, and even building websites.&lt;/p&gt;
 
 &lt;p&gt;R is widely used in academia, science and business. Some of the large companies like Microsoft, Facebook, Airbnb, Etsy, Stitch Fix, IBM and Uber use R for data science exclusively, or in tandem with Python.&lt;/p&gt;
@@ -273,12 +273,12 @@ in
     
     <item>
       <title>Imposterism in Data Science: Addressing the credentials problem</title>
-      <link>/2018/01/22/impostor/</link>
+      <link>https://taraskaduk.com/2018/01/22/impostor/</link>
       <pubDate>Mon, 22 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/01/22/impostor/</guid>
+      <guid>https://taraskaduk.com/2018/01/22/impostor/</guid>
       <description>&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;/post/impostor/fraud.gif&#34; /&gt;
+&lt;img src=&#34;https://taraskaduk.com/post/impostor/fraud.gif&#34; /&gt;
 
 &lt;/div&gt;
 &lt;p&gt;&lt;em&gt;Cross-posted: &lt;a href=&#34;https://medium.com/taras-kaduk/imposterism-in-data-science-f96c29ae96ce&#34;&gt;&lt;strong&gt;Medium&lt;/strong&gt;&lt;/a&gt; &lt;/em&gt;&lt;/p&gt;
@@ -303,7 +303,7 @@ in
 &lt;h2&gt;Faking it in the world of educated people&lt;/h2&gt;
 &lt;p&gt;If you think that this is a sound request, you won’t be wrong. But let me speak about it from my own experience. I’ve been in the workforce for 10 years, have been doing analytics for over 5 years. And I don’t have a degree. No, I don’t mean MS or PhD. I don’t have a Bachelor’s degree.&lt;/p&gt;
 &lt;center&gt;
-&lt;img src=&#34;/post/impostor/yachty.gif&#34; /&gt;
+&lt;img src=&#34;https://taraskaduk.com/post/impostor/yachty.gif&#34; /&gt;
 &lt;/center&gt;
 &lt;p&gt;Yep. And it’s hard to admit. Ever since I had to leave one of the best Economics universities of my country for a full-time job to make ends meet, I felt ashamed of the fact that I never graduated. And the feeling became even stronger as I broke into the analytics / data science field. Whereas overall a Bachelor’s degree in combination with hard work and continuous learning is fairly enough to hold a well-paid job, in our field it is an absolute bare minimum, but you need much more.&lt;/p&gt;
 &lt;p&gt;So how do you think it feels when you come across a position you have all the skills for, but which requires an MS in Math, Computer Science or Statistics? You’re like &lt;em&gt;“I’m 2 steps below that!”&lt;/em&gt; Or how does it feel when your direct report whom you teach, mentor and guide has a Master’s degree?&lt;/p&gt;
@@ -317,7 +317,7 @@ in
 &lt;h4&gt;&lt;span style=&#34;background-color: #DDDDDD&#34;&gt; But for the small amount of folks like me, who work (or want to work) in analytics / data science, yet don’t have any degree beyond high school, here is some bitter truth: there is no silver bullet. Go and study formally.&lt;/span&gt;&lt;/h4&gt;
 &lt;p&gt;All these ten years, I though I can prove the world wrong, thought I can show that one can be smart without a diploma from a 4-year university. MOOCs, online classes, free and paid resources, books, guides… It all takes you only so far.&lt;/p&gt;
 &lt;center&gt;
-&lt;img src=&#34;/post/impostor/homer.gif&#34; style=&#34;width:75.0%&#34; /&gt;
+&lt;img src=&#34;https://taraskaduk.com/post/impostor/homer.gif&#34; style=&#34;width:75.0%&#34; /&gt;
 &lt;/center&gt;
 &lt;p&gt;And I’m tired of fighting this uphill battle. That’s why I’m starting again from ground zero. Getting an AA at a state college, followed by a BS and hopefully an MS at a state university. And we’ll see what’s next. Classes start next week. It’s going to be long and costly, but it’s going to be worth it.&lt;/p&gt;
 &lt;/div&gt;
@@ -327,14 +327,14 @@ in
     
     <item>
       <title>The 4 Stages of Data Analytics Maturity: Challenging the Gartner’s Model</title>
-      <link>/2018/01/22/4-stages/</link>
+      <link>https://taraskaduk.com/2018/01/22/4-stages/</link>
       <pubDate>Mon, 22 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/01/22/4-stages/</guid>
+      <guid>https://taraskaduk.com/2018/01/22/4-stages/</guid>
       <description>&lt;p&gt;&lt;em&gt;Cross-posted: &lt;a href=&#34;https://www.linkedin.com/pulse/4-stages-data-analytics-maturity-challenging-gartners-taras-kaduk/&#34;&gt;&lt;strong&gt;LinkedIn&lt;/strong&gt;&lt;/a&gt;, &lt;a href=&#34;https://medium.com/taras-kaduk/4-stages-of-data-analytics-maturity-challenging-gartners-model-590eb5ebe6d1&#34;&gt;&lt;strong&gt;Medium&lt;/strong&gt;&lt;/a&gt; &lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;If you happen to work in analytics, data science or business intelligence, you’ve probably seen one of the iterations of this Gartner’s graph on stages of data analysis in a company:&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;/post/4-stages/gartner.jpg&#34; style=&#34;width:100.0%&#34; /&gt;
+&lt;img src=&#34;https://taraskaduk.com/post/4-stages/gartner.jpg&#34; style=&#34;width:100.0%&#34; /&gt;
 
 &lt;/div&gt;
 &lt;p&gt;The figure above shows various stages of analytics maturity, from “descriptive” to “prescriptive”. I’ve seen it so many times, it became an eyesore to me.&lt;/p&gt;
@@ -343,12 +343,12 @@ in
 &lt;p&gt;&lt;em&gt;Why&lt;/em&gt; and &lt;em&gt;how&lt;/em&gt; (diagnostic and prescriptive analytics), on the other hand, are the questions that can be answered with existing data and a dash of business intelligence, either manual (a person going over the numbers and figuring things out), or baked in (an algorithm analyzing the numbers and producing verdicts based on models ran). In other words, both &lt;strong&gt;diagnostic&lt;/strong&gt; and &lt;strong&gt;prescriptive&lt;/strong&gt; analytics build on top of &lt;strong&gt;descriptive&lt;/strong&gt; and &lt;strong&gt;predictive&lt;/strong&gt; analytics respectively.&lt;/p&gt;
 &lt;p&gt;So, another way to visualize the connection between the four times would look something like this:&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;/post/4-stages/2by2.png&#34; style=&#34;width:100.0%&#34; /&gt;
+&lt;img src=&#34;https://taraskaduk.com/post/4-stages/2by2.png&#34; style=&#34;width:100.0%&#34; /&gt;
 
 &lt;/div&gt;
 &lt;p&gt;One issue with the following graph is that it doesn’t fully show all the ways that &lt;em&gt;data + insight + machine learning&lt;/em&gt; produce 4 flavors of analytics. And hence the good ol’ venn diagram:&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;/post/4-stages/venn.png&#34; style=&#34;width:100.0%&#34; /&gt;
+&lt;img src=&#34;https://taraskaduk.com/post/4-stages/venn.png&#34; style=&#34;width:100.0%&#34; /&gt;
 
 &lt;/div&gt;
 &lt;p&gt;Every company’s approach to analytics and data science is still unique: there are very few best practices known in the industry, and we all are still figuring it out. Similarly, every analyst’s view on data analytics evolution and maturity will be different, and many of my colleagues will disagree with this view. And that is fine. We are still in the early stages of learning how to cook the proverbial spaghetti, and therefore let’s not rob ourselves of the joy of throwing stuff from the pot onto the wall and seeing what sticks.&lt;/p&gt;
@@ -357,10 +357,10 @@ in
     
     <item>
       <title>On Importance of Minimalism in Retrospective Analytics</title>
-      <link>/2018/01/12/sass/</link>
+      <link>https://taraskaduk.com/2018/01/12/sass/</link>
       <pubDate>Fri, 12 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/01/12/sass/</guid>
+      <guid>https://taraskaduk.com/2018/01/12/sass/</guid>
       <description>&lt;p&gt;&lt;em&gt;Cross-posted: &lt;a href=&#34;https://medium.com/taras-kaduk/on-importance-of-minimalism-in-retrospective-analytics-75c5a02c2c83&#34;&gt;&lt;strong&gt;Medium&lt;/strong&gt;&lt;/a&gt;, &lt;a href=&#34;https://www.linkedin.com/pulse/importance-minimalism-retrospective-analytics-taras-kaduk-1/&#34;&gt;&lt;strong&gt;LinkedIn&lt;/strong&gt;&lt;/a&gt; &lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Hey, analyst, how is life? Talk to me. Do you love what you do for life, do you like all things data?&lt;/p&gt;
 &lt;p&gt;Yet, do you sometimes feel like you’re a Sisyphus rolling a giant rock of data up the hill every day, only to see it go down with a racket in the evening (and you know what you’re going to do tomorrow)? Or, do you imagine yourself being a plate spinner at a circus, only instead of plates and poles you’ve got five dozen reports to spin, and instead of an entertained crowd you’ve got your co-workers, managers and senior executives watching your “performance” and asking to add more plates, and God forbid any one plate falls?&lt;/p&gt;
@@ -379,7 +379,7 @@ in
 &lt;div id=&#34;simple&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Simple&lt;/h2&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;/post/sass/simple.png&#34; alt=&#34;Simple is good. It’s that simple (pun intended).&#34; style=&#34;width:100.0%&#34; /&gt;
+&lt;img src=&#34;https://taraskaduk.com/post/sass/simple.png&#34; alt=&#34;Simple is good. It’s that simple (pun intended).&#34; style=&#34;width:100.0%&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;Simple is good. It’s that simple (pun intended).&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;Do you reports suffer from abundance of KPIs, complicated data models, transformation steps no one understands? Take a step back and simplify it. Keep your data tidy and your calculations simple. Your code should be laconic, elegant and easy to read. For me, complicated code is the first sign of a possible trouble. Do you have to many visuals? More opportunities of something failing. Reduce. Do have multiple reports running doing a similar thing? Reduce the amount and consolidate them. Keep it simple.&lt;/p&gt;
@@ -387,7 +387,7 @@ in
 &lt;div id=&#34;automated&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Automated&lt;/h2&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;/post/sass/automated.png&#34; style=&#34;width:100.0%&#34; /&gt;
+&lt;img src=&#34;https://taraskaduk.com/post/sass/automated.png&#34; style=&#34;width:100.0%&#34; /&gt;
 
 &lt;/div&gt;
 &lt;blockquote&gt;
@@ -402,7 +402,7 @@ in
 &lt;div id=&#34;standard&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Standard&lt;/h2&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;/post/sass/standard.gif&#34; style=&#34;width:100.0%&#34; /&gt;
+&lt;img src=&#34;https://taraskaduk.com/post/sass/standard.gif&#34; style=&#34;width:100.0%&#34; /&gt;
 
 &lt;/div&gt;
 &lt;p&gt;This one must be simple and obvious. Keeping things standard again means more time savings: less validation, less discovery time, less training and explaining.&lt;/p&gt;
@@ -412,7 +412,7 @@ in
 &lt;div id=&#34;scalable&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Scalable&lt;/h2&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;/post/sass/scalable.gif&#34; style=&#34;width:100.0%&#34; /&gt;
+&lt;img src=&#34;https://taraskaduk.com/post/sass/scalable.gif&#34; style=&#34;width:100.0%&#34; /&gt;
 
 &lt;/div&gt;
 &lt;p&gt;After all said and and done, you should be able to repurpose your logic for something else. Or scale it within the given context. Similarly, many solutions can be created on top of some previous work, instead of creating a new solution. This also makes sure your solutions are “standardized”: you kill 2 birds with 1 stone.&lt;/p&gt;
@@ -426,16 +426,16 @@ in
     
     <item>
       <title>When your data analysis is validated on The Late Show with Stephen Colbert</title>
-      <link>/2018/01/10/mpaa-damon/</link>
+      <link>https://taraskaduk.com/2018/01/10/mpaa-damon/</link>
       <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/01/10/mpaa-damon/</guid>
+      <guid>https://taraskaduk.com/2018/01/10/mpaa-damon/</guid>
       <description>&lt;p&gt;&lt;em&gt;Cross-posted: &lt;a href=&#34;https://medium.com/taras-kaduk/when-your-data-analysis-is-validated-on-the-late-show-with-stephen-colbert-b7cd6ca37147&#34;&gt;&lt;strong&gt;Medium&lt;/strong&gt;&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;About a month ago, I wrote a little article about the MPAA rating system. I set up to find out if their lettering system does any justice to the actual content seen on the screen. Briefly speaking, it does, but with caveats.&lt;/p&gt;
 &lt;p&gt;One of such caveats was the effect of profanity. What my quick and dirty data analysis showed was that profanity was the sure thing that could send a movie into an R category:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/mpaa/mpaa_files/figure-html/profanity-1.png&#34; style=&#34;width:100.0%&#34; /&gt; &lt;img src=&#34;/post/mpaa/mpaa_files/figure-html/profanity2-1.png&#34; style=&#34;width:100.0%&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;I even wrote this in my &lt;a href=&#34;/post/mpaa/mpaa/#quote&#34;&gt;blog post&lt;/a&gt;, when summing up the effects of profanity on movie’s rating:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://taraskaduk.com/post/mpaa/mpaa_files/figure-html/profanity-1.png&#34; style=&#34;width:100.0%&#34; /&gt; &lt;img src=&#34;https://taraskaduk.com/post/mpaa/mpaa_files/figure-html/profanity2-1.png&#34; style=&#34;width:100.0%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;I even wrote this in my &lt;a href=&#34;https://taraskaduk.com/post/mpaa/mpaa/#quote&#34;&gt;blog post&lt;/a&gt;, when summing up the effects of profanity on movie’s rating:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Good Will Hunting is neither violent nor sexually explicit, but it is profane AF, and, sure enough, is R rated for - wait for it - &lt;em&gt;“strong language, including some sex-related dialogue”.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -451,7 +451,7 @@ in
 &lt;p&gt;Ha! So, my theory checks out! It’s profanity that makes a movie R rated! It can be puritan and pacifistic, but you drop a couple of F-bombs — and you’re out.&lt;/p&gt;
 &lt;p&gt;It is funny that I chose exactly Good Will Hunting as an example of how an otherwise modest movie can be sent straight to the R bench for what Matt claims is how they all talk in Boston.&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;/post/mpaa/mpaa_files/figure-html/good_will_hunting-1.png&#34; /&gt;
+&lt;img src=&#34;https://taraskaduk.com/post/mpaa/mpaa_files/figure-html/good_will_hunting-1.png&#34; /&gt;
 
 &lt;/div&gt;
 &lt;hr /&gt;
@@ -462,10 +462,10 @@ in
     
     <item>
       <title>Create World Pixel Maps in R</title>
-      <link>/2017/11/26/pixel-maps/</link>
+      <link>https://taraskaduk.com/2017/11/26/pixel-maps/</link>
       <pubDate>Sun, 26 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>/2017/11/26/pixel-maps/</guid>
+      <guid>https://taraskaduk.com/2017/11/26/pixel-maps/</guid>
       <description>&lt;p&gt;&lt;em&gt;Cross-posted: &lt;a href=&#34;https://medium.com/taras-kaduk/r-walkthrough-create-a-pixel-map-537ce12c2f0c&#34;&gt;&lt;strong&gt;Medium&lt;/strong&gt;&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Today, I’m going to show you how to make pixel maps in R. Why pixel maps? Because they look awesome!&lt;/p&gt;
 &lt;p&gt;I was searching on the web for a while, but couldn’t find a good tutorial. Being stubborn as I am, I eventually figured out a way to get what I want. You know, if you torture your code enough, it might give you what you need.&lt;/p&gt;
@@ -564,7 +564,7 @@ plot &amp;lt;- ggplot() +
         #adding my theme
         theme
 plot&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/pixel-maps/pixel-maps_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;1344&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://taraskaduk.com/post/pixel-maps/pixel-maps_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;1344&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;You probably want to save the map, too.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggsave(&amp;#39;map_full.jpg&amp;#39;, 
        device = &amp;#39;jpg&amp;#39;, 
@@ -580,7 +580,7 @@ plot&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;For my case, I wanted a wide banner, so I chose some specific arbitrary limits that looked good to me.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot + scale_y_continuous(limits = c(10, 70), expand = c(0,0)) +
         scale_x_continuous(limits = c(-150,90), expand = c(0,0))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/pixel-maps/pixel-maps_files/figure-html/map-wide-1.png&#34; width=&#34;1920&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://taraskaduk.com/post/pixel-maps/pixel-maps_files/figure-html/map-wide-1.png&#34; width=&#34;1920&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;outro&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Outro&lt;/h2&gt;
@@ -596,20 +596,20 @@ plot&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>SASS: Simplify, Standardize, Automate and Scale your enterprise reporting</title>
-      <link>/talk/jpug-sass/</link>
+      <link>https://taraskaduk.com/talk/jpug-sass/</link>
       <pubDate>Thu, 05 Oct 2017 18:00:00 -0400</pubDate>
       
-      <guid>/talk/jpug-sass/</guid>
+      <guid>https://taraskaduk.com/talk/jpug-sass/</guid>
       <description>&lt;p&gt;In this session, we will talk about how to run Power BI reporting on enterprise level with minimal resources (i.e. lean), and introduce you to a SASS framework: simple, standard, automated and scalable.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Do MPAA movie ratings mean anything?</title>
-      <link>/2017/09/30/mpaa/</link>
+      <link>https://taraskaduk.com/2017/09/30/mpaa/</link>
       <pubDate>Sat, 30 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/2017/09/30/mpaa/</guid>
+      <guid>https://taraskaduk.com/2017/09/30/mpaa/</guid>
       <description>&lt;p&gt;&lt;em&gt;Cross-posted: &lt;a href=&#34;https://medium.com/taras-kaduk/do-mpaa-movie-ratings-mean-anything-1d1ab683f21d&#34;&gt;&lt;strong&gt;Medium&lt;/strong&gt;&lt;/a&gt; &lt;/em&gt;&lt;/p&gt;
 &lt;div id=&#34;intro&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;Intro&lt;/h1&gt;
@@ -787,7 +787,7 @@ ggplot(data = movies_df, aes(x=avg, y = mpaa, col = mpaa)) +
     subtitle = &amp;#39;Visualizing the amount of overlap between categories&amp;#39;,
     caption = caption) +
   theme&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/mpaa/mpaa_files/figure-html/mpaa-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://taraskaduk.com/post/mpaa/mpaa_files/figure-html/mpaa-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;mpaa-is-most-forgiving-on-violence&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;MPAA is most forgiving on violence&lt;/h3&gt;
@@ -818,7 +818,7 @@ ggplot(data = movies_df %&amp;gt;% filter(mpaa %in% c(&amp;#39;PG&amp;#39;, &amp
     title = &amp;#39;That G movie you felt safe about&amp;#39;,
     subtitle = &amp;#39;is probably just as violent as the PG one you rejected&amp;#39;,
     caption = caption)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/mpaa/mpaa_files/figure-html/violence-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://taraskaduk.com/post/mpaa/mpaa_files/figure-html/violence-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;what-the-is-up-with-profanity&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;What the **** is up with profanity?&lt;/h3&gt;
@@ -854,7 +854,7 @@ ggplot(data = movies_df, aes(x=as.factor(profanity), y = mpaa, col = mpaa)) +
     title = &amp;#39;Profanity rating patterns across MPAA categories&amp;#39;,
     caption = caption) +
   theme&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/mpaa/mpaa_files/figure-html/profanity-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://taraskaduk.com/post/mpaa/mpaa_files/figure-html/profanity-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Looking at R &amp;amp; NC-17 section, it is tempting to dive in a bit more. Let’s go!&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;labels_r &amp;lt;- movies_gather %&amp;gt;% 
   filter(metric != &amp;#39;avg&amp;#39;) %&amp;gt;% 
@@ -903,7 +903,7 @@ ggplot(
     title = &amp;#39;R &amp;amp; NC-17 Movies aren\&amp;#39;t always violent or vulgar... \nbut they sure are profane&amp;#39;,
     subtitle = &amp;#39;Most R and NC-17 movies are 5 or more on a profanity scale&amp;#39;,
     caption = caption)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/mpaa/mpaa_files/figure-html/profanity2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://taraskaduk.com/post/mpaa/mpaa_files/figure-html/profanity2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Indeed, movies in R &amp;amp; NC-17 categories are widely distributed across violence and sex, but snuggle tightly in the upper section of profanity. Why is that? Looking at the data, we can tell that often profanity accompanies other “R” worthy content. However, it is not always the case, and correlation is relatively weak. &lt;a id=&#34;quote&#34;&gt;Good Will Hunting is neither violent nor sexually explicit, but it is profane AF, and, sure enough, is R rated for - wait for it - &lt;em&gt;“strong language, including some sex-related dialogue”.&lt;/em&gt; &lt;/a&gt; It could be just me (after all, I am a foreigner, and English words don’t carry the same connotation for me), but I think it is mighty unfair to Good Will Hunting to be rated R, especially knowing that Scary Movie, parts 3 through 5, are rated PG-13.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(
     data = movies_gather %&amp;gt;% 
@@ -927,7 +927,7 @@ ggplot(
     title = &amp;#39;Good Will Hunting, rated R&amp;#39;,
     subtitle = &amp;#39;For strong language, including some sex-related dialogue&amp;#39;,
     caption = caption)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/mpaa/mpaa_files/figure-html/good_will_hunting-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://taraskaduk.com/post/mpaa/mpaa_files/figure-html/good_will_hunting-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div id=&#34;summary&#34; class=&#34;section level1&#34;&gt;
@@ -956,10 +956,10 @@ ggplot(
     
     <item>
       <title>Migrate your enterprise reporting into Power BI: process canvas, pitfalls &amp; best practices</title>
-      <link>/talk/sql-sat-649/</link>
+      <link>https://taraskaduk.com/talk/sql-sat-649/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 -0500</pubDate>
       
-      <guid>/talk/sql-sat-649/</guid>
+      <guid>https://taraskaduk.com/talk/sql-sat-649/</guid>
       <description>&lt;p&gt;In this session, we will discuss how to efficiently migrate your retrospective analytics from where it is now to Power BI, and do it in a way that saves you time in the future.&lt;/p&gt;
 
 &lt;p&gt;Some of the topics include:&lt;/p&gt;
@@ -974,10 +974,10 @@ ggplot(
     
     <item>
       <title>Deep Learning</title>
-      <link>/project/deep-learning/</link>
+      <link>https://taraskaduk.com/project/deep-learning/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/project/deep-learning/</guid>
+      <guid>https://taraskaduk.com/project/deep-learning/</guid>
       <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
 
 &lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
@@ -992,10 +992,10 @@ ggplot(
     
     <item>
       <title>External Project</title>
-      <link>/project/example-external-project/</link>
+      <link>https://taraskaduk.com/project/example-external-project/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/project/example-external-project/</guid>
+      <guid>https://taraskaduk.com/project/example-external-project/</guid>
       <description></description>
     </item>
     
