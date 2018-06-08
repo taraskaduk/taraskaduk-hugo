@@ -4,8 +4,8 @@ README
 
 
 # Blogdown recommendations
-blogdown/
-public/
+blogdown
+public
 
 # History files
 .Rhistory
