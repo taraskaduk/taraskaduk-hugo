@@ -1,3 +1,6 @@
 [submodule "pixel-maps"]
 	path = pixel-maps
 	url = https://github.com/taraskaduk/pixel-maps.git
+[submodule "content/post/submodules/pixel-maps"]
+	path = content/post/submodules/pixel-maps
+	url = https://github.com/taraskaduk/pixel-maps.git
