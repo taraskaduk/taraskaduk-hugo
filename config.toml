@@ -1,7 +1,7 @@
 # Configuration of Academic
 # Documentation: https://sourcethemes.com/academic/
 
-baseurl = "https://taraskaduk.com/"
+baseurl = "https://taraskaduk.netlify.com/"
 title = "Taras Kaduk"
 
 [permalinks]
