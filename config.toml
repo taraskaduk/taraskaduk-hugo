@@ -4,8 +4,8 @@
 baseurl = "https://taraskaduk.com/"
 title = "Taras Kaduk"
 
-[permalinks]
-    post = "/:year/:month/:day/:slug/"
+#[permalinks]
+#    post = "/:year/:month/:day/:slug/"
 
 # Your copyright notice - appears in site footer.
 # To display a copyright symbol, type `&copy;`.
