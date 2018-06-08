@@ -4,3 +4,6 @@
 [submodule "content/post/submodules/pixel-maps"]
 	path = content/post/submodules/pixel-maps
 	url = https://github.com/taraskaduk/pixel-maps.git
+[submodule "themes/hugo-academic"]
+	path = themes/hugo-academic
+	url = https://github.com/gcushen/hugo-academic.git
