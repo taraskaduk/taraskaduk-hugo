@@ -19,8 +19,11 @@ header:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(warning = FALSE, message=FALSE, engine = 'R')
+knitr::opts_chunk$set(echo = TRUE, warning=FALSE, message=FALSE, 
+                      results='show', cache=FALSE, autodep=FALSE)
+knitr::opts_knit$set(root.dir = 'submodules/pixel-maps/')
 ```
+
 
 *Cross-posted: [**Medium**](https://medium.com/taras-kaduk/r-walkthrough-create-a-pixel-map-537ce12c2f0c)*
 
