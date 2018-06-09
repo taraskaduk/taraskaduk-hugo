@@ -12,7 +12,7 @@ tags:
   - business intelligence
   - sass
 header:
-  image: post/sass/sass_files/platespinner.png
+  image: post/header-sass.png
 ---
 
 *Cross-posted: [**Medium**](https://medium.com/taras-kaduk/on-importance-of-minimalism-in-retrospective-analytics-75c5a02c2c83), [**LinkedIn**](https://www.linkedin.com/pulse/importance-minimalism-retrospective-analytics-taras-kaduk-1/) *

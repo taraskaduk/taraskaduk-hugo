@@ -12,7 +12,7 @@ tags:
 aliases:
     - /post/4-stages
 header:
-  image: post/4-stages/venn.png
+  image: post/header-4-stages.png
 ---
 
 *Cross-posted: [**LinkedIn**](https://www.linkedin.com/pulse/4-stages-data-analytics-maturity-challenging-gartners-taras-kaduk/), [**Medium**](https://medium.com/taras-kaduk/4-stages-of-data-analytics-maturity-challenging-gartners-model-590eb5ebe6d1) *
