@@ -15,7 +15,7 @@ tags:
   - maps
   - r
 header:
-  image: ../header.png
+  image: post/pixel-maps/header.png
 ---
 
 ```{r setup, include=FALSE}
@@ -151,6 +151,14 @@ ggsave('header.png',
        height = 90, 
        units = 'mm',
        dpi = 250)
+
+ggsave('header.png', 
+       device = 'png', 
+       width = 360, 
+       height = 90, 
+       units = 'mm',
+       dpi = 250)
+
 
 ```
 
