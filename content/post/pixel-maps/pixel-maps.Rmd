@@ -15,7 +15,7 @@ tags:
   - maps
   - r
 header:
-  image: post/pixel-maps/pixel-maps_files/figure-html/map-wide-1.png
+  image: post/img/header.png
 ---
 
 ```{r setup, include=FALSE}
