@@ -152,7 +152,7 @@ ggsave('header.png',
        units = 'mm',
        dpi = 250)
 
-ggsave(path = paste0('../../../static/img/post/img'), 
+ggsave("header.png", 
        device = 'png', 
        width = 360, 
        height = 90, 
