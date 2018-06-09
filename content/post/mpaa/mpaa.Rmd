@@ -21,7 +21,7 @@ tags:
 date: 2017-09-30
 slug: mpaa
 header:
-  image: post/mpaa/header-mpaa.jpg
+  image: post/header-mpaa.jpg
 ---
 
 *Cross-posted: [**Medium**](https://medium.com/taras-kaduk/do-mpaa-movie-ratings-mean-anything-1d1ab683f21d) *
