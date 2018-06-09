@@ -24,8 +24,8 @@ weight = 3
 [cta]
   url = "https://twitter.com/taraskaduk"
   label = '<i class="fa fa-twitter"></i> Follow Me!'
-+++
 
+# +++
 # {{< tweet 957485860668272641 >}}
 
 
