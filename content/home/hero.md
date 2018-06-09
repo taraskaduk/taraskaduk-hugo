@@ -4,7 +4,7 @@ widget = "hero"
 active = true
 date = 2017-10-15
 
-title = "A quick reminder..."
+title = "Taras Kaduk"
 
 # Order that this section will appear in.
 weight = 3
@@ -26,6 +26,6 @@ weight = 3
   label = '<i class="fa fa-twitter"></i> Follow Me!'
 +++
 
-{{< tweet 957485860668272641 >}}
+# {{< tweet 957485860668272641 >}}
 
 
