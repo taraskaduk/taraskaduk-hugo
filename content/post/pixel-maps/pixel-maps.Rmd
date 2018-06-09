@@ -15,7 +15,7 @@ tags:
   - maps
   - r
 header:
-  image: header.png
+  image: ../header.png
 ---
 
 ```{r setup, include=FALSE}
