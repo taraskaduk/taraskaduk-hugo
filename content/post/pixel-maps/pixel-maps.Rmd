@@ -127,17 +127,6 @@ ggsave('map_full.jpg',
        dpi = 250)
 ```
 
-```{r message=FALSE, warning=FALSE, include=FALSE, eval = FALSE}
-plot + scale_x_continuous(limits = c(-150, 30), expand = c(0,0))
-
-ggsave('bg.jpg', 
-       device = 'jpg', 
-       path = paste0(here(),'/themes/hugo-strata-theme/static/images'), 
-       width = 270, 
-       height = 270, 
-       units = 'mm',
-       dpi = 250)
-```
 
 Looking at the map of the entire world can be overwhelming and sad, especially if you, just like me, are not much of a traveler. Look at it! There aren't many dots! WTF?! Sad!
 
@@ -153,11 +142,11 @@ plot + scale_y_continuous(limits = c(10, 70), expand = c(0,0)) +
         scale_x_continuous(limits = c(-150,90), expand = c(0,0))
 ```
 
-```{r eval=FALSE, fig.height=5, fig.width=20, include=FALSE, results='hide'}
+```{r eval=TRUE, fig.height=5, fig.width=20, include=FALSE, results='hide'}
 ##Save it to the static folder for later re-use as a head image in YAML for this post.
 ggsave('header.png', 
        device = 'png', 
-       path = paste0('/static/img'),
+       path = paste0('../../../static/img'),
        width = 360, 
        height = 90, 
        units = 'mm',
