@@ -135,7 +135,7 @@ In all of these cases, you may want to reconsider the grain of the map: if you z
 I could definitely program my way though this scaling issue and create a parameter, and make other variables depend on it... I don't find this exercise to be particularly useful in this case. If you get it done - awesome!
 
 For my case, I wanted a wide banner, so I chose some specific arbitrary limits that looked good to me.
-```{r map-wide, results='hide', fig.height=5, fig.width=20}
+```{r header, results='hide', fig.height=5, fig.width=20}
 plot + scale_y_continuous(limits = c(10, 70), expand = c(0,0)) +
         scale_x_continuous(limits = c(-150,90), expand = c(0,0))
 ```
@@ -144,7 +144,6 @@ plot + scale_y_continuous(limits = c(10, 70), expand = c(0,0)) +
 ##Save it to the static folder for later re-use as a head image in YAML for this post.
 ggsave('header.png', 
        device = 'png', 
-       path = paste0('../../../static/img'),
        width = 360, 
        height = 90, 
        units = 'mm',
