@@ -25,7 +25,8 @@ weight = 3
   url = "https://twitter.com/taraskaduk"
   label = '<i class="fa fa-twitter"></i> Follow Me!'
 
-# +++
++++
+
 # {{< tweet 957485860668272641 >}}
 
 
