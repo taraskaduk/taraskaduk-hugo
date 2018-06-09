@@ -13,7 +13,7 @@ tags:
   - maps
   - r
 header:
-  image: header.png
+  image: ../post/pixel-maps/pixel-maps_files/figure-html/header-1.png
 ---
 
 ```{r setup, include=FALSE}
