@@ -156,7 +156,7 @@ plot + scale_y_continuous(limits = c(10, 70), expand = c(0,0)) +
 
 ```{r eval=FALSE, fig.height=5, fig.width=20, include=FALSE, results='hide'}
 ##Save it to the static folder for later re-use as a head image in YAML for this post.
-ggsave('map_wide.png', 
+ggsave('header.png', 
        device = 'png', 
        path = paste0('/static/img'),
        width = 360, 
