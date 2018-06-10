@@ -133,6 +133,16 @@ plot</code></pre>
 <pre class="r"><code>plot + scale_y_continuous(limits = c(10, 70), expand = c(0,0)) +
         scale_x_continuous(limits = c(-150,90), expand = c(0,0))</code></pre>
 <p><img src="/post/pixel-maps/pixel-maps_files/figure-html/header-1.png" width="1920" /></p>
+<pre class="r"><code>plot + scale_y_continuous(limits = c(10, 60), expand = c(0,0)) +
+        scale_x_continuous(limits = c(-250,-40), expand = c(0,0))</code></pre>
+<p><img src="/post/pixel-maps/pixel-maps_files/figure-html/header2-1.png" width="1920" /></p>
+<pre class="r"><code>ggsave(&#39;header2.png&#39;, 
+       device = &#39;png&#39;, 
+       path = &quot;../../../static/img&quot;,
+       width = 1710/6, 
+       height = 570/6, 
+       units = &#39;mm&#39;,
+       dpi = 250)</code></pre>
 </div>
 <div id="outro" class="section level2">
 <h2>Outro</h2>
