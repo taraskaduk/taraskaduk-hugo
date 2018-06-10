@@ -158,8 +158,8 @@ plot + scale_y_continuous(limits = c(10, 60), expand = c(0,0)) +
 ggsave('header2.png', 
        device = 'png', 
        path = "../../../static/img",
-       width = 171, 
-       height = 57, 
+       width = 1710/3, 
+       height = 570/3, 
        units = 'mm',
        dpi = 250)
 ```
