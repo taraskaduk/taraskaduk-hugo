@@ -4,7 +4,7 @@ widget = "hero"
 active = true
 date = 2017-10-15
 
-title = "Taras Kaduk"
+title = "A quick reminder..."
 
 # Order that this section will appear in.
 weight = 3
@@ -13,7 +13,7 @@ weight = 3
 #   Deactivate an option by commenting out the line, prefixing it with `#`.
 [header]
   overlay_color = "#999"  # An HTML color value.
-  overlay_img = "header.png"  # Image path relative to your `static/img/` folder.
+  overlay_img = "header2.png"  # Image path relative to your `static/img/` folder.
   overlay_filter = 0  # Darken the image. Value in range 0-1.
 
 
@@ -27,6 +27,6 @@ weight = 3
 
 +++
 
-# {{< tweet 957485860668272641 >}}
+{{< tweet 957485860668272641 >}}
 
 

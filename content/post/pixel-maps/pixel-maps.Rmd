@@ -149,14 +149,19 @@ ggsave('header.png',
        units = 'mm',
        dpi = 250)
 
-ggsave("header.png", 
+```
+
+```{r header2, results='hide', fig.height=5, fig.width=20}
+plot + scale_y_continuous(limits = c(10, 60), expand = c(0,0)) +
+        scale_x_continuous(limits = c(-250,-40), expand = c(0,0))
+
+ggsave('header2.png', 
        device = 'png', 
-       width = 360, 
-       height = 90, 
+       path = "../../../static/img",
+       width = 171, 
+       height = 57, 
        units = 'mm',
        dpi = 250)
-
-
 ```
 
 ## Outro
