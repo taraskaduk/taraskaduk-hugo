@@ -1,7 +1,7 @@
 baseURL = "https://taraskaduk.com/"
 languageCode = "en-us"
 title = "Taras Kaduk"
-theme = "hugo_theme_pickles"
+theme = "pickles"
 
 # Copyright notice. This is displayer in the footer.
 copyright = "&copy; Taras Kaduk"

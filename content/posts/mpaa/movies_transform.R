@@ -6,10 +6,11 @@ library(tidyverse)
 library(dplyr)
 library(rvest)
 library(ggrepel)
+library(ggthemes)
 
 # Extract -----------------------------------------------------------------
 
-path <- getwd()
+path <- "/Users/Taras_kaduk/Documents/taraskaduk/content/posts/mpaa"
 
 if (file.exists(paste(path,'movies_extract.csv', sep = "/"))) {
   movies_df <- read_csv(paste(path,'movies_extract.csv', sep = "/"))
@@ -63,7 +64,7 @@ if (file.exists(paste(path,'movies_extract.csv', sep = "/"))) {
   movies_df <- 
     as_data_frame(movies_vector) %>% 
     separate(value, sep = '\\[', remove = TRUE, into = c('name', 'year', 'rating')) %>% 
-    separate(rating, sep = '\\] - ', remove = TRUE, into = c('mcaa', 'rating')) %>% 
+    separate(rating, sep = '\\] - ', remove = TRUE, into = c('mpaa', 'rating')) %>% 
     separate(rating, sep = '\\.', remove = TRUE, into = c('sex', 'violence', 'profanity'))
   
   movies_df <- movies_df %>% 
@@ -72,7 +73,7 @@ if (file.exists(paste(path,'movies_extract.csv', sep = "/"))) {
       sex = as.numeric(sex),
       violence = as.numeric(violence),
       profanity = as.numeric(profanity),
-      mcaa = factor(mcaa, levels = c('G', 'PG', 'PG-13', 'R', 'NC-17', 'NR'))
+      mpaa = factor(mpaa, levels = c('G', 'PG', 'PG-13', 'R', 'NC-17', 'NR'))
     ) 
   
   
@@ -85,20 +86,20 @@ if (file.exists(paste(path,'movies_extract.csv', sep = "/"))) {
 # Transform ---------------------------------------------------------------
 
 movies_df <- movies_df %>% 
-  filter(mcaa != 'NR') %>% 
+  filter(mpaa != 'NR') %>% 
   mutate(avg = (sex + profanity + violence)/3)
 
-movies_df$mcaa <- movies_df$mcaa %>% recode(R = 'R & NC-17', `NC-17` = 'R & NC-17') 
-
-movies_df$mcaa <- factor(movies_df$mcaa, levels = c('G', 'PG', 'PG-13', 'R & NC-17'))
-
+movies_df$mpaa <- movies_df$mpaa %>% recode(R = 'R & NC-17', `NC-17` = 'R & NC-17') 
+movies_df$mpaa <- factor(movies_df$mpaa, levels = c('G', 'PG', 'PG-13', 'R & NC-17'))
 movies_gather <- movies_df %>% 
   gather(key = metric, value = score, c(sex, violence, profanity, avg))
 
 
 # Graphs -----------------------------------------------------------------
 
-theme <- theme(
+
+theme <- theme_fivethirtyeight() +
+  theme(
   legend.position="none",
   axis.ticks.y=element_blank(),
   panel.grid.major.y = element_line(colour="#e0e0e0",size=40),
@@ -128,7 +129,7 @@ labels_all <- movies_df %>%
   )
 
 
-ggplot(data = movies_df, aes(x=avg, y = mcaa, col = mcaa)) +
+ggplot(data = movies_df, aes(x=avg, y = mpaa, col = mpaa)) +
   geom_jitter(alpha = 0.2) +
   scale_colour_brewer(palette = "Spectral", direction = -1) +
   geom_point(data = labels_all, size = 3) +
@@ -137,11 +138,13 @@ ggplot(data = movies_df, aes(x=avg, y = mcaa, col = mcaa)) +
     aes(label = name),
     size = 3,
     nudge_y = 0.1) +
-  ylab('MCAA Rating') + xlab('Average (violence & gore, sex, profanity)') +
+  ylab('MPAA Rating') + 
+  xlab('Average (violence & gore, sex, profanity)') +
   labs(
-    title = 'MCCA rating isn\'t everything',
+    title = 'MPAA rating isn\'t everything',
     subtitle = 'On average, there are always movies from a higher category \nthat may be more appropriate') +
   theme
+
 
 labels_profanity <- movies_df %>% 
   filter(name %in% c('Aladdin',
@@ -155,7 +158,7 @@ labels_profanity <- movies_df %>%
          )
 
 
-ggplot(data = movies_df, aes(x=as.factor(profanity), y = mcaa, col = mcaa)) +
+ggplot(data = movies_df, aes(x=as.factor(profanity), y = mpaa, col = mpaa)) +
   geom_jitter(alpha = 0.2) +
   scale_colour_brewer(palette = "Spectral", direction = -1) +
   geom_point(data = labels_profanity, size = 3) +
@@ -164,7 +167,7 @@ ggplot(data = movies_df, aes(x=as.factor(profanity), y = mcaa, col = mcaa)) +
     aes(label = name),
     size = 3,
     nudge_y = 0.1) +
-  ylab('MCAA Rating') + xlab('Profanity') +
+  ylab('mpaa Rating') + xlab('Profanity') +
   labs(
     title = '') +
   theme
@@ -177,11 +180,11 @@ ggplot(data = movies_df, aes(x=as.factor(profanity), y = mcaa, col = mcaa)) +
 
 labels_g_pg <- movies_df %>% 
   filter(name == "Babe: Pig in the City" | 
-           name == "Beauty and the Beast" & mcaa == 'G' |
+           name == "Beauty and the Beast" & mpaa == 'G' |
            name == 'Zeus and Roxanne' |
            name == 'Sleepless in Seattle')
 
-ggplot(data = movies_df %>% filter(mcaa %in% c('PG', 'G')), aes(x=as.factor(violence), y = mcaa, col = as.factor(violence))) +
+ggplot(data = movies_df %>% filter(mpaa %in% c('PG', 'G')), aes(x=as.factor(violence), y = mpaa, col = as.factor(violence))) +
   geom_jitter(alpha = 0.5, size =3) +
   scale_colour_brewer(palette = "Spectral", direction = -1) +
   geom_point(data = labels_g_pg, size = 5) +
@@ -195,7 +198,7 @@ ggplot(data = movies_df %>% filter(mcaa %in% c('PG', 'G')), aes(x=as.factor(viol
   theme +
   theme(axis.text.y = element_text(size = rel(1.2)),
         panel.grid.major.y = element_line(colour="#e0e0e0",size=70)) +
-  ylab('MCAA Rating') + xlab('Violence and Gore') +
+  ylab('mpaa Rating') + xlab('Violence and Gore') +
   labs(
     title = 'That G movie you felt safe about',
     subtitle = 'is probably just as violent as a PG one you rejected')
@@ -232,9 +235,9 @@ labels_r <- movies_gather %>%
 ggplot(
     data = movies_gather %>% 
         filter(
-            mcaa == 'R & NC-17' & 
+            mpaa == 'R & NC-17' & 
             metric != 'avg'), 
-    aes(x=as.factor(score), y = 1, col = mcaa)) +
+    aes(x=as.factor(score), y = 1, col = mpaa)) +
     geom_jitter(alpha = 0.3, size = 3) +
     scale_colour_manual(values = c('#d7191c')) +
     geom_point(data = labels_r, size = 4,  col = 'black') +
@@ -260,7 +263,7 @@ ggplot(
 ggplot(
     data = movies_gather %>% 
         filter(
-            mcaa == 'R & NC-17' & 
+            mpaa == 'R & NC-17' & 
                 metric != 'avg'), 
     aes(x= score, y = ..density..)) +
     geom_histogram(bins = 11, stat = 'bin', col = 'white', fill = '#d7191c') +
@@ -282,7 +285,7 @@ ggplot(
 
 
 # 
-# ggplot(data = movies_df, aes(x=as.factor(violence), y = mcaa, col = mcaa)) +
+# ggplot(data = movies_df, aes(x=as.factor(violence), y = mpaa, col = mpaa)) +
 #     geom_jitter(alpha = 0.2) +
 #     scale_colour_brewer(palette = "Spectral", direction = -1) +
 #     geom_point(data = data_exceptions) +
@@ -292,7 +295,7 @@ ggplot(
 #          size = 3) +
 #     geom_hline(yintercept = 0) +
 #     geom_vline(xintercept = 0) +
-#     ylab('MCAA Rating') + xlab('Violence and Gore') +
+#     ylab('mpaa Rating') + xlab('Violence and Gore') +
 #     labs(
 #         title = 'That G movie you felt safe about \nis probably just as violent as a PG one you rejected') 
 
@@ -303,9 +306,9 @@ ggplot(
 
 
 # movies_df %>% 
-#   group_by(mcaa) %>% 
+#   group_by(mpaa) %>% 
 #   filter(avg == max(avg)) %>% 
-#   arrange(mcaa)
+#   arrange(mpaa)
 # 
 # movies_df %>% filter(grepl('Harry Potter', movies_df$name) == TRUE)
 # movies_df %>% filter(grepl('Star Wars', movies_df$name) == TRUE)
@@ -313,46 +316,46 @@ ggplot(
 
 # 
 # 
-# ggplot(data = movies_df, aes(x=sex, y=violence, alpha = 0.5, col = mcaa)) +
+# ggplot(data = movies_df, aes(x=sex, y=violence, alpha = 0.5, col = mpaa)) +
 #     geom_jitter() +
 #     scale_colour_brewer(palette = "Spectral", direction = -1) +
-#     facet_wrap(~ mcaa)
+#     facet_wrap(~ mpaa)
 # 
-# ggplot(data = movies_df, aes(x=sex, y=profanity, alpha = 0.5, col = mcaa)) +
+# ggplot(data = movies_df, aes(x=sex, y=profanity, alpha = 0.5, col = mpaa)) +
 #     geom_jitter() +
 #     scale_colour_brewer(palette = "Spectral", direction = -1) +
-#     facet_wrap(~ mcaa)
+#     facet_wrap(~ mpaa)
 # 
-# ggplot(data = movies_df, aes(x=profanity, y=violence, alpha = 0.5, col = mcaa)) +
+# ggplot(data = movies_df, aes(x=profanity, y=violence, alpha = 0.5, col = mpaa)) +
 #     geom_jitter() +
 #     scale_colour_brewer(palette = "Spectral", direction = -1) +
-#     facet_wrap(~ mcaa)
+#     facet_wrap(~ mpaa)
 # 
-# ggplot(data = movies_df, aes(x=profanity, y=violence, alpha = sex, col = mcaa)) +
+# ggplot(data = movies_df, aes(x=profanity, y=violence, alpha = sex, col = mpaa)) +
 #     geom_jitter() +
 #     scale_colour_brewer(palette = "Spectral", direction = -1) +
-#     facet_wrap(~ mcaa)
+#     facet_wrap(~ mpaa)
 # 
-# ggplot(data = movies_df, aes(x=avg, y = mcaa, col = mcaa)) +
+# ggplot(data = movies_df, aes(x=avg, y = mpaa, col = mpaa)) +
 #     geom_jitter(alpha = 0.2) +
 #     scale_colour_brewer(palette = "Spectral", direction = -1)
 # 
-# ggplot(data = movies_df, aes(x=sex, y = mcaa, col = mcaa)) +
+# ggplot(data = movies_df, aes(x=sex, y = mpaa, col = mpaa)) +
 #     geom_jitter(alpha = 0.2) +
 #     scale_colour_brewer(palette = "Spectral", direction = -1)
 # 
 # 
 # 
-# ggplot(data = movies_df, aes(x=as.factor(violence), y = mcaa, col = mcaa)) +
+# ggplot(data = movies_df, aes(x=as.factor(violence), y = mpaa, col = mpaa)) +
 #     geom_jitter(alpha = 0.2) +
 #     scale_colour_brewer(palette = "Spectral", direction = -1)
 #  
-# ggplot(data = movies_gather, aes(x=score, y = metric, col = mcaa)) +
+# ggplot(data = movies_gather, aes(x=score, y = metric, col = mpaa)) +
 #   geom_jitter(alpha = 0.2) +
 #   scale_colour_brewer(palette = "Spectral", direction = -1) +
-#   facet_grid(mcaa ~ .)
+#   facet_grid(mpaa ~ .)
 # 
-# ggplot(data = movies_gather, aes(x=score, y = mcaa, col = mcaa)) +
+# ggplot(data = movies_gather, aes(x=score, y = mpaa, col = mpaa)) +
 #   geom_jitter(alpha = 0.2) +
 #   scale_colour_brewer(palette = "Spectral", direction = -1) +
 #   facet_grid(metric ~ .)
@@ -360,19 +363,19 @@ ggplot(
 # ggplot(data = movies_df, aes(x=as.factor(violence))) +
 #   geom_bar() +
 #   scale_colour_brewer(palette = "Spectral", direction = -1) +
-#   facet_grid(mcaa ~ .)
+#   facet_grid(mpaa ~ .)
 # 
 # ggplot(data = movies_df, aes(x=sex)) +
 #     geom_density() +
 #     scale_colour_brewer(palette = "Spectral", direction = -1) +
-#     facet_grid(mcaa ~ .)
+#     facet_grid(mpaa ~ .)
 # 
 # ggplot(data = movies_df, aes(x=profanity)) +
 #     geom_density() +
 #     scale_colour_brewer(palette = "Spectral", direction = -1) +
-#     facet_grid(mcaa ~ .)
+#     facet_grid(mpaa ~ .)
 # 
-# ggplot(data = movies_df %>% filter(mcaa %in% c('PG', 'G')), aes(x=as.factor(violence), y = 1, col = mcaa)) +
+# ggplot(data = movies_df %>% filter(mpaa %in% c('PG', 'G')), aes(x=as.factor(violence), y = 1, col = mpaa)) +
 #   geom_jitter(alpha = 0.5) +
 #   scale_colour_manual(values = c('#2b83ba', '#abdda4')) +
 #   geom_point(data = labels_g_pg, size = 3) +
@@ -381,21 +384,21 @@ ggplot(
 #     aes(label = name),
 #     size = 4) +
 #   theme +
-#   ylab('MCAA Rating') + xlab('Violence and Gore') +
+#   ylab('mpaa Rating') + xlab('Violence and Gore') +
 #   labs(
 #     title = 'That G movie you felt safe about \nis probably just as violent as a PG one you rejected') +
-#   facet_grid(mcaa ~ .)
+#   facet_grid(mpaa ~ .)
 
 
 
 
 # text --------------------------------------------------------------------
 # 
-# Does MCAA movie rating mean anything?
+# Does mpaa movie rating mean anything?
 # Being a parent in modern days is lots of fun. Not only all of us are pretty much winging it, not having any idea what we’re doing (seriously, you need a license to do braids and nails, yet raising a human being a future member of society is a no-brainer, right?) — we are also constantly being watched and judged by other parents.
-# When it comes to watching movies with our six-year-old son, we don’t have a strict set of rules. We pretty much fly by the seat of our pants with “I know it when I see it” approach to violence, profanity, or any other content. Not to say that we’re watching Pulp Fiction and Basic Instinct — the most challenging movie to date was probably Alice in the Wonderland — but we pay little attention to the MCAA rating (in our case, it’s always between G and PG. So far)
+# When it comes to watching movies with our six-year-old son, we don’t have a strict set of rules. We pretty much fly by the seat of our pants with “I know it when I see it” approach to violence, profanity, or any other content. Not to say that we’re watching Pulp Fiction and Basic Instinct — the most challenging movie to date was probably Alice in the Wonderland — but we pay little attention to the mpaa rating (in our case, it’s always between G and PG. So far)
 # That’s why I was interesting to find out that some parents swear by this rating, and use it religiously when deciding what their kids can and can’t watch.
 # And it’d be all good if I haven’t noticed that these rating are kind of… arbitrary. So, I decided to dig into the data. Because data will solve all of our problems, right?
 # I searched around a bit, and stumbled upon a few awesome things. First, apparently imdb.com has a parental section for every movie. Not sure how to get there with page links, but you go to any movie page, clean up the fluff at the end of the hyperlink and replace it with “/parentalguide” in the end, you’ll get a page with some cool info. For example, here is the page for Pulp Fiction, if you ever wondered if the movie is appropriate to watch with children (hint: it is not): http://www.imdb.com/title/tt0110912/parentalguide
-# However, these guides are not standard in the way they are filled out, and scrubbing IMBd for this data wouldn’t get me where I wanted to be fast enough. And then I stumbled upon this awesome website called kids-in-mind.com. It had a lot of info similar or equal to one contained on IMBd.com, but it had a crucial key component: every movie on this website is rated on an 11-point scale, from 0 to 10, on three metrics: sex & nudity, violence & gore, and profanity. Well, this is just perfect! Not only that — it also has that MCAA rating data point, which means I get all of my data in one sitting.
-# So, I wrote a little R script using rvest package, and got my data into a tidy dataframe (I’ll post the code on github shortly), and started exploring. After a little bit of data wrangling and running into some obvious things (like, the higher the MCAA rating of the movie, the more likely it is to be rated in all 3 categories), I started to see some interesting narratives worth sharing
+# However, these guides are not standard in the way they are filled out, and scrubbing IMBd for this data wouldn’t get me where I wanted to be fast enough. And then I stumbled upon this awesome website called kids-in-mind.com. It had a lot of info similar or equal to one contained on IMBd.com, but it had a crucial key component: every movie on this website is rated on an 11-point scale, from 0 to 10, on three metrics: sex & nudity, violence & gore, and profanity. Well, this is just perfect! Not only that — it also has that mpaa rating data point, which means I get all of my data in one sitting.
+# So, I wrote a little R script using rvest package, and got my data into a tidy dataframe (I’ll post the code on github shortly), and started exploring. After a little bit of data wrangling and running into some obvious things (like, the higher the mpaa rating of the movie, the more likely it is to be rated in all 3 categories), I started to see some interesting narratives worth sharing

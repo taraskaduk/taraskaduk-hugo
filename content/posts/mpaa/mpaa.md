@@ -24,6 +24,9 @@ header:
   image: post/header-mpaa.jpg
 ---
 
+{{% zoom-img src="/posts/mpaa/mpaa.jpeg" %}}
+
+
 *Cross-posted: [**Medium**](https://medium.com/taras-kaduk/do-mpaa-movie-ratings-mean-anything-1d1ab683f21d) *
 
 # Intro
@@ -41,144 +44,7 @@ I searched around a bit, and stumbled upon a few awesome things. First, apparent
 
 So, I wrote a little R script using `rvest` package, and got my data into a tidy data frame, and started exploring. After a little bit of data wrangling (I excluded **NR** movies as they are obviously *not rated*, and are all over the place. Also, Kids In Mind database didn't have many **NC-17** rated movies, therefore I combined them with **R** rated films), I got my first results.
 
-
-```{r setup, message=FALSE, warning=FALSE, include=TRUE}
-# library() -------------------------------------------------------------------
-
-library(readr)
-library(stringr)
-library(tidyverse)
-library(rvest)
-library(ggrepel)
-
-# Extract -----------------------------------------------------------------
-## Here, I decided to be easy on the website and not to scrape it every time: instead, I saved the output and only let the web scraping run is the output isn't found.
-
-path <- getwd()
-
-if (file.exists(paste(path,'movies_extract.csv', sep = "/"))) {
-  movies_df <- read_csv(paste(path,'movies_extract.csv', sep = "/"))
-} else {
-        
-        
-## This is my first attempt ever to use rvest and also the first time I work with regex. Obviously, the code need improvement! Comments are welcome!
-
-        
-## The site has data displayed in a table, broken down into pages, and the url contains the top movie's position and a range of 3 metrics - sex, violence and profanity - from 0 to 10.
-## The way the data comes out after scraping, I had a problem with movies rated 10 on profanity, as didn't know how to let my regex know that 10 is 10 (it took all 10 as 1, and appended 0 to the next movie in line)
-## I couldn't figure it out!!! So, I made a loop inside the loop. That's what j and k variables are for.
-        
-  movies_vector <- character()
-  j<-10
-  k<-0
-  i<-0
- 
-  for(j in 10:9) {
-    if (j == 9) k <- 0 else k <- 10
-    position <- 0
-    
-    for(i in 0:300){
-      url <- paste("http://www.kids-in-mind.com/cgi-bin/listbyrating/search.pl?query=&stpos=", 
-                   position, 
-                   "&stype=AND&s1=0&s2=10&v1=0&v2=10&p1=",
-                   k,
-                   "&p2=",
-                   j,
-                   "&m=1&m=2&m=3&m=4", sep = "")
-      
-      import <- read_html(url)
-      
-      vector <- import %>%
-        html_node(".t11normal+ p") %>%
-        html_text() %>% 
-        str_replace_all('\\\n\\\n', '') %>% 
-        str_replace_all('\\[\\[', '[') %>%
-        str_replace_all('\\]\\]', ']')
-## This is that pesky regex. If the movie is return on the run that ask for movies rated 0 to 9 on profanity, then we know it is 0-9 as the last digit...      
-      if(j == 9){
-        vector <- vector %>% 
-          str_extract_all('([^\\]]* \\[\\d{4}\\] \\[\\S+\\] - [0-9]{1,2}.[0-9]{1,2}.[0-9])')
-
-      ##...otherwise, we know the last number is a 10!
-      } else {
-        vector <- vector %>% 
-          str_extract_all('([^\\]]* \\[\\d{4}\\] \\[\\S+\\] - [0-9]{1,2}.[0-9]{1,2}.10)')
-      }
-      movies_vector <- c(movies_vector,vector[[1]])
-      
-      position <- position + 34
-      if(any(duplicated(movies_vector)) == TRUE) break
-    }
-
-## Also, I couldn't figure out a good way to stop the loop. If you keep running it after the last movie, you'll return to the start and begin again. So, as dumb as it is, I simply looked up the last movie in the list and wrote it down. Given that Zootopia starts with a Z and followed by an O, it is unlikely there will be many more movies after this. I'll take my chances.
-    
-    if(any(grepl('Zootopia',movies_vector)) == TRUE) break
-  }
-  
- 
-  ## Some stringr FTW
-  movies_df <- 
-    as_data_frame(movies_vector) %>% 
-    separate(value, sep = '\\[', remove = TRUE, into = c('name', 'year', 'rating')) %>% 
-    separate(rating, sep = '\\] - ', remove = TRUE, into = c('mpaa', 'rating')) %>% 
-    separate(rating, sep = '\\.', remove = TRUE, into = c('sex', 'violence', 'profanity'))
- 
-  ## Some dplyr FTW
-  movies_df <- movies_df %>% 
-    mutate(
-      year = str_replace(movies_df$year, '\\]', ''),
-      sex = as.numeric(sex),
-      violence = as.numeric(violence),
-      profanity = as.numeric(profanity),
-      mpaa = factor(mpaa, levels = c('G', 'PG', 'PG-13', 'R', 'NC-17', 'NR'))
-    ) 
-  
-  ##Save output - I didn't want to ping their website every time. 
-  write_csv(movies_df, paste(path,'movies_extract.csv', sep = "/"))
-  remove(i,j,k, movies_vector, position, url, vector, import)
-}
-
-caption <- '\ntaraskaduk.com\nbased on data from kids-in-mind.com'
-
-
-
-# Transform ---------------------------------------------------------------
-
-movies_df <- movies_df %>% 
-  filter(mpaa != 'NR') %>% ## Not Rated movies are NOT RATED
-  filter(name != 'Mozart\'s Sister') %>%  ## This one is the one I caught that is wrong - it is actually NR and not G.
-  mutate(avg = (sex + profanity + violence)/3)
-
-## Not enough NC-17 movies - let's match them up with R
-movies_df$mpaa <- movies_df$mpaa %>% recode(R = 'R & NC-17', `NC-17` = 'R & NC-17') 
-
-movies_df$mpaa <- factor(movies_df$mpaa, levels = c('G', 'PG', 'PG-13', 'R & NC-17'))
-
-movies_gather <- movies_df %>% 
-  gather(key = metric, value = score, c(sex, violence, profanity, avg))
-
-
-# Graphs -----------------------------------------------------------------
-
-theme <- theme(
-  legend.position="none",
-  axis.ticks.y=element_blank(),
-  panel.grid.major.y = element_line(colour="#e0e0e0",size=40),
-  panel.grid.major.x =element_line(colour="#F0F0F0",size=.75),
-  panel.grid.minor =element_blank(),
-  panel.background=element_rect(fill="#F0F0F0"),
-  plot.background=element_rect(fill="#F0F0F0"),
-  plot.title=element_text(face="bold", colour="#3C3C3C",size=16),
-  plot.subtitle=element_text(colour="#3C3C3C",size=12),
-  plot.caption = element_text(colour="#3C3C3C",size=10),  
-  axis.text.x=element_text(size=11,colour="#535353",face="bold"),
-  axis.text.y=element_text(size=11,colour="#535353",face="bold"),
-  axis.title.y=element_text(size=11,colour="#535353",face="bold",vjust=1.5),
-  axis.title.x=element_text(size=11,colour="#535353",face="bold",vjust=-0.5),
-  plot.margin = unit(c(0.5, 0.5, 0.5, 0.5), "cm")
-)
-```
-
+# Results
 
 ### On average, higher MPAA rating follows higher levels of inappropriate content, but...
 The first result seemed fairly obvious: higher (stricter) MPAA ratings have a higher rate of violence, sex and profanity. **On average**. However, the amount of overlap is astonishing. Basically, any category is entirely consumed by its two neighboring categories. 
@@ -187,68 +53,15 @@ What's more, you can always find a movie in a "lower" category that is more inap
 
 You can see this from the figure below. You may also notice that there movies scoring 2.5 points on average that are in every MPAA category. We'll come back to this later.
 
-```{r mpaa}
-labels_all <- movies_df %>% 
-  filter(name == "Jimmy Neutron: Boy Genius" | 
-           name == 'Adventures of Elmo In Grouchland, The' |
-           name == "Harry Potter and the Half-Blood Prince" |
-           name == 'Year One' |
-           name == 'Halloween' |
-           name == 'Little Rascals, The' |
-           name ==  'Life is Beautiful' |
-           name == 'King\'s Speech, The'
-  )
+{{% zoom-img src="/posts/mpaa/mpaa-1.png" %}}
 
-ggplot(data = movies_df, aes(x=avg, y = mpaa, col = mpaa)) +
-  geom_jitter(alpha = 0.2) +
-  scale_colour_brewer(palette = "Spectral", direction = -1) +
-  geom_point(data = labels_all, size = 3) +
-  geom_label_repel(
-    data = labels_all,
-    aes(label = name),
-    size = 3,
-    nudge_y = 0.1) +
-  ylab('MPAA Rating') + xlab('Average (violence & gore, sex, profanity)') +
-  labs(
-    title = 'MPAA rating isn\'t everything',
-    subtitle = 'Visualizing the amount of overlap between categories',
-    caption = caption) +
-  theme
-
-```
 
 ### MPAA is most forgiving on violence
 Well, no kidding! This was hardly a surprise. As a foreigner, I am constantly amused by how much violence is considered appropriate, contrasted with, for example, how little nudity is acceptable. *Guts and blood? Body parts?* **Sure, bring it on!** *Naked breasts?* **How dare you!**
 
 So, next time you rent a G rated movie and think it is clean - think again. It's probably just as violent as that other PG movie you wanted. Both G and PG movies center around 3 points on violence anyway, with max points being 5 for G and 6 for PG. Just go with PG then, eh?
 
-```{r violence, message=FALSE, warning=FALSE, paged.print=FALSE}
-labels_g_pg <- movies_df %>% 
-  filter(name == "Babe: Pig in the City" | 
-           name == "Beauty and the Beast" & mpaa == 'G' |
-           name == 'Zeus and Roxanne' |
-           name == 'Sleepless in Seattle')
-
-ggplot(data = movies_df %>% filter(mpaa %in% c('PG', 'G')), aes(x=as.factor(violence), y = mpaa, col = as.factor(violence))) +
-  geom_jitter(alpha = 0.5, size =3) +
-  scale_colour_brewer(palette = "Spectral", direction = -1) +
-  geom_point(data = labels_g_pg, size = 5) +
-  geom_label_repel(
-    data = labels_g_pg,
-    aes(label = name),
-    size = 4,
-    col = 'grey51',
-    nudge_x = 1,
-    nudge_y = 0) +
-  theme +
-  theme(axis.text.y = element_text(size = rel(1.2)),
-        panel.grid.major.y = element_line(colour="#e0e0e0",size=70)) +
-  ylab('MPAA Rating') + xlab('Violence and Gore') +
-  labs(
-    title = 'That G movie you felt safe about',
-    subtitle = 'is probably just as violent as the PG one you rejected',
-    caption = caption)
-```
+{{% zoom-img src="/posts/mpaa/violence-1.png" %}}
 
 ### What the **** is up with profanity?
 Now, this is a zero tolerance zone in the movie world. Not sex and nudity, as I assumed. Profanity. Unlike other categories, where scores flow gradually from category to category, profanity has some clear trends:
@@ -261,113 +74,16 @@ Now, this is a zero tolerance zone in the movie world. Not sex and nudity, as I 
 
 I bet if I was trying to predict an MPAA rating based on these criteria, profanity would be the strongest predictor (not a concern of this post, but maybe later)
 
-```{r profanity, message=FALSE, warning=FALSE, paged.print=FALSE}
-labels_profanity <- movies_df %>% 
-  filter(name %in% c('Aladdin',
-                'Beethoven',
-                'Life is Beautiful',
-                'Psycho',
-                'Cars',
-                'Apollo 13',
-                'Nutty Professor, The',
-                'Straight Outta Compton')
-         )
-
-ggplot(data = movies_df, aes(x=as.factor(profanity), y = mpaa, col = mpaa)) +
-  geom_jitter(alpha = 0.2) +
-  scale_colour_brewer(palette = "Spectral", direction = -1) +
-  geom_point(data = labels_profanity, size = 3) +
-  geom_label_repel(
-    data = labels_profanity,
-    aes(label = name),
-    size = 3,
-    nudge_y = 0.1) +
-  ylab('MPAA Rating') + xlab('Profanity') +
-  labs(
-    title = 'Profanity rating patterns across MPAA categories',
-    caption = caption) +
-  theme
-```
+{{% zoom-img src="/posts/mpaa/profanity-1.png" %}}
 
 Looking at R & NC-17 section, it is tempting to dive in a bit more. Let's go!
 
-```{r profanity2, message=FALSE, warning=FALSE, paged.print=FALSE}
-labels_r <- movies_gather %>% 
-  filter(metric != 'avg') %>% 
-  filter(metric == 'violence' & 
-           name %in% c(
-             'Sex and the City', 
-             'Basic Instinct', 
-             'Saw', 
-             'Nightmare on Elm Street, A') | 
-           metric == 'sex' & 
-           name %in% c(
-             'Reservoir Dogs', 
-             'Love Actually', 
-             'Basic Instinct', 
-             'American Pie') |
-           metric == 'profanity' & 
-           name %in% c(
-             'Psycho',  
-             'Office Space',
-             'Pulp Fiction',
-             'Old School',
-             'Anchorman',
-             'Amelie'
-           )       
-  )
-
-
-ggplot(
-    data = movies_gather %>% 
-        filter(
-            mpaa == 'R & NC-17' & 
-            metric != 'avg'), 
-    aes(x=as.factor(score), y = metric, col = mpaa)) +
-    geom_jitter(alpha = 0.3, size = 3) +
-    scale_colour_manual(values = c('#d7191c')) +
-    geom_point(data = labels_r, size = 4,  col = 'black') +
-    geom_label_repel(
-        data = labels_r,
-        aes(label = name),
-        size = 3,
-        col = 'black') +
-    guides(fill = FALSE) +
-    xlab('') + ylab('') +
-  theme +
-  labs(
-    title = 'R & NC-17 Movies aren\'t always violent or vulgar... \nbut they sure are profane',
-    subtitle = 'Most R and NC-17 movies are 5 or more on a profanity scale',
-    caption = caption)
-```
+{{% zoom-img src="/posts/mpaa/profanity2-1.png" %}}
 
 Indeed, movies in R & NC-17 categories are widely distributed across violence and sex, but snuggle tightly in the upper section of profanity. Why is that? Looking at the data, we can tell that often profanity accompanies other "R" worthy content. However, it is not always the case, and correlation is relatively weak. <a id="quote">Good Will Hunting is neither violent nor sexually explicit, but it is profane AF, and, sure enough, is R rated for - wait for it - *"strong language, including some sex-related dialogue".* </a>
 It could be just me (after all, I am a foreigner, and English words don't carry the same connotation for me), but I think it is mighty unfair to Good Will Hunting to be rated R, especially knowing that Scary Movie, parts 3 through 5, are rated PG-13.
 
-```{r good_will_hunting}
-ggplot(
-    data = movies_gather %>% 
-        filter(metric != 'avg'), 
-    aes(x=as.factor(score), y = metric, col = mpaa)) +
-    geom_jitter(alpha = 0.2, size = 2) +
-    scale_colour_brewer(palette = "Spectral", direction = -1) +
-    geom_point(data = movies_gather %>% 
-        filter(name == 'Good Will Hunting' & metric != 'avg'), 
-        size = 7,  
-        col = 'grey20',
-        alpha = 0.9) +
-     geom_point(data = movies_gather %>% 
-        filter(name == 'Good Will Hunting' & metric != 'avg'), 
-        size = 2,  
-        col = 'grey10') +
-    guides(fill = FALSE) +
-    xlab('') + ylab('') +
-  theme +
-  labs(
-    title = 'Good Will Hunting, rated R',
-    subtitle = 'For strong language, including some sex-related dialogue',
-    caption = caption)
-```
+{{% zoom-img src="/posts/mpaa/good_will_hunting-1.png" %}}
 
 # Summary
 
