@@ -8,7 +8,7 @@ copyright = "&copy; Taras Kaduk"
 custom_css = "/static/css/custom.css"
 
 [permalinks]
-   post = "/:year/:month/:day/:slug/"
+   posts = "/:year/:month/:day/:slug/"
 
 [params]
   paginate = 10
