@@ -1,5 +1,4 @@
 <head>
-  {{ partial "twitter-card" . }}
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
   {{ with .Title | default .Site.Title }}
@@ -20,7 +19,7 @@
 
   {{ with .Params.thumbnail }}
   <meta property="og:image" content="{{ . | absURL }}" />
-  <meta name="twitter:image" content="{{ . | absURL }}" />
+  <meta name="twitter:image" content="{{ .Params.image }}">
   {{ end }}
   <meta name="twitter:card" content="summary" />
 
