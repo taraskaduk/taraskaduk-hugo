@@ -12,7 +12,6 @@ tags:
   - power query
 aliases:
     - /posts/power-query
-    
 twitter:
   - card: "Power Query"
   - site: "@taraskaduk"
