@@ -14,11 +14,11 @@ aliases:
     - /posts/power-query
     
 twitter:
-  card: "Power Query"
-  site: "@taraskaduk"
-  title: "Power Query: Excel's gateway to reproducible analysis"
-  description: "A guide to a reproducible workflow in Excel"
-  image: "/posts/power-query/head.png"
+  - card: "Power Query"
+  - site: "@taraskaduk"
+  - title: "Power Query: Excel's gateway to reproducible analysis"
+  - description: "A guide to a reproducible workflow in Excel"
+  - image: "/posts/power-query/head.png"
 ---
 
 
