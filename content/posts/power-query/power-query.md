@@ -12,9 +12,15 @@ tags:
   - power query
 aliases:
     - /posts/power-query
-header:
-  image: posts/header-power-query.png
+    
+twitter:
+  card: "Power Query"
+  site: "@taraskaduk"
+  title: "Power Query: Excel's gateway to reproducible analysis"
+  description: "A guide to a reproducible workflow in Excel"
+  image: "/posts/power-query/head.png"
 ---
+
 
 {{% zoom-img src="/posts/power-query/head.png" %}}
 

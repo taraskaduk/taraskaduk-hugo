@@ -19,14 +19,14 @@ custom_css = "/static/css/custom.css"
   github = "taraskaduk"
   linkedin = "taraskaduk"
   # Disqus shortname
-  disqus = "taraskaduk"
+  # disqus = "taraskaduk"
   # Google Analytics API key.
   ga_api_key = "UA-115954394-1"
   author = "Taras Kaduk"
   authorwebsite = "taraskaduk.com"
   avatar = "https://pbs.twimg.com/profile_images/1055225893269000192/qQbrASSV_400x400.jpg"
-  contact = "mailto:taras@taraskaduk.com)"
-  bio = "Statistical analysis and data reconfiguration, a.k.a. a transpondster 🧠📈📊"
+  contact = "https://twitter.com/taraskaduk"
+  bio = "Ukrainian by birth, Seattleite by heart, Southern by the irony of fate. I analyze data in R and write about it."
   # Short subtitle/tagline. This is displayed in the header.
   subtitle = "Data journalism in R"
   # Logo image. This is displayed ogp image.
@@ -34,19 +34,30 @@ custom_css = "/static/css/custom.css"
   favicon = "https://pbs.twimg.com/profile_images/1055225893269000192/qQbrASSV_400x400.jpg"
 
 [[menu.main]]
-    name = "Blog"
+    name = "Home"
     url = "/"
     weight = 1
+
+
+[[menu.main]]
+    name = "Blog"
+    url = "/posts"
+    weight = 2
 
 [[menu.main]]
     name = "About"
     url = "/about"
     weight = 3
+    
+[[menu.main]]
+    name = "Resume"
+    url = "/resume"
+    weight = 4
 
 [[menu.main]]
     name = "Tags"
     url = "/tags"
-    weight = 4
+    weight = 5
 
 
 # This is an interesting implementation of tree-like menu.
