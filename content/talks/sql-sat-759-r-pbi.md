@@ -7,7 +7,8 @@ title = "R in Power BI"
 - Event URL: http://www.sqlsaturday.com/759/Sessions/Details.aspx?sid=78517
 - Slides: https://taraskaduk.github.io/rpowerbi.html
 
-![We will need a bigger room! My crowd at my 2 'back to back' talks at SQL Saturday #759](talks/sqlsat759.jpg)
+
+{{% zoom-img src="/talks/sqlsat18.jpg" %}}
 
 ---
 

@@ -6,6 +6,6 @@ event_url = "http://www.sqlsaturday.com/759/Sessions/Details.aspx?sid=78516"
 location = "Jacksonville, FL"
 +++
 
-![We will need a bigger room! My crowd at my 2 'back to back' talks at SQL Saturday #759](talks/sqlsat759.jpg)
+{{% zoom-img src="/talks/sqlsat18.jpg" %}}
 
 In this session, we will explore all the various ways to pivot into the data science field. We will go over some common scenarios, and will inspect different pieces of advice found on the Internet.
