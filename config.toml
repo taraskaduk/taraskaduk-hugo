@@ -40,24 +40,30 @@ custom_css = "/static/css/custom.css"
 
 
 [[menu.main]]
-    name = "Blog"
+    name = "Posts"
     url = "/posts"
     weight = 2
 
 [[menu.main]]
+    name = "Talks"
+    url = "/talks"
+    weight = 3
+
+
+[[menu.main]]
     name = "About"
     url = "/about"
-    weight = 3
+    weight = 4
     
 [[menu.main]]
     name = "Resume"
     url = "/resume"
-    weight = 4
+    weight = 5
 
 [[menu.main]]
     name = "Tags"
     url = "/tags"
-    weight = 5
+    weight = 6
 
 
 # This is an interesting implementation of tree-like menu.

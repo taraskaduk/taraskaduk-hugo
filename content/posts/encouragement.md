@@ -9,7 +9,7 @@ tags:
   - learning
   - career
 aliases:
-    - /post/encouragement
+    - /posts/encouragement
 ---
 
 **Backstory:** *I wrote this blog post a couple of months ago, and I wasn't at my best. My resumes and cover letters were getting no response, I was (and still am) suffering from a bad case of imposterism fueled by doing data analytics and data science without a degree, I was looking around only saw people 10 times smarter than I'd ever be.*
