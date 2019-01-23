@@ -1,7 +1,7 @@
 ---
 title: "Resume"
 date: 2019-01-15T14:30:07-05:00
-draft: true
+draft: false
 ---
 
 ## Contact

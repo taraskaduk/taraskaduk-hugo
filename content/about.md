@@ -1,7 +1,7 @@
 ---
 title: "About"
 date: 2016-01-01
-draft: true
+draft: false
 ---
 (Updated: 2019-01-15)
 
