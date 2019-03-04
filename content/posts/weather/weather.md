@@ -6,7 +6,7 @@ slug: weather
 tags: [ggplot, maps, geospatial, r]
 image: /posts/weather/image.png
 twitter:
-  - card: "summary_large_image"
+  - card: "summary"
   - image: "/posts/weather/image.png"
 ---
 
