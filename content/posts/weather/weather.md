@@ -4,7 +4,7 @@ author: Taras Kaduk
 date: '2019-02-18'
 slug: weather
 tags: [ggplot, maps, geospatial, r]
-image: "/posts/weather/image.png"
+image: /posts/weather/image.png
 twitter:
   - card: "summary_large_image"
   - image: "/posts/weather/image.png"
