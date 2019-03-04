@@ -14,4 +14,4 @@ title = "R in Power BI"
 
 In this session, we will touch on R as the language for data science, and then will dive right into how to use R within the Power BI environment, and why to use it in a first place.
 
-[[Slides]](/sqlsat759-pbi/slides.html)
+[[Slides]](https://taraskaduk.github.io/sqlsat759-pbi/presentation/slides.html)

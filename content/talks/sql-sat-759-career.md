@@ -10,4 +10,4 @@ location = "Jacksonville, FL"
 
 In this session, we will explore all the various ways to pivot into the data science field. We will go over some common scenarios, and will inspect different pieces of advice found on the Internet.
 
-[[Slides]](/sqlsat759-career/slides.html)
+[[Slides]](https://taraskaduk.github.io/sqlsat759-career/slides.html)
