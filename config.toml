@@ -57,7 +57,7 @@ custom_css = "/static/css/custom.css"
     
 [[menu.main]]
     name = "Resume"
-    url = "/resume"
+    url = "/resume.pdf"
     weight = 5
 
 [[menu.main]]

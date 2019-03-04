@@ -15,14 +15,12 @@
     </p>
     {{ end }}
     {{ partial "link.html" . }}
+    
   </header>
 
 
-
-
-
-<main class="l-header" align="center">
-{{ partial "menu_vertical.html" . }}
+<main class="l-header">
+{{ partial "menu.html" . }}
 {{ range where .Data.Pages "Title" "Home" }}
     {{ .Content }}
 {{ end }}
