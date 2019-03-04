@@ -20,7 +20,7 @@
 
 
 <main class="l-header">
-{{ partial "menu.html" . }}
+{{ partial "menu_vertical.html" . }}
 {{ range where .Data.Pages "Title" "Home" }}
     {{ .Content }}
 {{ end }}

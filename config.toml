@@ -57,7 +57,7 @@ custom_css = "/static/css/custom.css"
     
 [[menu.main]]
     name = "Resume"
-    url = "/resume.pdf"
+    url = "/resume/resume.pdf"
     weight = 5
 
 [[menu.main]]
@@ -111,4 +111,4 @@ custom_css = "/static/css/custom.css"
   [[related.indices]]
   name  = "date"
   weight = 10
-  pattern = "2017"
+  pattern = "2019"
