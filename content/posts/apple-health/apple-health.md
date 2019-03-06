@@ -5,6 +5,7 @@ date: '2019-03-01'
 slug: apple-health
 tags: [r, personal data, productivity]
 image: /posts/weather/image.png
+draft: true
 ---
 
 # Intro
