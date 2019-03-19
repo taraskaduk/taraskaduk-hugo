@@ -2,50 +2,34 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
 
-  {{ with .Title | default .Site.Title }}
-  <title>{{ . }}</title>
-  <meta property="og:title" content="{{ . }}" />
-  <meta name="twitter:title" content="{{ . }}" />
-  {{ end }}
-
-  {{ with .Description | default .Site.Params.subtitle }}
-  <meta name="description" content="{{ . }}">
-  <meta property="og:description" content="{{ . }}">
-  <meta name="twitter:description" content="{{ . | truncate 200 }}">
-  {{ end }}
-
-  <meta name="author" content="{{ .Site.Params.author }}"/>
-  <meta property="og:site_name" content="{{ .Site.Title }}" />
-  <meta property="og:url" content="{{ .Permalink }}" />
+  {{ if eq .URL "/" }}
+<title>{{ .Site.Title }}</title>
+<meta property="og:title" content="{{ .Site.Title }}">
+<meta property="og:type" content="website">
+<meta property="description" content="{{ .Site.Params.description }}">
+<meta property="og:description" content="{{ .Site.Params.description }}">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://xvrdm.github.io/images/{{ .Site.Params.logo.url }}" >
+{{ else }}
+<title>{{ .Title }}{{ with .Params.subtitle }} - {{ . }} {{ end }} - {{ .Site.Title }}</title>
+<meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}">
+<meta property="og:type" content="article">
 
   {{ if .Params.twitterImg }}
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://taraskaduk.com/{{ .Params.twitterImg }}" >
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://xvrdm.github.io/{{ .Params.twitterImg }}" >
   {{ else }}
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:image" content="https://pbs.twimg.com/profile_images/1055225893269000192/qQbrASSV_400x400.jpg" >
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="http://xvrdm.github.io/images/{{ .Site.Params.logo.url }}" >
   {{ end }}
+  
+{{ $defaultDescription := printf "Article posted by %s, on %s" .Params.author (.Date.Format "Monday, January 2nd, 2006") }}
+<meta property="description" content="{{ .Description | default $defaultDescription }}">
+<meta property="og:description" content="{{ .Description | default $defaultDescription }}">
+{{ end }}
 
-
-  {{ with .Params.thumbnail }}
-  <meta property="og:image" content="{{ . | absURL }}" />
-  <meta name="twitter:image" content="{{ .Params.image }}">
-  {{ end }}
-  <meta name="twitter:card" content="summary" />
-
-  {{ with .Site.Params.twitter }}
-  <meta name="twitter:site" content="@{{ . }}" />
-  <meta name="twitter:creator" content="@{{ . }}" />
-  {{ end }}
-
-  {{ if .IsPage }}
-  <meta property="og:type" content="article" />
-  {{ with .Site.Params.facebook }}
-  <meta property="og:article:author" content="https://facebook.com/{{ . }}" />
-  {{ end }}
-  {{ else }}
-  <meta property="og:type" content="website" />
-  {{ end }}
+<meta name="twitter:creator" content="{{ .Params.twitterAuthor }}">
+<meta name="twitter:site" content="{{ .Params.twitterSite }}">
   
   
   <!-- Hugo Version number -->
