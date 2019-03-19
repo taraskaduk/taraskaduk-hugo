@@ -32,6 +32,9 @@ custom_css = "/static/css/custom.css"
   # Logo image. This is displayed ogp image.
   logo = "https://pbs.twimg.com/profile_images/1055225893269000192/qQbrASSV_400x400.jpg"
   favicon = "https://pbs.twimg.com/profile_images/1055225893269000192/qQbrASSV_400x400.jpg"
+  description = "A datascience journal."
+  twitterAuthor = "@taraskaduk"
+  twitterSite = "@taraskaduk"
 
 [[menu.main]]
     name = "Home"
