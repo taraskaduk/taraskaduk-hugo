@@ -4,7 +4,6 @@ author: Taras Kaduk
 date: '2019-02-18'
 slug: weather
 tags: [ggplot, maps, geospatial, r]
-image: "https://d33wubrfki0l68.cloudfront.net/6b72090b2a8d9a02b4240cc77803bd3cb98ff13a/56950/posts/sass/platespinner.png"
 twitter:
   - card: "summary"
   - image: "/posts/weather/image.png"
