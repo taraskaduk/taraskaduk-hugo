@@ -21,18 +21,18 @@ custom_css = "/static/css/custom.css"
   # Disqus shortname
   # disqus = "taraskaduk"
   # Google Analytics API key.
+  avatar = "/logo.jpg"
+  logo = "/logo.jpg"
+  favicon = "/logo.jpg"
   ga_api_key = "UA-115954394-1"
   author = "Taras Kaduk"
   authorwebsite = "taraskaduk.com"
-  avatar = "https://pbs.twimg.com/profile_images/1055225893269000192/qQbrASSV_400x400.jpg"
   contact = "https://twitter.com/taraskaduk"
   bio = "Ukrainian by birth, Seattleite by heart, Southern by the irony of fate. I analyze data in R and write about it."
   # Short subtitle/tagline. This is displayed in the header.
   subtitle = "Data journalism in R"
   # Logo image. This is displayed ogp image.
-  logo = "https://pbs.twimg.com/profile_images/1055225893269000192/qQbrASSV_400x400.jpg"
-  favicon = "https://pbs.twimg.com/profile_images/1055225893269000192/qQbrASSV_400x400.jpg"
-  description = "Data Journalism in R"
+  description = "Shocked by the data"
   twitterAuthor = "@taraskaduk"
   twitterSite = "@taraskaduk"
 
