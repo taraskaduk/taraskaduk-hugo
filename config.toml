@@ -3,12 +3,17 @@ languageCode = "en-us"
 title = "Taras Kaduk"
 theme = "pickles"
 
+pygmentsCodeFences = true
+pygmentsStyle="friendly"
+pygmentsCodeFencesGuessSyntax=true
+
 # Copyright notice. This is displayer in the footer.
 copyright = "&copy; Taras Kaduk"
 custom_css = "/static/css/custom.css"
 
 [permalinks]
    posts = "/:year/:month/:day/:slug/"
+
 
 [params]
   paginate = 10
@@ -28,11 +33,11 @@ custom_css = "/static/css/custom.css"
   author = "Taras Kaduk"
   authorwebsite = "taraskaduk.com"
   contact = "https://twitter.com/taraskaduk"
-  bio = "Ukrainian by birth, Seattleite by heart, Southern by the irony of fate. I analyze data in R and write about it."
+  bio = "Shocked by your data"
   # Short subtitle/tagline. This is displayed in the header.
   subtitle = "Data journalism in R"
   # Logo image. This is displayed ogp image.
-  description = "Shocked by the data"
+  description = "Shocked by your data"
   twitterAuthor = "@taraskaduk"
   twitterSite = "@taraskaduk"
 
