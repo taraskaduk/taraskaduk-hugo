@@ -1,5 +1,7 @@
 <html lang="{{ .Site.LanguageCode }}">
+
 {{ partial "head.html" . }}
+
 <body>
   <a href="#main" class="skip-link p-screen-reader-text">Skip to content</a>
   {{ partial "svgpack-sprite.html" . }}
@@ -15,15 +17,15 @@
     </p>
     {{ end }}
     {{ partial "link.html" . }}
-    
+    <br>
+    <img src="header.png"></img>
+    {{ partial "menu.html" . }}
   </header>
-
-
-<main class="l-header">
-{{ partial "menu_vertical.html" . }}
+<main class="l-main">
 {{ range where .Data.Pages "Title" "Home" }}
     {{ .Content }}
 {{ end }}
+{{ partial "menu.html" . }}
 </main>
 
 <p class="p-copyright">

@@ -24,7 +24,7 @@ custom_css = "/static/css/custom.css"
   github = "taraskaduk"
   linkedin = "taraskaduk"
   # Disqus shortname
-  # disqus = "taraskaduk"
+  disqus = "taraskaduk"
   # Google Analytics API key.
   avatar = "/logo.jpg"
   logo = "/logo.jpg"
