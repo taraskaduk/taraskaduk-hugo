@@ -1,7 +1,7 @@
 baseURL = "https://taraskaduk.com/"
 languageCode = "en-us"
 title = "Taras Kaduk"
-theme = "pickles"
+theme = "hugo_theme_pickles"
 
 pygmentsCodeFences = true
 pygmentsStyle="friendly"
@@ -56,22 +56,16 @@ custom_css = "/static/css/custom.css"
     name = "Talks"
     url = "/talks"
     weight = 3
-
-
-[[menu.main]]
-    name = "About"
-    url = "/about"
-    weight = 4
     
 [[menu.main]]
     name = "Resume"
     url = "/resume"
-    weight = 5
+    weight = 4
 
 [[menu.main]]
     name = "Tags"
     url = "/tags"
-    weight = 6
+    weight = 5
 
 
 # This is an interesting implementation of tree-like menu.
