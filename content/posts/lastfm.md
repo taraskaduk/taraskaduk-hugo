@@ -8,6 +8,7 @@ tags:
   - tableau
 aliases:
     - /posts/lastfm
+draft: true
 ---
 
 I recently got around to look at some data I've been collecting for a long-long time. The data comes from the service called Last.fm, which tracks your music listening history and offers a host of recommendations based on such habits and your friends' activity. The service has been around for a long time, and I initially signed up for it in 2007, and has been deliberate about tracking my music since then. That makes it over 11 years of data to look at!
