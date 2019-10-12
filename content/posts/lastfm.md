@@ -16,7 +16,7 @@ I used a service that helped me get the initial large chunk of data out fast:  h
 
 I built a quick Tableau dashboard to explore my results:
 
-<iframe src="https://public.tableau.com/views/LastFMListeningHistory/View1?:embed=y&:display_count=yes&:origin=viz_share_link:showVizHome=no&:embed=true"
+<iframe src="https://public.tableau.com/views/LastFMListeningHistory/View1?:showVizHome=no&:embed=true"
  width="500" height="780" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
  
  
