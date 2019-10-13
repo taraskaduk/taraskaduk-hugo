@@ -1,7 +1,7 @@
 baseURL = "https://taraskaduk.com/"
 languageCode = "en-us"
 title = "Taras Kaduk"
-theme = "hugo_theme_pickles"
+theme = "mediumish-gohugo-theme"
 
 pygmentsCodeFences = true
 pygmentsStyle="friendly"
