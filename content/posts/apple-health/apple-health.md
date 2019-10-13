@@ -28,7 +28,7 @@ And so, without further ado...
 # Get the data
 Getting the data out of Health app is pretty easy. From Apple Health, you can export it anywhere. I save it right away into the Files, which instantly appears in my iCloud and is accessible from my Mac.
 
-{{% zoom-img src="/posts/apple-health/1.jpg" %}}
+![](/posts/apple-health/1.jpg)
 
 Your mileage may vary based on the path you chose to get the files. You could save it on the cloud, and then access via a web link, for instance. I find the iCloud storage synced up to your Mac being the most convenient solution.
 Another thing you can do is to use a Shortcut to get the Health data in a different way. For example, there is [this shortcut here](https://www.icloud.com/shortcuts/db56d325085d4582aacc0e1b4bccf326), but you can write your own.

@@ -15,7 +15,7 @@ header:
   image: ../post/mpaa/mpaa_files/figure-html/good_will_hunting-1.png
 ---
 
-{{% zoom-img src="/posts/mpaa/screenshot.png" %}}
+![](/posts/mpaa/screenshot.png)
 
 *Cross-posted: [**Medium**](https://medium.com/taras-kaduk/when-your-data-analysis-is-validated-on-the-late-show-with-stephen-colbert-b7cd6ca37147)*
 
@@ -25,8 +25,8 @@ About a month ago, I wrote a little article about the MPAA rating system. I set 
 
 One of such caveats was the effect of profanity. What my quick and dirty data analysis showed was that profanity was the sure thing that could send a movie into an R category:
 
-{{% zoom-img src="/posts/mpaa/profanity-1.png" %}}
-{{% zoom-img src="/posts/mpaa/profanity2-1.png" %}}
+![](/posts/mpaa/profanity-1.png)
+![](/posts/mpaa/profanity2-1.png)
 
 
 
@@ -62,7 +62,7 @@ Ha! So, my theory checks out! It’s profanity that makes a movie R rated! It ca
 
 It is funny that I chose exactly Good Will Hunting as an example of how an otherwise modest movie can be sent straight to the R bench for what Matt claims is how they all talk in Boston.
 
-{{% zoom-img src="/posts/mpaa/good_will_hunting-1.png" %}}
+![](/posts/mpaa/good_will_hunting-1.png)
 
 ***
 
