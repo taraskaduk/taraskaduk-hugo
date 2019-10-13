@@ -2,115 +2,67 @@ baseURL = "https://taraskaduk.com/"
 languageCode = "en-us"
 title = "Taras Kaduk"
 theme = "mediumish-gohugo-theme"
-
-pygmentsCodeFences = true
-pygmentsStyle="friendly"
-pygmentsCodeFencesGuessSyntax=true
-
-# Copyright notice. This is displayer in the footer.
+summaryLength = 25
 copyright = "&copy; Taras Kaduk"
-custom_css = "/static/css/custom.css"
+enableEmoji = true
+publishDir = "docs"
+disqusShortname = "taraskaduk"
+#googleAnalytics = "UA-1XXXXXXX1-1"
 
 [permalinks]
    posts = "/:year/:month/:day/:slug/"
 
-
 [params]
-  paginate = 10
-  # Social accounts. Link to these accounts are displayed in the header and
-  # footer
-  twitter = "taraskaduk"
-  instagram = "taraskaduk"
+  logo = "/logo.jpg"
+  description ="Data Journalism in R"
+  #mailchimp = "you can provide a mailchimp-link here"
+
+[params.author]
+  name = "Taras Kaduk"
+  thumbnail = "/logo.jpg"
+  description = "@taraskaduk"
+
+[params.index]
+  picture = "/logo.jpg"
+  title = "Taras Kaduk"
+  subtitle = "I'm a unique placeholder. Working here and there!"
+  mdtext = '''
+Currently trying to get this blog running, still don't know what the blog will be about!\
+**This textblock is a demonstration of the mdtext-param.**\
+### This is a markdown heading
+'''
+  alertbar = false
+
+[params.social]
   github = "taraskaduk"
   linkedin = "taraskaduk"
-  # Disqus shortname
-  disqus = "taraskaduk"
-  # Google Analytics API key.
-  avatar = "/logo.jpg"
-  logo = "/logo.jpg"
-  favicon = "/logo.jpg"
-  ga_api_key = "UA-115954394-1"
-  author = "Taras Kaduk"
-  authorwebsite = "taraskaduk.com"
-  contact = "https://twitter.com/taraskaduk"
-  bio = "Shocked by your data"
-  # Short subtitle/tagline. This is displayed in the header.
-  subtitle = "Data journalism in R"
-  # Logo image. This is displayed ogp image.
-  description = "Shocked by your data"
-  twitterAuthor = "@taraskaduk"
-  twitterSite = "@taraskaduk"
+  twitter = "taraskaduk"
+  instagram = "taraskaduk"
 
+## Main Menu
 [[menu.main]]
     name = "Home"
     url = "/"
-    weight = 1
-
+    weight = 100
 
 [[menu.main]]
     name = "Posts"
+    weight = 200
+    identifier = "posts"
     url = "/posts"
-    weight = 2
-
+    
 [[menu.main]]
     name = "Talks"
     url = "/talks"
-    weight = 3
+    weight = 300
     
 [[menu.main]]
     name = "Resume"
     url = "/resume"
-    weight = 4
-
+    weight = 400
+    
 [[menu.main]]
-    name = "Tags"
-    url = "/tags"
-    weight = 5
-
-
-# This is an interesting implementation of tree-like menu.
-# Use it later, Taras!
-
-# [[menu.main]]
-#     identifier = "theme"
-#     name = "/theme"
-#     weight = 4
-# 
-# [[menu.main]]
-#     parent = "theme"
-#     name = "creating-a-new-theme"
-#     url = "/posts/creating-a-new-theme"
-#     weight = 1
-# 
-# [[menu.main]]
-#     parent = "theme"
-#     name = "migrate-from-jekyll"
-#     url = "/posts/migrate-from-jekyll"
-#     weight = 2
-
-
-
-[related]
-  # Only include matches with rank >= threshold. This is a normalized rank between 0 and 100.
-  threshold = 80
-
-  # To get stable "See also" sections we, by default, exclude newer related pages.
-  includeNewer = false
-
-  # Will lower case keywords in both queries and in the indexes.
-  toLower = false
-
-  [[related.indices]]
-  name = "keywords"
-  weight = 150
-  [[related.indices]]
-  name  = "author"
-  toLower = true
-  weight = 30
-  [[related.indices]]
-  name  = "tags"
-  weight = 100
-  [[related.indices]]
-  name  = "date"
-  weight = 10
-  pattern = "2019"
+    name = "About Me"
+    identifier = "about"
+    weight = 500
+    url = "/"
