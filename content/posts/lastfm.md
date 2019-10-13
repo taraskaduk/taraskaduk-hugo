@@ -20,6 +20,8 @@ I built a quick Tableau dashboard to explore my results:
 <iframe src="https://public.tableau.com/views/LastFMListeningHistory/View1?:showVizHome=no&:embed=true"
  width="500" height="780" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
  
+ <iframe align = "center" width = "1000" height = "1000" frameborder="0" src="https://public.tableau.com/views/LastFMListeningHistory/View1"/>
+ 
  
 Unfortunately, I ran out of time to do more with this data, and would like to publish whatever I've got. I am hoping to come back to it at some point and take a look at some stuff behind the numbers, but for now it's just a Tableau interactive report!
 

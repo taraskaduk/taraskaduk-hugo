@@ -66,6 +66,13 @@ custom_css = "/static/css/custom.css"
     name = "Tags"
     url = "/tags"
     weight = 5
+    
+# netlify.toml
+[context.deploy-preview]
+command = "hugo -b $DEPLOY_PRIME_URL --buildFuture"
+
+[context.branch-deploy]
+command = "hugo -b $DEPLOY_PRIME_URL --buildFuture"
 
 
 # This is an interesting implementation of tree-like menu.
