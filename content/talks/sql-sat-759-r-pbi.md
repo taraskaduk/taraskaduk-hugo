@@ -8,7 +8,7 @@ title = "R in Power BI"
 - Slides: https://taraskaduk.github.io/rpowerbi.html
 
 
-{{% zoom-img src="/talks/sqlsat18.jpg" %}}
+![](/talks/sqlsat18.jpg)
 
 ---
 

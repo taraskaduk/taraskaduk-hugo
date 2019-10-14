@@ -123,7 +123,7 @@ plot <- ggplot() +
         theme
 plot
 ```
-{{% zoom-img src="/posts/pixel-maps/map_full.jpg" %}}
+![](/posts/pixel-maps/map_full.jpg)
 
 
 Looking at the map of the entire world can be overwhelming and sad, especially if you, just like me, are not much of a traveler. Look at it! There aren't many dots! WTF?! Sad!
@@ -139,7 +139,7 @@ For my case, I wanted a wide banner, so I chose some specific arbitrary limits t
 plot + scale_y_continuous(limits = c(10, 70), expand = c(0,0)) +
         scale_x_continuous(limits = c(-150,90), expand = c(0,0))
 ```
-{{% zoom-img src="/posts/pixel-maps/header.png" %}}
+![](/posts/pixel-maps/header.png)
 
 
 ## Outro

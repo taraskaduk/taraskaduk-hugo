@@ -21,8 +21,7 @@ twitter:
   - image: "https://d33wubrfki0l68.cloudfront.net/8694e4b3b82b2a35c1658ecf105aa66709aadd85/e12d7/posts/power-query/head.png"
 ---
 
-
-{{% zoom-img src="/posts/power-query/head.png" %}}
+![](/posts/power-query/head.png)
 
 
 ## Intro
@@ -161,14 +160,14 @@ What Power Query is good at is its GUI that allows users to click around and app
 
 First, there is a ribbon with several tabs and plenty of buttons to click on. Some represent very simple existing functions, while others are pretty complicated and generate a solid chunk of code on just one click.
 
-{{% zoom-img src="/posts/power-query/1.png" %}}
-{{% zoom-img src="/posts/power-query/2.png" %}}
-{{% zoom-img src="/posts/power-query/3.png" %}}
+![](/posts/power-query/1.png)
+![](/posts/power-query/2.png)
+![](/posts/power-query/3.png)
 
 Next, you are allowed to interact with your data to some extend. You can't edit any cells, but you can filter columns, move them around, fill them down, sort, and so on, within the table itself. Power Query will pick up on your actions and will save your transformations in a script.
 
-{{% zoom-img src="/posts/power-query/gui1.png" %}}
-{{% zoom-img src="/posts/power-query/gui2.png" %}}
+![](/posts/power-query/gui1.png)
+![](/posts/power-query/gui2.png)
 
 You can have more than one query, coming from different sources, and you can make them interact with each other: merge (join), append (union), reference, split, nest and so on.
 
@@ -185,16 +184,16 @@ There are quite a few things I like about Power Query:
 Here is an example of how Power Query treats JSON files. I used the well-known (thanks to Jenny Bryan's tutorials!) [API of Ice and Fire](https://anapioficeandfire.com/).
 Here is what I've got after a few clicks. Note that I only plugged in the API call as a URL - Power Query did the rest.
 
-{{% zoom-img src="/posts/power-query/got-1.png" %}}
+![](/posts/power-query/got-1.png)
 It is a data frame, but it has a nested list column for titles. Neat!
 
 Not only JSON records get nested. You could have a nested table (can happen upon a join or after a `group_by`-like call), or a nested list. Regardless, Power Query will always try to make your data rectangular, which is pleasing to any `tidyverse` adept. Here is another example. I took the same Gapminder dataset, and nested it, grouping by `country`. The table above is now how Power Query sees the table. The data frame below is a sneak peek into one of the nested cells for the United Kingdom. The function up on top is the step I applied to nest the data frame:
 
-{{% zoom-img src="/posts/power-query/gui4.png" %}}
+![](/posts/power-query/gui4.png)
 
 One more example. Here is how Power Query sees a folder full of files:
 
-{{% zoom-img src="/posts/power-query/gui5.png" %}}
+![](/posts/power-query/gui5.png)
 
 Likewise, if you told Power Query to access a database, and didn't specify SQL statement, it would return a data frame of all tables and views in that database, and you can take it from there.
 
