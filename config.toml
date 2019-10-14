@@ -9,6 +9,13 @@ publishDir = "docs"
 disqusShortname = "taraskaduk"
 #googleAnalytics = "UA-1XXXXXXX1-1"
 
+# netlify.toml
+[context.deploy-preview]
+command = "hugo -b $DEPLOY_PRIME_URL --buildFuture"
+[context.branch-deploy]
+command = "hugo -b $DEPLOY_PRIME_URL --buildFuture"
+
+
 [permalinks]
    posts = "/:year/:month/:day/:slug/"
 
@@ -61,69 +68,8 @@ Currently trying to get this blog running, still don't know what the blog will b
     url = "/resume"
     weight = 400
     
-[[menu.main]]
-<<<<<<< HEAD
-    name = "Tags"
-    url = "/tags"
-    weight = 5
-    
-# netlify.toml
-[context.deploy-preview]
-command = "hugo -b $DEPLOY_PRIME_URL --buildFuture"
-
-[context.branch-deploy]
-command = "hugo -b $DEPLOY_PRIME_URL --buildFuture"
-
-
-# This is an interesting implementation of tree-like menu.
-# Use it later, Taras!
-
-# [[menu.main]]
-#     identifier = "theme"
-#     name = "/theme"
-#     weight = 4
-# 
-# [[menu.main]]
-#     parent = "theme"
-#     name = "creating-a-new-theme"
-#     url = "/posts/creating-a-new-theme"
-#     weight = 1
-# 
-# [[menu.main]]
-#     parent = "theme"
-#     name = "migrate-from-jekyll"
-#     url = "/posts/migrate-from-jekyll"
-#     weight = 2
-
-
-
-[related]
-  # Only include matches with rank >= threshold. This is a normalized rank between 0 and 100.
-  threshold = 80
-
-  # To get stable "See also" sections we, by default, exclude newer related pages.
-  includeNewer = false
-
-  # Will lower case keywords in both queries and in the indexes.
-  toLower = false
-
-  [[related.indices]]
-  name = "keywords"
-  weight = 150
-  [[related.indices]]
-  name  = "author"
-  toLower = true
-  weight = 30
-  [[related.indices]]
-  name  = "tags"
-  weight = 100
-  [[related.indices]]
-  name  = "date"
-  weight = 10
-  pattern = "2019"
-=======
-    name = "About Me"
-    identifier = "about"
-    weight = 500
-    url = "/"
->>>>>>> test
+#[[menu.main]]
+#    name = "About Me"
+#    identifier = "about"
+#    weight = 500
+#    url = "/about"
