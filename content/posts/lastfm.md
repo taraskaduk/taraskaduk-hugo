@@ -8,7 +8,6 @@ tags:
   - tableau
 aliases:
     - /posts/lastfm
-draft: true
 ---
 
 I recently got around to look at some data I've been collecting for a long-long time. The data comes from the service called Last.fm, which tracks your music listening history and offers a host of recommendations based on such habits and your friends' activity. The service has been around for a long time, and I initially signed up for it in 2007, and has been deliberate about tracking my music since then. That makes it over 11 years of data to look at!
@@ -17,10 +16,8 @@ I used a service that helped me get the initial large chunk of data out fast:  h
 
 I built a quick Tableau dashboard to explore my results:
 
-<iframe src="https://public.tableau.com/views/LastFMListeningHistory/View1?:showVizHome=no&:embed=true"
- width="500" height="780" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
- 
- <iframe align = "center" width = "1000" height = "1000" frameborder="0" src="https://public.tableau.com/views/LastFMListeningHistory/View1"/>
+<iframe src="https://public.tableau.com/views/LastFMListeningHistory/View2?:showVizHome=no&:embed=true"
+ width="800" height="1200" frameborder="0" align="left" allowfullscreen="allowfullscreen"></iframe>
  
  
 Unfortunately, I ran out of time to do more with this data, and would like to publish whatever I've got. I am hoping to come back to it at some point and take a look at some stuff behind the numbers, but for now it's just a Tableau interactive report!
