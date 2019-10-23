@@ -5,9 +5,8 @@ theme = "mediumish-gohugo-theme"
 summaryLength = 25
 copyright = "Taras Kaduk"
 enableEmoji = true
-#publishDir = "docs"
+publishDir = "posts"
 disqusShortname = "taraskaduk"
-comments = true
 #googleAnalytics = "UA-1XXXXXXX1-1"
 
 # netlify.toml
