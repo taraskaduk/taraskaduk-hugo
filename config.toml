@@ -5,7 +5,7 @@ theme = "mediumish-gohugo-theme"
 summaryLength = 25
 copyright = "Taras Kaduk"
 enableEmoji = true
-publishDir = "posts"
+#publishDir = "posts"
 disqusShortname = "taraskaduk"
 #googleAnalytics = "UA-1XXXXXXX1-1"
 
