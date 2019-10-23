@@ -35,7 +35,7 @@ I've [moved around a bit](https://taraskaduk.com/2017/11/26/pixel-maps/), and I 
 
 About a year ago or so, I saw this [amazing weather map by Kelly Norton](https://kellegous.com/j/2014/02/03/pleasant-places/) showing the locations by the amount of pleasant days in a year. And it got me thinking: weather is an important factor in determining where to live (growing up in cold Ukraine, and later moving to hot Florida and rainy Seattle, I'm never happy with my weather). What I need is a tool to find the best place to live in the United States! Something like Kelly's map, but with more factors! Well, that sounds like a project I can do in R.
 
-![](/posts/weather/kellynorton.png)
+![](kellynorton.png)
 *Kelly's original map. Interactive and all. Check it out at [https://kellegous.com/j/2014/02/03/pleasant-places/](https://kellegous.com/j/2014/02/03/pleasant-places/)*
 
 And so I decided to start with the weather. Since Kelly hasn't published his data or his methodology, I had to do everything by myself from scratch. Below is the brief methodology.
@@ -69,8 +69,8 @@ Inspired by the original post, I started with a map. I tried the World map first
 {{% tweet 1008879318502604800 %}}
 
 Later, my analysis took down the path of keeping only the US locations. Mimicking the original map that inspired this analysis, I took a few liberties here and there: change the projection, indicate true NAs (uninhabited areas).
-![](/posts/weather/map.png)
 
+![](map.png)
 ### 50 best and worst
 Moving on to the rankings. Below is the chart design I settled on. Each chart shows 50 metropolitan and/or micropolitan areas, ranked by their average amount of pleasant days in years 2012-2017. The year 2017 is displayed for each area as a tile chart: months on y-axis, days of the month on x-axis. Areas are sorted according to the chart: from most to least in "most pleasant days", and from least to most in "least pleasant days": the most winner or loser is always on top
 
@@ -78,43 +78,32 @@ Moving on to the rankings. Below is the chart design I settled on. Each chart sh
 
 This is top 50 out of all areas for which there is data. Nothing surprising at the top, with California leading the way. Tennessee was a bit of a surprise to me (these smaller towns also don't seem to report a lot or any rain, which is suspicious). Also, it changed my frame of reference about Florida a bit: I live here now, and I consider it unpleasant (because it is very hot in the summer), but I must agree that our winters are very nice, and it looks like we've got it good compared to the rest of the country.
 
-![](/posts/weather/50_most_all_5_cols_.png) 
+![](50_most_all_5_cols_.png) 
 <a href="/posts/weather/50_most_all_5_cols_.png" target="_blank">[Full-size vertical version]</a> | <a href="/posts/weather/50_most_all_10_cols_.png" target="_blank">[Full-size horizontal version]</a> 
 
 #### Top 50 worst, all metropolitan and micropolitan
 In the "worst" section, we see all the usual suspects: Wyoming, Alaska, Montana, North Dakota. Also, Puerto Rico and Key West, FL are the only places that are too hot: the rest is too cold.
-![](/posts/weather/50_least_all_5_cols_.png)
-<a href="/posts/weather/50_least_all_5_cols_.png" target="_blank">[Full-size vertical version]</a> | <a href="/posts/weather/50_least_all_10_cols_.png" target="_blank">[Full-size horizontal version]</a> 
-
+![](50_least_all_5_cols_.png)
 
 #### Top 50 best metro areas
 
 Micropolitan areas are not always on everyone's mind, and therefore I wanted to look at metro areas specifically.
 No surprise here either, with California and Florida having the 2/3 of top 50 metro areas. The first non-California metro area is Serbing, FL, 11th in the rank.
-![](/posts/weather/50_most_M1_5_cols_.png)
-<a href="/posts/weather/50_most_M1_5_cols_.png" target="_blank">[Full-size vertical version]</a> | <a href="/posts/weather/50_most_M1_10_cols_.png" target="_blank">[Full-size horizontal version]</a> 
-
+![](50_most_M1_5_cols_.png)
 
 #### Top 50 worst metro areas
 Over on the other side, not so pleasant places still include Puerto Rico and the Northern USA, but now we see a lot more of Eastern Washington and Oregon, along with that cold Northeast.
 
-![](/posts/weather/50_least_M1_5_cols_.png)
-
-<a href="/posts/weather/50_least_M1_5_cols_.png" target="_blank">[Full-size vertical version]</a> | <a href="/posts/weather/50_least_M1_10_cols_.png" target="_blank">[Full-size horizontal version]</a> 
-
-
+![](50_least_M1_5_cols_.png)
 
 ### Top 25 best and worst metro areas with population over 1,000,000 people
 
 Finally, I ranked the biggest metro areas  - the ones with the population over 1 million - in the same way.
 Here are 25 best and worst metro areas with over 1,000,000 people. This time, I used a different design, displaying all 6 years per metro area as "tree rings", using polar coordinates 
 
-![](/posts/weather/25_most_1000_polar_.png)
-<a href="/posts/weather/25_most_1000_polar_.png" target="_blank">[Full-size version]</a>
+![](25_most_1000_polar_.png)
 
-
-![](/posts/weather/25_least_1000_polar_.png)
-<a href="/posts/weather/25_least_1000_polar_.png" target="_blank">[Full-size version]</a>
+![](25_least_1000_polar_.png)
 
 ## Final thoughts
 

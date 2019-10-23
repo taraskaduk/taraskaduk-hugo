@@ -11,23 +11,14 @@ tags:
   - movies
   - data visualization
   - data journalism
-header:
-  image: ../post/mpaa/mpaa_files/figure-html/good_will_hunting-1.png
----
-
-![](/posts/mpaa/screenshot.png)
-
-*Cross-posted: [**Medium**](https://medium.com/taras-kaduk/when-your-data-analysis-is-validated-on-the-late-show-with-stephen-colbert-b7cd6ca37147)*
-
 ---
 
 About a month ago, I wrote a little article about the MPAA rating system. I set up to find out if their lettering system does any justice to the actual content seen on the screen. Briefly speaking, it does, but with caveats.
 
 One of such caveats was the effect of profanity. What my quick and dirty data analysis showed was that profanity was the sure thing that could send a movie into an R category:
 
-![](/posts/mpaa/profanity-1.png)
-![](/posts/mpaa/profanity2-1.png)
-
+![](profanity-1.png)
+![](profanity2-1.png)
 
 
 I even wrote this in my [blog post](/post/mpaa/mpaa/#quote), when summing up the effects of profanity on movie's rating:
@@ -62,7 +53,7 @@ Ha! So, my theory checks out! It’s profanity that makes a movie R rated! It ca
 
 It is funny that I chose exactly Good Will Hunting as an example of how an otherwise modest movie can be sent straight to the R bench for what Matt claims is how they all talk in Boston.
 
-![](/posts/mpaa/good_will_hunting-1.png)
+![](good_will_hunting-1.png)
 
 ***
 

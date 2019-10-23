@@ -11,14 +11,7 @@ tags:
   - analytics
   - business intelligence
   - sass
-header:
-  image: posts/header-sass.png
 ---
-
-![](/posts/sass/platespinner.png)
-
-*Cross-posted: [**Medium**](https://medium.com/taras-kaduk/on-importance-of-minimalism-in-retrospective-analytics-75c5a02c2c83), [**LinkedIn**](https://www.linkedin.com/pulse/importance-minimalism-retrospective-analytics-taras-kaduk-1/) *
-
 
 Hey, analyst, how is life? Talk to me. Do you love what you do for life, do you like all things data?
 
@@ -48,13 +41,9 @@ Below, I’ll show you some examples of what it means.
 
 ## Simple
 
-![Simple is good. It’s that simple (pun intended).](/posts/sass/simple.png)
-
 Do you reports suffer from abundance of KPIs, complicated data models, transformation steps no one understands? Take a step back and simplify it. Keep your data tidy and your calculations simple. Your code should be laconic, elegant and easy to read. For me, complicated code is the first sign of a possible trouble. Do you have to many visuals? More opportunities of something failing. Reduce. Do have multiple reports running doing a similar thing? Reduce the amount and consolidate them. Keep it simple.
 
 ## Automated
-
-![](/posts/sass/automated.png)
 
 > “That which does not kill us, makes us stronger.” **~Nietzsche**
 
@@ -70,8 +59,6 @@ You’re too valuable to do some script’s dirty job.
 
 ## Standard
 
-![](/posts/sass/standard.gif)]
-
 This one must be simple and obvious. Keeping things standard again means more time savings: less validation, less discovery time, less training and explaining.
 
 Do you use one record of truth, the data from one lake? If half your analysts use one source (say, a new database on the cloud) and another half is running stored procedures written before the times of Noah’s Ark, then don’t get surprised if the two teams end up with a different number.
@@ -79,8 +66,6 @@ Do you use one record of truth, the data from one lake? If half your analysts us
 Do you and/or your team adhere to the same visual design principles? Nothing beats bars and lines, and nothing beats simple colors. Most of our recurring reporting looks pretty plain and boring: it is bars, lines and tables; and the color is designated to carry a specific data point and almost never used just for the looks. Yeah, it isn’t fun, but you avoid the decision fatigue, you save time by not coming up with a new palette and new outline, and you don’t spend time explaining your audience what this new spider web chart means and how to read it. Don’t get me wrong, I’m not against new reports, cool colors, interesting and fresh charts — I’m just showing you where to save time and resources when you need to maintain a large number of such reports.
 
 ## Scalable
-
-![](/posts/sass/scalable.gif)
 
 After all said and and done, you should be able to repurpose your logic for something else. Or scale it within the given context. Similarly, many solutions can be created on top of some previous work, instead of creating a new solution. This also makes sure your solutions are “standardized”: you kill 2 birds with 1 stone.
 

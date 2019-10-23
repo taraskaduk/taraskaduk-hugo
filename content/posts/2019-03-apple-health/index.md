@@ -4,16 +4,13 @@ author: Taras Kaduk
 date: '2019-03-23'
 slug: apple-health
 tags: [r, personal data, productivity, xml, ggplot, tydyverse]
-twitterImg: /posts/apple-health/header.png
 description: "Learn to import, analyze and visualize your Health app data in R"
 ---
-
-![](/posts/apple-health/header2.png)
 
 # Intro
 I am convinced that many data scientists and data analysts acquire a peculiar reflex. Any time they suspect (consciuosly or subconsiously) that somewhere data is being collected, they develop an irresistable itch to analyze that data, oftentimes not even knowing where the data is!
 
-![](/posts/apple-health/cheese.gif)
+![](cheese.gif)
 
 
 After purchasing my first iPhone, I quickly realized that its Health app is capable of storing lots of data points. I looked at and analyzed some weight and steps data from my Android phone in the past, but this seemed like a whole new level.
@@ -28,7 +25,7 @@ And so, without further ado...
 # Get the data
 Getting the data out of Health app is pretty easy. From Apple Health, you can export it anywhere. I save it right away into the Files, which instantly appears in my iCloud and is accessible from my Mac.
 
-![](/posts/apple-health/1.jpg)
+![](1.jpg)
 
 Your mileage may vary based on the path you chose to get the files. You could save it on the cloud, and then access via a web link, for instance. I find the iCloud storage synced up to your Mac being the most convenient solution.
 Another thing you can do is to use a Shortcut to get the Health data in a different way. For example, there is [this shortcut here](https://www.icloud.com/shortcuts/db56d325085d4582aacc0e1b4bccf326), but you can write your own.
@@ -267,7 +264,7 @@ df %>% select(type) %>% distinct()
 
 First of all, if you use iPhone, there is no Earthly reason for you to log your weight in Google Forms or some other spreadsheet. Putting the number into Health is super easy, and I like storing things in one place (versus a bunch of orphan spreadsheets). And with the acquisition of Workflow and the renaming it into Shortcuts, it's even easier:
 
-![](/posts/apple-health/weight.gif)
+![](weight.gif)
 
 I've been tracking my daily weight since my Android times, and tried many approaches. Apple Health + Shortcuts is by far the most efficient and reliable.
 
@@ -290,15 +287,15 @@ df %>%
     theme(axis.text.y = element_blank()) # you shouldn't see these, lol
 ```
 
-![](/posts/apple-health/weight1.png)
+![](weight1.png)
 
 With a few additional calls to `geom_vline()` and `geom_line()` you can supercharge this chart and make it a part of a goal-tracking dashboard:
 
-![](/posts/apple-health/weight2.png)
+![](weight2.png)
 
 ### More daily grain data
 There many more charts you can build from this grain: your resting heart rate, walking heart rate, VO2Max, and anything else that can be summarized to a daily level.
-![](/posts/apple-health/daily.png)
+![](daily.png)
 
 ### Hourly grain
 
@@ -323,7 +320,7 @@ df %>%
   guides(fill=FALSE)
 ```
 
-![](/posts/apple-health/hourly.png)
+![](hourly.png)
 
 As these two charts nicely reveal, I have a sedentary job, I walk to work and from work, and walk around during my break, I work out after work (hence a slightly higher step count around 6 PM + higher heart rate).
 Or, if we further break down the step count by day of the week, it will reveal that on weekend, I move a bit all the time, versus more concentrated activity on weekdays:
@@ -355,7 +352,7 @@ df %>%
     coord_equal()
 ```
 
-![](/posts/apple-health/heatmap1.png)
+![](heatmap1.png)
 
 Same can be done with a "days X months" grid, or anything else - you name it.
 
@@ -389,7 +386,7 @@ ggplot() +
 
 ggsave('energy1.png', width = 8, height = 6, units = "in")
 ```
-![](/posts/apple-health/energy1.png)
+![](energy1.png)
 
 You can also calculate given deficit/surplus by a bit of data wrangling:
 
@@ -411,7 +408,7 @@ energy_spread %>%
 ```
 (oh, hey, look, I overate a lot on Christmas!)
 
-![](/posts/apple-health/energy2.png)
+![](energy2.png)
 
 ### Other dietary data
 
@@ -432,7 +429,7 @@ df %>%
          caption = '@taraskaduk | taraskaduk.com')
 ```
 
-![](/posts/apple-health/dietary.png)
+![](dietary.png)
 
 For example, you could plot your protein intake against your body weight and then visualize the percentage, if you're working out and need to ensure a specific amount of protein intake every day.
 
@@ -478,7 +475,7 @@ blood_pressure  %>%
        caption = '@taraskaduk | taraskaduk.com')
 ```
 
-![](/posts/apple-health/bp.png)
+![](bp.png)
 
 
 ## Activity data frame
@@ -564,7 +561,7 @@ df_activity_tall %>%
          caption = '@taraskaduk | taraskaduk.com') +
     theme(axis.text.x = element_blank())
 ```
-![](/posts/apple-health/applewatch2.png)
+![](applewatch2.png)
 
 Or, I could match color to activity, but then I'd need to remove all `FALSE` values:
 ```r
@@ -581,12 +578,12 @@ df_activity_tall %>%
     theme(axis.text.x = element_blank())
 ```
 
-![](/posts/apple-health/applewatch1.png)
+![](applewatch1.png)
 
 
 You can even do yourself a "Don't Break The Chain" tracker, adding data from other tables and other sources:
 
-![](/posts/apple-health/chain.png)
+![](chain.png)
 
 And since we're on the subject, you can do something like a streak count chart, seeing how long of a streak you can get:
 
@@ -608,7 +605,7 @@ ggplot(df_activity_streak, aes(x = date, y = streak, group = x, col = category))
   labs(title = "Streak Count",
        caption = '@taraskaduk | taraskaduk.com')
 ```
-![](/posts/apple-health/streak.png)
+![](streak.png)
 
 ---
 

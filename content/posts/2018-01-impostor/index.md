@@ -14,9 +14,6 @@ tags:
 aliases:
     - /posts/impostor
 ---
-<center>![](/posts/impostor/fraud.gif)</center>
-
-*Cross-posted: [**Medium**](https://medium.com/taras-kaduk/imposterism-in-data-science-f96c29ae96ce) *
 
 We happen to talk a lot about the impostor syndrome these days. No wonder — it seems to be an important subject. But what is it? That feeling of faking it while others *clearly* know what’s they’re doing.
 
@@ -43,8 +40,6 @@ I find Data Science increasingly leaning towards the former category. Scan the p
 ## Faking it in the world of educated people
 If you think that this is a sound request, you won’t be wrong. But let me speak about it from my own experience. I’ve been in the workforce for 10 years, have been doing analytics for over 5 years. And I don’t have a degree. No, I don’t mean MS or PhD. I don’t have a Bachelor’s degree.
 
-<center>![](/posts/impostor/yachty.gif)</center>
-
 Yep. And it’s hard to admit. Ever since I had to leave one of the best Economics universities of my country for a full-time job to make ends meet, I felt ashamed of the fact that I never graduated. And the feeling became even stronger as I broke into the analytics / data science field. Whereas overall a Bachelor’s degree in combination with hard work and continuous learning is fairly enough to hold a well-paid job, in our field it is an absolute bare minimum, but you need much more.
 
 So how do you think it feels when you come across a position you have all the skills for, but which requires an MS in Math, Computer Science or Statistics? You’re like *“I’m 2 steps below that!”* Or how does it feel when your direct report whom you teach, mentor and guide has a Master’s degree?
@@ -60,8 +55,6 @@ There aren’t many of us. Somehow, data science is different from even computer
 
 
 All these ten years, I though I can prove the world wrong, thought I can show that one can be smart without a diploma from a 4-year university. MOOCs, online classes, free and paid resources, books, guides… It all takes you only so far.
-
-<center><img src="/posts/impostor/homer.gif" width="500"></center>
 
 
 And I’m tired of fighting this uphill battle. That’s why I’m starting again from ground zero. Getting an AA at a state college, followed by a BS and hopefully an MS at a state university. And we’ll see what’s next. Classes start next week. It’s going to be long and costly, but it’s going to be worth it.

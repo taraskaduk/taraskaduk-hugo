@@ -21,9 +21,6 @@ twitter:
   - image: "https://d33wubrfki0l68.cloudfront.net/8694e4b3b82b2a35c1658ecf105aa66709aadd85/e12d7/posts/power-query/head.png"
 ---
 
-![](/posts/power-query/head.png)
-
-
 ## Intro
 In this blog post, I'll try to highlight some of Excel's functionality which have been around for a while, but remains largely unknown to the broad public.
 
@@ -33,14 +30,10 @@ Now, I'll be the first one to throw rocks at the Excel camp. I've got receipts:
 {{% tweet 970708905251737605 %}} 
 {{% tweet 935263135413555203 %}}
 
-
-<br>
 However, I'll also be the first to jump in Excel's defense whenever an opportunity presents itself:
 
 {{% tweet 946035002571218944 %}}
 
-<br>
-<br>
 What gives? I generally agree that Excel is a bad way to conduct an analysis. Having said that, there are many enhancements to the product (Windows version mainly) that came out over the last 10 years which are completely overlooked by both Excel users and Excel bashers. One of such enhancements, Power Query (or Query Editor, or M language), allows for a reproducible data import and transformation, and is quite easy to learn. That will be this post's topic.
 
 ### What this post isn't about
@@ -76,7 +69,7 @@ In simpler terms, it is a data transformation language. Now, I'm not a computer 
 ##### Example 1
 Let me explain it on an example. 
 In Excel, I created sample table of 3 rows and 3 columns called `df`. 
-![](/posts/power-query/test1.png)
+![](test1.png)
 
 I then loaded it into the query editor, and pressed a few buttons. Here is the code it generated (I edited the step names and indented the lines):
 
@@ -95,7 +88,7 @@ in
     remove_cols
 ```
 The final output will look like this:
-![](/posts/power-query/test2.png)
+![](test2.png)
 
 The first step, `Source`, is our import step. It tells Power Query where to find our table.
 The second step, `change_type"`, is auto-generated. Notice that it references the first step as the first argument of the function `Table.TransformColumnTypes`: it says *"that's the table we will work with"*. All this step does is assigns columns a, b and c the type of integer.
@@ -160,14 +153,14 @@ What Power Query is good at is its GUI that allows users to click around and app
 
 First, there is a ribbon with several tabs and plenty of buttons to click on. Some represent very simple existing functions, while others are pretty complicated and generate a solid chunk of code on just one click.
 
-![](/posts/power-query/1.png)
-![](/posts/power-query/2.png)
-![](/posts/power-query/3.png)
+![](1.png)
+![](2.png)
+![](3.png)
 
 Next, you are allowed to interact with your data to some extend. You can't edit any cells, but you can filter columns, move them around, fill them down, sort, and so on, within the table itself. Power Query will pick up on your actions and will save your transformations in a script.
 
-![](/posts/power-query/gui1.png)
-![](/posts/power-query/gui2.png)
+![](gui1.png)
+![](gui2.png)
 
 You can have more than one query, coming from different sources, and you can make them interact with each other: merge (join), append (union), reference, split, nest and so on.
 
@@ -184,16 +177,16 @@ There are quite a few things I like about Power Query:
 Here is an example of how Power Query treats JSON files. I used the well-known (thanks to Jenny Bryan's tutorials!) [API of Ice and Fire](https://anapioficeandfire.com/).
 Here is what I've got after a few clicks. Note that I only plugged in the API call as a URL - Power Query did the rest.
 
-![](/posts/power-query/got-1.png)
+![](got-1.png)
 It is a data frame, but it has a nested list column for titles. Neat!
 
 Not only JSON records get nested. You could have a nested table (can happen upon a join or after a `group_by`-like call), or a nested list. Regardless, Power Query will always try to make your data rectangular, which is pleasing to any `tidyverse` adept. Here is another example. I took the same Gapminder dataset, and nested it, grouping by `country`. The table above is now how Power Query sees the table. The data frame below is a sneak peek into one of the nested cells for the United Kingdom. The function up on top is the step I applied to nest the data frame:
 
-![](/posts/power-query/gui4.png)
+![](gui4.png)
 
 One more example. Here is how Power Query sees a folder full of files:
 
-![](/posts/power-query/gui5.png)
+![](gui5.png)
 
 Likewise, if you told Power Query to access a database, and didn't specify SQL statement, it would return a data frame of all tables and views in that database, and you can take it from there.
 

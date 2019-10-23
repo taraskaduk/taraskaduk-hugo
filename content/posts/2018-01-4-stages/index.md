@@ -11,15 +11,13 @@ tags:
   - gartner
 aliases:
     - /post/4-stages
-header:
-  image: post/header-4-stages.png
 ---
 
-*Cross-posted: [**LinkedIn**](https://www.linkedin.com/pulse/4-stages-data-analytics-maturity-challenging-gartners-taras-kaduk/), [**Medium**](https://medium.com/taras-kaduk/4-stages-of-data-analytics-maturity-challenging-gartners-model-590eb5ebe6d1) *
+_Cross-posted: [**LinkedIn**](https://www.linkedin.com/pulse/4-stages-data-analytics-maturity-challenging-gartners-taras-kaduk/)_
 
 If you happen to work in analytics, data science or business intelligence, you've probably seen one of the iterations of this Gartner's graph on stages of data analysis in a company:
 
-![](/posts/4-stages/gartner.jpg)
+![](gartner.jpg)
 
 The figure above shows various stages of analytics maturity, from "descriptive" to "prescriptive". I've seen it so many times, it became an eyesore to me.
 
@@ -31,10 +29,10 @@ In my mind, the *what* questions (descriptive and predictive analytics) can simp
 
 So, another way to visualize the connection between the four times would look something like this:
 
-![](/posts/4-stages/2by2.png)
+![](2by2.png)
 
 One issue with the following graph is that it doesn't fully show all the ways that *data + insight + machine learning* produce 4 flavors of analytics. And hence the good ol' venn diagram:
 
-![](/posts/4-stages/venn.png)
+![](cover.png)
 
 Every company's approach to analytics and data science is still unique: there are very few best practices known in the industry, and we all are still figuring it out. Similarly, every analyst's view on data analytics evolution and maturity will be different, and many of my colleagues will disagree with this view. And that is fine. We are still in the early stages of learning how to cook the proverbial spaghetti, and therefore let's not rob ourselves of the joy of throwing stuff from the pot onto the wall and seeing what sticks.

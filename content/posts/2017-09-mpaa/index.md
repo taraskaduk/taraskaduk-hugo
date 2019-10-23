@@ -20,16 +20,8 @@ tags:
 
 date: 2017-09-30
 slug: mpaa
-header:
-  image: post/header-mpaa.jpg
+cover: /logo.jpg
 ---
-
-![](/posts/mpaa/mpaa.jpeg)
-
-
-*Cross-posted: [**Medium**](https://medium.com/taras-kaduk/do-mpaa-movie-ratings-mean-anything-1d1ab683f21d) *
-
-# Intro
 
 Being a parent in modern days is lots of fun. Not only all of us are pretty much winging it, not having any idea what we’re doing *(seriously, you need a license to do braids and nails, yet raising a human being a future member of society is a no-brainer, right?)*  — we are also constantly being watched and judged by other parents.
 
@@ -53,15 +45,14 @@ What's more, you can always find a movie in a "lower" category that is more inap
 
 You can see this from the figure below. You may also notice that there movies scoring 2.5 points on average that are in every MPAA category. We'll come back to this later.
 
-![](/posts/mpaa/mpaa-1.png)
-
+![](mpaa-1.png)
 
 ### MPAA is most forgiving on violence
 Well, no kidding! This was hardly a surprise. As a foreigner, I am constantly amused by how much violence is considered appropriate, contrasted with, for example, how little nudity is acceptable. *Guts and blood? Body parts?* **Sure, bring it on!** *Naked breasts?* **How dare you!**
 
 So, next time you rent a G rated movie and think it is clean - think again. It's probably just as violent as that other PG movie you wanted. Both G and PG movies center around 3 points on violence anyway, with max points being 5 for G and 6 for PG. Just go with PG then, eh?
 
-![](/posts/mpaa/violence-1.png)
+![](violence-1.png)
 
 ### What the **** is up with profanity?
 Now, this is a zero tolerance zone in the movie world. Not sex and nudity, as I assumed. Profanity. Unlike other categories, where scores flow gradually from category to category, profanity has some clear trends:
@@ -74,16 +65,16 @@ Now, this is a zero tolerance zone in the movie world. Not sex and nudity, as I 
 
 I bet if I was trying to predict an MPAA rating based on these criteria, profanity would be the strongest predictor (not a concern of this post, but maybe later)
 
-![](/posts/mpaa/profanity-1.png)
+![](profanity-1.png)
 
 Looking at R & NC-17 section, it is tempting to dive in a bit more. Let's go!
 
-![](/posts/mpaa/profanity2-1.png)
+![](profanity2-1.png)
 
 Indeed, movies in R & NC-17 categories are widely distributed across violence and sex, but snuggle tightly in the upper section of profanity. Why is that? Looking at the data, we can tell that often profanity accompanies other "R" worthy content. However, it is not always the case, and correlation is relatively weak. <a id="quote">Good Will Hunting is neither violent nor sexually explicit, but it is profane AF, and, sure enough, is R rated for - wait for it - *"strong language, including some sex-related dialogue".* </a>
 It could be just me (after all, I am a foreigner, and English words don't carry the same connotation for me), but I think it is mighty unfair to Good Will Hunting to be rated R, especially knowing that Scary Movie, parts 3 through 5, are rated PG-13.
 
-![](/posts/mpaa/good_will_hunting-1.png)
+![](good_will_hunting-1.png)
 
 # Summary
 

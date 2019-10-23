@@ -16,8 +16,6 @@ header:
   image: ../post/pixel-maps/pixel-maps_files/figure-html/header-1.png
 ---
 
-*Cross-posted: [**Medium**](https://medium.com/taras-kaduk/r-walkthrough-create-a-pixel-map-537ce12c2f0c)*
-
 Today, I'm going to show you how to make pixel maps in R. Why pixel maps? Because they look awesome!
 
 I was searching on the web for a while, but couldn't find a good tutorial. Being stubborn as I am, I eventually figured out a way to get what I want. You know, if you torture your code enough, it might give you what you need.
@@ -123,7 +121,7 @@ plot <- ggplot() +
         theme
 plot
 ```
-![](/posts/pixel-maps/map_full.jpg)
+![](cover.jpg)
 
 
 Looking at the map of the entire world can be overwhelming and sad, especially if you, just like me, are not much of a traveler. Look at it! There aren't many dots! WTF?! Sad!
@@ -139,7 +137,7 @@ For my case, I wanted a wide banner, so I chose some specific arbitrary limits t
 plot + scale_y_continuous(limits = c(10, 70), expand = c(0,0)) +
         scale_x_continuous(limits = c(-150,90), expand = c(0,0))
 ```
-![](/posts/pixel-maps/header.png)
+![](header.png)
 
 
 ## Outro
