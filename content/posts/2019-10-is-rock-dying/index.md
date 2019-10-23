@@ -8,14 +8,14 @@ slug: is-rock-dying
 
 ---
 
-I've been a huge rock and metal fan my whole life. Most of the music that I listen to are some derivatives of rock, but mostly of a subcultural kind. I've been logging my listening habbits for over 11 years, so in case you are curious on the validity of may claims or the details of my tastes, you can check out [this post right here](https://taraskaduk.com/2019/10/11/lastfm/).
+I've been a huge rock and metal fan my whole life. Most of the music that I listen to are some derivatives of rock, but mostly of a subcultural kind. I've been logging my listening habbits for over 11 years, so in case you are curious on the validity of my claims or the details of my tastes, you can check out [this post right here](https://taraskaduk.com/2019/10/11/lastfm/).
 
 Anyway, I've been noticing a trend in my habits for the last few years: it seemed to me that I stopped discovering new artists and pretty much listen to the same old bands. At first, I thought it's all me to blame and I just get old. But then Finn McKenty, a guy that does reviews of subcultural music genres and various music bands on his YouTube channel "The Punk Rock MBA" (which I stan a lot), released this video titled "3 Reasons Why Rock is Dying", and it kind of made a lot of sense to me:
 
 {{< youtube k2nwioKr3o0 >}}
 
 Regardless of the reasons Finn thinks rock is dying, it was a new thought for me - an idea that it's not that I only listen to the old bands, but that there aren't any new good bands to begin with.
-In his video, Finn cites Billboard charts as one of the data sources. In fact, he kicks it off with a phrase "Let's look at the data", which is totally a call to action for me. I decided to take it up and investigate it properly: not but glancing over charts, but by getting the data and analazyng it.
+In his video, Finn cites Billboard charts as one of the data sources. In fact, he kicks it off with a phrase "Let's look at the data", which is totally a call to action for me. I decided to take it up and investigate it properly: not by glancing over charts, but by getting the data and analazyng it.
 
 I followed one of Finn's hunches looked at the Billboard 200 charts and payed attention to two specific metrics: how often does rock music appear in the charts, and what is the age of the artists.^[The discussion of whether or not rock and metal music, especially the niche subcultures at the extremes should even be concerned with making it to the Billboard 200 is beyond the scope of this analysis. Finn provides some thoughts on this in his video, BTW] To put the results in context, but keep it simple, I compared the data on rock with the same data on hip-hop - a music genre that we see rising more and more recently. Any other comnparisons didn't seem especially meaningful or interesting, and so I kept it to "Rock VS Hip-Hop" exclusively.
 
