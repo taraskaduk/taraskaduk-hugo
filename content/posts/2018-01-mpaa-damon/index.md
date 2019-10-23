@@ -11,6 +11,7 @@ tags:
   - movies
   - data visualization
   - data journalism
+comments: true
 ---
 
 About a month ago, I wrote a little article about the MPAA rating system. I set up to find out if their lettering system does any justice to the actual content seen on the screen. Briefly speaking, it does, but with caveats.

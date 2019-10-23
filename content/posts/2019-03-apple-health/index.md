@@ -5,6 +5,7 @@ date: '2019-03-23'
 slug: apple-health
 tags: [r, personal data, productivity, xml, ggplot, tydyverse]
 description: "Learn to import, analyze and visualize your Health app data in R"
+comments: true
 ---
 
 # Intro

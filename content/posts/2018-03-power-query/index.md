@@ -12,13 +12,7 @@ tags:
   - power query
 aliases:
     - /posts/power-query
-twitter:
-  - card: "Power Query"
-  - site: "@taraskaduk"
-  - summary: "Test"
-  - title: "Power Query: Excel's gateway to reproducible analysis"
-  - description: "A guide to a reproducible workflow in Excel"
-  - image: "https://d33wubrfki0l68.cloudfront.net/8694e4b3b82b2a35c1658ecf105aa66709aadd85/e12d7/posts/power-query/head.png"
+comments: true
 ---
 
 ## Intro

@@ -20,7 +20,7 @@ tags:
 
 date: 2017-09-30
 slug: mpaa
-cover: /logo.jpg
+comments: true
 ---
 
 Being a parent in modern days is lots of fun. Not only all of us are pretty much winging it, not having any idea what we’re doing *(seriously, you need a license to do braids and nails, yet raising a human being a future member of society is a no-brainer, right?)*  — we are also constantly being watched and judged by other parents.

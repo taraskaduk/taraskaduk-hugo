@@ -2,6 +2,7 @@
 title: "Is Rock Dead?"
 date: 2019-10-22T12:30:45-04:00
 draft: true
+comments: true
 ---
 *Author of the "I'm a huge metal fan" illustration is unknown*
 

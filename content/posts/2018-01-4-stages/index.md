@@ -11,6 +11,7 @@ tags:
   - gartner
 aliases:
     - /post/4-stages
+comments: true
 ---
 
 _Cross-posted: [**LinkedIn**](https://www.linkedin.com/pulse/4-stages-data-analytics-maturity-challenging-gartners-taras-kaduk/)_

@@ -13,6 +13,7 @@ tags:
   - career
 aliases:
     - /posts/impostor
+comments: true
 ---
 
 We happen to talk a lot about the impostor syndrome these days. No wonder — it seems to be an important subject. But what is it? That feeling of faking it while others *clearly* know what’s they’re doing.

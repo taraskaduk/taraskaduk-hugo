@@ -11,6 +11,7 @@ tags:
   - analytics
   - business intelligence
   - sass
+comments: true
 ---
 
 Hey, analyst, how is life? Talk to me. Do you love what you do for life, do you like all things data?

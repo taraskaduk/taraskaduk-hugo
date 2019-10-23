@@ -12,8 +12,7 @@ tags:
   - geospatial
   - maps
   - r
-header:
-  image: ../post/pixel-maps/pixel-maps_files/figure-html/header-1.png
+comments: true
 ---
 
 Today, I'm going to show you how to make pixel maps in R. Why pixel maps? Because they look awesome!
