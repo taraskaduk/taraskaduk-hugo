@@ -3,7 +3,6 @@ title: "Area Under Curve of Daily Temperature Oscillation as a Temperature Unple
 date: 2019-11-11
 comments: true
 slug: tui
-draft: true
 categories:
   - Urbanism
 tags:
