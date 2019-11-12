@@ -1,6 +1,6 @@
 ---
 title: "Area Under Curve of Daily Temperature Oscillation as a Temperature Unpleasantness Index"
-date: 2019-11-07
+date: 2019-11-11
 comments: true
 slug: tui
 draft: true
