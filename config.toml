@@ -75,3 +75,8 @@ I'm pretty active on Twitter under [@taraskaduk](https://twitter.com/taraskaduk)
 #    identifier = "about"
 #    weight = 500
 #    url = "/about"
+
+
+[taxonomies]
+    tag = "tags"
+    category = "categories"
