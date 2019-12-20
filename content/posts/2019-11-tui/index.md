@@ -3,6 +3,7 @@ title: "Area Under Curve of Daily Temperature Oscillation as a Temperature Unple
 date: 2019-11-11
 comments: true
 slug: tui
+toc: true
 categories:
   - Urbanism
 tags:
@@ -14,10 +15,11 @@ tags:
   - urbanism
 ---
 
+# Intro
 Ever since my analysis on [most pleasant places to live](https://taraskaduk.com/2019/02/18/weather/), I've been aware of some shortcomings of such analysis (and painfully reminded via a not so pleasant crowd over at Reddit [here](https://www.reddit.com/r/dataisbeautiful/comments/bybovm/us_cities_with_most_pleasant_weather_days_in_a/) and [here](https://www.reddit.com/r/dataisbeautiful/comments/byjies/top_25_world_cities_with_most_pleasant_days_in_a/)). Still, I had my 15 seconds of fame, with local and global resources sharing it, including [Digg.com](https://digg.com/2019/top-25-cities-most-pleasant-days-data-viz), [CBS Sacramento](https://sacramento.cbslocal.com/2019/04/30/sacramento-pleasant-weather/), [Revolution Analytics](https://blog.revolutionanalytics.com/2019/03/best-and-worst-weather.html) and a host of Reddit pages.
 Despite all the heat I got for being subjective and picking arbitrary parameters, I wasn't alone. My analysis was inspired by an [map viz by Kelly Norton](https://kellegous.com/j/2014/02/03/pleasant-places/), and later I found similar articles with similar approaches over at [WaPo](https://www.washingtonpost.com/news/capital-weather-gang/wp/2018/08/07/the-united-states-of-nice-days-heres-where-and-when-to-find-the-nations-most-frequent-ideal-weather/#comments-wrapper) and [Zillow](https://www.zillow.com/research/pleasant-days-methodology-8513/). They all use pretty arbitrary parameters, but what else to do? Weather, after all, is subjective.
 
-### Problems with past analysis
+# Problems with past analysis
 Still, I was thinking about how to improve this analysis a bit. There are a few items to consider:
 
 - almost every weather metric as a function of pleasantness is rather quadratic than linear
@@ -35,7 +37,7 @@ Still, I was thinking about how to improve this analysis a bit. There are a few 
 With all this in mind, I figured that the most reliable metric here is temperature (adjusted for RH to reflect Heat Index or adjusted for wind speed to reflect Wind Chill is also OK). But even here, we run into an issue of having at least 2 very different readings (min and max temp, as well as the mean in between): if it was 10°C at night and 35°C in the afternoon, was the day pleasant? Yes, it was at some point (or two points, actually), but not all day. However, my methodology (and methodology of other above-mentioned authors) is a "yes-no" system: either the day was pleasant, or it wasn't.
 
 ---
-### The Temperature Unpleasantness Index, or TUI
+# The Temperature Unpleasantness Index, or TUI
 
 Not to say that this methodology is wrong or bad, but it gave me some food for thought, and allowed me to come up with something I call a Temperature Unpleasantness Index or Weather Independence Index. 
 
@@ -43,7 +45,7 @@ _(And just to show how long it takes me to get stuff done, here is a tweet from 
 
 {{% tweet 1123928248432451589 %}}
 
-### Basic Assumptions
+## Basic Assumptions
 
 To explain how it works, we first must make a couple of assumptions and simplifications of our model (remember that "all models are wrong, but some of them are useful"):
 
@@ -57,7 +59,7 @@ $$f(\theta) = -a \cdot cos(b\theta) + d = -\frac{({t\_{max}} - {t\_{min}})}{2}\c
 
 **In other words, 18°C is an ideal baseline, any deviation up or down from which will make a human experience of outside temperature less favorable. Along the same lines, any deviation from 18°C up or down will also make humans rely on other advances of civilization: clothing, indoor insulation, heating, air conditioning, more clothing layers, more heating etc. Thus, the higher the Index, the less livable the place is, or the more reliant the place is on things like air conditioning or central heating.**
 
-### TUI Calculation
+## TUI Calculation
 
 With these basic assumptions in mind, and using 3 cities (Los Angeles, Miami, Minneapolis) at 2 specific dates (Feb 1 and Jul 1 of 2018) as examples, here are our next steps:
 
@@ -79,7 +81,7 @@ where \\(\theta\\) is time, \\(f(\theta)\\) is our cosine function, \\(g(\theta)
 ![](3.gif)
 - The average value of the year is that location's average unpleasantness index.
 
-### Examples of TUI calculation
+## Examples of TUI calculation
 
 Here are some cities (population over 1,000,000 people) with lowest and highest indexes, based on past 5 years of data. The numbers on the label indicate cold/hot/total TUI, respectively:
 ![](5.png)
@@ -89,7 +91,7 @@ The data for U.S. CSAs looks a bit more uniform. However, the most "unpleasant" 
 
 Once again, we are talking about the cities strictly in temperature terms (adjusted for relative humidity and wind chill), and the baseline is picked somewhat arbitrarily (although not completely at random). I know people get opinionated and take the city rankings personally, but that's part of the fun, isn't it?
 
-### Comparison to "Pleasant Days" analysis
+# Comparison to "Pleasant Days" analysis
 
 One thing that stands out here is that the cities in both analyses are very similar. E.g. compare the list of top 25 world cities above with the following chart I posted on Reddit a while back:
 ![](reddit.jpg)
@@ -100,7 +102,7 @@ Same goes for the the U.S. cities. In fact, there seems to be some correlation b
 
 ---
 
-## Code for obtaining AUC for TUI
+# Code for obtaining AUC for TUI
 
 Here is the R function to obtain the area between the temperature curve and the baseline.
 

@@ -18,6 +18,7 @@ command = "hugo -b $DEPLOY_PRIME_URL --buildFuture"
 
 [permalinks]
    posts = "/:year/:month/:day/:slug/"
+   books = "/books/:slug/"
 
 [params]
   logo = "/logo.jpg"
@@ -66,9 +67,15 @@ I'm pretty active on Twitter under [@taraskaduk](https://twitter.com/taraskaduk)
     weight = 300
     
 [[menu.main]]
+    name = "Book Notes"
+    url = "/books"
+    identifier = "books"
+    weight = 400
+    
+[[menu.main]]
     name = "Resume"
     url = "/resume"
-    weight = 400
+    weight = 500
     
 #[[menu.main]]
 #    name = "About Me"
@@ -78,5 +85,8 @@ I'm pretty active on Twitter under [@taraskaduk](https://twitter.com/taraskaduk)
 
 
 [taxonomies]
-    tag = "tags"
-    category = "categories"
+  tag = "tags"
+  category = "categories"
+    
+    
+    
