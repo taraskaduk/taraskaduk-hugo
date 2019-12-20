@@ -17,22 +17,14 @@ tags:
 
 ## Intro
 
-This is a code that I used to print a map of Kyiv, Ukraine at home. Here
-is the final product: ![](final.png)
+This is a code that I used to print a map of Kyiv, Ukraine at home. Here is the final product: ![](final.png)
 
-One important caveat here is that I want to come out upfront and say
-that I know literally nothing about what I’m doing. This is my first
-time working with shapefiles, and second time working with `sf` package.
-If some parts seems overly complicated or outright nonsensical to you —
-now you know why.
+One important caveat here is that I want to come out upfront and say that I know literally nothing about what I’m doing. This is my first time working with shapefiles, and second time working with `sf` package. If some parts seems overly complicated or outright nonsensical to you — now you know why.
 
 ## Credit
 
-The code here was heavily inspired by Erin Davis and their blogpost
-[“The Beautiful Hidden Logic of
-Cities”](https://erdavis.com/2019/07/27/the-beautiful-hidden-logic-of-cities/).
-The GH repo with original code can be found here:
-<a href="https://github.com/erdavis1/RoadColors" class="uri">https://github.com/erdavis1/RoadColors</a>
+The code here was heavily inspired by Erin Davis and their blogpost [“The Beautiful Hidden Logic of
+Cities”](https://erdavis.com/2019/07/27/the-beautiful-hidden-logic-of-cities/). The GH repo with original code can be found here: <a href="https://github.com/erdavis1/RoadColors" class="uri">https://github.com/erdavis1/RoadColors</a>
 
 ## Code
 
@@ -49,10 +41,7 @@ library(stringi)
 
 ### Set up some parameters
 
-I have literally zero idea why I need to declare two `crs` projections.
-This is the only way I could make things work. Don’t askme any questions
-about it. If you can explain to me what I’m doing here and why - please,
-do.
+I have literally zero idea why I need to declare two `crs` projections. This is the only way I could make things work. Don’t ask me any questions about it. If you can explain to me what I’m doing here and why - please, do.
 
 ``` r
 # ESRI projection for mapping. 
@@ -63,13 +52,9 @@ crs2 <- 4326
 
 ### Download files
 
-This is a major fork in the road, as you’ll need to source your
-shapefiles somewhere. As I was going to print a map of city that is not
-on anyone’s radar (literally), some of the easier ways of getting the
-necessary shapefiles were not available to me.
+This is a major fork in the road, as you’ll need to source your shapefiles somewhere. As I was going to print a map of city that is not on anyone’s radar (literally), some of the easier ways of getting the necessary shapefiles were not available to me.
 
-Your mileage will vary, but I hope the basic idea is clear: get the
-files that countain street, rail and water info.
+Your mileage will vary, but I hope the basic idea is clear: get the files that countain street, rail and water info.
 
 ``` r
 url <- "http://download.geofabrik.de/europe/ukraine-latest-free.shp.zip"
@@ -88,17 +73,11 @@ setwd("..")
 
 ### Finding borders
 
-This is by far the most complicated part of the code. How to determine
-which part of these big-ass shapefiles to print? Like, I have roads,
-water and railways data for an entire country now (the 2nd biggest
-country in Europe, nonetheless). There are just too many ways to go
-about this problem, and I’ll try to list a few solutions.
+This is by far the most complicated part of the code. How to determine which part of these big-ass shapefiles to print? Like, I have roads, water and railways data for an entire country now (the 2nd biggest country in Europe, nonetheless). There are just too many ways to go about this problem, and I’ll try to list a few solutions.
 
 #### Scenario 1: Go by the city’s borders
 
-Perhaps, the easiest approach is to go by the city’s (or metro area’s)
-borders. In the existing workflow, these are provided, I just needed to
-find what I wanted:
+Perhaps, the easiest approach is to go by the city’s (or metro area’s) borders. In the existing workflow, these are provided, I just needed to find what I wanted:
 
 ``` r
 places_kyiv <- places_import %>%
@@ -110,8 +89,7 @@ places_kyiv <- places_import %>%
 
 #### Scenario 2: A circular map
 
-This one is straight out of Erin Davis’ blog post. All we need is a
-center point and a radius (in m).
+This one is straight out of Erin Davis’ blog post. All we need is a center point and a radius (in m).
 
 ``` r
 center <- c(long = 30.5224974,
@@ -130,9 +108,7 @@ circle <- tibble(lat = center["lat"], long = center["long"]) %>%
 
 #### Scenario 3.1: Rectangular map, known margins
 
-To cut out a clear square or rectangle, there is a bit more work to do.
-The easiest way is if we know the margins — in that case, we only need
-to pass the marginal latitudes and longitudes to a `bbox` variable:
+To cut out a clear square or rectangle, there is a bit more work to do. The easiest way is if we know the margins — in that case, we only need to pass the marginal latitudes and longitudes to a `bbox` variable:
 
 ``` r
 bbox <- c(xmin= your_lowest_lat, 
@@ -143,9 +119,7 @@ bbox <- c(xmin= your_lowest_lat,
 
 #### Scenario 3.2: Rectangular map, known center, known radius, unknown margins
 
-If we know a desired center, and know (or guess) a radius, constructing
-a crop box becomes a matter of drawing a circle around the center, and
-then finding the tangents on each of four sides.
+If we know a desired center, and know (or guess) a radius, constructing a crop box becomes a matter of drawing a circle around the center, and then finding the tangents on each of four sides.
 
 ``` r
 dist <-  10000
@@ -157,9 +131,7 @@ circle1 <- tibble(lat = center["lat"], long = center["long"]) %>%
 bbox1 <- st_bbox(circle1)
 ```
 
-An extra complication: if we don’t want a square, but a rectangular map.
-I wanted a 4:5 ratio. What to do? Draw another circle, and then use 2
-data points from each to form a box.
+An extra complication: if we don’t want a square, but a rectangular map. I wanted a 4:5 ratio. What to do? Draw another circle, and then use 2 data points from each to form a box.
 
 ``` r
 circle2 <- tibble(lat = center["lat"], long = center["long"]) %>% 
@@ -175,8 +147,7 @@ bbox <- c(bbox1$xmin, bbox2$ymin, bbox1$xmax, bbox2$ymax)
 
 **This is the longest of all possible scenarios.**
 
-If you are going to plot some personal data points on top, this is the
-time upload your data. Here is a sample I used:
+If you are going to plot some personal data points on top, this is the time upload your data. Here is a sample I used:
 
 ``` r
 points <- tibble::tribble(
@@ -218,9 +189,7 @@ ggplot(points, aes(x = Long, y = Lat, col = Person, shape = Type)) +
 
 ![](unnamed-chunk-6-1.png)
 
-Another thing that we need to do now is to make sure that all points fit
-inside the printed map. We’re going to find the limits on all sides. Out
-of curiocity, we also can find the center of such map.
+Another thing that we need to do now is to make sure that all points fit inside the printed map. We’re going to find the limits on all sides. Out of curiocity, we also can find the center of such map.
 
 ``` r
 top <- max(points$Lat)
@@ -232,13 +201,7 @@ center <- c(long = (right - left)/2 + left,
             lat = (top - bottom)/2 + bottom)
 ```
 
-My appoach is slightly different and more complicated though. I have a
-predetermined center in mind (and I assume you will as well), but I also
-want to make sure all of my points fit in the map, while center remains
-center. I need to find the longest of four distances from the center to
-the top, bottom, left, and right, and use that as my new length. I also
-will be adding an extra kilometer to the distance to have the furthest
-point not completely on the edge of the map
+My appoach is slightly different and more complicated though. I have a predetermined center in mind (and I assume you will as well), but I also want to make sure all of my points fit in the map, while center remains center. I need to find the longest of four distances from the center to the top, bottom, left, and right, and use that as my new length. I also will be adding an extra kilometer to the distance to have the furthest point not completely on the edge of the map
 
 ``` r
 center <- c(long = 30.5224974,
@@ -255,8 +218,7 @@ dist <- max(top1,
             left1) + 1000 
 ```
 
-Now that we have a center and a radius, we can draw the box the same way
-we did in Scenario 3.2.
+Now that we have a center and a radius, we can draw the box the same way we did in Scenario 3.2.
 
 ``` r
 circle1 <- tibble(lat = center["lat"], long = center["long"]) %>% 
@@ -277,13 +239,9 @@ bbox <- c(bbox1$xmin, bbox2$ymin, bbox1$xmax, bbox2$ymax)
 
 ### Cutting the map
 
-With borders determined (one of several ways above), we are ready to
-crop the map to its desired size. If we’ve been cutting out a
-rectangular shape, we can use a `st_crop()` function to crop the
-shapefiles. Otherwise, we’ll need `st_intersection()`
+With borders determined (one of several ways above), we are ready to crop the map to its desired size. If we’ve been cutting out a rectangular shape, we can use a `st_crop()` function to crop the shapefiles. Otherwise, we’ll need `st_intersection()`
 
-If you want to you the city/metro/district/etc borders, the code and the
-initial output will look something like this:
+If you want to you the city/metro/district/etc borders, the code and the initial output will look something like this:
 
 ``` r
 roads_cropped <- st_intersection(roads_import, places_kyiv)
@@ -293,8 +251,7 @@ railways_cropped <- st_intersection(railways_import, places_kyiv)
 
 ![](place_crop_ggplot-1.png)
 
-A circle crop will have a very similar code, and will most likely run
-much faster:
+A circle crop will have a very similar code, and will most likely run much faster:
 
 ``` r
 roads_cropped <- st_intersection(roads_import, circle)
@@ -304,8 +261,7 @@ railways_cropped <- st_intersection(railways_import, circle)
 
 ![](circle_crop_ggplot-1.png)
 
-A rectangular crop will have a slightly different code, as mentioned
-before, and will run even faster:
+A rectangular crop will have a slightly different code, as mentioned before, and will run even faster:
 
 ``` r
 water_cropped <- st_crop(water_import, bbox)
@@ -317,12 +273,7 @@ railways_cropped <- st_crop(railways_import, bbox)
 
 ### Roads cleanup
 
-One thing you may want to do is clean up one of your shapefiles. Your
-mileage will vary. Here are some of the changes I made to the streets of
-Kyiv: I removed some streets and pathways of the least importance,
-untitled road links/junctions with their respective road classes,
-separated all the remaining streets of lower importance into its own
-“other” class, and then ordered them by meaning.
+One thing you may want to do is clean up one of your shapefiles. Your mileage will vary. Here are some of the changes I made to the streets of Kyiv: I removed some streets and pathways of the least importance, united road links/junctions with their respective road classes, separated all the remaining streets of lower importance into its own “other” class, and then ordered them by meaning.
 
 ``` r
 roads_cleaned <- roads_cropped %>% 
@@ -334,13 +285,7 @@ roads_cleaned <- roads_cropped %>%
 
 ### Plotting
 
-Now, to the plotting. This is where most of the tweaking is going to
-happen. Pick colors, opacity, width of the streets, order of layers etc
-etc. At some point, I wrote a double-layered `for` loop to iterate over
-several shades of grey and several versions of street widths, generating
-64 different chart combinations. And that’s just for 2 parameters alone
-with values very close to one another! The possibilities here are
-endless.
+Now, to the plotting. This is where most of the tweaking is going to happen. Pick colors, opacity, width of the streets, order of layers etc etc. At some point, I wrote a double-layered `for` loop to iterate over several shades of grey and several versions of street widths, generating 64 different chart combinations. And that’s just for 2 parameters alone with values very close to one another! The possibilities here are endless.
 
 Here is my final version:
 
