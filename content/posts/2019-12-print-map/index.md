@@ -17,7 +17,9 @@ tags:
 
 ## Intro
 
-This is a code that I used to print a map of Kyiv, Ukraine at home. Here is the final product: ![](final.png)
+This is a code that I used to print a map of Kyiv, Ukraine at home. Here is the final product: 
+
+![](final.png) ![](final2.jpg)
 
 One important caveat here is that I want to come out upfront and say that I know literally nothing about what I’m doing. This is my first time working with shapefiles, and second time working with `sf` package. If some parts seems overly complicated or outright nonsensical to you — now you know why.
 
