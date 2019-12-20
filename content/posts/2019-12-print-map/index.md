@@ -340,6 +340,6 @@ ggsave("map.png", width = 297, height = 420, units = "mm", dpi = "retina")
 ggsave("map.svg")
 ```
 
-![](cover.png)
+![](map.png)
 
 This is pretty much it! Enjoy!
