@@ -21,7 +21,7 @@ This is a code that I used to print a map of Kyiv, Ukraine at home. Here is the 
 
 ![](final.png) ![](final2.jpg)
 
-One important caveat here is that I want to come out upfront and say that I know literally nothing about what I’m doing. This is my first time working with shapefiles, and second time working with `sf` package. If some parts seems overly complicated or outright nonsensical to you — now you know why.
+One important caveat here is that I want to come out upfront and say that I know nothing about what I’m doing. This is my first time working with shapefiles, and second time working with `sf` package. If some parts seems overly complicated or outright nonsensical to you — now you know why.
 
 ## Credit
 
@@ -30,22 +30,19 @@ Cities”](https://erdavis.com/2019/07/27/the-beautiful-hidden-logic-of-cities/)
 
 ## Code
 
-Load a crap ton of packages:
+Load packages first. `tidyverse` is my workhorse, and we'll need quite a number of `sf` functions.
 
-``` r
+```
 library(sf)
-library(raster)
-library(foreign)
 library(tidyverse)
-library(lwgeom)
-library(stringi)
+library(raster)
 ```
 
 ### Set up some parameters
 
-I have literally zero idea why I need to declare two `crs` projections. This is the only way I could make things work. Don’t ask me any questions about it. If you can explain to me what I’m doing here and why - please, do.
+Although I am confused about this step, I will put it here as is. I have zero idea why I need to declare two `crs` projections, and not one. This is the only way, however, that I could make things work. Don’t ask me any questions about it. If you can explain to me what I’m doing here and why - please, do.
 
-``` r
+``` 
 # ESRI projection for mapping. 
 # https://spatialreference.org/ref/esri/europe-albers-equal-area-conic/ for reference
 crs1 <- 102013
@@ -75,7 +72,7 @@ setwd("..")
 
 ### Finding borders
 
-This is by far the most complicated part of the code. How to determine which part of these big-ass shapefiles to print? Like, I have roads, water and railways data for an entire country now (the 2nd biggest country in Europe, nonetheless). There are just too many ways to go about this problem, and I’ll try to list a few solutions.
+This is by far the most complicated part of the code. How to determine which part of these large shapefiles to print? In this case, I have roads, water and railways data for an entire country (the 2nd biggest country in Europe, nonetheless). There are just too many ways to go about this problem, and I’ll try to list a few solutions.
 
 #### Scenario 1: Go by the city’s borders
 
@@ -106,7 +103,7 @@ circle <- tibble(lat = center["lat"], long = center["long"]) %>%
   st_transform(st_crs(crs2))
 ```
 
-![](unnamed-chunk-1-1.png)
+![](circle1.png)
 
 #### Scenario 3.1: Rectangular map, known margins
 
@@ -335,7 +332,7 @@ ggplot() +
 
 And, of course, save the plot on hard drive to printing.
 
-``` r
+```
 ggsave("map.png", width = 297, height = 420, units = "mm", dpi = "retina")
 ggsave("map.svg")
 ```
