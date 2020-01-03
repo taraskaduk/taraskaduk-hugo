@@ -3,6 +3,7 @@ title: "Is Rock Dying?"
 date: 2019-10-23
 comments: true
 categories: Data Stories
+tags: [r, pop culture]
 slug: is-rock-dying
 ---
 *"I'm a huge metal fan". Author unknown*

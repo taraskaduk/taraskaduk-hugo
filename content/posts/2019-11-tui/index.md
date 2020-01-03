@@ -5,6 +5,7 @@ comments: true
 slug: tui
 toc: true
 categories: Data Stories
+tags: [calculus, trigonometry, gganimate, r, weather, urbanism]
 ---
 
 # Intro

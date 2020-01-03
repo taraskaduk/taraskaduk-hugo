@@ -4,6 +4,7 @@ author: Taras Kaduk
 date: '2018-01-22'
 slug: 4-stages
 categories: Essays
+tags: [data analytics & business intelligence]
 comments: true
 ---
 

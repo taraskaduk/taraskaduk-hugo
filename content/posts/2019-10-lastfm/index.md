@@ -4,6 +4,7 @@ author: Taras Kaduk
 date: '2019-10-11'
 slug: lastfm
 categories: Data Stories
+tags: [pop culture, r, tableau]
 comments: true
 ---
 

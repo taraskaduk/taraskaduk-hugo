@@ -4,6 +4,7 @@ author: Taras Kaduk
 date: '2019-02-18'
 slug: weather
 categories: Data Stories
+tags: [urbanism, r, geospatial, weather]
 comments: true
 ---
 

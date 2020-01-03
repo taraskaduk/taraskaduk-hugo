@@ -2,6 +2,7 @@
 title: "Do MPAA movie ratings mean anything?"
 subtitle: "Using rvest, stringr, dplyr and ggplot2 to make sense of the movie data"
 categories: Data Stories
+tags: [pop culture, r]
 author: "Taras Kaduk"
 date: 2017-09-30
 slug: mpaa

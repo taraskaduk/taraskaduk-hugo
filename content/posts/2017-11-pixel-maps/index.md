@@ -4,6 +4,7 @@ author: Taras Kaduk
 date: '2017-11-26'
 slug: pixel-maps
 categories: Tutorials
+tags: [maps, data viz, r]
 comments: true
 ---
 

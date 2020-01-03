@@ -4,6 +4,7 @@ author: Taras Kaduk
 date: '2018-01-12'
 slug: sass
 categories: Essays
+tags: [data analytics & business intelligence]
 comments: true
 ---
 

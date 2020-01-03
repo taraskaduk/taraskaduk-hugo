@@ -5,9 +5,8 @@ comments: true
 slug: print-maps
 toc: true
 categories: Tutorials
+tags: [maps, r, geospatial, urbanism]
 ---
-
-
 
 ## Intro
 

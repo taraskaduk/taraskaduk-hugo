@@ -5,6 +5,7 @@ date: '2019-03-23'
 slug: apple-health
 description: "Learn to import, analyze and visualize your Health app data in R"
 categories: Tutorials
+tags: [r, health]
 comments: true
 ---
 

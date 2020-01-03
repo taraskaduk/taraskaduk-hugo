@@ -4,6 +4,7 @@ author: Taras Kaduk
 date: '2018-03-29'
 slug: power-query
 categories: Tutorials
+tags: [power bi, power query, excel]
 comments: true
 ---
 

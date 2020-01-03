@@ -3,7 +3,6 @@ title: Where are the places with the best (and the worst) weather? 2020 Edition
 author: Taras Kaduk
 date: '2019-01-02'
 slug: weather2
-tags: [ggplot, maps, geospatial, r]
 draft: true
 comments: true
 ---
