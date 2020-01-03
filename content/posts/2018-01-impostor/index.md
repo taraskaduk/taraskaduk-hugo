@@ -2,17 +2,8 @@
 title: 'Imposterism in Data Science: Addressing the credentials problem'
 author: Taras Kaduk
 date: '2018-01-22'
-
 slug: impostor
-categories:
-  - Insights
-tags:
-  - analytics
-  - data science
-  - learning
-  - career
-aliases:
-    - /posts/impostor
+categories: Essays
 comments: true
 ---
 

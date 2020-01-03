@@ -3,14 +3,7 @@ title: 'The 4 Stages of Data Analytics Maturity: Challenging the Gartner’s Mod
 author: Taras Kaduk
 date: '2018-01-22'
 slug: 4-stages
-categories:
-  - Insights!
-tags:
-  - analytics
-  - business intelligence
-  - gartner
-aliases:
-    - /post/4-stages
+categories: Essays
 comments: true
 ---
 

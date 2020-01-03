@@ -4,13 +4,7 @@ date: 2019-12-20
 comments: true
 slug: print-maps
 toc: true
-categories:
-  - Urbanism
-tags:
-  - ggplot
-  - r
-  - urbanism
-  - gis
+categories: Data Stories
 ---
 
 

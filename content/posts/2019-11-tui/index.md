@@ -4,15 +4,7 @@ date: 2019-11-11
 comments: true
 slug: tui
 toc: true
-categories:
-  - Urbanism
-tags:
-  - ggplot
-  - r
-  - gganimate
-  - math
-  - weather
-  - urbanism
+categories: Data Stories
 ---
 
 # Intro

@@ -3,15 +3,11 @@ title: "Power Query: Excel's gateway to reproducible analysis"
 author: Taras Kaduk
 date: '2018-03-29'
 slug: power-query
-categories:
-  - Insights
+categories: Tutorials
 tags:
-  - analytics
-  - business intelligence
   - excel
-  - power query
-aliases:
-    - /posts/power-query
+  - power-query
+  - power-bi
 comments: true
 ---
 

@@ -3,14 +3,8 @@ title: On Importance of Minimalism in Retrospective Analytics
 author: Taras Kaduk
 date: '2018-01-12'
 slug: sass
-featured: "platespinner.png"
-featuredpath: "/post/2018-01-sass/"
-categories:
-  - Insights
-tags:
-  - analytics
-  - business intelligence
-  - sass
+categories: Essays
+
 comments: true
 ---
 

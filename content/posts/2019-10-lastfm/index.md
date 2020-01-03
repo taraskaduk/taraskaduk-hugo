@@ -3,11 +3,7 @@ title: "Analyzing 11 years of my personal music listening history"
 author: Taras Kaduk
 date: '2019-10-11'
 slug: lastfm
-tags:
-  - r
-  - tableau
-aliases:
-    - /posts/lastfm
+categories: Data Stories
 comments: true
 ---
 

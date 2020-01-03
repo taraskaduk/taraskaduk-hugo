@@ -3,14 +3,8 @@ title: When your data analysis is validated on The Late Show with Stephen Colber
 author: Taras Kaduk
 date: '2018-01-10'
 slug: mpaa-damon
-categories:
-  - R
-  - Data Journalism
-  - Data Visualization
-tags:
-  - movies
-  - data visualization
-  - data journalism
+categories: Data Stories
+tags: movies
 comments: true
 ---
 

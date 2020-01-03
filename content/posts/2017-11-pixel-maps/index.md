@@ -3,14 +3,10 @@ title: Create World Pixel Maps in R
 author: Taras Kaduk
 date: '2017-11-26'
 slug: pixel-maps
-categories:
-  - R
-  - Data Visualization
+categories: Tutorials
 tags:
-  - ggplot
-  - ggmap
-  - geospatial
   - maps
+  - data viz
   - r
 comments: true
 ---

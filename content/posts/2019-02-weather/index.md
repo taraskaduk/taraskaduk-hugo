@@ -3,7 +3,7 @@ title: Where are the places with the best (and the worst) weather in the United 
 author: Taras Kaduk
 date: '2019-02-18'
 slug: weather
-tags: [ggplot, maps, geospatial, r]
+categories: Data Stories
 comments: true
 ---
 
