@@ -4,7 +4,6 @@ author: Taras Kaduk
 date: '2018-01-12'
 slug: sass
 categories: Essays
-
 comments: true
 ---
 

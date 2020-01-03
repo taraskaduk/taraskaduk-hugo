@@ -4,7 +4,6 @@ author: Taras Kaduk
 date: '2018-01-10'
 slug: mpaa-damon
 categories: Data Stories
-tags: movies
 comments: true
 ---
 
