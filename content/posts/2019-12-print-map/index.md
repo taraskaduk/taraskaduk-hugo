@@ -35,7 +35,7 @@ library(raster)
 
 Although I am confused about this step, I will put it here as is. I have zero idea why I need to declare two `crs` projections, and not one. This is the only way, however, that I could make things work. Don’t ask me any questions about it. If you can explain to me what I’m doing here and why - please, do.
 
-``` 
+```r
 # ESRI projection for mapping. 
 # https://spatialreference.org/ref/esri/europe-albers-equal-area-conic/ for reference
 crs1 <- 102013
@@ -48,7 +48,7 @@ This is a major fork in the road, as you’ll need to source your shapefiles som
 
 Your mileage will vary, but I hope the basic idea is clear: get the files that countain street, rail and water info.
 
-``` r
+```r
 url <- "http://download.geofabrik.de/europe/ukraine-latest-free.shp.zip"
 curl::curl_download(url, destfile = "ukraine.shp.zip")
 unzip("ukraine.shp.zip", exdir = "shapefiles")
@@ -71,7 +71,7 @@ This is by far the most complicated part of the code. How to determine which par
 
 Perhaps, the easiest approach is to go by the city’s (or metro area’s) borders. In the existing workflow, these are provided, I just needed to find what I wanted:
 
-``` r
+```r
 places_kyiv <- places_import %>%
   filter(osm_id == 421866) %>%
   dplyr::select()

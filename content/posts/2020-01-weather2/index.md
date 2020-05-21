@@ -7,10 +7,8 @@ draft: true
 comments: true
 ---
 
-Last year, I wrote a blog post titled ["Where are the places with the best (and the worst) weather in the United States"](https://taraskaduk.com/2019/02/18/weather/), which was the result of my endless weather data analysis that I conducted in spare time. It proved to be a bit popular for a quick second, which I was very proud of. I later saw my code re-used for a similar weather data viz and posted on r/dataisbeautiful subreddit, which inspired me to post some of my own visuals there... And so I registered on Reddit and posted two things [here](https://www.reddit.com/r/dataisbeautiful/comments/byjies/top_25_world_cities_with_most_pleasant_days_in_a) and [here](https://www.reddit.com/r/dataisbeautiful/comments/bybovm/us_cities_with_most_pleasant_weather_days_in_a/). I did not expect this many comments, both kind and not-so-much ones.
-
-
-
+## Intro
+Last year, I wrote a blog post titled ["Where are the places with the best (and the worst) weather in the United States"](https://taraskaduk.com/2019/02/18/weather/), which was the result of my endless weather data analysis that I conducted in spare time. It proved to be a bit popular for a quick second, which I was very proud of. I later saw my code re-used for a similar weather data viz and posted on r/dataisbeautiful subreddit, which inspired me to post some of my own visuals there... And so I registered on Reddit and posted two things [here](https://www.reddit.com/r/dataisbeautiful/comments/byjies/top_25_world_cities_with_most_pleasant_days_in_a) and [here](https://www.reddit.com/r/dataisbeautiful/comments/bybovm/us_cities_with_most_pleasant_weather_days_in_a/). I did not expect this many comments, both kind and not-so-much. But it did generate some interest, and so I figured I'd make a follow-up on it once all 2019 data is in.
 
 ## Updated methodology
 
@@ -24,3 +22,5 @@ Last year, I wrote a blog post titled ["Where are the places with the best (and 
 8. Finally, I classify every day for every station into one of "pleasant / elements / hot / cold / hot & elements / cold & elements" categories, rank the cities by the average count of pleasant days, and visualize the data.
 
 If you still need more details on the methodology, the code is always available here: https://github.com/taraskaduk/weather
+
+## Results

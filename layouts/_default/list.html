@@ -8,21 +8,9 @@
         <!-- Posts Index
         ================================================== -->
         <section class="recent-posts">            
-            <div class="section-title">
-                <h2><span>
-                    <a class="nav-link" href="{{ "/posts/" | relLangURL }}">All Posts</a></span>
-                    
-                    {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
-                    <span>
-                        <a class="nav-link" href="{{ "/categories/" | relLangURL }}{{ $name | urlize }}">
-                            {{ $name | humanize | title }}
-                        </a>
-                        </span>
-                    {{ end }}
-                </h2>
+            <div class="section-title">                
+                              
             </div>            
-            
-            
             <div class="row listrecent">
                 {{ $post_paginator := .Paginate (.Pages) 6 }}
                 {{ range $post_paginator.Pages }}

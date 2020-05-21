@@ -9,6 +9,22 @@ enableEmoji = true
 disqusShortname = "taraskaduk"
 #googleAnalytics = "UA-1XXXXXXX1-1"
 
+pygmentsCodefences = true
+pygmentsCodefencesGuessSyntax = true
+pygmentsStyle = "xcode"
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    style = "monokai"
+    tabWidth = 4
+
 # netlify.toml
 [context.deploy-preview]
 command = "hugo -b $DEPLOY_PRIME_URL --buildFuture"
@@ -24,7 +40,7 @@ command = "hugo -b $DEPLOY_PRIME_URL --buildFuture"
   logo = "/logo.jpg"
   # description ="Data Journalism in R"
   #mailchimp = "you can provide a mailchimp-link here"
-
+  
 [params.author]
   name = "Taras Kaduk"
   thumbnail = "/logo.jpg"
