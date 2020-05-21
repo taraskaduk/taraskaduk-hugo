@@ -13,18 +13,6 @@ pygmentsCodefences = true
 pygmentsCodefencesGuessSyntax = true
 pygmentsStyle = "xcode"
 
-[markup]
-  [markup.highlight]
-    codeFences = true
-    guessSyntax = false
-    hl_Lines = ""
-    lineNoStart = 1
-    lineNos = false
-    lineNumbersInTable = true
-    noClasses = true
-    style = "monokai"
-    tabWidth = 4
-
 # netlify.toml
 [context.deploy-preview]
 command = "hugo -b $DEPLOY_PRIME_URL --buildFuture"
