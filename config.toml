@@ -35,7 +35,7 @@ command = "hugo -b $DEPLOY_PRIME_URL --buildFuture"
   description = "@taraskaduk"
 
 [params.index]
-  picture = "/logo.jpg"
+  picture = "/userpic.jpg"
   title = "Taras Kaduk"
   #subtitle = "Shocked with your data!"
   mdtext = '''
