@@ -25,7 +25,7 @@ command = "hugo -b $DEPLOY_PRIME_URL --buildFuture"
    books = "/books/:slug/"
 
 [params]
-  logo = "/logo.jpg"
+  logo = "/logo.png"
   # description ="Data Journalism in R"
   #mailchimp = "you can provide a mailchimp-link here"
   
